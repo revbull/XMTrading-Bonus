@@ -6,7 +6,7 @@
     <title>¥13,000 No-Deposit Bonus - Start Trading Now</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Noto Sans JP', Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
@@ -19,73 +19,110 @@
             text-align: center;
         }
         .header {
-            background-color: #0046ad;
+            background-image: url('https://via.placeholder.com/800x400');
+            background-size: cover;
+            background-position: center;
             color: white;
-            padding: 20px;
+            padding: 40px 20px;
+            text-shadow: 2px 2px 5px #000;
         }
         .header h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 32px;
+            color: #ffd700;
         }
         .subheader {
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 10px;
+            color: #fff;
         }
         .content img {
             width: 100%;
             max-width: 600px;
             margin: 20px 0;
+            border-radius: 8px;
         }
         .benefits {
             text-align: left;
             margin-top: 20px;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .benefits li {
             font-size: 16px;
             margin: 10px 0;
+            line-height: 1.6;
         }
         .cta {
             margin-top: 30px;
         }
         .cta a {
             text-decoration: none;
-            background-color: #f57c00;
+            background-color: #e60000;
             color: white;
             padding: 15px 30px;
             font-size: 18px;
             border-radius: 5px;
+            display: inline-block;
         }
         .cta a:hover {
-            background-color: #d66f00;
+            background-color: #bf0000;
         }
         .footer {
             margin-top: 30px;
             font-size: 14px;
             color: #777;
         }
+        .timer {
+            font-size: 16px;
+            color: #d66f00;
+            font-weight: bold;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>¥13,000 無料ボーナスを今すぐゲット！</h1>
-            <p class="subheader">リスクなしでトレードを始める絶好のチャンス</p>
+            <h1>期間限定！ ¥13,000ボーナス</h1>
+            <p class="subheader">今すぐ取引を始めましょう</p>
         </div>
         <div class="content">
             <img src="https://via.placeholder.com/600x300" alt="Trading Illustration">
             <ul class="benefits">
-                <li>初回登録で¥13,000の無料ボーナスを獲得！</li>
+                <li>初回登録で<strong>¥13,000</strong>の無料ボーナスを獲得！</li>
                 <li>入金不要ですぐに取引を開始。</li>
                 <li>初心者にも最適な簡単で安全な取引プラットフォーム。</li>
                 <li>利益を獲得してすぐに出金可能。</li>
             </ul>
         </div>
         <div class="cta">
-            <a href="https://www.xmtrading.com/jp" target="_blank">今すぐボーナスを受け取る</a>
+            <a href="https://www.xmtrading.com/jp" target="_blank">無料ボーナスを今すぐ申し込む >></a>
         </div>
+        <div class="timer">このオファーはあと <span id="timer">24:00:00</span> で終了します！</div>
         <div class="footer">
             <p>このオファーは期間限定です。今すぐご登録ください！</p>
         </div>
     </div>
+    <script>
+        // Countdown Timer Script
+        const timerElement = document.getElementById('timer');
+        let timeLeft = 24 * 60 * 60; // 24 hours in seconds
+
+        function updateTimer() {
+            const hours = String(Math.floor(timeLeft / 3600)).padStart(2, '0');
+            const minutes = String(Math.floor((timeLeft % 3600) / 60)).padStart(2, '0');
+            const seconds = String(timeLeft % 60).padStart(2, '0');
+
+            timerElement.textContent = `${hours}:${minutes}:${seconds}`;
+            if (timeLeft > 0) {
+                timeLeft--;
+            }
+        }
+
+        setInterval(updateTimer, 1000);
+    </script>
 </body>
 </html>
