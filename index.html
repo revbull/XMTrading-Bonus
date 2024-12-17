@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            font-family: 'Noto Sans JP', Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #000;
+            background-color: #f2f2f2;
             color: #000;
             text-align: center;
         }
@@ -17,54 +17,76 @@
             margin: 50px auto;
             padding: 40px;
             border-radius: 8px;
-            max-width: 800px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-        .logo {
-            margin-bottom: 20px;
-        }
-        .logo img {
-            max-width: 200px;
+            max-width: 900px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
         .banner {
-            width: 100%;
+            background-color: #e60000;
+            padding: 20px;
+            border-radius: 8px;
             margin-bottom: 20px;
         }
+        .banner img {
+            width: 100%;
+            border-radius: 8px;
+        }
         .main-title {
-            font-size: 38px;
+            font-size: 36px;
             font-weight: bold;
             margin: 20px 0;
-        }
-        .highlight {
             color: #e60000;
         }
         .description {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 30px;
             line-height: 1.8;
             color: #333;
         }
-        .footer-text {
-            font-size: 15px;
-            color: #555;
-            margin-top: 30px;
-        }
-        .ribbon {
-            position: absolute;
-            top: -10px;
-            left: -10px;
+        .cta-button {
+            display: inline-block;
             background-color: #e60000;
             color: #fff;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 30px;
+            font-size: 20px;
             font-weight: bold;
-            transform: rotate(-10deg);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            text-decoration: none;
+            margin-top: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #b00000;
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+        .footer-text {
+            font-size: 14px;
+            color: #777;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="ribbon">期間限定!</div>
-        <!-- Lo
+        <!-- Banner -->
+        <div class="banner">
+            <img src="https://ads.affstrack.com/i/126617?c=438318" alt="XMTrading Banner">
+        </div>
+        <!-- Main Content -->
+        <div class="main-title">
+            <span>今すぐ¥13,000のボーナスを受け取ろう！</span>
+        </div>
+        <div class="description">
+            <p>新規口座を開設して、入金不要で<strong>¥13,000</strong>のトレードボーナスを獲得しましょう。</p>
+            <p>リスクゼロで取引を始めるチャンス！この期間限定オファーをお見逃しなく。</p>
+        </div>
+        <!-- Call to Action Button -->
+        <a class="cta-button" href="https://clicks.affstrack.com/c?m=126617&c=438318" target="_blank">ボーナスを受け取る</a>
+        <!-- Footer Text -->
+        <div class="footer-text">
+            <p>このプロモーションは期間限定です。早めに行動してください。</p>
+        </div>
+    </div>
+</body>
+</html>
