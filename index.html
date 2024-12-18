@@ -24,12 +24,12 @@
             z-index: -1; /* Ensures the video is behind the content */
         }
         .bonus-button {
-            position: fixed;
+            position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            padding: 1em 2em; /* Use scalable units */
-            font-size: 1.5rem; /* Relative font size for responsiveness */
+            padding: 1em 2em; /* Scalable padding */
+            font-size: 1.5rem; /* Relative font size for better responsiveness */
             background-color: #388e3c; /* Green button */
             color: #fff;
             text-decoration: none;
@@ -42,27 +42,35 @@
             background-color: #2a6b2f;
         }
 
+        /* Ensures proper behavior on large screens */
+        @media (min-width: 1200px) {
+            .bonus-button {
+                padding: 1.5em 3em;
+                font-size: 1.8rem;
+            }
+        }
+
         /* Responsive adjustments for medium screens (tablets) */
         @media (max-width: 1024px) {
             .bonus-button {
-                padding: 0.8em 1.5em;
-                font-size: 1.2rem;
+                padding: 1em 2em;
+                font-size: 1.4rem;
             }
         }
 
         /* Responsive adjustments for small screens (phones) */
         @media (max-width: 768px) {
             .bonus-button {
-                padding: 0.6em 1.2em;
-                font-size: 1rem;
+                padding: 0.8em 1.5em;
+                font-size: 1.2rem;
             }
         }
 
         /* Responsive adjustments for very small screens */
         @media (max-width: 480px) {
             .bonus-button {
-                padding: 0.5em 1em;
-                font-size: 0.9rem;
+                padding: 0.7em 1.2em;
+                font-size: 1rem;
             }
         }
     </style>
