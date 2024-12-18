@@ -28,45 +28,21 @@
             padding: 20px;
             position: relative; /* Ensures content stays on top */
         }
-        h1 {
-            color: #fff;
-            font-size: 28px;
-        }
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            color: #fff;
-        }
-        .cta-button {
-            display: inline-block;
-            margin: 20px 0;
-            padding: 150px 25px;
-            background-color: #388e28; /* Green CTA button */
-            color: #fff;
-            font-size: 20px;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .cta-button:hover {
-            background-color: #b8000f;
-        }
         .bonus-button {
             display: inline-block;
-            margin: 20px 0;
-            padding: 150px 25px;
-            background-color: #388e28; /* Blue button */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 15px 25px;
+            background-color: #388e3c; /* Green button */
             color: #fff;
             font-size: 20px;
             text-decoration: none;
             border-radius: 5px;
+            z-index: 10; /* Ensures the button stays above other content */
         }
         .bonus-button:hover {
-            background-color: #005f7a;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
+            background-color: #2a6b2f;
         }
     </style>
 </head>
@@ -78,23 +54,10 @@
     </video>
 
     <div class="container">
-        <!-- Headline -->
-        <h1></h1>
-        <p></p>
-        
-        <!-- Custom Image -->
-       
-        <!-- CTA Button -->
-        <a href="https://clicks.affstrack.com/c?c=12345&l=ja&p=6" class="cta-button" target="_blank">
-           ボーナスを獲得する
+        <!-- New Bonus Button -->
+        <a href="https://clicks.affstrack.com/c?c=12345&l=ja&p=6" class="bonus-button" target="_blank">
+            ボーナスを獲得する
         </a>
-
-        
-
-        <!-- Footer or Disclaimer -->
-        <p style="font-size: 12px; color: #ddd;">
-            *Terms and conditions apply. Bonus available for new users only.
-        </p>
     </div>
 </body>
 </html>
