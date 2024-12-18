@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <style>
+        /* General styles */
         body {
             margin: 0;
             padding: 0;
@@ -22,29 +23,39 @@
             object-fit: cover;
             z-index: -1; /* Ensures the video is behind the content */
         }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            position: relative; /* Ensures content stays on top */
-        }
-       .bonus-button {
-    position: fixed;
-    bottom: 110px; /* 30px from the bottom */
-    right: 280px; /* 30px from the right */
-    padding: 25px 230px; /* Button size */
-    font-size: 23px; /* Text size */
-    background-color: #388e3c; /* Green button */
-    color: #fff; /* Text color */
-    border-radius: 10px; /* Rounded corners */
-    text-align: center;
-    text-decoration: none;
-    z-index: 10; /* Stays above other content */
-}
-s the button stays above other content */
+        .bonus-button {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #388e3c; /* Green button */
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 10; /* Ensures it stays above other content */
+            transition: all 0.3s ease; /* Smooth hover effect */
         }
         .bonus-button:hover {
             background-color: #2a6b2f;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .bonus-button {
+                padding: 12px 25px; /* Slightly smaller padding */
+                font-size: 16px; /* Smaller text */
+            }
+        }
+
+        /* Responsive adjustments for very small screens (e.g., mobile) */
+        @media (max-width: 480px) {
+            .bonus-button {
+                padding: 10px 20px; /* Compact size */
+                font-size: 14px; /* Smaller text */
+            }
         }
     </style>
 </head>
@@ -55,11 +66,9 @@ s the button stays above other content */
         Your browser does not support the video tag.
     </video>
 
-    <div class="container">
-        <!-- New Bonus Button -->
-        <a href="https://clicks.affstrack.com/c?c=12345&l=ja&p=6" class="bonus-button" target="_blank">
-            ボーナスを獲得する
-        </a>
-    </div>
+    <!-- Centered Bonus Button -->
+    <a href="https://clicks.affstrack.com/c?c=12345&l=ja&p=6" class="bonus-button" target="_blank">
+        ボーナスを獲得する
+    </a>
 </body>
 </html>
