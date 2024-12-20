@@ -5,16 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ボーナスを獲得する</title>
     <style>
-         /* Media query for smaller screens */
-        @media (max-width: 768px) {
-            .header img, .devices-image img {
-                position: static;
-                margin: 0 auto;
-                width: 100%;
-            }
-        }
-    
-        * {
+       
+     * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -34,10 +26,8 @@
             background-position: center;
         }
         .header {
-            width: 100%;
-            max-width: 1200px;
-            text-align: center;
-            margin-bottom: 20px;
+            display: flex;
+            align-items: center; 
         }
         .header img {
             padding: 60px 60px;
@@ -69,34 +59,47 @@
             font-size: 16px;
             border-radius: 5px;
             text-decoration: none;
+        }.info-container {
+            text-align: left; 
+            margin-left: 20px; 
         }
-        .cta-button {
-            background-color: #388e3c;
+
+        .info-item {
+            margin-bottom: 10px; 
+        }
+         .cta-button {
+            background-color: #388e3c; /* Keep the green color */
             color: #fff;
-            padding: 15px 30px;
-            font-size: 18px;
-            border: none;
+            padding: 20px 40px; /* Increased padding for emphasis */
+            font-size: 20px; 
             border-radius: 5px;
-            cursor: pointer;
             text-decoration: none;
+            display: block; /* Make it a block-level element for better styling */
+            margin: 30px 0; /* Add some space above and below */
         }
-        .cta-button:hover {
-            background-color: #2a6b2f;
+
+        .devices-image {
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
         }
         .footer {
             font-size: 12px;
             color: #bbb;
             margin-top: 20px;
         }
-        .devices-image {
-            margin: 20px 0;
-            position: fixed;
-            left: 20px;
-            right: 20px
-        }
+       
         .devices-image img {
-            width: 80%;
+            width: 40%;
             max-width: 400px;
+        }
+          /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .header img, .devices-image img {
+                position: static;
+                margin: 0 auto;
+                width: 100%;
+            }
         }
     </style>
 </head>
