@@ -3,65 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ボーナスを獲得する</title>
+    <title></title>
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            color: #333;
+            text-align: center;
             overflow: hidden;
+            background: url('https://github.com/revbull/XMTrading-Bonus/blob/c077296c8a68294610549223c78894e16cf1a365/%C2%A513%2C000%E3%81%AE%E3%83%9B%E3%82%99%E3%83%BC%E3%83%8A%E3%82%B9%E3%82%92%E7%8D%B2%E5%BE%97%E3%81%97%E3%82%88%E3%81%86.png') no-repeat center center fixed;
+            background-size: cover;
         }
-        .background-video {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            width: 100vw;
-            height: 100vh;
-            transform: translate(-50%, -50%);
-            object-fit: cover; /* Ensures the video covers the screen while keeping the aspect ratio */
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            position: relative;
         }
         .bonus-button {
+            display: inline-block;
             position: fixed;
-            bottom: 10%; /* Adjusted for mobile compatibility */
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 20px;
+            right: 20px;
             padding: 15px 25px;
             background-color: #388e3c; /* Green button */
             color: #fff;
             font-size: 20px;
             text-decoration: none;
             border-radius: 5px;
-            z-index: 10; /* Keeps the button above the video */
+            z-index: 10; /* Ensures the button stays above other content */
         }
         .bonus-button:hover {
             background-color: #2a6b2f;
         }
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .bonus-button {
-                font-size: 16px;
-                padding: 10px 20px;
-            }
-        }
-        @media (max-width: 480px) {
-            .bonus-button {
-                font-size: 14px;
-                padding: 8px 16px;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Video Background -->
-    <video class="background-video" autoplay loop muted>
-        <source src="https://raw.githubusercontent.com/revbull/XMTrading-Bonus/bd6a0a3a1ab749d07131608b789875d0091cdf49/%C2%A513%2C000%E3%81%AE%E3%83%9B%E3%82%99%E3%83%BC%E3%83%8A%E3%82%B9%E3%82%92%E7%8D%B2%E5%BE%97%E3%81%97%E3%82%88%E3%81%86.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-
-    <!-- Bonus Button -->
-    <a href="https://clicks.affstrack.com/c?c=12345&l=ja&p=6" class="bonus-button" target="_blank">
-        ボーナスを獲得する
-    </a>
+    <div class="container">
+        <!-- New Bonus Button -->
+        <a href="https://clicks.affstrack.com/c?c=12345&l=ja&p=6" class="bonus-button" target="_blank">
+            ボーナスを獲得する
+        </a>
+    </div>
 </body>
 </html>
-
