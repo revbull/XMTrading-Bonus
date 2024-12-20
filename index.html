@@ -9,42 +9,69 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
             color: #333;
             text-align: center;
-            overflow: hidden;
-            background: url('https://github.com/revbull/XMTrading-Bonus/blob/c077296c8a68294610549223c78894e16cf1a365/%C2%A513%2C000%E3%81%AE%E3%83%9B%E3%82%99%E3%83%BC%E3%83%8A%E3%82%B9%E3%82%92%E7%8D%B2%E5%BE%97%E3%81%97%E3%82%88%E3%81%86.png') no-repeat center center fixed;
-            background-size: cover;
         }
         .container {
             max-width: 800px;
             margin: auto;
             padding: 20px;
-            position: relative;
         }
-        .bonus-button {
+        h1 {
+            color: #2a2a2a;
+            font-size: 28px;
+        }
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .cta-button {
             display: inline-block;
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 200;
+            right: 120:
+            margin: 20px 0;
             padding: 15px 25px;
-            background-color: #388e3c; /* Green button */
+            background-color: #28a745; /* Green button */
             color: #fff;
             font-size: 20px;
             text-decoration: none;
             border-radius: 5px;
-            z-index: 10; /* Ensures the button stays above other content */
+            transition: transform 0.2s, background-color 0.3s;
+            cursor: pointer;
         }
-        .bonus-button:hover {
-            background-color: #2a6b2f;
+        .cta-button:hover {
+            background-color: #218838; /* Darker green on hover */
+            transform: translateY(-5px); /* Button moves up slightly */
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- New Bonus Button -->
-        <a href="https://clicks.affstrack.com/c?c=12345&l=ja&p=6" class="bonus-button" target="_blank">
+        <!-- Headline -->
+        <h1></h1>
+        <p></p>
+        
+        <!-- Custom Image -->
+        <img src="https://raw.githubusercontent.com/revbull/XMTrading-Bonus/c077296c8a68294610549223c78894e16cf1a365/%C2%A513%2C000%E3%81%AE%E3%83%9B%E3%82%99%E3%83%BC%E3%83%8A%E3%82%B9%E3%82%92%E7%8D%B2%E5%BE%97%E3%81%97%E3%82%88%E3%81%86.png" 
+             alt="">
+        
+        <!-- CTA Button -->
+        <a href="https://clicks.affstrack.com/c?c=12345&l=ja&p=6" class="cta-button" target="_blank">
             ボーナスを獲得する
         </a>
+
+        <!-- Footer or Disclaimer -->
+        <p style="font-size: 12px; color: #777;">
+           
+        </p>
     </div>
 </body>
 </html>
+
