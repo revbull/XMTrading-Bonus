@@ -1,119 +1,480 @@
-<!doctype html>
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>XMTrading Christmas Bonus – Version B</title>
-  <style>
-    body { margin:0; font-family:-apple-system, BlinkMacSystemFont, 'Noto Sans JP', sans-serif; background:#ffffff; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Complete Structure</title>
+    
+    <style>
+        /* ------------------------------------------- */
+        /* GLOBAL RESET AND BASE STYLES */
+        /* ------------------------------------------- */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
 
-    /* Clean minimalist topbar */
-    .topbar {
-      background:#0a0a0a;
-      padding:12px 22px;
-      color:white;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      font-size:15px;
-      letter-spacing:0.2px;
-    }
-    .topbar-left, .topbar-right { display:flex; align-items:center; gap:18px; }
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 28px;
+            color: #1e1e1e;
+        }
 
-    /* Hero Section */
-    .hero {
-      background:#0e4b2c;
-      background-size:cover;
-      padding:80px 20px;
-      color:white;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      background:url('your-green-snow-pattern.png') center/cover no-repeat;
-      opacity:0.20;
-    }
-    .hero-inner {
-      position:relative;
-      display:flex;
-      max-width:1250px;
-      margin:0 auto;
-      align-items:center;
-      justify-content:space-between;
-      gap:60px;
-      flex-wrap:wrap;
-    }
+        /* ------------------------------------------- */
+        /* 1. SECTION: 3-COLUMN FEATURES GRID STYLES */
+        /* ------------------------------------------- */
+        .features-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto 60px; /* Added margin-bottom */
+        }
 
-    .hero-left { flex:1 1 480px; }
-    .promo-date { font-size:15px; margin-bottom:10px; opacity:0.9; }
-    .promo-title { font-size:42px; font-weight:800; line-height:1.25; margin-bottom:16px; }
-    .promo-sub { font-size:17px; opacity:0.92; margin-bottom:24px; max-width:450px; }
-    .cta-btn { background:#00d06f; color:#000; padding:16px 26px; border-radius:10px; font-size:18px; font-weight:700; text-decoration:none; }
+        .grid-item {
+            flex: 1;
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
 
-    .hero-img { flex:1 1 420px; text-align:center; }
-    .hero-img img { max-width:100%; height:auto; }
+        .feature-image {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: contain;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
 
-    /* White section */
-    .white-section { padding:70px 20px; text-align:center; background:#ffffff; }
-    .white-section h2 { font-size:30px; font-weight:800; margin-bottom:14px; }
-    .white-section p { font-size:18px; opacity:0.9; }
-  </style>
+        .cta-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ------------------------------------------- */
+        /* 2. SECTION: 4-STEP PROCESS CARDS STYLES */
+        /* ------------------------------------------- */
+        .process-steps {
+            background-color: #f0f0f0;
+            padding: 60px 20px;
+        }
+
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .step-card {
+            flex: 1;
+            text-align: center;
+            padding: 25px 15px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .step-number {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 45px;
+            height: 45px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+            background-color: #d90000;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .step-title { margin-top: 0; font-size: 18px; color: #333; }
+        .step-description { font-size: 14px; color: #666; }
+
+        .steps-cta-wrapper { text-align: center; padding-top: 30px; }
+
+        .main-cta-button {
+            text-decoration: none;
+            padding: 15px 40px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+        .main-cta-button:hover { background-color: #1e7e34; }
+
+
+        /* ------------------------------------------- */
+        /* 3. SECTION: RESPONSIVE TABLE STYLES */
+        /* ------------------------------------------- */
+        .bonus-structure-section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: white;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+
+        .responsive-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .responsive-table th, .responsive-table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .responsive-table th {
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+        }
+
+        .responsive-table tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .disclaimer {
+            font-size: 12px;
+            color: #666;
+            margin-top: 20px;
+        }
+
+        /* ------------------------------------------- */
+        /* 4. STICKY CTA PANEL STYLES */
+        /* ------------------------------------------- */
+        #sticky-cta-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1e1e1e;
+            color: white;
+            padding: 15px 0;
+            z-index: 1000;
+            transform: translateY(100%);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        }
+
+        #sticky-cta-panel.show {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .panel-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+        }
+
+        .panel-message {
+            flex-grow: 1;
+            font-size: 14px;
+            margin: 0;
+            padding-right: 20px;
+        }
+
+        .panel-cta-button {
+            background-color: #38a54c;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+        }
+
+        .panel-cta-button:hover {
+            background-color: #2e8b41;
+        }
+
+        #close-panel-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            margin-left: 15px;
+            padding: 0 10px;
+            line-height: 1;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+        }
+
+        #close-panel-btn:hover {
+            opacity: 1;
+        }
+
+        /* ------------------------------------------- */
+        /* MOBILE RESPONSIVENESS (Media Queries) */
+        /* ------------------------------------------- */
+        @media (max-width: 992px) {
+            /* Steps Container (2 cards per row) */
+            .steps-container {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .step-card {
+                flex: 0 0 45%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+             /* 3-Column Grid (Stacks vertically) */
+            .features-grid {
+                flex-direction: column; 
+            }
+            .grid-item {
+                margin-bottom: 20px;
+            }
+
+            /* Table (Collapses into card view) */
+            .responsive-table thead {
+                display: none;
+            }
+            .responsive-table, .responsive-table tbody, .responsive-table tr, .responsive-table td {
+                display: block;
+                width: 100%;
+            }
+            .responsive-table tr {
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            }
+            .responsive-table td {
+                text-align: right;
+                padding-left: 50%;
+                position: relative;
+                border: none;
+            }
+            .responsive-table td::before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                text-align: left;
+                color: #333;
+            }
+
+            /* Sticky Panel adjustment */
+            .panel-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .panel-message {
+                padding-right: 0;
+                margin-bottom: 10px;
+            }
+            #close-panel-btn {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            /* Steps Container (Stacks vertically) */
+            .step-card {
+                flex: 0 0 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- TOP BAR (Version B - cleaner, more compact) -->
-  <div class="topbar">
-    <div class="topbar-left">
-      <img src="ScreenshotXMTrading_logo.png" alt="logo" height="34" />
-      <span>ホーム</span>
-      <span>プロモーション</span>
-      <span>サポート</span>
-    </div>
+    <h1>Your Landing Page Title</h1>
+    <p style="text-align:center; padding-bottom: 500px;">
+        *Scroll down to see the sticky CTA panel appear!*
+    </p>
 
-    <div class="topbar-right">
-      <a href="#" style="color:white; text-decoration:none;">ログイン</a>
-      <a href="#" style="color:white; text-decoration:none;">口座開設</a>
-      <img src="Luck_JP600x600.png" height="20" alt="JP" />
-    </div>
-  </div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
+    <section class="features-grid">
+        <h2>Explore Our Features</h2>
+        
+        <div class="grid-item">
+            <a href="URL_FOR_LINK_1_HERE" target="_blank" class="image-link">
+                <img src="PATH_TO_IMAGE_1.jpg" alt="Feature 1: Speed and Innovation" class="feature-image">
+            </a>
+            <h3 class="item-title">High Speed Performance</h3>
+            <p class="item-description">Discover the technology that drives innovation in every aspect of our platform.</p>
+            <a href="URL_FOR_LINK_1_HERE" class="cta-link">Learn More &rarr;</a>
+        </div>
 
-      <div class="hero-left">
-        <div class="promo-date">🎄 プロモーション期間：2025年11月18日〜12月8日</div>
+        <div class="grid-item">
+            <a href="URL_FOR_LINK_2_HERE" target="_blank" class="image-link">
+                <img src="PATH_TO_IMAGE_2.jpg" alt="Feature 2: Reliability and Safety" class="feature-image">
+            </a>
+            <h3 class="item-title">Trusted Reliability</h3>
+            <p class="item-description">Our infrastructure is built for stability, ensuring maximum uptime and security.</p>
+            <a href="URL_FOR_LINK_2_HERE" class="cta-link">View Details &rarr;</a>
+        </div>
 
-        <h1 class="promo-title">
-          クリスマス入金ボーナス<br>
-          <span style="font-size:46px; color:#ffd966;">最大総額 $25,000*</span>
-        </h1>
+        <div class="grid-item">
+            <a href="URL_FOR_LINK_3_HERE" target="_blank" class="image-link">
+                <img src="PATH_TO_IMAGE_3.jpg" alt="Feature 3: Global Access" class="feature-image">
+            </a>
+            <h3 class="item-title">Global Accessibility</h3>
+            <p class="item-description">Access our tools and services from anywhere in the world, 24 hours a day.</p>
+            <a href="URL_FOR_LINK_3_HERE" class="cta-link">Get Started &rarr;</a>
+        </div>
+    </section>
 
-        <p class="promo-sub">
-          今年だけの限定プロモーション！取引量に応じて毎週アップする<br>
-          豪華クリスマスボーナスを獲得しよう。
+    <section class="process-steps">
+        <h2 class="section-title">Get Started in 4 Simple Steps</h2>
+
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Register Account</h3>
+                <p class="step-description">Sign up quickly and easily to create your new trading account.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Fund Your Wallet</h3>
+                <p class="step-description">Make your initial deposit to be eligible for bonus promotions.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Complete a Trade</h3>
+                <p class="step-description">Execute your first transaction to unlock the bonus reward.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Receive Your Bonus</h3>
+                <p class="step-description">The bonus is credited to your account and ready for use in trading.</p>
+            </div>
+        </div>
+        
+        <div class="steps-cta-wrapper">
+            <a href="URL_TO_REGISTRATION_PAGE" class="main-cta-button">
+                Claim Your Bonus Now
+            </a>
+        </div>
+    </section>
+
+    <section class="bonus-structure-section">
+        <h2 class="section-title">Trade More, Earn More: Bonus Structure</h2>
+        
+        <div class="table-wrapper">
+            <table class="responsive-table">
+                <thead>
+                    <tr>
+                        <th>Weekly Min. Trading Lot Size</th>
+                        <th>Bonus Offer (Tier 1)</th>
+                        <th>Bonus Offer (Tier 2)</th>
+                        <th>Total Max. Bonus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td data-label="Min. Lots">3 Standard (or 300 Micro)</td>
+                        <td data-label="Tier 1 Bonus">Max $100 @ 100%</td>
+                        <td data-label="Tier 2 Bonus">Next Max $250 @ 50%</td>
+                        <td data-label="Total Max">$350</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Min. Lots">5 Standard (or 500 Micro)</td>
+                        <td data-label="Tier 1 Bonus">Max $150 @ 100%</td>
+                        <td data-label="Tier 2 Bonus">Next Max $500 @ 50%</td>
+                        <td data-label="Total Max">$650</td>
+                    </tr>
+                    <tr>
+                        <td data-label="Min. Lots">10 Standard (or 1000 Micro)</td>
+                        <td data-label="Tier 1 Bonus">Max $300 @ 100%</td>
+                        <td data-label="Tier 2 Bonus">Next Max $700 @ 50%</td>
+                        <td data-label="Total Max">$1,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <p class="disclaimer">
+            *All funds are specified in USD. Terms and conditions apply.
+            <a href="URL_TO_FULL_T&C" target="_blank">View full details.</a>
         </p>
+    </section>
 
-        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="cta-btn">ボーナスを獲得</a>
-      </div>
 
-      <div class="hero-img">
-        <img src="ScreenshotXMTrading_img1.png" alt="Bonus Image" />
-      </div>
-
+    <div id="sticky-cta-panel">
+        <div class="panel-content">
+            <p class="panel-message">
+                ¥5,000の取引ボーナスで、何時でも何処でも取引しましょう。全定気、利用制限通達。
+            </p>
+            <a href="URL_TO_YOUR_SIGNUP_PAGE" class="panel-cta-button">
+                こぉろから口座登録
+            </a>
+            <button id="close-panel-btn" aria-label="Close promotion bar">
+                &times;
+            </button>
+        </div>
     </div>
-  </section>
 
-  <!-- WHITE SECTION -->
-  <section class="white-section">
-    <h2>🎁 今年のクリスマスは特別ボーナスで取引スタート！</h2>
-    <p>ステップに従うだけで簡単に豪華ボーナスを獲得可能。</p>
-  </section>
 
+    <script>
+        // JavaScript for the Sticky CTA Panel
+        const panel = document.getElementById('sticky-cta-panel');
+        const closeBtn = document.getElementById('close-panel-btn');
+        const scrollThreshold = 200; // Panel appears after 200px of scrolling
+
+        function checkScroll() {
+            if (window.scrollY > scrollThreshold) {
+                panel.classList.add('show');
+            } else {
+                panel.classList.remove('show');
+            }
+        }
+
+        // 1. Show/Hide on Scroll
+        window.addEventListener('scroll', checkScroll);
+
+        // 2. Hide when the user clicks the close button
+        closeBtn.addEventListener('click', () => {
+            panel.classList.remove('show');
+        });
+        
+        // Check scroll position once on page load
+        checkScroll(); 
+    </script>
 </body>
 </html>
-
-
