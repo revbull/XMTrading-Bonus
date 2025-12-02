@@ -2,229 +2,116 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>XMTrading（日本向け）｜簡単3ステップで口座開設</title>
-  <meta name="description" content="XMTrading 日本向けランディングページ — 日本語サポート、MT4/MT5、ボーナスと簡単出金ガイド。あなたのXMアフィリエイトリンクで登録を促進します。" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XMTrading Christmas Bonus – Version B</title>
   <style>
-    :root{--bg:#f7fafc;--card:#ffffff;--accent:#ff6b6b;--muted:#6b7280;--accent-dark:#e05555}
-    body{font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Kaku Gothic ProN', 'Noto Sans JP', 'Yu Gothic', 'Meiryo', sans-serif; margin:0;background:var(--bg);color:#111}
-    .container{max-width:980px;margin:24px auto;padding:20px}
-    .card{background:var(--card);border-radius:12px;box-shadow:0 6px 22px rgba(15,23,42,0.06);padding:20px;margin-bottom:18px}
-    header{display:flex;align-items:center;gap:16px}
-    .logo{width:96px}
-    h1{font-size:22px;margin:6px 0}
-    p.lead{color:var(--muted);margin:0 0 12px}
-    .cta{display:inline-block;background:var(--accent);color:white;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
-    .secondary-cta{display:inline-block;border:1px solid #e6edf3;color:#0f172a;padding:10px 14px;border-radius:8px;text-decoration:none}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px}
-    @media(max-width:880px){.grid{grid-template-columns:1fr} .logo{width:72px} }
-    .features{display:flex;gap:12px;flex-wrap:wrap}
-    .feature{flex:1 1 140px;background:#f8fafc;border-radius:8px;padding:12px}
-    .steps{display:flex;gap:10px;flex-direction:column}
-    .step{display:flex;gap:12px;align-items:flex-start}
-    .step .num{background:var(--accent);color:#fff;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:700}
-    table{width:100%;border-collapse:collapse;margin-top:8px}
-    th,td{padding:8px;border-bottom:1px solid #eef2f6;text-align:left}
-    .trust-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .badge{background:#eef6ff;padding:8px 10px;border-radius:8px;font-weight:600}
-    .faq dt{font-weight:700;margin-top:10px}
-    .small{font-size:13px;color:var(--muted)}
-    footer{font-size:13px;color:var(--muted);text-align:center;padding:18px 0}
+    body { margin:0; font-family:-apple-system, BlinkMacSystemFont, 'Noto Sans JP', sans-serif; background:#ffffff; }
+
+    /* Clean minimalist topbar */
+    .topbar {
+      background:#0a0a0a;
+      padding:12px 22px;
+      color:white;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      font-size:15px;
+      letter-spacing:0.2px;
+    }
+    .topbar-left, .topbar-right { display:flex; align-items:center; gap:18px; }
+
+    /* Hero Section */
+    .hero {
+      background:#0e4b2c;
+      background-size:cover;
+      padding:80px 20px;
+      color:white;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:url('your-green-snow-pattern.png') center/cover no-repeat;
+      opacity:0.20;
+    }
+    .hero-inner {
+      position:relative;
+      display:flex;
+      max-width:1250px;
+      margin:0 auto;
+      align-items:center;
+      justify-content:space-between;
+      gap:60px;
+      flex-wrap:wrap;
+    }
+
+    .hero-left { flex:1 1 480px; }
+    .promo-date { font-size:15px; margin-bottom:10px; opacity:0.9; }
+    .promo-title { font-size:42px; font-weight:800; line-height:1.25; margin-bottom:16px; }
+    .promo-sub { font-size:17px; opacity:0.92; margin-bottom:24px; max-width:450px; }
+    .cta-btn { background:#00d06f; color:#000; padding:16px 26px; border-radius:10px; font-size:18px; font-weight:700; text-decoration:none; }
+
+    .hero-img { flex:1 1 420px; text-align:center; }
+    .hero-img img { max-width:100%; height:auto; }
+
+    /* White section */
+    .white-section { padding:70px 20px; text-align:center; background:#ffffff; }
+    .white-section h2 { font-size:30px; font-weight:800; margin-bottom:14px; }
+    .white-section p { font-size:18px; opacity:0.9; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="card">
-      <header class="bg-gradient-to-br from-[#0d1117] to-[#161b22] text-white py-12 px-6 text-center shadow-xl border-b border-white/10">
-  <div class="max-w-4xl mx-auto space-y-6">
-    <!-- NEW BONUS HEADLINE -->
-    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-yellow-400 drop-shadow-lg">
-      🎁 ¥15,000 No‑Deposit Bonus + Up to $25,000 Christmas Deposit Bonus!
-    </h1>
 
-    <h2 class="text-xl md:text-2xl font-semibold text-white/90">
-      Celebrate XMTrading’s 15th Anniversary with Huge Rewards & Weekly Bonus Growth
-    </h2>
-
-    <!-- ORIGINAL HERO TITLE BELOW -->
-    <p class="text-3xl md:text-4xl font-extrabold leading-tight mt-4">
-      日本トレーダー向け – すぐに始められるFX・暗号通貨CFD取引
-    </p>
-    <p class="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
-      信頼のグローバルブローカー XMTradingで、高速約定・ゼロ手数料・強力なボーナスを活用しよう。
-    </p>
-    <a
-      href="#signup"
-      class="inline-block bg-[#22c55e] hover:bg-[#16a34a] text-black font-bold px-8 py-4 rounded-xl text-lg mt-6 shadow-lg hover:shadow-green-500/30 transition duration-300"
-    >
-      今すぐ無料で始める
-    </a>
-  </div>
-</header>
-
-<!-- Bonus Highlight Section (Popunder Optimized) -->
-<section class="bg-[#0d1117] text-white py-10 px-6 border-b border-white/10">
-  <div class="max-w-5xl mx-auto text-center space-y-6">
-
-    <!-- Animated Badges -->
-    <div class="flex flex-wrap items-center justify-center gap-4 animate-pulse">
-      <span class="bg-yellow-400 text-black font-bold px-4 py-2 rounded-full text-sm md:text-base shadow-lg">🎉 15周年記念</span>
-      <span class="bg-green-400 text-black font-bold px-4 py-2 rounded-full text-sm md:text-base shadow-lg">🎁 ¥15,000 ノーデポジット</span>
-      <span class="bg-blue-400 text-black font-bold px-4 py-2 rounded-full text-sm md:text-base shadow-lg">💰 最大 $25,000 クリスマスボーナス</span>
+  <!-- TOP BAR (Version B - cleaner, more compact) -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <img src="your-logo.png" alt="logo" height="34" />
+      <span>ホーム</span>
+      <span>プロモーション</span>
+      <span>サポート</span>
     </div>
 
-    <!-- Bonus Details -->
-    <h2 class="text-3xl md:text-4xl font-extrabold text-yellow-300 drop-shadow-lg">今だけの超大型ボーナスイベント開催中！</h2>
-
-    <p class="text-lg md:text-xl text-white/80 leading-relaxed max-w-3xl mx-auto">
-      ¥15,000のノーデポジットボーナスで即取引スタート。さらに、100%入金ボーナス（最大$500）、20%入金ボーナス（最大$10,000）、そして特大クリスマス入金ボーナスで合計 <span class="text-green-400 font-bold">$25,000 まで獲得可能！</span>
-    </p>
-
-    <p class="text-white/75">取引量に応じて毎週報酬がアップ！トレードすればするほどボーナスが増える特別イベント。</p>
-  </div>
-</section>
-
-<!-- Popunder-Specific CTA Section -->
-<section class="bg-gradient-to-br from-[#111827] to-[#0d1117] py-12 px-6 text-center">
-  <div class="max-w-4xl mx-auto space-y-6">
-    <h3 class="text-2xl md:text-3xl font-bold text-white">今すぐチャンスを逃さずに！</h3>
-    <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto">期間限定の特大ボーナスは予告なく終了する可能性があります。ページを閉じる前に、無料口座開設で特典を確保しましょう。</p>
-
-    <a href="#signup" class="inline-block bg-[#22c55e] hover:bg-[#16a34a] text-black font-bold px-10 py-4 rounded-2xl text-xl shadow-xl hover:shadow-green-500/30 transition duration-300">
-      無料でボーナスを受け取る
-    </a>
-  </div>
-</section>
+    <div class="topbar-right">
+      <a href="#" style="color:white; text-decoration:none;">ログイン</a>
+      <a href="#" style="color:white; text-decoration:none;">口座開設</a>
+      <img src="japan-flag.png" height="20" alt="JP" />
     </div>
-
-    <div class="grid">
-      <main class="card">
-        <section>
-          <h2>なぜ日本人トレーダーにXMが選ばれるのか</h2>
-          <div class="features" style="margin-top:12px">
-            <div class="feature">
-              <strong>日本語サポート</strong>
-              <div class="small">日本語対応のカスタマーサポートと日本語サイトで安心。</div>
-            </div>
-            <div class="feature">
-              <strong>MT4 / MT5 対応</strong>
-              <div class="small">慣れた取引プラットフォームで高速実行。</div>
-            </div>
-            <div class="feature">
-              <strong>ボーナス／キャンペーン</strong>
-              <div class="small">新規顧客向けの口座ボーナスが頻繁に実施されます（時期要確認）。</div>
-            </div>
-            <div class="feature">
-              <strong>分別管理</strong>
-              <div class="small">顧客資金の分別管理を公表。透明性を重視。</div>
-            </div>
-          </div>
-        </section>
-
-        <section id="how" style="margin-top:20px">
-          <h2>かんたん3ステップで開設</h2>
-          <div class="steps">
-            <div class="step">
-              <div class="num">1</div>
-              <div>
-                <strong>申し込みフォームを記入</strong>
-                <div class="small">基本情報（氏名、メール、電話）と本人確認書類をアップロードします。</div>
-              </div>
-            </div>
-            <div class="step">
-              <div class="num">2</div>
-              <div>
-                <strong>口座有効化＆入金</strong>
-                <div class="small">日本円入金が可能。入金方法は銀行送金・電子決済など（時期により異なります）。</div>
-              </div>
-            </div>
-            <div class="step">
-              <div class="num">3</div>
-              <div>
-                <strong>取引スタート</strong>
-                <div class="small">MT4/MT5にログインしてトレードを開始。出金はマイページから簡単に申請できます。</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section style="margin-top:20px">
-          <h2>実際のスプレッド・比較</h2>
-          <p class="small">下の表は参考値です。アカウントタイプにより異なります。</p>
-          <table>
-            <thead>
-              <tr><th>通貨ペア</th><th>XM（参考）</th><th>国内平均（参考）</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>USD/JPY</td><td>1.0〜1.6 pips</td><td>0.4〜1.0 pips</td></tr>
-              <tr><td>EUR/JPY</td><td>1.2〜2.0 pips</td><td>0.6〜1.4 pips</td></tr>
-              <tr><td>GBP/JPY</td><td>1.8〜3.0 pips</td><td>1.2〜2.2 pips</td></tr>
-            </tbody>
-          </table>
-          <p class="small" style="margin-top:8px">注：スプレッドは市場状況、アカウント種別、プロモーションにより変動します。</p>
-        </section>
-
-        <section style="margin-top:20px">
-          <h2>よくある質問（FAQ）</h2>
-          <dl class="faq">
-            <dt>出金は安全ですか？</dt>
-            <dd class="small">はい。通常は本人確認（KYC）完了後にスムーズに処理されます。出金方法や所要日数は選んだ方法によります。問題が生じた場合はカスタマーサポートに連絡しましょう。</dd>
-            <dt>日本の金融庁の登録は？</dt>
-            <dd class="small">XMは海外ブローカーのため、日本の金融庁（FSA）に登録された国内業者ではありません。これに伴う規制面の違いを理解したうえでご利用ください。</dd>
-            <dt>ボーナスはありますか？</dt>
-            <dd class="small">時期によっては新規口座向けのボーナスや入金ボーナスが提供されます。ボーナスの条件を必ず確認してください。</dd>
-          </dl>
-        </section>
-
-      </main>
-
-      <aside class="card">
-        <div style="display:flex;flex-direction:column;gap:12px">
-          <div>
-            <div class="trust-row">
-              <div class="badge">日本語サポート</div>
-              <div class="badge">MT4/MT5</div>
-              <div class="badge">分別管理</div>
-            </div>
-          </div>
-
-          <div style="padding-top:6px">
-            <h3 style="margin:6px 0">今すぐ口座を開設</h3>
-            <p class="small">簡単3ステップでスタート。日本語サポートあり。</p>
-            <a class="cta" href="YOUR-XM-LINK" rel="noopener noreferrer">口座を開設する</a>
-          </div>
-
-          <div style="margin-top:12px;padding:10px;background:#fbfbff;border-radius:8px">
-            <strong>注意</strong>
-            <div class="small" style="margin-top:6px">海外ブローカー利用に伴うリスク（規制の違い等）を理解のうえでご利用ください。出金の手続きはKYC完了が前提です。</div>
-          </div>
-
-          <div style="margin-top:12px">
-            <h4 style="margin:6px 0">サポート連絡先</h4>
-            <div class="small">XMカスタマーサポート（日本語）: サイト内サポートフォームまたはチャットをご利用ください。</div>
-          </div>
-
-          <div style="margin-top:12px">
-            <h4 style="margin:6px 0">レビュー / 検証</h4>
-            <div class="small">複数のレビューサイトで総合評価が高い結果。利用前にレビューをチェックしてください。</div>
-          </div>
-        </div>
-      </aside>
-    </div>
-
-    <div class="card">
-      <h3>安心して始めるためのチェックリスト</h3>
-      <ul class="small">
-        <li>本人確認（運転免許証 / パスポート）の準備</li>
-        <li>銀行口座・入金手段の確認</li>
-        <li>ボーナス条件と出金ルールの確認</li>
-        <li>必要ならサポートにチャットで確認</li>
-      </ul>
-    </div>
-
-    <footer>
-      <div class="small">免責事項：当ページはアフィリエイトリンクを含みます。XM Trading のサービスや規約は変更されることがあります。利用前に公式サイトで最新情報をご確認ください。</div>
-    </footer>
   </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="hero-left">
+        <div class="promo-date">🎄 プロモーション期間：2025年11月18日〜12月8日</div>
+
+        <h1 class="promo-title">
+          クリスマス入金ボーナス<br>
+          <span style="font-size:46px; color:#ffd966;">最大総額 $25,000*</span>
+        </h1>
+
+        <p class="promo-sub">
+          今年だけの限定プロモーション！取引量に応じて毎週アップする<br>
+          豪華クリスマスボーナスを獲得しよう。
+        </p>
+
+        <a href="#" class="cta-btn">ボーナスを獲得</a>
+      </div>
+
+      <div class="hero-img">
+        <img src="your-christmas-bonus-image.png" alt="Bonus Image" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WHITE SECTION -->
+  <section class="white-section">
+    <h2>🎁 今年のクリスマスは特別ボーナスで取引スタート！</h2>
+    <p>ステップに従うだけで簡単に豪華ボーナスを獲得可能。</p>
+  </section>
+
 </body>
 </html>
