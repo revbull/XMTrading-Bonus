@@ -63,7 +63,6 @@
       font-weight: 600;
       padding: 6px 10px;
       border-radius: 999px;
-      transition: background .2s, color .2s;
       color: #f9fafb;
     }
     .topbar-right a:hover {
@@ -144,6 +143,7 @@
       gap: 12px;
       align-items: center;
     }
+
     .btn-primary {
       background: #22c55e;
       color: #052e16;
@@ -152,15 +152,9 @@
       font-size: 16px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 0 18px rgba(34,197,94,.65);
-      transform: scale(1.04);
-      animation: pulseGlow 2.2s infinite ease-in-out;
+      box-shadow: 0 4px 12px rgba(0,0,0,.15);
     }
-    @keyframes pulseGlow {
-      0% { box-shadow:0 0 10px rgba(34,197,94,.4); }
-      50% { box-shadow:0 0 22px rgba(34,197,94,.8); }
-      100%{ box-shadow:0 0 10px rgba(34,197,94,.4); }
-    }
+
     .hero-note {
       font-size: 13px;
       opacity: .8;
@@ -260,7 +254,6 @@
       font-size: 15px;
       text-decoration: none;
       border: 1px solid var(--border-soft);
-      transition: background .15s, color .15s, border-color .15s;
     }
     .btn-secondary--green {
       background: #22c55e;
@@ -392,23 +385,21 @@
     .faq-icon {
       font-size: 18px;
       color: #9ca3af;
-      transition: transform .2s ease;
     }
     .faq-item.open .faq-icon { transform: rotate(180deg); }
+
+    /* Instant open (no animation) */
     .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 16px;
+      display: none;
+      padding: 0 16px 12px;
       font-size: 14px;
       color: var(--gray-text);
-      transition: max-height .25s ease, padding-bottom .25s ease;
     }
     .faq-item.open .faq-answer {
-      max-height: 180px;
-      padding-bottom: 12px;
+      display: block;
     }
 
-    /* F1 CAR ANIMATION SECTION */
+    /* F1 CAR SECTION — STATIC (no slider) */
 
     .car-section { background: #0b1120; color: #e5e7eb; }
     .car-slider {
@@ -424,8 +415,7 @@
     .car-slide {
       position: absolute;
       inset: 0;
-      opacity: 0;
-      transition: opacity 0.8s ease-in-out;
+      opacity: 1;
     }
     .car-slide img {
       width: 100%;
@@ -433,9 +423,8 @@
       object-fit: contain;
       filter: drop-shadow(0 0 18px rgba(0,0,0,.7));
     }
-    .car-slide.active { opacity: 1; }
 
-    /* SCROLL CTA PANEL (BOTTOM) */
+    /* BOTTOM CTA — static (no sliding) */
 
     #scrollCta {
       position: fixed;
@@ -449,10 +438,8 @@
       justify-content: center;
       align-items: center;
       gap: 20px;
-      transform: translateY(100%);
-      transition: transform .4s;
-      z-index: 9000;
       font-size: 14px;
+      z-index: 9000;
     }
     #scrollCta a {
       background:#22c55e;
@@ -470,25 +457,18 @@
       cursor:pointer;
     }
 
-    /* FALLING TOP PANEL */
+    /* TOP FALLING CTA — static (always visible or you can hide) */
 
     #fallingCta {
       position: fixed;
-      top: -80px;
+      top: 0;
       left: 0;
       right: 0;
       background:#111827;
       color:#f9fafb;
       border-bottom:1px solid #4b5563;
       padding:10px 16px;
-      transform: translateY(-100%);
-      opacity:0;
-      transition: transform .5s ease-out, opacity .5s ease-out;
       z-index: 9500;
-    }
-    #fallingCta.show {
-      transform: translateY(0);
-      opacity:1;
     }
     #fallingCta-inner {
       max-width:1200px;
@@ -541,21 +521,14 @@
   <header class="topbar">
     <div class="topbar-inner">
       <div class="topbar-left">
-        <!-- 📌 IMAGE PLACEHOLDER — REPLACE WITH YOUR LOGO -->
         <img src="logo-placeholder.png" alt="Brand Logo" height="26" loading="lazy">
-        <!-- 🔗 AFFILIATE LINK — INSERT YOUR HOME LINK -->
         <a href="YOUR_HOME_LINK_HERE">ホーム</a>
-        <!-- 🔗 AFFILIATE LINK — INSERT YOUR PROMO LINK -->
         <a href="YOUR_PROMO_LINK_HERE">プロモーション</a>
-        <!-- 🔗 AFFILIATE LINK — INSERT YOUR SUPPORT LINK -->
         <a href="YOUR_SUPPORT_LINK_HERE">サポート</a>
       </div>
       <div class="topbar-right">
-        <!-- 🔗 AFFILIATE LINK — INSERT YOUR LOGIN LINK -->
         <a href="YOUR_LOGIN_LINK_HERE">ログイン</a>
-        <!-- 🔗 AFFILIATE LINK — INSERT YOUR MAIN SIGNUP LINK -->
         <a href="YOUR_AFFILIATE_LINK_HERE">口座開設</a>
-        <!-- LANGUAGE DROPDOWN (visual only) -->
         <select class="lang-select" aria-label="言語選択">
           <option value="ja">日本語</option>
           <option value="en">English</option>
@@ -566,13 +539,12 @@
     </div>
   </header>
 
-  <!-- ========= FALLING TOP PANEL (YOUR TEXT) ========= -->
+  <!-- ========= FALLING TOP PANEL ========= -->
   <div id="fallingCta">
     <div id="fallingCta-inner">
       <div id="fallingCta-text">
         ¥15000の取引ボーナスでFX、仮想通貨CFDなどを取引しよう。入金不要。（利用規約適用）
       </div>
-      <!-- 🔗 AFFILIATE LINK — INSERT YOUR AFF LINK -->
       <a href="YOUR_AFFILIATE_LINK_HERE">Open your account here</a>
       <button id="fallingCta-close" aria-label="閉じる">×</button>
     </div>
@@ -589,298 +561,25 @@
           <span>最大総額 $25,000*</span>
         </h1>
         <p class="hero-sub">
-          15周年を記念した特別プロモーション。取引量に応じて毎週ボーナス枠が増額され、
-          取引と入金を組み合わせて、豪華な特典を獲得できます。
+          15周年を記念した特別プロモーション。取引量に応じて毎週ボーナス枠が増額され、取引と入金を組み合わせて豪華な特典を獲得できます。
         </p>
         <div class="hero-cta-row">
-          <!-- 🔗 AFFILIATE LINK — INSERT YOUR MAIN CTA LINK -->
           <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-primary" id="signup">ボーナスを獲得</a>
-          <span class="hero-note">* 利用規約が適用されます。詳細は下部の説明をご確認ください。</span>
+          <span class="hero-note">* 利用規約が適用されます。</span>
         </div>
       </div>
 
       <div class="hero-image">
         <div class="hero-image-inner">
-          <!-- 📌 IMAGE PLACEHOLDER — USE YOUR NEW BONUS BOX IMAGE -->
           <img src="bonus-hero.png" alt="Christmas Bonus" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========= SIGN-UP BONUS HIGHLIGHT (¥15,000) ========= -->
-  <section class="section signup-bonus-section">
-    <div class="container" style="max-width:1100px;">
-      <div style="text-align:center; margin-bottom:10px;">
-        <h2 class="section-title" style="color:#065f46;">新規口座開設で ¥15,000 ボーナス獲得！</h2>
-        <p style="font-size:16px; color:#065f46; line-height:1.7; max-width:750px; margin:0 auto;">
-          はい、新規のお客様は登録後に<strong>¥15,000の口座開設ボーナス*</strong>をお受け取りいただけます。<br>
-          既存のお客様も、対象となる他のボーナスを獲得いただくことが可能です。<br>
-          また、既存の入金ボーナスプログラムは、<strong>本プロモーションの期間限定入金ボーナスを全額ご獲得後に適用</strong>されます。
-        </p>
-      </div>
-      <div style="text-align:center; margin-top:18px;">
-        <!-- 🔗 AFFILIATE LINK — INSERT YOUR AFF LINK -->
-        <a href="YOUR_AFFILIATE_LINK_HERE"
-           style="display:inline-block; background:#10b981; color:#052e16; padding:14px 26px; border-radius:999px; font-size:16px; font-weight:700; text-decoration:none; box-shadow:0 8px 18px rgba(16,185,129,.35);">
-          ¥15,000ボーナスを受け取る
-        </a>
-      </div>
-      <p style="font-size:12px; text-align:center; margin-top:16px; color:#166534;">
-        *利用規約が適用されます。
-      </p>
-    </div>
-  </section>
-
-  <!-- ========= 4-STEP PROCESS ========= -->
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">今年のクリスマスは豪華プロモーションで！</h2>
-        <p class="section-sub">簡単な4つのステップで、最大$25,000*の入金ボーナスを目指せます。</p>
-      </div>
-      <div class="steps-grid">
-        <article class="step-card">
-          <div class="step-num">1</div>
-          <div class="step-title">登録</div>
-          <p class="step-text">会員ページから認証済みの取引口座を用意し、本プロモーションにエントリーします。</p>
-        </article>
-        <article class="step-card">
-          <div class="step-num">2</div>
-          <div class="step-title">取引</div>
-          <p class="step-text">対象銘柄を取引して、週ごとに設定された目標ロット数を達成します。</p>
-        </article>
-        <article class="step-card">
-          <div class="step-num">3</div>
-          <div class="step-title">ボーナス枠獲得</div>
-          <p class="step-text">翌週、有効化された入金ボーナス枠が取引口座へ付与されます。</p>
-        </article>
-        <article class="step-card">
-          <div class="step-num">4</div>
-          <div class="step-title">取引継続</div>
-          <p class="step-text">取引を続けることでボーナス枠が増額され、最終的に最大$25,000*まで到達可能です。</p>
-        </article>
-      </div>
-      <div class="steps-cta-row">
-        <a href="#bonus-table" class="btn-secondary btn-secondary--green">ボーナス詳細を見る</a>
-        <!-- 🔗 AFFILIATE LINK — INSERT YOUR AFF LINK -->
-        <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-secondary">今すぐ登録する</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========= F1 CAR ANIMATION SECTION ========= -->
-  <section class="section car-section">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">F1パートナーとスピード感ある取引を</h2>
-        <p class="section-sub" style="color:#9ca3af;">
-          公式パートナーシップで磨かれたテクノロジーとスピードで、マーケットに挑戦。
-        </p>
-      </div>
-      <div class="car-slider" id="carSlider">
-        <!-- 📌 IMAGE PLACEHOLDER — PUT YOUR CAR IMAGES IN SAME FOLDER -->
-        <div class="car-slide active">
-          <img src="formula-car_1.png" alt="F1 Car 1" loading="lazy">
-        </div>
-        <div class="car-slide">
-          <img src="formula-car_11.png" alt="F1 Car 2" loading="lazy">
-        </div>
-        <div class="car-slide">
-          <img src="formula-car_12.png" alt="F1 Car 3" loading="lazy">
-        </div>
-        <div class="car-slide">
-          <img src="formula-car_13.png" alt="F1 Car 4" loading="lazy">
-        </div>
-        <div class="car-slide">
-          <img src="formula-car_14.png" alt="F1 Car 5" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========= BONUS TABLE ========= -->
-  <section id="bonus-table" class="section section-table">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">取引するほど、ボーナス増額</h2>
-        <p class="section-sub">週間の取引量に応じて翌週のボーナス獲得枠が決定します。</p>
-      </div>
-      <div class="bonus-table-wrapper">
-        <table class="bonus-table">
-          <thead>
-            <tr>
-              <th>週ごとの最小取引ロット数*</th>
-              <th>ボーナス体系</th>
-              <th>週間最大ボーナス額*</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>3スタンダード（または300マイクロ）ロット</td>
-              <td>最大$100を100%、次に最大$250を50%</td>
-              <td>$350</td>
-            </tr>
-            <tr>
-              <td>5スタンダード（または500マイクロ）ロット</td>
-              <td>最大$150を100%、次に最大$500を50%</td>
-              <td>$650</td>
-            </tr>
-            <tr>
-              <td>10スタンダード（または1000マイクロ）ロット</td>
-              <td>最大$300を100%、次に最大$700を50%</td>
-              <td>$1,000</td>
-            </tr>
-            <tr>
-              <td>15スタンダード（または1500マイクロ）ロット</td>
-              <td>最大$1,000を100%、次に最大$2,000を50%</td>
-              <td>$3,000</td>
-            </tr>
-            <tr>
-              <td>25スタンダード（または2500マイクロ）ロット</td>
-              <td>最大$2,000を100%、次に最大$3,000を50%</td>
-              <td>$5,000</td>
-            </tr>
-            <tr>
-              <td>50スタンダード（または5000マイクロ）ロット</td>
-              <td>最大$3,333を100%、次に最大$5,000を50%</td>
-              <td>$8,333</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="3">
-                * すべての金額はUSDまたは他通貨の同等額で表示されます。<br>
-                * 取引ロット数の計算方法や対象銘柄の詳細については、利用規約を必ずご確認ください。
-              </td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-      <p class="bonus-note">※ 表は一例です。実際のボーナス条件は必ず公式ページの最新情報をご参照ください。</p>
-    </div>
-  </section>
-
-  <!-- ========= PROMO FLOW ========= -->
-  <section class="section promo-flow">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">プロモーションの仕組み</h2>
-        <p class="section-sub">各週ごとに新しいスタート。取引量に応じて次の週のボーナス枠が決まります。</p>
-      </div>
-      <div class="flow-grid">
-        <article class="flow-card">
-          <h3>第1週</h3>
-          <p>
-            プロモーションに登録し、対象銘柄（FX・ゴールド・シルバー・一部暗号資産CFDなど）を取引します。
-            週末の取引量に応じて、第2週に獲得可能となる入金ボーナス枠が決定します。
-          </p>
-          <div class="flow-example">
-            <strong>例：</strong><br>
-            10スタンダード（または1000マイクロ）ロットを取引 → 第2週に最大$1,000のボーナス枠を獲得。
-          </div>
-        </article>
-        <article class="flow-card">
-          <h3>第2週</h3>
-          <p>
-            第1週の取引に基づいて入金ボーナス枠が有効化されます。新たな週として取引量が再カウントされ、
-            第3週に向けたさらに大きなボーナス枠獲得のチャンスが与えられます。
-          </p>
-          <div class="flow-example">
-            <strong>例：</strong><br>
-            25スタンダード（または2500マイクロ）ロットを取引 → 第3週に最大$5,000のボーナス枠を獲得。
-          </div>
-        </article>
-        <article class="flow-card">
-          <h3>第3週</h3>
-          <p>
-            第2週の取引結果に応じた入金ボーナス枠が有効化されます。プロモーション終了まで継続的に取引を行うことで、
-            最終的な入金ボーナス枠を最大限まで活用できます。
-          </p>
-          <div class="flow-example">
-            <strong>例：</strong><br>
-            50スタンダード（または5000マイクロ）ロットを取引 → 合計で最大$8,333相当のボーナス枠を獲得可能。
-          </div>
-        </article>
-      </div>
-      <p class="promo-flow-note">
-        ※ 取引量のカウントは毎週指定日時にリセットされます。<br>
-        詳細な条件や除外事項については、必ず公式の利用規約全文をご確認ください。
-      </p>
-    </div>
-  </section>
-
-  <!-- ========= FAQ ========= -->
-  <section class="section faq-section">
-    <div class="container">
-      <div class="faq-header-row">
-        <h2 class="faq-title">よくあるご質問</h2>
-        <div id="faqToggleAll" class="faq-toggle-all">すべて展開する</div>
-      </div>
-      <div class="faq-list" id="faqList">
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-q-text">誰がこのプロモーションに参加できますか？</span>
-            <span class="faq-icon">⌄</span>
-          </div>
-          <div class="faq-answer">
-            認証済みのXMTrading本口座をお持ちのお客様が対象です。対象国や口座タイプには制限がある場合があります。
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-q-text">プロモーションへの参加方法は？</span>
-            <span class="faq-icon">⌄</span>
-          </div>
-          <div class="faq-answer">
-            会員ページへログインし、「プロモーション」タブから本キャンペーンに参加登録してください。
-            登録後の取引量がカウント対象となります。
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-q-text">各週の取引期間とボーナス獲得期間はいつですか？</span>
-            <span class="faq-icon">⌄</span>
-          </div>
-          <div class="faq-answer">
-            通常、週の取引期間は指定の曜日・時間から翌週同時刻までとなり、翌週に入金ボーナス枠が有効化されます。
-            詳細は公式ページのスケジュールをご覧ください。
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-q-text">ボーナスは出金できますか？</span>
-            <span class="faq-icon">⌄</span>
-          </div>
-          <div class="faq-answer">
-            入金ボーナス自体は通常、出金対象とはなりませんが、ボーナスを利用して得た利益は出金可能です。
-            出金時にはボーナス残高が一部または全て消滅する場合があります。
-          </div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">
-            <span class="faq-q-text">XMTradingで他のボーナスを獲得することはできますか？</span>
-            <span class="faq-icon">⌄</span>
-          </div>
-          <div class="faq-answer">
-            一部のボーナスとは併用できない場合があります。キャンペーン併用可否については、
-            利用規約またはサポートにてご確認ください。
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========= SCROLL CTA PANEL (BOTTOM) ========= -->
-  <div id="scrollCta">
-    <span>¥15,000の取引ボーナスで今すぐ取引スタート！</span>
-    <!-- 🔗 AFFILIATE LINK — INSERT YOUR AFF LINK -->
-    <a href="YOUR_AFFILIATE_LINK_HERE">無料で口座開設</a>
-    <button id="scrollCtaClose" aria-label="閉じる">×</button>
-  </div>
-
- 
-    // FAQ accordion
+  <!-- ========= JS ========== -->
+  <script>
+    // FAQ instant toggle
     const faqItems = document.querySelectorAll(".faq-item");
     faqItems.forEach(item => {
       item.querySelector(".faq-question").addEventListener("click", () => {
@@ -897,39 +596,14 @@
       toggleAll.textContent = allOpen ? "すべて閉じる" : "すべて展開する";
     });
 
-    // Scroll CTA & Falling CTA
-    const scrollCta = document.getElementById("scrollCta");
-    const scrollCtaClose = document.getElementById("scrollCtaClose");
-    const fallingCta = document.getElementById("fallingCta");
-    const fallingClose = document.getElementById("fallingCta-close");
-
-    let scrollShown = false;
-    let fallingShown = false;
-
-    function handleScroll() {
-      const y = window.scrollY || window.pageYOffset;
-
-      if (!scrollShown && y > 500) {
-        scrollCta.style.transform = "translateY(0)";
-        scrollShown = true;
-      }
-
-      if (!fallingShown && y > 300) {
-        fallingCta.classList.add("show");
-        fallingShown = true;
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-
-    scrollCtaClose.addEventListener("click", () => {
-      scrollCta.style.display = "none";
+    // Close CTAs manually
+    document.getElementById("scrollCtaClose")?.addEventListener("click", () => {
+      document.getElementById("scrollCta").style.display = "none";
     });
-
     document.getElementById("fallingCta-close")?.addEventListener("click", () => {
-      fallingCta.classList.remove("show");
+      document.getElementById("fallingCta").style.display = "none";
     });
   </script>
+
 </body>
 </html>
