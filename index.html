@@ -2,162 +2,157 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>XMTrading クリスマスボーナス – LP Full Rebuild</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>XMTrading クリスマスボーナス LP – Ver.B (Rewritten w/ Topbar Animation)</title>
 <style>
-/* ================= BASE ================ */
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif;background:#fff;color:#111;}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Noto Sans JP',sans-serif;background:#fff;color:#111827;}
 img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
 
-/* ================= TOP BAR ================ */
-.topbar{background:#000;color:#fff;padding:18px 20px;}
-.topbar-inner{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;}
-.topbar-left,.topbar-right{display:flex;align-items:center;gap:22px;}
-.topbar-left a,.topbar-right a{text-decoration:none;color:#fff;font-size:14px;}
-.lang-select{padding:6px 10px;background:#111;color:#eee;border:1px solid #444;border-radius:6px;}
+/* ================= TOP BAR ================= */
+.topbar{background:#000;padding:14px 16px;color:#fff;}
+.topbar-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;}
+.topbar-left,.topbar-right{display:flex;align-items:center;gap:18px;}
+.lang-select{padding:4px 8px;background:#111827;color:#e5e7eb;border:1px solid #444;border-radius:6px;font-size:13px;}
+.topbar-right a{padding:6px 12px;border-radius:999px;font-weight:700;transition:.2s;} .topbar-right a:hover{background:#fff;color:#000;}
 
-/* ===== Car Animation in Top Bar ===== */
-.topbar-car-box{width:160px;height:58px;overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative;}
-.topbar-car-box img{position:absolute;animation:carRun 3.4s linear infinite;}
-@keyframes carRun{
- 0%{transform:translateX(-180px);} 
- 70%{transform:translateX(140px);} 
- 100%{transform:translateX(140px) scaleX(-1);} /* flips to face */
+/* ====== TOPBAR MINI ANIMATION (Option B) ====== */
+.topbar-mini-anim{width:120px;height:40px;position:relative;overflow:hidden;}
+.topbar-mini-anim img{position:absolute;bottom:0;height:40px;}
+@keyframes miniRun{
+ 0%{left:-140px;}
+ 60%{left:80px;}
+ 100%{left:80px;transform:scaleX(-1);} /* car turns to face */
 }
+.topbar-mini-anim img{animation:miniRun 2.4s ease-in-out infinite;}
 
-/* ================= HERO ================ */
-.hero{background:#0b3b29;color:white;padding:80px 16px 90px;position:relative;}
-.hero-inner{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;}
-.hero-title{font-size:40px;font-weight:800;line-height:1.25;margin:0 0 10px;}
-.hero-title span{font-size:46px;color:#fef9c3;display:block;}
-.hero-sub{font-size:16px;max-width:460px;opacity:.9;margin-bottom:24px;}
-.btn-main{background:#22c55e;color:#052e16;padding:14px 28px;font-weight:700;border-radius:999px;text-decoration:none;box-shadow:0 0 16px rgba(34,197,94,.5);} 
+/* ================= HERO ================= */
+.hero{background:#0b3b29;color:#fff;padding:70px 16px 80px;position:relative;}
+.hero-inner{max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;align-items:center;gap:40px;justify-content:space-between;}
+.hero-title{font-size:40px;font-weight:800;margin:0 0 10px;}
+.hero-title span{font-size:44px;color:#fef9c3;}
+.hero-sub{font-size:16px;max-width:440px;opacity:.9;margin-bottom:20px;}
+.btn-primary{background:#22c55e;color:#052e16;padding:14px 26px;border-radius:999px;font-weight:700;box-shadow:0 0 18px rgba(34,197,94,.65);} 
 
-/* ================= FALLING CTA ================ */
-#fallingCta{position:fixed;top:-100px;left:0;right:0;background:#111827;color:#fff;padding:12px 16px;border-bottom:1px solid #334155;transform:translateY(-100%);opacity:0;transition:.55s ease;z-index:9999;}
+/* ================= FALLING CTA ================= */
+#fallingCta{position:fixed;top:-100px;left:0;right:0;background:#111827;color:#fff;padding:10px 16px;border-bottom:1px solid #334155;transform:translateY(-100%);opacity:0;transition:.5s;z-index:9000;}
 #fallingCta.show{transform:translateY(0);opacity:1;}
-#fallingCta-inner{max-width:1300px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:14px;}
-.falling-btn{background:#22c55e;color:#052e16;padding:8px 18px;border-radius:999px;font-weight:700;text-decoration:none;white-space:nowrap;}
-#fallingCta-close{background:none;border:0;color:#eee;font-size:20px;cursor:pointer;}
+#fallingCta-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:16px;}
+#fallingCta a{background:#22c55e;color:#052e16;padding:8px 18px;border-radius:999px;font-weight:700;}
 
-/* ================= SCROLL CTA BOTTOM ================ */
-#scrollCta{position:fixed;bottom:0;width:100%;background:#111;color:#fff;padding:16px;display:flex;justify-content:center;align-items:center;gap:22px;transform:translateY(100%);transition:.4s;z-index:9998;}
-#scrollCta a{background:#22c55e;color:#052e16;padding:10px 20px;border-radius:6px;font-weight:700;text-decoration:none;}
-#scrollCta button{background:none;border:0;color:#fff;font-size:22px;cursor:pointer;}
+/* ================= SCROLL CTA ================= */
+#scrollCta{position:fixed;bottom:0;background:#111;color:#fff;width:100%;padding:14px;display:flex;gap:18px;justify-content:center;align-items:center;transform:translateY(100%);transition:.4s;z-index:8500;}
+#scrollCta a{background:#22c55e;color:#052e16;padding:10px 20px;border-radius:6px;font-weight:700;}
 
-/* ================= F1 ANIMATION BLOCK (HERO ALT) ================ */
-.f1-block{background:#020617;padding:60px 0;text-align:center;}
-.f1-slider{position:relative;max-width:1100px;margin:0 auto;aspect-ratio:16/6;overflow:hidden;border-radius:22px;border:1px solid #1e293b;background:#000;}
-.f1-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s;}
-.f1-slide.active{opacity:1;}
-.f1-slide img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 18px rgba(0,0,0,.6));}
+/* ================= F1 CAR SLIDER ================= */
+.car-slider{position:relative;max-width:960px;margin:auto;aspect-ratio:16/5;overflow:hidden;border-radius:20px;border:1px solid #1f2937;background:#020617;}
+.car-slide{position:absolute;inset:0;opacity:0;transition:.8s;} .car-slide.active{opacity:1;}
+.car-slide img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 18px rgba(0,0,0,.7));}
+
+.section{padding:60px 16px;}
+.section-title{text-align:center;font-size:26px;font-weight:800;margin-bottom:8px;}
+.section-sub{text-align:center;font-size:16px;color:#6b7280;}
 
 </style>
 </head>
 <body>
 
+<!-- ================= TOP BAR ================= -->
 <header class="topbar">
- <div class="topbar-inner">
-   <div class="topbar-left">
-     <img src="logo.png" alt="logo" height="30">
-     <a href="YOUR_HOME_LINK">ホーム</a>
-     <a href="YOUR_PROMO_LINK">プロモーション</a>
-     <a href="YOUR_SUPPORT_LINK">サポート</a>
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <img src="logo-placeholder.png" alt="logo" height="26">
+      <a href="YOUR_HOME_LINK_HERE">ホーム</a>
+      <a href="YOUR_PROMO_LINK_HERE">プロモーション</a>
+      <a href="YOUR_SUPPORT_LINK_HERE">サポート</a>
 
-     <!-- 🚗 Car Animation in Top Bar -->
-     <div class="topbar-car-box">
-       <img src="formula-car_1.png" alt="car" height="58" />
-     </div>
-   </div>
+      <!-- ⭐ MINI TOPBAR ANIMATION (Option B) ⭐ -->
+      <div class="topbar-mini-anim">
+        <img src="formula-car_1.png" alt="mini car anim">
+      </div>
+    </div>
 
-   <div class="topbar-right">
-     <a href="YOUR_LOGIN">ログイン</a>
-     <a href="YOUR_AFFILIATE_LINK">口座開設</a>
-     <select class="lang-select">
-       <option>日本語</option>
-       <option>English</option>
-       <option>한국어</option>
-       <option>中文</option>
-     </select>
-   </div>
- </div>
+    <div class="topbar-right">
+      <a href="YOUR_LOGIN_LINK_HERE">ログイン</a>
+      <a href="YOUR_AFFILIATE_LINK_HERE">口座開設</a>
+      <select class="lang-select"><option>日本語</option><option>English</option><option>한국어</option><option>中文</option></select>
+    </div>
+  </div>
 </header>
 
 <!-- ================= FALLING CTA ================= -->
 <div id="fallingCta">
- <div id="fallingCta-inner">
-   <div>¥15000の取引ボーナスでFX、仮想通貨CFDなどを取引しよう。入金不要。（利用規約適用）</div>
-   <a href="YOUR_AFFILIATE_LINK" class="falling-btn">Open your account here</a>
-   <button id="fallingCta-close">×</button>
- </div>
+  <div id="fallingCta-inner">
+    <div>¥15000の取引ボーナスでFX、仮想通貨CFDなどを取引しよう。入金不要。（利用規約適用）</div>
+    <a href="YOUR_AFFILIATE_LINK_HERE">Open your account here</a>
+    <button id="fallingCta-close" style="background:none;border:0;color:#fff;font-size:18px;cursor:pointer;">×</button>
+  </div>
 </div>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
- <div class="hero-inner">
-   <div>
-     <h1 class="hero-title">クリスマス入金ボーナス<br><span>最大¥25,000相当</span></h1>
-     <p class="hero-sub">今年だけの特別ボーナス。入金不要の¥15000口座開設ボーナスも同時に獲得可能！</p>
-     <a href="YOUR_AFFILIATE_LINK" class="btn-main">ボーナスを受け取る</a>
-   </div>
-   <div style="max-width:420px;">
-     <img src="bonus-hero.png" alt="Bonus Image">
-   </div>
- </div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div>プロモーション期間：2025年11月18日〜12月8日</div>
+      <h1 class="hero-title">クリスマスボーナス<br><span>最大総額 $25,000*</span></h1>
+      <p class="hero-sub">15周年記念プロモ：取引量に応じて毎週ボーナス枠が増えます。¥15000の新規口座ボーナスも獲得可能！</p>
+      <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-primary" id="signup">ボーナスを獲得</a>
+    </div>
+    <div class="hero-image"><img src="bonus-hero.png"></div>
+  </div>
 </section>
 
-<!-- ================= F1 ANIMATION BLOCK ================= -->
-<section class="f1-block">
- <div class="f1-slider" id="f1Slider">
-   <div class="f1-slide active"><img src="formula-car_1.png"></div>
-   <div class="f1-slide"><img src="formula-car_11.png"></div>
-   <div class="f1-slide"><img src="formula-car_12.png"></div>
-   <div class="f1-slide"><img src="formula-car_13.png"></div>
-   <div class="f1-slide"><img src="formula-car_14.png"></div>
- </div>
+<!-- ================= SIGNUP BONUS ================= -->
+<section class="section" style="background:#f0fdf4;">
+  <h2 class="section-title" style="color:#065f46;">新規口座開設で ¥15,000 ボーナス獲得！</h2>
+  <p class="section-sub" style="color:#065f46;max-width:760px;margin:auto;">
+    新規登録で¥15,000ボーナス。既存ユーザーも併用ボーナス利用可能。
+  </p>
+  <div style="text-align:center;margin-top:20px;">
+    <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-primary" style="background:#10b981;color:#052e16;">¥15,000を受け取る</a>
+  </div>
+</section>
+
+<!-- ================= F1 CAR SLIDER ================= -->
+<section class="section" style="background:#0b1120;color:#e5e7eb;">
+  <h2 class="section-title" style="color:#fff;">F1パートナーと共にスピード取引</h2>
+  <p class="section-sub" style="color:#9ca3af;">公式パートナーシップで強化された取引環境</p>
+
+  <div class="car-slider" id="carSlider">
+    <div class="car-slide active"><img src="formula-car_1.png"></div>
+    <div class="car-slide"><img src="formula-car_11.png"></div>
+    <div class="car-slide"><img src="formula-car_12.png"></div>
+    <div class="car-slide"><img src="formula-car_13.png"></div>
+    <div class="car-slide"><img src="formula-car_14.png"></div>
+  </div>
 </section>
 
 <!-- ================= SCROLL CTA ================= -->
 <div id="scrollCta">
- <span>¥15,000ボーナスでトレード開始！</span>
- <a href="YOUR_AFFILIATE_LINK">無料で口座開設</a>
- <button id="scrollCtaClose">×</button>
+  <span>¥15,000の取引ボーナスでスタート！</span>
+  <a href="YOUR_AFFILIATE_LINK_HERE">無料で口座開設</a>
+  <button id="scrollCtaClose">×</button>
 </div>
 
 <script>
-// ========= Falling CTA =========
-let fallingShown=false;
-window.addEventListener('scroll',()=>{
- if(window.scrollY>300 && !fallingShown){
-   document.getElementById('fallingCta').classList.add('show');
-   fallingShown=true;
- }
-});
-document.getElementById('fallingCta-close').onclick=()=>{
- document.getElementById('fallingCta').style.display='none';
-};
-
-// ========= Scroll CTA =========
-let scrollShown=false;
-window.addEventListener('scroll',()=>{
- if(window.scrollY>600 && !scrollShown){
-   document.getElementById('scrollCta').style.transform='translateY(0)';
-   scrollShown=true;
- }
-});
-
-document.getElementById('scrollCtaClose').onclick=()=>{
- document.getElementById('scrollCta').style.display='none';
-}
-
-// ========= F1 Fade Animation =========
+// ===== F1 SLIDER =====
 let idx=0;
-const slides=document.querySelectorAll('.f1-slide');
+const slides=document.querySelectorAll('.car-slide');
 setInterval(()=>{
  slides[idx].classList.remove('active');
  idx=(idx+1)%slides.length;
  slides[idx].classList.add('active');
-},2500);
+},3000);
+
+// ===== PANELS =====
+let scrollShown=false,fallingShown=false;
+window.addEventListener('scroll',()=>{
+ const y=window.scrollY;
+ if(!scrollShown&&y>500){document.getElementById('scrollCta').style.transform='translateY(0)';scrollShown=true;}
+ if(!fallingShown&&y>300){document.getElementById('fallingCta').classList.add('show');fallingShown=true;}
+});
+document.getElementById('scrollCtaClose').onclick=()=>document.getElementById('scrollCta').style.display='none';
+document.getElementById('fallingCta-close').onclick=()=>document.getElementById('fallingCta').style.display='none';
 </script>
 
 </body>
