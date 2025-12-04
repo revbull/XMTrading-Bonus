@@ -1,203 +1,298 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>【速報】XMの“冬の大特典”が話題に – 最大$25,000ボーナスとは？</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>XM 冬の特典 – 最大$25,000ボーナス</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
-      background: #0b3b29; /* deep emerald green */
-      color: #f8fafc;
-      line-height: 1.8;
-    }
+<style>
+:root {
+  --red: #ef4444;
+  --gold: #fef9c3;
+  --green-dark: #052e16;
+}
 
-    img { max-width: 100%; display: block; }
+/* RESET */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
+  background: #0b3b29;
+  color: #ffffff;
+  overflow-x: hidden;
+}
 
-    /* HEADER */
-    .header {
-      background: #062f22;
-      color: #fff;
-      padding: 14px 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+/* BLACK TOP BAR */
+.header {
+  background: #000;
+  padding: 14px 26px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.header img { height: 38px; }
+.header .cta {
+  background: var(--red);
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+}
 
-    .header img { height: 36px; }
+/* LANGUAGE SWITCHER */
+.lang-switch {
+  margin-left: 14px;
+  padding: 6px 10px;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 6px;
+}
 
-    .header a.cta {
-      background: #ef4444;
-      padding: 10px 22px;
-      border-radius: 6px;
-      font-weight: 700;
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      box-shadow: 0 0 12px rgba(239,68,68,0.5);
-    }
-    .header a.cta:hover { background: #dc2626; }
+/* HERO */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 60px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
 
-    /* CONTENT */
-    .container {
-      max-width: 860px;
-      margin: 40px auto;
-      padding: 0 22px;
-    }
+/* Floating Snowflakes */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: #fff;
+  font-size: 12px;
+  animation: fall linear infinite;
+  opacity: 0.8;
+  pointer-events: none;
+}
+@keyframes fall {
+  0% { transform: translateY(-10px) translateX(0); opacity: 1; }
+  100% { transform: translateY(120vh) translateX(20px); opacity: 0.2; }
+}
 
-    h1 {
-      font-size: 32px;
-      line-height: 1.4;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: #ffffff;
-      text-shadow: 0 0 6px rgba(0,0,0,0.4);
-    }
+/* Glow lights */
+.glow {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
+  filter: blur(20px);
+  animation: glowmove 12s infinite alternate ease-in-out;
+}
+@keyframes glowmove {
+  from { transform: translate(0px,0px); }
+  to   { transform: translate(80px,40px); }
+}
 
-    h2 {
-      font-size: 22px;
-      margin-top: 42px;
-      font-weight: 700;
-      color: #fef9c3; /* soft gold */
-    }
+/* HERO TEXT */
+.hero-left {
+  flex: 1 1 50%;
+  max-width: 600px;
+  animation: fadeIn 1.8s ease forwards;
+  opacity: 0;
+}
+.hero-left h1 {
+  font-size: 38px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+.hero-left h1 span {
+  color: var(--gold);
+}
+.hero-left p {
+  margin-top: 14px;
+  opacity: 0.95;
+  font-size: 16px;
+}
 
-    p {
-      font-size: 16px;
-      color: #e2e8f0;
-    }
+/* HERO IMAGE RIGHT */
+.hero-right {
+  flex: 1 1 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.hero-right img {
+  max-width: 480px;
+  animation: slideIn 2s ease forwards;
+  opacity: 0;
+}
 
-    /* Golden highlight box */
-    .highlight {
-      background: rgba(255,215,100,0.12);
-      padding: 16px 20px;
-      border-left: 4px solid #fcd34d;
-      margin: 26px 0;
-      color: #fef3c7;
-      font-size: 15px;
-      border-radius: 6px;
-    }
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+  from { transform: translateX(40px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
 
-    /* Benefits section */
-    .benefits {
-      background: rgba(255,255,255,0.08);
-      padding: 22px;
-      border-radius: 12px;
-      margin-top: 30px;
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-    .benefits li {
-      margin-bottom: 12px;
-      font-size: 16px;
-      color: #ffffff;
-    }
+/* MAIN CTA */
+.big-cta {
+  display: inline-block;
+  background: var(--red);
+  padding: 16px 28px;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 22px;
+  text-decoration: none;
+  box-shadow: 0 0 16px rgba(239,68,68,0.7);
+}
 
-    /* Main CTA */
-    .big-cta {
-      display: block;
-      text-align: center;
-      margin: 46px auto;
-      background: #ef4444;
-      color: #fff;
-      padding: 18px 28px;
-      border-radius: 999px;
-      font-size: 20px;
-      font-weight: 700;
-      text-decoration: none;
-      max-width: 400px;
-      box-shadow: 0 0 14px rgba(239,68,68,0.7);
-    }
-    .big-cta:hover { background: #dc2626; }
+/* TRUST BADGES */
+.trust-section {
+  max-width: 900px;
+  margin: 60px auto 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-around;
+  gap: 22px;
+  flex-wrap: wrap;
+}
+.trust-box {
+  background: rgba(255,255,255,0.08);
+  padding: 16px 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 260px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.trust-box img { height: 45px; margin-bottom: 8px; }
+.trust-box p { font-size: 14px; }
 
-    /* RISK BOX */
-    .risk {
-      margin-top: 50px;
-      font-size: 13px;
-      color: #fecaca;
-      background: rgba(220,38,38,0.12);
-      padding: 18px;
-      border-left: 4px solid #ef4444;
-      border-radius: 6px;
-    }
+/* MULTI-LANGUAGE CONTENT BLOCKS */
+.lang-block { display: none; }
+.lang-block.active { display: block; }
 
-    footer {
-      text-align: center;
-      font-size: 13px;
-      padding: 40px 0;
-      color: #cbd5e1;
-    }
-  </style>
+/* Footer Risk */
+.risk {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 18px 20px;
+  background: rgba(220,38,38,0.12);
+  border-left: 4px solid var(--red);
+  font-size: 13px;
+  border-radius: 6px;
+}
+
+footer {
+  text-align: center;
+  color: #cbd5e1;
+  padding: 40px 0;
+  font-size: 13px;
+}
+</style>
 </head>
 
 <body>
 
+<!-- SNOWFLAKES -->
+<script>
+for (let i = 0; i < 28; i++) {
+  let flake = document.createElement("div");
+  flake.className = "snowflake";
+  flake.style.left = Math.random() * 100 + "vw";
+  flake.style.animationDuration = 6 + Math.random()*6 + "s";
+  flake.textContent = "❄";
+  document.body.appendChild(flake);
+}
+</script>
+
+<!-- GLOW -->
+<div class="glow" style="top: 40px; left: 60px;"></div>
+<div class="glow" style="top: 280px; right: 120px;"></div>
+
 <!-- HEADER -->
 <header class="header">
-  <img src="ScreenshotXMTrading_logo.png" alt="XMTrading">
-  <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="cta">口座を開設する</a>
+  <img src="ScreenshotXMTrading_logo.png">
+  <div>
+    <select class="lang-switch" id="langSelect">
+      <option value="ja">日本語</option>
+      <option value="en">English</option>
+      <option value="kr">한국어</option>
+      <option value="cn">中文</option>
+    </select>
+  </div>
 </header>
 
-<!-- CONTENT -->
-<div class="container">
+<!-- HERO -->
+<section class="hero">
 
-  <h1>【速報】今年のXMは“本気度”が違う？トレーダーが騒いでいる冬の特別ボーナスとは</h1>
+  <!-- LEFT TEXT -->
+  <div class="hero-left">
+    <div class="lang-block active" id="lang-ja">
+      <h1>XMの冬限定<br><span>最大$25,000ボーナス</span></h1>
+      <p>今年のXMは一味違う。口コミで広がる“冬の大特典”をご紹介。</p>
+    </div>
 
-  <p>
-    今年の冬、SNS・YouTube・海外FXフォーラムで話題になっているのが、
-    XMTradingの<strong>最大総額 $25,000 のクリスマス入金ボーナス</strong>。
-  </p>
+    <div class="lang-block" id="lang-en">
+      <h1>XM Winter Promo<br><span>Up to $25,000 Bonus</span></h1>
+      <p>A special limited-time event traders are talking about.</p>
+    </div>
 
-  <div class="highlight">
-    「取引するほどボーナス枠が増えていく」「今年のXMはやばい」と多くのトレーダーが注目しています。
+    <div class="lang-block" id="lang-kr">
+      <h1>XM 겨울 이벤트<br><span>최대 $25,000 보너스</span></h1>
+      <p>트레이더들이 주목하는 시즌 한정 프로모션.</p>
+    </div>
+
+    <div class="lang-block" id="lang-cn">
+      <h1>XM冬季优惠<br><span>最高 $25,000 奖金</span></h1>
+      <p>交易者热议的限时促销活动。</p>
+    </div>
+
+    <a href="YOUR_MAIN_LP_URL_HERE" class="big-cta">詳細を見る</a>
   </div>
 
-  <h2>■ 実際なにがすごいの？</h2>
-  <p>
-    新しく公開されたキャンペーン画像を見ると、今年のXMがどれほど本気かすぐに分かります。
-  </p>
-
-  <!-- Refurbished image -->
-  <img src="Tr_Bonus.png" alt="bonus preview" style="margin: 32px auto; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.4);">
-
-  <p>
-    さらに驚くのが、既存ユーザーだけでなく<strong>新規ユーザーにも¥15,000の口座開設ボーナス</strong>が付くこと。
-  </p>
-
-  <h2>■ 特典まとめ（超シンプル）</h2>
-  <ul class="benefits">
-    <li>✔ 新規登録で <strong>¥15,000</strong> 無料ボーナス</li>
-    <li>✔ 取引量に応じて毎週ボーナス枠が増加</li>
-    <li>✔ 最大 <strong>$25,000</strong> の入金ボーナス枠</li>
-    <li>✔ 利益は出金可能</li>
-  </ul>
-
-  <h2>■ 「本当にお得か？」を調査してみた結果…</h2>
-  <p>
-    本格的に取引する人ほど恩恵が大きい仕組み。
-    ボーナス枠が毎週リセットされるため、
-    <strong>エントリーしたほうが確実に有利</strong>という声が多いです。
-  </p>
-
-  <p>
-    詳細条件や参加手順をシンプルにまとめた
-    <strong>完全版のボーナス解説ページ</strong>をご用意しました👇
-  </p>
-
-  <a href="YOUR_MAIN_LANDING_PAGE_URL_HERE" class="big-cta">
-    ボーナスの詳細を見る（公式まとめ）
-  </a>
-
-  <div class="risk">
-    ※ 海外FXにはリスクが伴います。必ず自己判断でお取引ください。ボーナス条件は時期によって変更される場合があります。
+  <!-- RIGHT IMAGE -->
+  <div class="hero-right">
+    <img src="Tr_Bonus.png" alt="bonus graphic">
   </div>
 
+</section>
+
+<!-- TRUST BADGES -->
+<section class="trust-section">
+  <div class="trust-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png">
+    <p>15年以上の実績</p>
+  </div>
+
+  <div class="trust-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/929/929416.png">
+    <p>世界累計500万人のトレーダー</p>
+  </div>
+
+  <div class="trust-box">
+    <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png">
+    <p>高速約定・低スプレッド</p>
+  </div>
+</section>
+
+<!-- RISK -->
+<div class="risk">
+  海外FXにはリスクが伴います。必ず自己判断でご利用ください。
 </div>
 
 <footer>
-  © 2025 XM Trading – Affiliate Information Page
+  © 2025 XM Trading – Affiliate Pre-lander Page
 </footer>
+
+<script>
+/* LANGUAGE SWITCHING */
+document.getElementById("langSelect").addEventListener("change", function(){
+  let lang = this.value;
+  document.querySelectorAll(".lang-block").forEach(b => b.classList.remove("active"));
+  document.getElementById("lang-" + lang).classList.add("active");
+});
+</script>
 
 </body>
 </html>
