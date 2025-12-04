@@ -3,442 +3,185 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>XMTrading クリスマス入金ボーナス – 最大総額 $25,000</title>
-
-  <!-- Basic SEO -->
-  <meta name="description" content="XMTrading クリスマス特別入金ボーナス。取引量に応じて最大総額 $25,000 を獲得。新規登録で15,000円ボーナスも。">
-  <meta name="robots" content="index, follow">
+  <title>【速報】XMの冬キャンペーンが話題に – 最大$25,000ボーナスとは？</title>
 
   <style>
-    :root {
-      --green-dark: #0b3b29;
-      --green: #10b981;
-      --red: #ef4444;
-      --gray-text: #6b7280;
-      --border-soft: #e5e7eb;
-    }
-
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
       background: #ffffff;
       color: #111827;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     img { max-width: 100%; display: block; }
-    a { color: inherit; text-decoration: none; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-    /* ========= CLEAN AFFILIATE HEADER ========= */
-
-    .affiliate-header {
+    /* Header */
+    .header {
       background: #000;
       color: #fff;
-      font-family: inherit;
-    }
-
-    /* Announcement */
-    .aff-announcement {
-      background: #111;
-      color: #f9fafb;
-      text-align: center;
-      padding: 8px 16px;
-      font-size: 14px;
-      border-bottom: 1px solid #222;
-    }
-
-    /* Main header */
-    .aff-header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
       padding: 14px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
     }
-
-    .aff-logo {
-      height: 44px;
-    }
-
-    .aff-header-right {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-    }
-
-    .aff-link {
-      color: #e5e7eb;
+    .header img { height: 32px; }
+    .header a.cta {
+      background: #ef4444;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
       font-size: 14px;
-      transition: opacity .2s;
     }
-    .aff-link:hover { opacity: 0.6; }
+    .header a.cta:hover { background: #dc2626; }
 
-    .aff-lang {
-      background: #000;
-      border: 1px solid #4b5563;
-      color: #e5e7eb;
-      padding: 6px 8px;
-      border-radius: 4px;
-      font-size: 13px;
+    /* Content */
+    .container {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
-    .aff-cta {
+    h1 {
+      font-size: 30px;
+      line-height: 1.4;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-top: 40px;
+      font-weight: 700;
+    }
+
+    p { font-size: 16px; }
+
+    .highlight {
+      background: #fef3c7;
+      padding: 14px 18px;
+      border-left: 4px solid #f59e0b;
+      margin: 20px 0;
+      font-size: 15px;
+    }
+
+    .benefits {
+      background: #f9fafb;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+    .benefits li {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    /* CTA Button */
+    .big-cta {
+      display: block;
+      text-align: center;
+      margin: 40px auto;
       background: #ef4444;
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 4px;
-      font-weight: 700;
-      font-size: 14px;
-      transition: background .2s;
-    }
-    .aff-cta:hover { background: #dc2626; }
-
-    @media (max-width: 760px) {
-      .aff-header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-      .aff-header-right {
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      background: radial-gradient(circle at top left, #059669, var(--green-dark));
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Watermark background image (Option C) */
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: url("Tr_Bonus.png");
-      background-repeat: no-repeat;
-      background-position: center right;
-      background-size: 80%;
-      opacity: 0.15;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 72px 16px 80px;
-      text-align: center;
-    }
-
-    .hero-promo-top { font-size: 20px; font-weight: 700; }
-    .hero-eyebrow { font-size: 14px; letter-spacing: .15em; opacity: .9; }
-
-    .hero-title {
-      font-size: 58px;
-      font-weight: 800;
-      line-height: 1.25;
-      margin-bottom: 10px;
-    }
-    .hero-title span { display: block; font-size: 42px; color: #fef9c3; }
-
-    .hero-sub {
-      font-size: 16px;
-      opacity: .95;
-      max-width: 480px;
-      margin: 0 auto 22px;
-    }
-    .hero-sub a { color: #fef9c3; text-decoration: underline; }
-
-    .btn-primary {
-      background: var(--red);
-      color: #ffffff;
-      padding: 14px 26px;
+      padding: 16px 28px;
       border-radius: 999px;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
       text-decoration: none;
-      box-shadow: 0 0 18px rgba(239,68,68,.65);
-      animation: pulseGlow 2.2s infinite ease-in-out;
-      display: inline-block;
+      max-width: 380px;
     }
-    @keyframes pulseGlow {
-      0% { box-shadow:0 0 10px rgba(239,68,68,.4); }
-      50% { box-shadow:0 0 22px rgba(239,68,68,.8); }
-      100%{ box-shadow:0 0 10px rgba(239,68,68,.4); }
-    }
+    .big-cta:hover { background: #dc2626; }
 
-    .hero-note { font-size: 13px; opacity: .85; }
-    .hero-note a { color: #fde68a; text-decoration: underline; }
-
-    /* ================= SECTIONS ================= */
-
-    .section { padding: 64px 16px; }
-    .section-header { text-align: center; margin-bottom: 32px; }
-    .section-title { font-size: 26px; font-weight: 800; }
-    .section-sub { font-size: 16px; color: #6b7280; }
-
-    .signup-bonus-section {
-      background:#f0fdf4;
-      border-top:1px solid #d1fae5;
-      border-bottom:1px solid #d1fae5;
-    }
-
-    /* Steps */
-    .steps-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      max-width: 1100px;
-      margin: 0 auto 24px;
-    }
-    .step-card {
-      flex: 1 1 220px;
-      background: #f9fafb;
-      border-radius: 16px;
-      padding: 26px 18px 24px;
-      text-align: center;
-      box-shadow: 0 4px 14px rgba(15,23,42,0.06);
-    }
-    .step-num {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      background: var(--red);
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      margin: 0 auto 10px;
-    }
-
-    .btn-secondary {
-      background: white;
-      color: #111827;
-      border-radius: 999px;
-      padding: 12px 20px;
-      font-weight: 700;
-      border: 1px solid var(--border-soft);
-    }
-    .btn-secondary--green {
-      background: #22c55e;
-      color: #052e16;
-    }
-
-    /* Bonus Table */
-    .section-table { background: white; }
-    .bonus-table-wrapper { max-width: 1100px; margin: 0 auto; overflow-x: auto; }
-    table.bonus-table { width: 100%; border-collapse: collapse; min-width: 640px; }
-
-    .bonus-table th {
-      background: #14532d;
-      color: #fff;
-      padding: 14px 12px;
-      text-align: left;
-    }
-    .bonus-table td {
-      padding: 14px 12px;
-      border-bottom: 1px solid #e5e7eb;
-    }
-    .bonus-table tbody tr:nth-child(even) { background: #f9fafb; }
-
-    /* Promo Flow */
-    .promo-flow { background: #064e3b; color: #ecfdf5; }
-
-    /* FAQ */
-    .faq-section { background: #fafafa; }
-    .faq-list { max-width: 1100px; margin: 0 auto; border-radius: 12px; overflow: hidden; }
-
-    .faq-item { background: #f9fafb; border-bottom: 1px solid #e5e7eb; }
-    .faq-question { padding: 14px 16px; display: flex; justify-content: space-between; cursor: pointer; }
-    .faq-answer { max-height: 0; overflow: hidden; padding: 0 16px; transition: .25s; }
-
-    .faq-item.open .faq-answer { max-height: 180px; padding-bottom: 12px; }
-
-    /* Scroll CTA */
-    #scrollCta {
-      position: fixed; bottom: 0; left: 0; width: 100%;
-      background: #111; color: white; padding: 14px 20px;
-      display: flex; justify-content: center; gap: 20px;
-      transform: translateY(100%); transition: .4s; z-index: 9000;
-    }
-
-    /* Risk Warning */
-    .risk-warning {
-      max-width: 1100px;
-      margin: 40px auto;
-      background: #fef2f2;
-      padding: 18px 22px;
-      border-left: 4px solid #dc2626;
-      color: #7f1d1d;
+    /* Risk note */
+    .risk {
+      margin-top: 50px;
       font-size: 13px;
+      color: #7f1d1d;
+      background: #fef2f2;
+      padding: 18px;
+      border-left: 4px solid #dc2626;
     }
 
+    footer {
+      text-align: center;
+      font-size: 13px;
+      padding: 40px 0;
+      color: #6b7280;
+    }
   </style>
 </head>
 
 <body>
 
-<!-- ========= CLEAN AFFILIATE HEADER ========= -->
-<header class="affiliate-header">
-
-  <div class="aff-announcement">
-    🎄 クリスマス限定プロモーション開催中：最大総額 $25,000 ボーナス獲得のチャンス！
-  </div>
-
-  <div class="aff-header-inner">
-    <div>
-      <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0">
-        <img src="ScreenshotXMTrading_logo.png" alt="XMTrading Affiliate" class="aff-logo">
-      </a>
-    </div>
-
-    <nav class="aff-header-right">
-      <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="aff-link">ログイン</a>
-      <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=18" class="aff-link">サポート</a>
-
-      <select class="aff-lang">
-        <option>日本語</option>
-        <option>English</option>
-      </select>
-
-      <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="aff-cta">口座を開設する</a>
-    </nav>
-  </div>
-
+<!-- HEADER -->
+<header class="header">
+  <img src="ScreenshotXMTrading_logo.png" alt="XMTrading">
+  <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="cta">口座を開設する</a>
 </header>
 
-<!-- ========= HERO ========= -->
-<section id="hero" class="hero">
-  <div class="hero-inner">
-    <div class="hero-promo-top">プロモーション期間：2025年11月18日〜12月8日</div>
-    <div class="hero-eyebrow">クリスマス入金ボーナスキャンペーン</div>
+<!-- CONTENT -->
+<div class="container">
 
-    <h1 class="hero-title">
-      入金ボーナス<br>
-      <span>最大総額 $25,000*</span>
-    </h1>
+  <h1>【速報】今年のXMは本気すぎる？トレーダーの間で話題の「冬キャンペーン」を調査</h1>
 
-    <p class="hero-sub">
-      限定プロモーション。取引量に応じて毎週ボーナス枠が増額され、
-      豪華特典を目指せます。
-      <br><a href="#bonus-table">see details below.</a>
-    </p>
+  <p>
+    11月に入り、SNSや海外FXフォーラムで
+    <strong>「今年のXMはやりすぎ」</strong>という投稿が急増しています。
+    特に話題になっているのが、
+    <strong>最大総額 $25,000 の入金ボーナスキャンペーン</strong>。
+  </p>
 
-    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="btn-primary">ボーナスを獲得</a>
-    <div class="hero-note"><a href="#bonus-table">*Terms and conditions apply.</a></div>
+  <div class="highlight">
+    「毎週の取引量に応じてボーナス枠が拡大していく」という点が大きな注目ポイントです。
   </div>
-</section>
 
-<!-- ========= SIGNUP BONUS ========= -->
-<section class="section signup-bonus-section">
-  <div class="container" style="max-width:1100px;">
-    <h2 class="section-title" style="text-align:center; color:#065f46;">
-      新規口座開設で ¥15,000 ボーナス獲得！
-    </h2>
+  <h2>● なぜここまで注目されているのか？</h2>
+  <p>
+    実は今回のキャンペーン、例年よりボーナス規模が大きく、
+    さらに新規ユーザーには<strong>¥15,000の口座開設ボーナス</strong>も用意されています。
+    これが「神キャンペーン」と呼ばれている理由です。
+  </p>
 
-    <p style="text-align:center; max-width:750px; margin:0 auto; color:#065f46;">
-      新規のお客様は口座開設後に<strong>¥15,000の口座開設ボーナス*</strong>をお受け取りいただけます。
-      既存のお客様も対象のボーナスをご利用いただけます。
-    </p>
+  <img src="Tr_Bonus.png" alt="bonus preview" style="margin: 30px auto; border-radius: 10px;">
 
-    <div style="text-align:center; margin-top:18px;">
-      <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1"
-        style="background:#10b981; color:#052e16; padding:14px 26px; border-radius:999px; font-weight:700;">
-        ¥15,000ボーナスを受け取る
-      </a>
-    </div>
+  <h2>● 実際にどんな特典がある？（簡単まとめ）</h2>
 
-    <p style="text-align:center; font-size:12px; color:#166534;">
-      *利用規約が適用されます。
-    </p>
+  <ul class="benefits">
+    <li>✔ 新規登録で <strong>¥15,000</strong> の無料ボーナス</li>
+    <li>✔ 取引量に応じて毎週ボーナス枠が成長</li>
+    <li>✔ 最大 <strong>合計 $25,000</strong> の入金ボーナス枠</li>
+    <li>✔ 利益は出金可能（ボーナスは残高に影響なし）</li>
+  </ul>
+
+  <h2>● 「本当にお得なの？」という方へ</h2>
+  <p>
+    結論から言うと、取引量が多いトレーダーほど恩恵が大きいキャンペーンです。
+    ボーナス枠が毎週リセットされるため、
+    一度参加すると「続けるほど得をする仕組み」になっています。
+  </p>
+
+  <p>
+    詳しく知りたい方向けに、公式情報を元に
+    <strong>参加方法やボーナス条件をまとめたページ</strong>
+    をこちらに用意しました。👇
+  </p>
+
+  <a href="YOUR_MAIN_LANDING_PAGE_URL_HERE" class="big-cta">
+    ボーナス詳細ページを見る
+  </a>
+
+  <div class="risk">
+    海外FXにはリスクが伴います。必ず自己判断でご利用ください。
+    取引量やボーナス条件は時期により異なる場合があります。
   </div>
-</section>
 
-<!-- ========= 4 STEPS ========= -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">簡単4ステップで最大$25,000*を目指す！</h2>
-      <p class="section-sub">取引量に応じて毎週ボーナス枠が増えていきます。</p>
-    </div>
-
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <h3>登録</h3>
-        <p class="step-text">認証済み口座を用意し、プロモーションに参加します。</p>
-      </div>
-
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <h3>取引</h3>
-        <p class="step-text">対象銘柄で取引し、週ごとのロット目標を達成します。</p>
-      </div>
-
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <h3>ボーナス枠獲得</h3>
-        <p class="step-text">翌週に入金ボーナス枠が有効化されます。</p>
-      </div>
-
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <h3>継続</h3>
-        <p class="step-text">取引を続けてボーナス枠を最大化しましょう。</p>
-      </div>
-    </div>
-
-    <div style="text-align:center;">
-      <a href="#bonus-table" class="btn-secondary btn-secondary--green">ボーナス詳細を見る</a>
-    </div>
-  </div>
-</section>
-
-<!-- ========= BONUS TABLE ========= -->
-<section id="bonus-table" class="section section-table">
-  <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">取引するほど、ボーナスが増える</h2>
-    </div>
-
-    <div class="bonus-table-wrapper">
-      <table class="bonus-table">
-        <thead>
-          <tr>
-            <th>週間ロット数*</th>
-            <th>ボーナス体系</th>
-            <th>最大獲得額</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>3ロット</td><td>$100(100%) + $250(50%)</td><td>$350</td></tr>
-          <tr><td>5ロット</td><td>$150(100%) + $500(50%)</td><td>$650</td></tr>
-          <tr><td>10ロット</td><td>$300(100%) + $700(50%)</td><td>$1,000</td></tr>
-          <tr><td>15ロット</td><td>$1,000(100%) + $2,000(50%)</td><td>$3,000</td></tr>
-          <tr><td>25ロット</td><td>$2,000(100%) + $3,000(50%)</td><td>$5,000</td></tr>
-          <tr><td>50ロット</td><td>$3,333(100%) + $5,000(50%)</td><td>$8,333</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<!-- ========= RISK WARNING ========= -->
-<div class="risk-warning">
-  弊社のサービスには大きなリスクが伴い、投資元本を失う結果となる場合がございます。<br>
-  *利用規約適用。<br>
-  リスク警告： 投資元本を失うリスクが伴います。レバレッジ商品は全てのお客様に適しているわけではございません。<br>
-  Tradexfinのリスク開示およびFintradeのリスク開示を熟読ください。
 </div>
+
+<footer>
+  © 2025 XM Trading – Affiliate Information Page
+</footer>
 
 </body>
 </html>
