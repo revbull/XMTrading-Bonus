@@ -3,22 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>XMTrading クリスマス入金ボーナス – 最大総額 $25,000</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="XMTrading クリスマス特別入金ボーナス。取引量に応じて最大総額 $25,000 を獲得。新規登録で15,000円ボーナス。">
+  <!-- Basic SEO -->
+  <meta name="description" content="XMTrading クリスマス特別入金ボーナス。取引量に応じて最大総額 $25,000 を獲得。新規登録で15,000円ボーナスも。">
   <meta name="keywords" content="XMTrading, XM, FX, クリスマスボーナス, 入金ボーナス, 15,000円, 取引ボーナス, 最大25,000ドル">
   <meta name="robots" content="index, follow">
 
-  <!-- Open Graph (SNS share) -->
+  <!-- Open Graph -->
   <meta property="og:title" content="XMTrading クリスマス入金ボーナス – 最大総額 $25,000">
-  <meta property="og:description" content="取引量に応じて毎週ボーナス枠が増加！新規登録で15,000円ボーナスもプレゼント。">
+  <meta property="og:description" content="取引量に応じて毎週ボーナス枠が増加。新規登録で15,000円ボーナスもプレゼント。">
   <meta property="og:type" content="website">
   <meta property="og:image" content="Tr_Bonus.png">
   <meta property="og:locale" content="ja_JP">
 
-  <!-- Twitter Card -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="XMTrading クリスマス入金ボーナス – 最大総額 $25,000">
   <meta name="twitter:description" content="新規登録で15,000円ボーナス。クリスマス限定プロモーション開催中。">
@@ -26,11 +25,12 @@
 
   <style>
     :root {
+      --green-dark: #0b3b29;
+      --green: #10b981;
       --red: #ef4444;
-      --red-dark: #b91c1c;
-      --green-dark: #064e3b;
-      --text-gray: #6b7280;
-      --soft-border: #e5e7eb;
+      --gray-bg: #f5f5f5;
+      --gray-text: #6b7280;
+      --border-soft: #e5e7eb;
     }
 
     * { box-sizing: border-box; }
@@ -38,14 +38,13 @@
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
-      background: #fff;
+      background: #ffffff;
       color: #111827;
       line-height: 1.7;
     }
 
     img { max-width: 100%; display: block; }
-
-    a { text-decoration: none; color: inherit; }
+    a { color: inherit; text-decoration: none; }
 
     .container {
       max-width: 1200px;
@@ -53,274 +52,987 @@
       padding: 0 24px;
     }
 
-    /* ================= TOP BAR ================= */
+    /* ============== TOP BAR (3 ROWS LIKE SCREENSHOT) ============== */
 
-    .topbar {
+    header.topbar {
       background: #000;
-      padding: 18px;
-      color: #fff;
+      color: #f9fafb;
+      font-size: 14px;
     }
-    .topbar-inner {
+
+    /* Row 1: Announcement */
+    .topbar-announcement {
+      border-bottom: 1px solid #111;
+      padding: 6px 16px;
+      text-align: center;
+    }
+    .topbar-ann-inner {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .topbar-ann-inner img {
+      height: 40px;
+    }
+    .topbar-ann-text a {
+      color: #f97373;
+      text-decoration: underline;
+    }
+
+    /* Row 2: Main links + buttons */
+    .topbar-main {
+      border-bottom: 1px solid #111;
+      padding: 12px 16px;
+    }
+    .topbar-main-inner {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 24px;
     }
-    .topbar-left {
+    .topbar-main-left,
+    .topbar-main-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .topbar-main-left a {
+      color: #f9fafb;
+    }
+    .topbar-btn {
+      border: 1px solid #4b5563;
+      padding: 6px 14px;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+    .topbar-btn.green {
+      background: #16a34a;
+      border-color: #16a34a;
+      color: #fff;
+      font-weight: 700;
+    }
+    .lang-select-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #4b5563;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    .lang-select-wrap span.flag {
+      font-size: 14px;
+    }
+    .lang-select-wrap select {
+      border: none;
+      background: transparent;
+      color: #f9fafb;
+      font-size: 13px;
+    }
+    .lang-select-wrap select:focus {
+      outline: none;
+    }
+
+    /* Row 3: Logo + nav */
+    .topbar-nav {
+      padding: 18px 16px;
+      border-bottom: 1px solid #111;
+    }
+    .topbar-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .topbar-nav-left {
       display: flex;
       align-items: center;
       gap: 20px;
+      flex-wrap: wrap;
     }
-    .topbar-left img {
-      height: 48px; /* larger logo */
+    .topbar-nav-left img {
+      height: 40px; /* bigger logo as requested */
     }
-    .topbar-left a {
-      padding: 8px 14px;
-      border-radius: 999px;
+    .topbar-promo-btn {
+      border: 1px solid #f9fafb;
+      padding: 8px 16px;
+      font-size: 13px;
+      border-radius: 2px;
+      white-space: nowrap;
+    }
+    .topbar-nav-right {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: 15px;
       font-weight: 600;
+    }
+    .topbar-nav-right a {
+      color: #f9fafb;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    @media (max-width: 900px) {
+      .topbar-main-inner,
+      .topbar-nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .topbar-main-right,
+      .topbar-main-left,
+      .topbar-nav-left,
+      .topbar-nav-right {
+        flex-wrap: wrap;
+      }
     }
 
     /* ================= HERO ================= */
 
     .hero {
-      background: linear-gradient(135deg, #0f766e, #064e3b);
-      color: #fff;
-      padding: 70px 16px 90px;
-      text-align: center;
+      background: radial-gradient(circle at top left, #059669, var(--green-dark));
+      color: white;
       position: relative;
       overflow: hidden;
     }
+    /* gradient overlay */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.12) 0, transparent 55%);
+      opacity: .35;
+      pointer-events: none;
+    }
+    /* bonus image behind text (option C) */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("Tr_Bonus.png");
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: min(480px, 60%);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 16px 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
 
     .hero-promo-top {
-      font-size: 22px;
+      font-size: 20px;
       font-weight: 700;
-      margin-bottom: 18px;
       opacity: .95;
+      margin-bottom: 4px;
     }
-
+    .hero-eyebrow {
+      font-size: 14px;
+      letter-spacing: .15em;
+      opacity: .9;
+      margin-bottom: 6px;
+    }
     .hero-title {
-      font-size: 60px;
+      font-size: 58px;
       font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 12px;
+      line-height: 1.25;
+      margin: 0 0 10px;
     }
-
     .hero-title span {
       display: block;
-      font-size: 44px;
-      color: #fde68a;
+      font-size: 42px;
+      color: #fef9c3;
     }
-
     .hero-sub {
-      font-size: 17px;
-      max-width: 520px;
-      margin: 0 auto 26px;
+      font-size: 16px;
       opacity: .95;
+      max-width: 480px;
+      margin-bottom: 22px;
+    }
+    .hero-sub a {
+      color: #fef9c3;
+      text-decoration: underline;
+    }
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* CTA */
     .btn-primary {
       background: var(--red);
-      padding: 16px 32px;
+      color: #ffffff;
+      padding: 14px 26px;
       border-radius: 999px;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
-      color: #fff;
-      box-shadow: 0 0 18px rgba(239,68,68,.55);
-      transition: background .2s;
+      text-decoration: none;
+      box-shadow: 0 0 18px rgba(239,68,68,.65);
+      animation: pulseGlow 2.2s infinite ease-in-out;
       display: inline-block;
-      margin-bottom: 10px;
     }
-    .btn-primary:hover {
-      background: var(--red-dark);
+    @keyframes pulseGlow {
+      0% { box-shadow:0 0 10px rgba(239,68,68,.4); }
+      50% { box-shadow:0 0 22px rgba(239,68,68,.8); }
+      100%{ box-shadow:0 0 10px rgba(239,68,68,.4); }
+    }
+    .hero-note {
+      font-size: 13px;
+      opacity: .85;
+    }
+    .hero-note a {
+      color: #fde68a;
+      text-decoration: underline;
     }
 
-    /* IMAGE */
-    .hero-image {
-      max-width: 420px;
-      margin: 40px auto 0;
+    @media (max-width: 640px) {
+      .hero-title { font-size: 40px; }
+      .hero-title span { font-size: 30px; }
     }
 
-    /* ================= BONUS TABLE ================= */
+    /* ================= GENERIC SECTIONS ================= */
 
     .section {
       padding: 64px 16px;
     }
-
-    .section-title {
-      font-size: 28px;
-      font-weight: 800;
+    .section-header {
       text-align: center;
-      margin-bottom: 8px;
+      margin-bottom: 32px;
+    }
+    .section-title {
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 6px;
     }
     .section-sub {
       font-size: 16px;
-      text-align: center;
-      color: var(--text-gray);
-      margin-bottom: 30px;
+      color: var(--gray-text);
     }
 
+    .signup-bonus-section {
+      background:#f0fdf4;
+      border-top:1px solid #d1fae5;
+      border-bottom:1px solid #d1fae5;
+    }
+
+    /* STEPS */
+
+    .steps-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto 24px;
+    }
+    .step-card {
+      flex: 1 1 220px;
+      background: #f9fafb;
+      border-radius: 16px;
+      padding: 26px 18px 24px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(15,23,42,0.06);
+    }
+    .step-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: var(--red);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto 10px;
+    }
+    .step-title { font-weight: 700; margin-bottom: 4px; }
+    .step-text  { font-size: 14px; color: var(--gray-text); }
+
+    .steps-cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+    .btn-secondary {
+      background: white;
+      color: #111827;
+      border-radius: 999px;
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      border: 1px solid var(--border-soft);
+      transition: background .15s, color .15s, border-color .15s;
+    }
+    .btn-secondary--green {
+      background: #22c55e;
+      color: #052e16;
+      border-color: #16a34a;
+    }
+    .btn-secondary:hover {
+      background: #f3f4f6;
+    }
+    .btn-secondary--green:hover {
+      background: #16a34a;
+      color: #ecfdf5;
+    }
+
+    /* BONUS TABLE */
+
+    .section-table { background: white; }
     .bonus-table-wrapper {
       max-width: 1100px;
-      margin: auto;
+      margin: 0 auto;
       overflow-x: auto;
     }
-
     table.bonus-table {
       width: 100%;
       border-collapse: collapse;
       min-width: 640px;
     }
-
+    .bonus-table th,
+    .bonus-table td {
+      padding: 14px 12px;
+      font-size: 14px;
+      border-bottom: 1px solid var(--border-soft);
+    }
     .bonus-table thead th {
       background: #14532d;
-      color: #fff;
-      padding: 14px;
-      text-align: left;
+      color: #f9fafb;
       font-weight: 700;
+      text-align: left;
+    }
+    .bonus-table tbody tr:nth-child(even) { background: #f9fafb; }
+    .bonus-table tfoot td {
+      font-size: 12px;
+      color: var(--gray-text);
+      padding-top: 10px;
+      border-bottom: none;
+    }
+    .bonus-note {
+      font-size: 12px;
+      color: #9f1239;
+      margin-top: 12px;
+      text-align: center;
     }
 
-    .bonus-table td {
-      padding: 14px;
+    /* PROMO FLOW */
+
+    .promo-flow { background: #064e3b; color: #ecfdf5; }
+    .promo-flow .section-title { color: #ecfdf5; }
+    .promo-flow .section-sub { color: #d1fae5; }
+
+    .flow-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .flow-card {
+      flex: 1 1 280px;
+      background: #ecfdf5;
+      color: #022c22;
+      border-radius: 14px;
+      padding: 22px 18px 20px;
+      box-shadow: 0 4px 16px rgba(15,23,42,0.4);
+    }
+    .flow-card h3 {
+      font-weight: 800;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+    .flow-card p { font-size: 14px; color: #065f46; }
+    .flow-example {
+      margin-top: 14px;
+      padding: 12px 10px;
+      border-radius: 10px;
+      background: #e0f2fe;
+      font-size: 13px;
+      color: #0f172a;
+    }
+    .promo-flow-note {
+      font-size: 12px;
+      color: #bbf7d0;
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    /* FAQ */
+
+    .faq-section { background: #fafafa; }
+    .faq-header-row {
+      max-width: 1100px;
+      margin: 0 auto 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .faq-title { font-size: 26px; font-weight: 800; }
+    .faq-toggle-all { font-size: 14px; color: #b91c1c; cursor: pointer; }
+    .faq-list {
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 3px 14px rgba(15,23,42,0.08);
+    }
+    .faq-item {
+      background: #f9fafb;
       border-bottom: 1px solid #e5e7eb;
+    }
+    .faq-question {
+      cursor: pointer;
+      padding: 14px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-q-text { font-size: 15px; font-weight: 500; }
+    .faq-icon {
+      font-size: 18px;
+      color: #9ca3af;
+      transition: transform .2s ease;
+    }
+    .faq-item.open .faq-icon { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 16px;
+      font-size: 14px;
+      color: var(--gray-text);
+      transition: max-height .25s ease, padding-bottom .25s ease;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 180px;
+      padding-bottom: 12px;
+    }
+
+    /* SCROLL CTA PANEL (BOTTOM) */
+
+    #scrollCta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #111;
+      color: white;
+      padding: 14px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      transform: translateY(100%);
+      transition: transform .4s;
+      z-index: 9000;
       font-size: 14px;
     }
+    #scrollCta a {
+      background:#22c55e;
+      color:#000;
+      padding:10px 20px;
+      border-radius:6px;
+      font-weight:700;
+      text-decoration:none;
+    }
+    #scrollCta button {
+      background:none;
+      border:0;
+      color:white;
+      font-size:22px;
+      cursor:pointer;
+    }
 
-    /* ================= RISK WARNING ================= */
+    /* FALLING TOP PANEL */
+
+    #fallingCta {
+      position: fixed;
+      top: -80px;
+      left: 0;
+      right: 0;
+      background:#111827;
+      color:#f9fafb;
+      border-bottom:1px solid #4b5563;
+      padding:10px 16px;
+      transform: translateY(-100%);
+      opacity:0;
+      transition: transform .5s ease-out, opacity .5s ease-out;
+      z-index: 9500;
+    }
+    #fallingCta.show {
+      transform: translateY(0);
+      opacity:1;
+    }
+    #fallingCta-inner {
+      max-width:1200px;
+      margin:0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    #fallingCta-text { font-size:14px; }
+    #fallingCta a {
+      background:#22c55e;
+      color:#052e16;
+      padding:8px 18px;
+      border-radius:999px;
+      font-size:14px;
+      font-weight:700;
+      text-decoration:none;
+      white-space:nowrap;
+    }
+    #fallingCta-close {
+      background:none;
+      border:none;
+      color:#e5e7eb;
+      font-size:18px;
+      cursor:pointer;
+      padding:0 4px;
+    }
+
+    /* Risk warning */
 
     .risk-warning {
       max-width: 1100px;
       margin: 40px auto 30px;
       padding: 18px 22px;
-      background: #fef2f2;
-      border-left: 5px solid #dc2626;
-      color: #7f1d1d;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1.8;
+      color: #7f1d1d;
+      background: #fef2f2;
+      border-left: 4px solid #dc2626;
     }
 
-    /* ================= RESPONSIVE ================= */
-
-    @media (max-width: 680px) {
-      .hero-title { font-size: 42px; }
-      .hero-title span { font-size: 32px; }
-      .btn-primary { font-size: 16px; padding: 14px 26px; }
-      .hero-image { max-width: 360px; }
+    @media (max-width: 900px) {
+      .steps-grid,
+      .flow-grid {
+        flex-direction: column;
+      }
+      #fallingCta-inner { flex-direction: column; align-items:flex-start; }
+      #fallingCta a { width:100%; text-align:center; }
+      #scrollCta { flex-direction: column; text-align:center; }
     }
-
   </style>
 </head>
 
-
-
 <body>
 
-  <!-- ================= TOP BAR ================= -->
+  <!-- ========= TOP BAR (3 ROWS) ========= -->
   <header class="topbar">
-    <div class="topbar-inner">
-      <div class="topbar-left">
-        <img src="ScreenshotXMTrading_logo.png" alt="XMTrading ロゴ">
-        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0">ホーム</a>
-        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6">プロモーション</a>
-        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=18">サポート</a>
+    <!-- Row 1: Announcement -->
+    <div class="topbar-announcement">
+      <div class="topbar-ann-inner">
+        <!-- Replace TopCar.png with your F1 image if you have one -->
+        <img src="TopCar.png" alt="F1 Car">
+        <div class="topbar-ann-text">
+          極限の取引を。Visa Cash App Racing Bulls F1 Teamの誇り高きオフィシャルパートナー。
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6">詳細はこちら</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Main links & buttons -->
+    <div class="topbar-main">
+      <div class="topbar-main-inner">
+        <div class="topbar-main-left">
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0">XMTradingホームページ</a>
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=18">サポート</a>
+        </div>
+        <div class="topbar-main-right">
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="topbar-btn">会員ログイン</a>
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=18" class="topbar-btn">ヘルプセンター</a>
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="topbar-btn green">口座を開設する</a>
+          <div class="lang-select-wrap">
+            <span class="flag">🇯🇵</span>
+            <select aria-label="言語選択">
+              <option value="ja">日本語</option>
+              <option value="en">English</option>
+              <option value="ko">한국어</option>
+              <option value="zh">中文</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Logo + nav menu -->
+    <div class="topbar-nav">
+      <div class="topbar-nav-inner">
+        <div class="topbar-nav-left">
+          <img src="ScreenshotXMTrading_logo.png" alt="XMTrading ロゴ">
+          <a href="#hero" class="topbar-promo-btn">クリスマスプロモーション</a>
+        </div>
+        <nav class="topbar-nav-right" aria-label="グローバルナビ">
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0">取引</a>
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0">プラットフォーム</a>
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0">取引ツール</a>
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6">プロモーション</a>
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0">当社について</a>
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0">パートナーシップ</a>
+        </nav>
       </div>
     </div>
   </header>
 
-  <!-- ================= HERO ================= -->
-  <section class="hero">
-
-    <!-- PROMO DATES AT TOP CENTER -->
-    <div class="hero-promo-top">
-      プロモーション期間：2025年11月18日〜12月8日
+  <!-- ========= FALLING TOP PANEL ========= -->
+  <div id="fallingCta">
+    <div id="fallingCta-inner">
+      <div id="fallingCta-text">
+        ¥15000の取引ボーナスでFX、仮想通貨CFDなどを取引しよう。入金不要。（利用規約適用）
+      </div>
+      <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1">登録しましょう！</a>
+      <button id="fallingCta-close" aria-label="閉じる">×</button>
     </div>
-
-    <h1 class="hero-title">
-      クリスマス入金ボーナス<br>
-      <span>最大総額 $25,000*</span>
-    </h1>
-
-    <p class="hero-sub">
-      年末限定の特別キャンペーン。取引量に応じてボーナス枠が毎週増額され、最大総額 $25,000 を目指せます。  
-      <a href="#bonus-details" style="color:#fde68a; text-decoration:underline;">see details below.</a>
-    </p>
-
-    <!-- RED CTA BUTTON -->
-    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="btn-primary">
-      無料で登録してボーナスを受け取る
-    </a>
-
-    <div>
-      <a href="#bonus-details" style="color:#fde68a; font-size:14px; text-decoration:underline;">
-        *Terms and conditions apply.
-      </a>
-    </div>
-
-    <div class="hero-image">
-      <img src="Tr_Bonus.png" alt="XMTrading クリスマスボーナス">
-    </div>
-
-  </section>
-
-  <!-- ================= BONUS TABLE ================= -->
-  <section id="bonus-details" class="section">
-    <h2 class="section-title">取引量に応じてボーナス枠が増額</h2>
-    <p class="section-sub">毎週の取引ロット数に応じて翌週のボーナス上限が決まります。</p>
-
-    <div class="bonus-table-wrapper">
-      <table class="bonus-table">
-        <thead>
-          <tr>
-            <th>週ごとの最小取引ロット数*</th>
-            <th>ボーナス体系</th>
-            <th>週間最大ボーナス額</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>3スタンダード（300マイクロ）</td>
-            <td>$100 を100% + $250 を50%</td>
-            <td>$350</td>
-          </tr>
-          <tr>
-            <td>5スタンダード（500マイクロ）</td>
-            <td>$150 を100% + $500 を50%</td>
-            <td>$650</td>
-          </tr>
-          <tr>
-            <td>10スタンダード（1000マイクロ）</td>
-            <td>$300 を100% + $700 を50%</td>
-            <td>$1,000</td>
-          </tr>
-          <tr>
-            <td>15スタンダード（1500マイクロ）</td>
-            <td>$1,000 を100% + $2,000 を50%</td>
-            <td>$3,000</td>
-          </tr>
-          <tr>
-            <td>25スタンダード（2500マイクロ）</td>
-            <td>$2,000 を100% + $3,000 を50%</td>
-            <td>$5,000</td>
-          </tr>
-          <tr>
-            <td>50スタンダード（5000マイクロ）</td>
-            <td>$3,333 を100% + $5,000 を50%</td>
-            <td>$8,333</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ================= RISK WARNING ================= -->
-  <div class="risk-warning">
-    弊社のサービスには大きなリスクが伴い、投資元本を失う場合がございます。<br>
-    *利用規約適用。<br>
-    リスク警告：投資元本の損失リスクがあります。レバレッジ商品はすべてのお客様に適しているとは限りません。<br>
-    Tradexfin のリスク開示および Fintrade のリスク開示を必ずご確認ください。
   </div>
 
+  <!-- ========= HERO ========= -->
+  <section id="hero" class="hero">
+    <div class="hero-inner">
+      <div class="hero-promo-top">プロモーション期間：2025年11月18日〜12月8日</div>
+      <div class="hero-eyebrow">クリスマス入金ボーナスキャンペーン</div>
+      <h1 class="hero-title">
+        入金ボーナス<br>
+        <span>最大総額 $25,000*</span>
+      </h1>
+      <p class="hero-sub">
+        15周年を記念した特別プロモーション。取引量に応じて毎週ボーナス枠が増額され、
+        取引と入金を組み合わせて、豪華な特典を狙えます。
+        <br>
+        <a href="#bonus-table">see details below.</a>
+      </p>
+      <div class="hero-cta-row">
+        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="btn-primary" id="signup">ボーナスを獲得</a>
+        <span class="hero-note">
+          <a href="#bonus-table">*Terms and conditions apply.</a>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= SIGN-UP BONUS HIGHLIGHT (¥15,000) ========= -->
+  <section class="section signup-bonus-section">
+    <div class="container" style="max-width:1100px;">
+      <div style="text-align:center; margin-bottom:10px;">
+        <h2 class="section-title" style="color:#065f46;">新規口座開設で ¥15,000 ボーナス獲得！</h2>
+        <p style="font-size:16px; color:#065f46; line-height:1.7; max-width:750px; margin:0 auto;">
+          新規のお客様は、口座開設と本人確認の完了後に<strong>¥15,000の口座開設ボーナス*</strong>をお受け取りいただけます。<br>
+          既存のお客様も、対象となる本プロモーションおよびその他のボーナスをご利用いただけます。<br>
+          また、既存の入金ボーナスプログラムは、<strong>本プロモーションの期間限定入金ボーナスを全額獲得後に適用</strong>されます。
+        </p>
+      </div>
+      <div style="text-align:center; margin-top:18px;">
+        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1"
+           style="display:inline-block; background:#10b981; color:#052e16; padding:14px 26px; border-radius:999px; font-size:16px; font-weight:700; text-decoration:none; box-shadow:0 8px 18px rgba(16,185,129,.35);">
+          ¥15,000ボーナスを受け取る
+        </a>
+      </div>
+      <p style="font-size:12px; text-align:center; margin-top:16px; color:#166534;">
+        *利用規約が適用されます。
+      </p>
+    </div>
+  </section>
+
+  <!-- ========= 4-STEP PROCESS ========= -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">今年のクリスマスは豪華プロモーションで！</h2>
+        <p class="section-sub">簡単な4つのステップで、最大$25,000*の入金ボーナスを目指せます。</p>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-title">登録</div>
+          <p class="step-text">会員ページから認証済みの取引口座を用意し、本プロモーションにエントリーします。</p>
+        </article>
+        <article class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-title">取引</div>
+          <p class="step-text">対象銘柄を取引して、週ごとに設定された目標ロット数を達成します。</p>
+        </article>
+        <article class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-title">ボーナス枠獲得</div>
+          <p class="step-text">翌週、有効化された入金ボーナス枠が取引口座へ付与されます。</p>
+        </article>
+        <article class="step-card">
+          <div class="step-num">4</div>
+          <div class="step-title">取引継続</div>
+          <p class="step-text">取引を続けることでボーナス枠が増額され、最終的に最大$25,000*まで到達可能です。</p>
+        </article>
+      </div>
+      <div class="steps-cta-row">
+        <a href="#bonus-table" class="btn-secondary btn-secondary--green">ボーナス詳細を見る</a>
+        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" class="btn-secondary">今すぐ登録する</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= BONUS TABLE ========= -->
+  <section id="bonus-table" class="section section-table">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">取引するほど、ボーナス増額</h2>
+        <p class="section-sub">週間の取引量に応じて翌週のボーナス獲得枠が決定します。</p>
+      </div>
+      <div class="bonus-table-wrapper">
+        <table class="bonus-table">
+          <thead>
+            <tr>
+              <th>週ごとの最小取引ロット数*</th>
+              <th>ボーナス体系</th>
+              <th>週間最大ボーナス額*</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>3スタンダード（または300マイクロ）ロット</td>
+              <td>最大$100を100%、次に最大$250を50%</td>
+              <td>$350</td>
+            </tr>
+            <tr>
+              <td>5スタンダード（または500マイクロ）ロット</td>
+              <td>最大$150を100%、次に最大$500を50%</td>
+              <td>$650</td>
+            </tr>
+            <tr>
+              <td>10スタンダード（または1000マイクロ）ロット</td>
+              <td>最大$300を100%、次に最大$700を50%</td>
+              <td>$1,000</td>
+            </tr>
+            <tr>
+              <td>15スタンダード（または1500マイクロ）ロット</td>
+              <td>最大$1,000を100%、次に最大$2,000を50%</td>
+              <td>$3,000</td>
+            </tr>
+            <tr>
+              <td>25スタンダード（または2500マイクロ）ロット</td>
+              <td>最大$2,000を100%、次に最大$3,000を50%</td>
+              <td>$5,000</td>
+            </tr>
+            <tr>
+              <td>50スタンダード（または5000マイクロ）ロット</td>
+              <td>最大$3,333を100%、次に最大$5,000を50%</td>
+              <td>$8,333</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3">
+                * すべての金額はUSDまたは他通貨の同等額で表示されます。<br>
+                * 取引ロット数の計算方法や対象銘柄の詳細については、利用規約を必ずご確認ください。
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <p class="bonus-note">※ 表は一例です。実際のボーナス条件は必ず公式ページの最新情報をご参照ください。</p>
+    </div>
+  </section>
+
+  <!-- ========= PROMO FLOW ========= -->
+  <section class="section promo-flow">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">プロモーションの仕組み</h2>
+        <p class="section-sub">各週ごとに新しいスタート。取引量に応じて次の週のボーナス枠が決まります。</p>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-card">
+          <h3>第1週</h3>
+          <p>
+            プロモーションに登録し、対象銘柄（FX・ゴールド・シルバー・一部暗号資産CFDなど）を取引します。
+            週末の取引量に応じて、第2週に獲得可能となる入金ボーナス枠が決定します。
+          </p>
+          <div class="flow-example">
+            <strong>例：</strong><br>
+            10スタンダード（または1000マイクロ）ロットを取引 → 第2週に最大$1,000のボーナス枠を獲得。
+          </div>
+        </article>
+        <article class="flow-card">
+          <h3>第2週</h3>
+          <p>
+            第1週の取引に基づいて入金ボーナス枠が有効化されます。新たな週として取引量が再カウントされ、
+            第3週に向けたさらに大きなボーナス枠獲得のチャンスが与えられます。
+          </p>
+          <div class="flow-example">
+            <strong>例：</strong><br>
+            25スタンダード（または2500マイクロ）ロットを取引 → 第3週に最大$5,000のボーナス枠を獲得。
+          </div>
+        </article>
+        <article class="flow-card">
+          <h3>第3週</h3>
+          <p>
+            第2週の取引結果に応じた入金ボーナス枠が有効化されます。プロモーション終了まで継続的に取引を行うことで、
+            最終的な入金ボーナス枠を最大限まで活用できます。
+          </p>
+          <div class="flow-example">
+            <strong>例：</strong><br>
+            50スタンダード（または5000マイクロ）ロットを取引 → 合計で最大$8,333相当のボーナス枠を獲得可能。
+          </div>
+        </article>
+      </div>
+      <p class="promo-flow-note">
+        ※ 取引量のカウントは毎週指定日時にリセットされます。<br>
+        詳細な条件や除外事項については、必ず公式の利用規約全文をご確認ください。
+      </p>
+    </div>
+  </section>
+
+  <!-- ========= FAQ ========= -->
+  <section class="section faq-section">
+    <div class="container">
+      <div class="faq-header-row">
+        <h2 class="faq-title">よくあるご質問</h2>
+        <div id="faqToggleAll" class="faq-toggle-all">すべて展開する</div>
+      </div>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-q-text">誰がこのプロモーションに参加できますか？</span>
+            <span class="faq-icon">⌄</span>
+          </div>
+          <div class="faq-answer">
+            認証済みのXMTrading本口座をお持ちのお客様が対象です。対象国や口座タイプには制限がある場合があります。
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-q-text">プロモーションへの参加方法は？</span>
+            <span class="faq-icon">⌄</span>
+          </div>
+          <div class="faq-answer">
+            会員ページへログインし、「プロモーション」タブから本キャンペーンに参加登録してください。
+            登録後の取引量がカウント対象となります。
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-q-text">各週の取引期間とボーナス獲得期間はいつですか？</span>
+            <span class="faq-icon">⌄</span>
+          </div>
+          <div class="faq-answer">
+            通常、週の取引期間は指定の曜日・時間から翌週同時刻までとなり、翌週に入金ボーナス枠が有効化されます。
+            詳細は公式ページのスケジュールをご覧ください。
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-q-text">ボーナスは出金できますか？</span>
+            <span class="faq-icon">⌄</span>
+          </div>
+          <div class="faq-answer">
+            入金ボーナス自体は通常、出金対象とはなりませんが、ボーナスを利用して得た利益は出金可能です。
+            出金時にはボーナス残高が一部または全て消滅する場合があります。
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-q-text">XMTradingで他のボーナスを獲得することはできますか？</span>
+            <span class="faq-icon">⌄</span>
+          </div>
+          <div class="faq-answer">
+            一部のボーナスとは併用できない場合があります。キャンペーン併用可否については、
+            利用規約またはサポートにてご確認ください。
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========= SCROLL CTA PANEL (BOTTOM) ========= -->
+  <div id="scrollCta">
+    <span>¥15,000の取引ボーナスで今すぐ取引スタート！</span>
+    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6">無料で口座開設</a>
+    <button id="scrollCtaClose" aria-label="閉じる">×</button>
+  </div>
+
+  <!-- ========= RISK WARNING ========= -->
+  <div class="risk-warning">
+    弊社のサーピスには大きなリスクが伴い、投資元舎を失う結果となる場合がございます。<br>
+    *利用規約適用。<br>
+    リスク警告： 投資元本を失うリスクが伴います。レバレッジ商品は、全てのお客様に適しているわけではございません。<br>
+    Tradexfinのリスク開示およびFintradeのリスク開示を熟読ください。
+  </div>
+
+  <!-- ========= JS ========= -->
+  <script>
+    // FAQ accordion
+    const faqItems = document.querySelectorAll(".faq-item");
+    faqItems.forEach(item => {
+      const q = item.querySelector(".faq-question");
+      q.addEventListener("click", () => {
+        item.classList.toggle("open");
+      });
+    });
+
+    // FAQ toggle all
+    const toggleAll = document.getElementById("faqToggleAll");
+    let allOpen = false;
+    toggleAll.addEventListener("click", () => {
+      allOpen = !allOpen;
+      faqItems.forEach(i => i.classList.toggle("open", allOpen));
+      toggleAll.textContent = allOpen ? "すべて閉じる" : "すべて展開する";
+    });
+
+    // Scroll CTA & Falling CTA
+    const scrollCta = document.getElementById("scrollCta");
+    const scrollCtaClose = document.getElementById("scrollCtaClose");
+    const fallingCta = document.getElementById("fallingCta");
+
+    let scrollShown = false;
+    let fallingShown = false;
+
+    function handleScroll() {
+      const y = window.scrollY || window.pageYOffset;
+
+      if (!scrollShown && y > 500) {
+        scrollCta.style.transform = "translateY(0)";
+        scrollShown = true;
+      }
+
+      if (!fallingShown && y > 300) {
+        fallingCta.classList.add("show");
+        fallingShown = true;
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    scrollCtaClose.addEventListener("click", () => {
+      scrollCta.style.display = "none";
+    });
+
+    document.getElementById("fallingCta-close")?.addEventListener("click", () => {
+      fallingCta.classList.remove("show");
+    });
+  </script>
 </body>
 </html>
