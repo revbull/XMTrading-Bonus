@@ -1,195 +1,327 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>XM 冬の特典 – 最大$25,000ボーナス</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>XM 冬の特典 – 最大$25,000ボーナス</title>
 
-<style>
-:root {
-  --red: #ef4444;
-  --gold: #fef9c3;
-  --green-dark: #052e16;
-}
+  <style>
+    :root {
+      --red: #ef4444;
+      --red-dark: #dc2626;
+      --green-bg: #0b3b29;
+      --green-hero: #0f5132;
+      --gold: #fef9c3;
+      --text-soft: #e2e8f0;
+    }
 
-/* RESET */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
-  background: #0b3b29;
-  color: #ffffff;
-  overflow-x: hidden;
-}
+    /* ========== RESET ========== */
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
+      background: var(--green-bg);
+      color: #ffffff;
+      overflow-x: hidden;
+      line-height: 1.8;
+    }
+    img { max-width: 100%; display: block; }
+    a  { color: inherit; text-decoration: none; }
 
-/* BLACK TOP BAR */
-.header {
-  background: #000;
-  padding: 14px 26px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
-}
-.header img { height: 38px; }
-.header .cta {
-  background: var(--red);
-  padding: 10px 22px;
-  border-radius: 6px;
-  font-weight: 700;
-  color: #fff;
-  text-decoration: none;
-  font-size: 15px;
-}
+    /* ========== BLACK TOP BAR (XM-STYLE, ORIGINAL) ========== */
+    .header {
+      background:#000;
+      color:#fff;
+      padding:14px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-bottom:1px solid rgba(255,255,255,.12);
+      position:relative;
+      z-index:10;
+    }
+    .header-left {
+      display:flex;
+      align-items:center;
+      gap:28px;
+    }
+    .header-logo {
+      height:36px;
+    }
+    .main-nav {
+      display:flex;
+      gap:18px;
+      font-size:14px;
+    }
+    .main-nav a {
+      padding-bottom:2px;
+      border-bottom:2px solid transparent;
+    }
+    .main-nav a:hover {
+      border-color:#f97316;
+    }
+    .header-right {
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .lang-switch {
+      padding:6px 10px;
+      background:#111;
+      border:1px solid #333;
+      color:#fff;
+      border-radius:6px;
+      font-size:13px;
+    }
+    .top-cta {
+      background:var(--red);
+      padding:10px 20px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:14px;
+      box-shadow:0 0 10px rgba(239,68,68,.7);
+    }
+    .top-cta:hover { background:var(--red-dark); }
 
-/* LANGUAGE SWITCHER */
-.lang-switch {
-  margin-left: 14px;
-  padding: 6px 10px;
-  background: #111;
-  border: 1px solid #333;
-  color: #fff;
-  border-radius: 6px;
-}
+    /* ========== HERO ========== */
+    .hero-wrap {
+      background:linear-gradient(to bottom, #0f5132, #064e3b);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero {
+      max-width:1200px;
+      margin:0 auto;
+      padding:60px 24px 70px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+      position:relative;
+      z-index:1;
+    }
 
-/* HERO */
-.hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 60px 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-}
+    /* snow overlay texture (very subtle) */
+    .hero-wrap::before {
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,.06) 0, transparent 55%),
+        radial-gradient(circle at 80% 60%, rgba(255,255,255,.08) 0, transparent 55%);
+      opacity:.5;
+      pointer-events:none;
+    }
 
-/* Floating Snowflakes */
-.snowflake {
-  position: fixed;
-  top: -10px;
-  color: #fff;
-  font-size: 12px;
-  animation: fall linear infinite;
-  opacity: 0.8;
-  pointer-events: none;
-}
-@keyframes fall {
-  0% { transform: translateY(-10px) translateX(0); opacity: 1; }
-  100% { transform: translateY(120vh) translateX(20px); opacity: 0.2; }
-}
+    /* floating glow lights */
+    .glow {
+      position:absolute;
+      width:160px;
+      height:160px;
+      background:radial-gradient(circle, rgba(255,255,255,.22), transparent 70%);
+      filter:blur(18px);
+      animation:glowmove 14s infinite alternate ease-in-out;
+      pointer-events:none;
+    }
+    .glow.g1 { top:40px; left:-40px; }
+    .glow.g2 { bottom:-40px; right:-20px; animation-delay:2s; }
 
-/* Glow lights */
-.glow {
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  background: radial-gradient(circle, rgba(255,255,255,0.25), transparent 70%);
-  filter: blur(20px);
-  animation: glowmove 12s infinite alternate ease-in-out;
-}
-@keyframes glowmove {
-  from { transform: translate(0px,0px); }
-  to   { transform: translate(80px,40px); }
-}
+    @keyframes glowmove {
+      from { transform:translate(0,0); }
+      to   { transform:translate(60px,40px); }
+    }
 
-/* HERO TEXT */
-.hero-left {
-  flex: 1 1 50%;
-  max-width: 600px;
-  animation: fadeIn 1.8s ease forwards;
-  opacity: 0;
-}
-.hero-left h1 {
-  font-size: 38px;
-  font-weight: 800;
-  line-height: 1.3;
-}
-.hero-left h1 span {
-  color: var(--gold);
-}
-.hero-left p {
-  margin-top: 14px;
-  opacity: 0.95;
-  font-size: 16px;
-}
+    .hero-left,
+    .hero-right { flex:1 1 50%; }
 
-/* HERO IMAGE RIGHT */
-.hero-right {
-  flex: 1 1 50%;
-  display: flex;
-  justify-content: flex-end;
-}
-.hero-right img {
-  max-width: 480px;
-  animation: slideIn 2s ease forwards;
-  opacity: 0;
-}
+    .hero-left {
+      max-width:520px;
+      opacity:0;
+      transform:translateY(20px);
+      animation:fadeInUp 1.2s ease forwards;
+    }
+    .promo-period {
+      font-size:14px;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      opacity:.9;
+      text-align:left;
+      margin-bottom:10px;
+    }
+    .promo-period span {
+      font-size:13px;
+      display:block;
+      margin-top:4px;
+      opacity:.85;
+    }
+    .hero-title {
+      font-size:40px;
+      font-weight:800;
+      line-height:1.3;
+      margin:8px 0 6px;
+    }
+    .hero-title span {
+      display:block;
+      font-size:30px;
+      color:var(--gold);
+    }
+    .hero-sub {
+      font-size:15px;
+      color:var(--text-soft);
+      margin-top:10px;
+    }
 
-@keyframes fadeIn {
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes slideIn {
-  from { transform: translateX(40px); opacity: 0; }
-  to   { transform: translateX(0); opacity: 1; }
-}
+    .hero-cta {
+      margin-top:22px;
+    }
+    .hero-cta-main {
+      display:inline-block;
+      background:var(--red);
+      color:#fff;
+      padding:14px 26px;
+      border-radius:999px;
+      font-size:17px;
+      font-weight:700;
+      box-shadow:0 0 14px rgba(239,68,68,.8);
+    }
+    .hero-cta-main:hover { background:var(--red-dark); }
+    .hero-cta-note {
+      font-size:12px;
+      margin-top:8px;
+      color:var(--gold);
+    }
+    .hero-cta-note a {
+      text-decoration:underline;
+    }
 
-/* MAIN CTA */
-.big-cta {
-  display: inline-block;
-  background: var(--red);
-  padding: 16px 28px;
-  border-radius: 999px;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 22px;
-  text-decoration: none;
-  box-shadow: 0 0 16px rgba(239,68,68,0.7);
-}
+    .hero-right {
+      display:flex;
+      justify-content:flex-end;
+      opacity:0;
+      transform:translateX(40px);
+      animation:slideIn 1.6s ease forwards;
+      animation-delay:.2s;
+    }
+    .hero-right img {
+      max-width:480px;
+      border-radius:10px;
+    }
 
-/* TRUST BADGES */
-.trust-section {
-  max-width: 900px;
-  margin: 60px auto 0;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-around;
-  gap: 22px;
-  flex-wrap: wrap;
-}
-.trust-box {
-  background: rgba(255,255,255,0.08);
-  padding: 16px 20px;
-  border-radius: 12px;
-  text-align: center;
-  width: 260px;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-.trust-box img { height: 45px; margin-bottom: 8px; }
-.trust-box p { font-size: 14px; }
+    @keyframes fadeInUp {
+      to { opacity:1; transform:translateY(0); }
+    }
+    @keyframes slideIn {
+      to { opacity:1; transform:translateX(0); }
+    }
 
-/* MULTI-LANGUAGE CONTENT BLOCKS */
-.lang-block { display: none; }
-.lang-block.active { display: block; }
+    /* ========== TRUST BADGES ========== */
+    .trust-area {
+      max-width:950px;
+      margin:40px auto 10px;
+      padding:0 20px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      justify-content:center;
+    }
+    .trust-box {
+      flex:1 1 220px;
+      max-width:260px;
+      border-radius:12px;
+      padding:14px 16px;
+      background:rgba(15,23,42,.35);
+      border:1px solid rgba(255,255,255,.12);
+      text-align:center;
+      font-size:14px;
+      color:#e5e7eb;
+      opacity:0;
+      transform:translateY(20px);
+      transition:.6s ease;
+    }
+    .trust-box.visible {
+      opacity:1;
+      transform:translateY(0);
+    }
+    .trust-icon {
+      font-size:22px;
+      margin-bottom:6px;
+      display:block;
+    }
 
-/* Footer Risk */
-.risk {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 18px 20px;
-  background: rgba(220,38,38,0.12);
-  border-left: 4px solid var(--red);
-  font-size: 13px;
-  border-radius: 6px;
-}
+    /* ========== SMALL SECTIONS FOR NAV (MINIMAL TEXT) ========== */
+    .mini-section {
+      max-width:900px;
+      margin:40px auto 0;
+      padding:0 20px;
+      font-size:14px;
+      color:#e5e7eb;
+      opacity:0;
+      transform:translateY(18px);
+      transition:.6s ease;
+    }
+    .mini-section.visible {
+      opacity:1;
+      transform:translateY(0);
+    }
+    .mini-section h2 {
+      font-size:18px;
+      margin-bottom:6px;
+      color:var(--gold);
+    }
 
-footer {
-  text-align: center;
-  color: #cbd5e1;
-  padding: 40px 0;
-  font-size: 13px;
-}
-</style>
+    /* ========== RISK / FOOTER ========== */
+    .risk {
+      max-width:900px;
+      margin:40px auto 0;
+      padding:16px 18px;
+      background:rgba(220,38,38,.12);
+      border-radius:6px;
+      border-left:4px solid var(--red);
+      font-size:13px;
+      color:#fee2e2;
+    }
+    footer {
+      text-align:center;
+      color:#cbd5e1;
+      font-size:13px;
+      padding:28px 0 38px;
+    }
+
+    /* ========== SNOWFLAKES ========== */
+    .snowflake {
+      position:fixed;
+      top:-10px;
+      color:#fff;
+      font-size:12px;
+      animation:fall linear infinite;
+      opacity:0.7;
+      pointer-events:none;
+      z-index:0;
+    }
+    @keyframes fall {
+      0% { transform:translateY(-10px) translateX(0); opacity:1; }
+      100% { transform:translateY(110vh) translateX(25px); opacity:0; }
+    }
+
+    /* ========== LANGUAGE BLOCKS ========== */
+    .lang-block { display:none; }
+    .lang-block.active { display:block; }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction:column;
+        text-align:center;
+      }
+      .hero-left { align-items:center; margin:0 auto; }
+      .hero-cta { text-align:center; }
+      .hero-right { justify-content:center; }
+      .promo-period { text-align:center; }
+      .header { flex-wrap:wrap; gap:10px; }
+      .header-left { flex-wrap:wrap; gap:10px; }
+      .main-nav { flex-wrap:wrap; justify-content:flex-start; }
+    }
+  </style>
 </head>
 
 <body>
@@ -197,88 +329,162 @@ footer {
 <!-- SNOWFLAKES -->
 <script>
 for (let i = 0; i < 28; i++) {
-  let flake = document.createElement("div");
+  const flake = document.createElement("div");
   flake.className = "snowflake";
-  flake.style.left = Math.random() * 100 + "vw";
-  flake.style.animationDuration = 6 + Math.random()*6 + "s";
   flake.textContent = "❄";
+  flake.style.left = Math.random()*100 + "vw";
+  flake.style.animationDuration = (6 + Math.random()*6) + "s";
   document.body.appendChild(flake);
 }
 </script>
 
-<!-- GLOW -->
-<div class="glow" style="top: 40px; left: 60px;"></div>
-<div class="glow" style="top: 280px; right: 120px;"></div>
-
 <!-- HEADER -->
 <header class="header">
-  <img src="ScreenshotXMTrading_logo.png">
-  <div>
-    <select class="lang-switch" id="langSelect">
+  <div class="header-left">
+    <img src="ScreenshotXMTrading_logo.png" alt="XMTrading" class="header-logo">
+    <nav class="main-nav">
+      <a href="#trade">取引</a>
+      <a href="#platforms">プラットフォーム</a>
+      <a href="#tools">取引ツール</a>
+    </nav>
+  </div>
+  <div class="header-right">
+    <select id="langSelect" class="lang-switch" aria-label="Language">
       <option value="ja">日本語</option>
       <option value="en">English</option>
       <option value="kr">한국어</option>
       <option value="cn">中文</option>
     </select>
+    <a href="YOUR_MAIN_LP_URL_HERE" class="top-cta">ボーナス詳細へ</a>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero">
+<div class="hero-wrap">
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
 
-  <!-- LEFT TEXT -->
-  <div class="hero-left">
-    <div class="lang-block active" id="lang-ja">
-      <h1>XMの冬限定<br><span>最大$25,000ボーナス</span></h1>
-      <p>今年のXMは一味違う。口コミで広がる“冬の大特典”をご紹介。</p>
+  <section class="hero">
+
+    <div class="hero-left">
+
+      <!-- JA -->
+      <div class="lang-block active" id="lang-ja">
+        <div class="promo-period">
+          クリスマス入金ボーナスキャンペーン
+          <span>プロモーション期間：2025年11月18日〜12月8日</span>
+        </div>
+        <h1 class="hero-title">
+          入金ボーナス<br><span>最大総額 $25,000*</span>
+        </h1>
+        <p class="hero-sub">
+          XMTradingの冬限定プロモーション。取引量に応じてボーナス枠が拡大し、
+          トレーダーから高い注目を集めています。
+        </p>
+      </div>
+
+      <!-- EN -->
+      <div class="lang-block" id="lang-en">
+        <div class="promo-period">
+          Christmas Deposit Bonus
+          <span>Promo Period: 18 Nov 2025 – 8 Dec 2025</span>
+        </div>
+        <h1 class="hero-title">
+          Deposit Bonus<br><span>Up to $25,000*</span>
+        </h1>
+        <p class="hero-sub">
+          A limited-time winter promotion from XMTrading. The more you trade, the more bonus room you can unlock.
+        </p>
+      </div>
+
+      <!-- KR -->
+      <div class="lang-block" id="lang-kr">
+        <div class="promo-period">
+          크리스마스 입금 보너스 이벤트
+          <span>프로모션 기간: 2025년 11월 18일 ~ 12월 8일</span>
+        </div>
+        <h1 class="hero-title">
+          입금 보너스<br><span>최대 총 $25,000*</span>
+        </h1>
+        <p class="hero-sub">
+          XMTrading의 겨울 한정 프로모션입니다. 거래량에 따라 보너스 한도가 커집니다.
+        </p>
+      </div>
+
+      <!-- CN -->
+      <div class="lang-block" id="lang-cn">
+        <div class="promo-period">
+          圣诞入金赠金活动
+          <span>活动时间：2025年11月18日–12月8日</span>
+        </div>
+        <h1 class="hero-title">
+          入金赠金<br><span>最高总额 $25,000*</span>
+        </h1>
+        <p class="hero-sub">
+          XMTrading 冬季限时优惠。交易量越多，可解锁的赠金额度越高。
+        </p>
+      </div>
+
+      <div class="hero-cta">
+        <a href="YOUR_MAIN_LP_URL_HERE" class="hero-cta-main">ボーナス詳細を見る</a>
+        <div class="hero-cta-note">
+          <a href="YOUR_MAIN_LP_URL_HERE">*Terms and conditions apply.</a>
+        </div>
+      </div>
     </div>
 
-    <div class="lang-block" id="lang-en">
-      <h1>XM Winter Promo<br><span>Up to $25,000 Bonus</span></h1>
-      <p>A special limited-time event traders are talking about.</p>
+    <div class="hero-right">
+      <img src="Tr_Bonus.png" alt="Bonus Promotion">
     </div>
 
-    <div class="lang-block" id="lang-kr">
-      <h1>XM 겨울 이벤트<br><span>최대 $25,000 보너스</span></h1>
-      <p>트레이더들이 주목하는 시즌 한정 프로모션.</p>
-    </div>
-
-    <div class="lang-block" id="lang-cn">
-      <h1>XM冬季优惠<br><span>最高 $25,000 奖金</span></h1>
-      <p>交易者热议的限时促销活动。</p>
-    </div>
-
-    <a href="YOUR_MAIN_LP_URL_HERE" class="big-cta">詳細を見る</a>
-  </div>
-
-  <!-- RIGHT IMAGE -->
-  <div class="hero-right">
-    <img src="Tr_Bonus.png" alt="bonus graphic">
-  </div>
-
-</section>
+  </section>
+</div>
 
 <!-- TRUST BADGES -->
-<section class="trust-section">
-  <div class="trust-box">
-    <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png">
-    <p>15年以上の実績</p>
+<section class="trust-area">
+  <div class="trust-box reveal">
+    <span class="trust-icon">⭐</span>
+    15年以上の運営実績
   </div>
+  <div class="trust-box reveal">
+    <span class="trust-icon">🌍</span>
+    世界中のトレーダーに利用される海外FXブランド
+  </div>
+  <div class="trust-box reveal">
+    <span class="trust-icon">⚡</span>
+    高速約定と柔軟なレバレッジ
+  </div>
+</section>
 
-  <div class="trust-box">
-    <img src="https://cdn-icons-png.flaticon.com/512/929/929416.png">
-    <p>世界累計500万人のトレーダー</p>
-  </div>
+<!-- MINI SECTIONS FOR NAV (VERY SHORT) -->
+<section id="trade" class="mini-section reveal">
+  <h2>取引について</h2>
+  <p>
+    FX、貴金属、株価指数、エネルギーなど、多様な商品を一つの口座から取引可能。
+    取引スタイルに合わせてロット数やレバレッジを柔軟に選択できます。
+  </p>
+</section>
 
-  <div class="trust-box">
-    <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png">
-    <p>高速約定・低スプレッド</p>
-  </div>
+<section id="platforms" class="mini-section reveal">
+  <h2>プラットフォーム</h2>
+  <p>
+    XMTradingでは、PC・スマホどちらからでも使いやすい取引プラットフォームを提供。
+    外出先からでもスムーズにマーケットへアクセスできます。
+  </p>
+</section>
+
+<section id="tools" class="mini-section reveal">
+  <h2>取引ツール</h2>
+  <p>
+    経済指標カレンダー、チャート分析ツール、教育コンテンツなど、
+    取引判断をサポートする各種ツールを活用できます。
+  </p>
 </section>
 
 <!-- RISK -->
 <div class="risk">
   海外FXにはリスクが伴います。必ず自己判断でご利用ください。
+  ボーナスおよびプロモーション条件は時期により変更される場合があります。
 </div>
 
 <footer>
@@ -286,12 +492,25 @@ for (let i = 0; i < 28; i++) {
 </footer>
 
 <script>
-/* LANGUAGE SWITCHING */
-document.getElementById("langSelect").addEventListener("change", function(){
-  let lang = this.value;
-  document.querySelectorAll(".lang-block").forEach(b => b.classList.remove("active"));
-  document.getElementById("lang-" + lang).classList.add("active");
-});
+  // language switching
+  const select = document.getElementById("langSelect");
+  select.addEventListener("change", () => {
+    const lang = select.value;
+    document.querySelectorAll(".lang-block").forEach(b => b.classList.remove("active"));
+    document.getElementById("lang-" + lang).classList.add("active");
+  });
+
+  // scroll reveal for trust boxes & mini sections
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll(".trust-box, .mini-section").forEach(el => observer.observe(el));
 </script>
 
 </body>
