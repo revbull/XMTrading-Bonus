@@ -215,18 +215,19 @@
       opacity: .35;
       pointer-events: none;
     }
-    /* bonus image behind text (option C) */
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-image: url("Tr_Bonus.png");
-      background-repeat: no-repeat;
-      background-position: right center;
-      background-size: min(480px, 60%);
-      opacity: 0.18;
-      pointer-events: none;
-    }
+   /* bonus image behind text (option C - huge watermark style) */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("Tr_Bonus.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: 80%;   /* huge faded background */
+  opacity: 0.15;          /* soft so text stays readable */
+  pointer-events: none;
+}
+
 
     .hero-inner {
       position: relative;
@@ -1036,3 +1037,4 @@
   </script>
 </body>
 </html>
+
