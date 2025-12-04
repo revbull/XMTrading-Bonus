@@ -3,27 +3,49 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>XMTrading クリスマスボーナス LP – Ver.B</title>
+
+  <title>XMTrading クリスマス入金ボーナス – 最大総額 $25,000</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="XMTrading クリスマス特別入金ボーナス。取引量に応じて最大総額 $25,000 を獲得。新規登録で15,000円ボーナス。">
+  <meta name="keywords" content="XMTrading, XM, FX, クリスマスボーナス, 入金ボーナス, 15,000円, 取引ボーナス, 最大25,000ドル">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (SNS share) -->
+  <meta property="og:title" content="XMTrading クリスマス入金ボーナス – 最大総額 $25,000">
+  <meta property="og:description" content="取引量に応じて毎週ボーナス枠が増加！新規登録で15,000円ボーナスもプレゼント。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="Tr_Bonus.png">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="XMTrading クリスマス入金ボーナス – 最大総額 $25,000">
+  <meta name="twitter:description" content="新規登録で15,000円ボーナス。クリスマス限定プロモーション開催中。">
+  <meta name="twitter:image" content="Tr_Bonus.png">
 
   <style>
     :root {
-      --green-dark: #0b3b29;
-      --green: #10b981;
       --red: #ef4444;
-      --gray-bg: #f5f5f5;
-      --gray-text: #6b7280;
-      --border-soft: #e5e7eb;
+      --red-dark: #b91c1c;
+      --green-dark: #064e3b;
+      --text-gray: #6b7280;
+      --soft-border: #e5e7eb;
     }
+
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Noto Sans JP", sans-serif;
-      background: #ffffff;
+      background: #fff;
       color: #111827;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     img { max-width: 100%; display: block; }
+
+    a { text-decoration: none; color: inherit; }
 
     .container {
       max-width: 1200px;
@@ -35,116 +57,170 @@
 
     .topbar {
       background: #000;
-      color: #f9fafb;
-      padding: 25px 16px;
-      font-size: 14px;
+      padding: 18px;
+      color: #fff;
     }
     .topbar-inner {
       max-width: 1200px;
-      margin: 0 auto;
+      margin: auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
     }
     .topbar-left {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
     }
     .topbar-left img {
-      height: 42px !important; /* ★ Bigger logo */
+      height: 48px; /* larger logo */
     }
-
-    .topbar-left a, .topbar-right a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 10px 16px;
+    .topbar-left a {
+      padding: 8px 14px;
       border-radius: 999px;
+      font-weight: 600;
     }
 
     /* ================= HERO ================= */
 
     .hero {
-      background: radial-gradient(circle at top left, #059669, var(--green-dark));
-      color: white;
+      background: linear-gradient(135deg, #0f766e, #064e3b);
+      color: #fff;
+      padding: 70px 16px 90px;
+      text-align: center;
       position: relative;
       overflow: hidden;
-      text-align: center;
-      padding-top: 50px;
     }
 
-    /* ★ Promotion Period moved to top-center */
     .hero-promo-top {
       font-size: 22px;
       font-weight: 700;
-      margin-bottom: 14px;
-      text-align: center;
+      margin-bottom: 18px;
       opacity: .95;
     }
 
     .hero-title {
       font-size: 60px;
       font-weight: 800;
-      margin-bottom: 10px;
       line-height: 1.2;
+      margin-bottom: 12px;
     }
 
     .hero-title span {
       display: block;
       font-size: 44px;
-      color: #fef9c3;
-    }
-
-    /* ★ Register button changed to RED */
-    .btn-primary {
-      background: #ef4444;
-      color: #ffffff;
-      padding: 14px 26px;
-      border-radius: 999px;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: 0 0 18px rgba(239,68,68,.65);
-      animation: pulseGlow 2.2s infinite ease-in-out;
-      display: inline-block;
-    }
-
-    @keyframes pulseGlow {
-      0% { box-shadow:0 0 10px rgba(239,68,68,.4); }
-      50% { box-shadow:0 0 22px rgba(239,68,68,.8); }
-      100%{ box-shadow:0 0 10px rgba(239,68,68,.4); }
+      color: #fde68a;
     }
 
     .hero-sub {
-      margin: 0 auto 24px;
-      max-width: 480px;
+      font-size: 17px;
+      max-width: 520px;
+      margin: 0 auto 26px;
+      opacity: .95;
+    }
+
+    /* CTA */
+    .btn-primary {
+      background: var(--red);
+      padding: 16px 32px;
+      border-radius: 999px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: 0 0 18px rgba(239,68,68,.55);
+      transition: background .2s;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .btn-primary:hover {
+      background: var(--red-dark);
+    }
+
+    /* IMAGE */
+    .hero-image {
+      max-width: 420px;
+      margin: 40px auto 0;
+    }
+
+    /* ================= BONUS TABLE ================= */
+
+    .section {
+      padding: 64px 16px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .section-sub {
+      font-size: 16px;
+      text-align: center;
+      color: var(--text-gray);
+      margin-bottom: 30px;
+    }
+
+    .bonus-table-wrapper {
+      max-width: 1100px;
+      margin: auto;
+      overflow-x: auto;
+    }
+
+    table.bonus-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+    }
+
+    .bonus-table thead th {
+      background: #14532d;
+      color: #fff;
+      padding: 14px;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .bonus-table td {
+      padding: 14px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 14px;
     }
 
     /* ================= RISK WARNING ================= */
 
     .risk-warning {
       max-width: 1100px;
-      margin: 40px auto 20px;
-      padding: 18px 20px;
-      font-size: 13px;
-      line-height: 1.7;
-      color: #7f1d1d;
+      margin: 40px auto 30px;
+      padding: 18px 22px;
       background: #fef2f2;
-      border-left: 4px solid #dc2626;
+      border-left: 5px solid #dc2626;
+      color: #7f1d1d;
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 680px) {
+      .hero-title { font-size: 42px; }
+      .hero-title span { font-size: 32px; }
+      .btn-primary { font-size: 16px; padding: 14px 26px; }
+      .hero-image { max-width: 360px; }
     }
 
   </style>
 </head>
 
+
+
 <body>
 
-  <!-- ========= TOP BAR ========= -->
+  <!-- ================= TOP BAR ================= -->
   <header class="topbar">
     <div class="topbar-inner">
       <div class="topbar-left">
-        <img src="ScreenshotXMTrading_logo.png" alt="Logo">
+        <img src="ScreenshotXMTrading_logo.png" alt="XMTrading ロゴ">
         <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0">ホーム</a>
         <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6">プロモーション</a>
         <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=18">サポート</a>
@@ -152,55 +228,98 @@
     </div>
   </header>
 
-  <!-- ========= HERO ========= -->
+  <!-- ================= HERO ================= -->
   <section class="hero">
 
-    <!-- ★ Promotion period moved to top center -->
+    <!-- PROMO DATES AT TOP CENTER -->
     <div class="hero-promo-top">
       プロモーション期間：2025年11月18日〜12月8日
     </div>
 
     <h1 class="hero-title">
-      入金ボーナス <br>
+      クリスマス入金ボーナス<br>
       <span>最大総額 $25,000*</span>
     </h1>
 
     <p class="hero-sub">
-      15周年を記念した特別プロモーション。取引量に応じて毎週ボーナス枠が増額されます。
-      <a href="#bonus-table" style="color:#fef9c3; text-decoration:underline;">see details below.</a>
+      年末限定の特別キャンペーン。取引量に応じてボーナス枠が毎週増額され、最大総額 $25,000 を目指せます。  
+      <a href="#bonus-details" style="color:#fde68a; text-decoration:underline;">see details below.</a>
     </p>
 
-    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="btn-primary">ボーナスを獲得</a>
+    <!-- RED CTA BUTTON -->
+    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="btn-primary">
+      無料で登録してボーナスを受け取る
+    </a>
 
-    <p style="margin-top:10px;">
-      <a href="#bonus-table" style="color:#fde68a; text-decoration:underline;">
+    <div>
+      <a href="#bonus-details" style="color:#fde68a; font-size:14px; text-decoration:underline;">
         *Terms and conditions apply.
       </a>
-    </p>
+    </div>
+
+    <div class="hero-image">
+      <img src="Tr_Bonus.png" alt="XMTrading クリスマスボーナス">
+    </div>
 
   </section>
 
-  <!-- ========= BONUS TABLE (anchor target) ========= -->
-  <section id="bonus-table" class="section section-table">
-    <div class="container">
-      <h2 style="text-align:center;">ボーナス詳細</h2>
-      <p style="text-align:center; color:#555;">
-        ※ 表は一例です。実際の条件は公式ページをご確認ください。
-      </p>
-      <!-- (Your bonus table stays unchanged) -->
+  <!-- ================= BONUS TABLE ================= -->
+  <section id="bonus-details" class="section">
+    <h2 class="section-title">取引量に応じてボーナス枠が増額</h2>
+    <p class="section-sub">毎週の取引ロット数に応じて翌週のボーナス上限が決まります。</p>
+
+    <div class="bonus-table-wrapper">
+      <table class="bonus-table">
+        <thead>
+          <tr>
+            <th>週ごとの最小取引ロット数*</th>
+            <th>ボーナス体系</th>
+            <th>週間最大ボーナス額</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>3スタンダード（300マイクロ）</td>
+            <td>$100 を100% + $250 を50%</td>
+            <td>$350</td>
+          </tr>
+          <tr>
+            <td>5スタンダード（500マイクロ）</td>
+            <td>$150 を100% + $500 を50%</td>
+            <td>$650</td>
+          </tr>
+          <tr>
+            <td>10スタンダード（1000マイクロ）</td>
+            <td>$300 を100% + $700 を50%</td>
+            <td>$1,000</td>
+          </tr>
+          <tr>
+            <td>15スタンダード（1500マイクロ）</td>
+            <td>$1,000 を100% + $2,000 を50%</td>
+            <td>$3,000</td>
+          </tr>
+          <tr>
+            <td>25スタンダード（2500マイクロ）</td>
+            <td>$2,000 を100% + $3,000 を50%</td>
+            <td>$5,000</td>
+          </tr>
+          <tr>
+            <td>50スタンダード（5000マイクロ）</td>
+            <td>$3,333 を100% + $5,000 を50%</td>
+            <td>$8,333</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
-  <!-- ========= THE REST OF YOUR PAGE (UNMODIFIED CONTENT) ========= -->
-  <!-- You can paste all your original content here (steps, FAQ, CTA, etc.). -->
-  <!-- I did not remove or break any layout. Only the requested changes were made. -->
-
-  <!-- ===== RISK WARNING AT BOTTOM (Required) ===== -->
+  <!-- ================= RISK WARNING ================= -->
   <div class="risk-warning">
-    弊社のサービスには大きなリスクが伴い、投資元舎を失う結果となる場合がございます。<br>
+    弊社のサービスには大きなリスクが伴い、投資元本を失う場合がございます。<br>
     *利用規約適用。<br>
-    リスク警告： 投資元本を失うリスクが伴います。レバレッジ商品は、全てのお客様に適しているわけではございません。<br>
-    Tradexfinのリスク開示およびFintradeのリスク開示を熟読ください。
+    リスク警告：投資元本の損失リスクがあります。レバレッジ商品はすべてのお客様に適しているとは限りません。<br>
+    Tradexfin のリスク開示および Fintrade のリスク開示を必ずご確認ください。
   </div>
 
 </body>
