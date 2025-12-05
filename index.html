@@ -15,7 +15,7 @@
       --text-soft: #e2e8f0;
     }
 
-    /* ========== RESET ========== */
+    /* RESET */
     * { box-sizing: border-box; }
     body {
       margin: 0;
@@ -28,7 +28,7 @@
     img { max-width: 100%; display: block; }
     a  { color: inherit; text-decoration: none; }
 
-    /* ========== BLACK TOP BAR (XM-STYLE, ORIGINAL) ========== */
+    /* TOP BAR */
     .header {
       background:#000;
       color:#fff;
@@ -83,7 +83,7 @@
     }
     .top-cta:hover { background:var(--red-dark); }
 
-    /* ========== HERO ========== */
+    /* HERO */
     .hero-wrap {
       background:linear-gradient(to bottom, #0f5132, #064e3b);
       position:relative;
@@ -101,19 +101,7 @@
       z-index:1;
     }
 
-    /* snow overlay texture (very subtle) */
-    .hero-wrap::before {
-      content:"";
-      position:absolute;
-      inset:0;
-      background-image:
-        radial-gradient(circle at 10% 20%, rgba(255,255,255,.06) 0, transparent 55%),
-        radial-gradient(circle at 80% 60%, rgba(255,255,255,.08) 0, transparent 55%);
-      opacity:.5;
-      pointer-events:none;
-    }
-
-    /* floating glow lights */
+    /* glow */
     .glow {
       position:absolute;
       width:160px;
@@ -145,7 +133,6 @@
       letter-spacing:.18em;
       text-transform:uppercase;
       opacity:.9;
-      text-align:left;
       margin-bottom:10px;
     }
     .promo-period span {
@@ -214,7 +201,7 @@
       to { opacity:1; transform:translateX(0); }
     }
 
-    /* ========== TRUST BADGES ========== */
+    /* TRUST */
     .trust-area {
       max-width:950px;
       margin:40px auto 10px;
@@ -248,7 +235,7 @@
       display:block;
     }
 
-    /* ========== SMALL SECTIONS FOR NAV (MINIMAL TEXT) ========== */
+    /* MINI SECTIONS */
     .mini-section {
       max-width:900px;
       margin:40px auto 0;
@@ -269,25 +256,7 @@
       color:var(--gold);
     }
 
-    /* ========== RISK / FOOTER ========== */
-    .risk {
-      max-width:900px;
-      margin:40px auto 0;
-      padding:16px 18px;
-      background:rgba(220,38,38,.12);
-      border-radius:6px;
-      border-left:4px solid var(--red);
-      font-size:13px;
-      color:#fee2e2;
-    }
-    footer {
-      text-align:center;
-      color:#cbd5e1;
-      font-size:13px;
-      padding:28px 0 38px;
-    }
-
-    /* ========== SNOWFLAKES ========== */
+    /* SNOWFLAKES */
     .snowflake {
       position:fixed;
       top:-10px;
@@ -303,30 +272,107 @@
       100% { transform:translateY(110vh) translateX(25px); opacity:0; }
     }
 
-    /* ========== LANGUAGE BLOCKS ========== */
+    /* MULTI LANGUAGE */
     .lang-block { display:none; }
     .lang-block.active { display:block; }
 
-    /* ========== RESPONSIVE ========== */
-    @media (max-width: 900px) {
-      .hero {
-        flex-direction:column;
-        text-align:center;
-      }
-      .hero-left { align-items:center; margin:0 auto; }
-      .hero-cta { text-align:center; }
-      .hero-right { justify-content:center; }
-      .promo-period { text-align:center; }
-      .header { flex-wrap:wrap; gap:10px; }
-      .header-left { flex-wrap:wrap; gap:10px; }
-      .main-nav { flex-wrap:wrap; justify-content:flex-start; }
+    /* RISK */
+    .risk {
+      max-width:900px;
+      margin:40px auto 0;
+      padding:16px 18px;
+      background:rgba(220,38,38,.12);
+      border-radius:6px;
+      border-left:4px solid var(--red);
+      font-size:13px;
+      color:#fee2e2;
     }
+
+    footer {
+      text-align:center;
+      color:#cbd5e1;
+      font-size:13px;
+      padding:28px 0 38px;
+    }
+
+    /* BOTTOM FALLING CTA */
+    #bottomCta {
+      position: fixed;
+      bottom: -120px;
+      left: 0;
+      width: 100%;
+      background: #111;
+      color: #fff;
+      padding: 14px 12px;
+      box-shadow: 0 -1px 4px rgba(0,0,0,0.4);
+      transition: bottom .45s ease-out;
+      z-index: 9999;
+    }
+    #bottomCta.show {
+      bottom: 0;
+    }
+    .bottomCta-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 4px 0;
+    }
+
+    .bottomCta-text {
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.45;
+      flex: 1;
+      opacity: .95;
+    }
+
+    .bottomCta-btn {
+      background: #22c55e;
+      color: #000;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .bottomCta-btn:hover {
+      background: #16a34a;
+    }
+
+    .bottomCta-close {
+      background: none;
+      border: none;
+      color: #ccc;
+      font-size: 20px;
+      cursor: pointer;
+      padding: 4px 8px;
+    }
+    .bottomCta-close:hover { color: #fff; }
+
+    @media (max-width: 700px) {
+      .bottomCta-inner {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .bottomCta-text {
+        font-size: 13px;
+      }
+      .bottomCta-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
-<!-- SNOWFLAKES -->
+<!-- Snowflakes -->
 <script>
 for (let i = 0; i < 28; i++) {
   const flake = document.createElement("div");
@@ -355,7 +401,7 @@ for (let i = 0; i < 28; i++) {
       <option value="kr">한국어</option>
       <option value="cn">中文</option>
     </select>
-    <a href="YOUR_MAIN_LP_URL_HERE" class="top-cta">ボーナス詳細へ</a>
+    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" class="top-cta">口座開設</a>
   </div>
 </header>
 
@@ -368,7 +414,7 @@ for (let i = 0; i < 28; i++) {
 
     <div class="hero-left">
 
-      <!-- JA -->
+      <!-- JP -->
       <div class="lang-block active" id="lang-ja">
         <div class="promo-period">
           クリスマス入金ボーナスキャンペーン
@@ -393,7 +439,7 @@ for (let i = 0; i < 28; i++) {
           Deposit Bonus<br><span>Up to $25,000*</span>
         </h1>
         <p class="hero-sub">
-          A limited-time winter promotion from XMTrading. The more you trade, the more bonus room you can unlock.
+          A limited-time winter promotion from XMTrading. The more you trade, the more bonus room you unlock.
         </p>
       </div>
 
@@ -407,7 +453,7 @@ for (let i = 0; i < 28; i++) {
           입금 보너스<br><span>최대 총 $25,000*</span>
         </h1>
         <p class="hero-sub">
-          XMTrading의 겨울 한정 프로모션입니다. 거래량에 따라 보너스 한도가 커집니다.
+          XMTrading의 겨울 한정 프로모션입니다. 거래량에 따라 보너스 한도가 증가합니다.
         </p>
       </div>
 
@@ -421,14 +467,14 @@ for (let i = 0; i < 28; i++) {
           入金赠金<br><span>最高总额 $25,000*</span>
         </h1>
         <p class="hero-sub">
-          XMTrading 冬季限时优惠。交易量越多，可解锁的赠金额度越高。
+          XMTrading 冬季限时优惠。交易越多，赠金额度越高。
         </p>
       </div>
 
       <div class="hero-cta">
-        <a href="YOUR_MAIN_LP_URL_HERE" class="hero-cta-main">ボーナス詳細を見る</a>
+        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" class="hero-cta-main">ボーナス詳細を見る</a>
         <div class="hero-cta-note">
-          <a href="YOUR_MAIN_LP_URL_HERE">*Terms and conditions apply.</a>
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6">*利用規約適用。</a>
         </div>
       </div>
     </div>
@@ -440,67 +486,72 @@ for (let i = 0; i < 28; i++) {
   </section>
 </div>
 
-<!-- TRUST BADGES -->
+<!-- TRUST -->
 <section class="trust-area">
   <div class="trust-box reveal">
     <span class="trust-icon">⭐</span>
-    15年以上の運営実績
+    15年以上の実績
   </div>
   <div class="trust-box reveal">
     <span class="trust-icon">🌍</span>
-    世界中のトレーダーに利用される海外FXブランド
+    世界500万人のトレーダーが利用
   </div>
   <div class="trust-box reveal">
     <span class="trust-icon">⚡</span>
-    高速約定と柔軟なレバレッジ
+    高速約定・低コスト
   </div>
 </section>
 
-<!-- MINI SECTIONS FOR NAV (VERY SHORT) -->
+<!-- MINI SECTIONS -->
 <section id="trade" class="mini-section reveal">
   <h2>取引について</h2>
-  <p>
-    FX、貴金属、株価指数、エネルギーなど、多様な商品を一つの口座から取引可能。
-    取引スタイルに合わせてロット数やレバレッジを柔軟に選択できます。
-  </p>
+  <p>FX、貴金属、指数など多様な商品を取引できます。</p>
 </section>
 
 <section id="platforms" class="mini-section reveal">
   <h2>プラットフォーム</h2>
-  <p>
-    XMTradingでは、PC・スマホどちらからでも使いやすい取引プラットフォームを提供。
-    外出先からでもスムーズにマーケットへアクセスできます。
-  </p>
+  <p>PC・スマホのどちらからでもスムーズな取引が可能です。</p>
 </section>
 
 <section id="tools" class="mini-section reveal">
   <h2>取引ツール</h2>
-  <p>
-    経済指標カレンダー、チャート分析ツール、教育コンテンツなど、
-    取引判断をサポートする各種ツールを活用できます。
-  </p>
+  <p>経済カレンダー、チャート分析、教育動画などが利用できます。</p>
 </section>
 
 <!-- RISK -->
 <div class="risk">
   海外FXにはリスクが伴います。必ず自己判断でご利用ください。
-  ボーナスおよびプロモーション条件は時期により変更される場合があります。
 </div>
 
 <footer>
   © 2025 XM Trading – Affiliate Pre-lander Page
 </footer>
 
+<!-- BOTTOM FALLING CTA -->
+<div id="bottomCta">
+  <div class="bottomCta-inner">
+
+    <div class="bottomCta-text">
+      ¥15000の取引ボーナスでFX、仮想通貨CFDなどを取引しよう。入金不要。（利用規約適用）
+    </div>
+
+    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" class="bottomCta-btn">
+      こちらから口座開設 ▶
+    </a>
+
+    <button class="bottomCta-close">✕</button>
+  </div>
+</div>
+
 <script>
-  // language switching
-  const select = document.getElementById("langSelect");
-  select.addEventListener("change", () => {
-    const lang = select.value;
+  // Language switching
+  document.getElementById("langSelect").addEventListener("change", function(){
+    const lang = this.value;
     document.querySelectorAll(".lang-block").forEach(b => b.classList.remove("active"));
     document.getElementById("lang-" + lang).classList.add("active");
   });
 
-  // scroll reveal for trust boxes & mini sections
+  // Reveal on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -511,6 +562,20 @@ for (let i = 0; i < 28; i++) {
   }, { threshold: 0.2 });
 
   document.querySelectorAll(".trust-box, .mini-section").forEach(el => observer.observe(el));
+
+  // Bottom CTA show after scroll
+  let ctaShown = false;
+  window.addEventListener("scroll", () => {
+    if (!ctaShown && window.scrollY > 300) {
+      document.getElementById("bottomCta").classList.add("show");
+      ctaShown = true;
+    }
+  });
+
+  // Close button
+  document.querySelector(".bottomCta-close").addEventListener("click", () => {
+    document.getElementById("bottomCta").style.display = "none";
+  });
 </script>
 
 </body>
