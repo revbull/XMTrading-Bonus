@@ -13,6 +13,8 @@
       --green-hero: #0f5132;
       --gold: #fef9c3;
       --text-soft: #e2e8f0;
+
+      --gold-gradient: linear-gradient(90deg, #fef7c3 0%, #f9e26b 40%, #f7d147 60%, #fff6ce 100%);
     }
 
     /* RESET */
@@ -27,6 +29,7 @@
     }
     img { max-width: 100%; display: block; }
     a  { color: inherit; text-decoration: none; }
+
 
     /* TOP BAR */
     .header {
@@ -82,6 +85,7 @@
       box-shadow:0 0 10px rgba(239,68,68,.7);
     }
     .top-cta:hover { background:var(--red-dark); }
+
 
     /* HERO */
     .hero-wrap {
@@ -201,10 +205,75 @@
       to { opacity:1; transform:translateX(0); }
     }
 
-    /* TRUST */
+
+    /* TRUST SECTION — enhanced title */
+    .trust-title-wrap {
+      width:100%;
+      position:relative;
+      text-align:center;
+      margin-bottom:40px;
+      padding:30px 0;
+      opacity:0;
+      animation:fadeInUp 1.2s ease forwards;
+    }
+
+    .trust-title {
+      font-size:32px;
+      font-weight:900;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: 0.05em;
+      position:relative;
+      z-index:2;
+      text-shadow: 0 0 6px rgba(255,255,200,0.4);
+    }
+
+    /* snowfall background behind title */
+    .snow-bg {
+      position:absolute;
+      inset:0;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><text x='0' y='32' font-size='32' opacity='0.45'>❄</text></svg>");
+      background-size: 60px 60px;
+      background-repeat: repeat;
+      opacity: 0.25;
+      animation: snowDrift 18s linear infinite;
+      filter: blur(1px);
+    }
+
+    @keyframes snowDrift {
+      0%   { transform: translateY(0) translateX(0); }
+      100% { transform: translateY(40px) translateX(20px); }
+    }
+
+    /* sparkles */
+    .sparkle {
+      position:absolute;
+      width:8px;
+      height:8px;
+      background: radial-gradient(circle, #fff, transparent);
+      border-radius:50%;
+      animation: sparkleFloat 6s infinite ease-in-out;
+      opacity:.9;
+      pointer-events:none;
+    }
+
+    .sparkle.s1 { top:12px; left:50%; animation-delay:0s; }
+    .sparkle.s2 { top:40px; left:45%; animation-delay:1.5s; }
+    .sparkle.s3 { top:20px; left:55%; animation-delay:3s; }
+
+    @keyframes sparkleFloat {
+      0%   { transform:scale(0.4) translateY(0); opacity:.5; }
+      50%  { transform:scale(1) translateY(-10px); opacity:1; }
+      100% { transform:scale(0.4) translateY(0); opacity:.5; }
+    }
+
+
+    /* TRUST BOXES */
     .trust-area {
       max-width:950px;
-      margin:40px auto 10px;
+      margin:60px auto 10px;
       padding:0 20px;
       display:flex;
       flex-wrap:wrap;
@@ -235,6 +304,7 @@
       display:block;
     }
 
+
     /* MINI SECTIONS */
     .mini-section {
       max-width:900px;
@@ -256,6 +326,7 @@
       color:var(--gold);
     }
 
+
     /* SNOWFLAKES */
     .snowflake {
       position:fixed;
@@ -263,7 +334,7 @@
       color:#fff;
       font-size:12px;
       animation:fall linear infinite;
-      opacity:0.9;
+      opacity:0.7;
       pointer-events:none;
       z-index:0;
     }
@@ -272,9 +343,11 @@
       100% { transform:translateY(110vh) translateX(25px); opacity:0; }
     }
 
+
     /* MULTI LANGUAGE */
     .lang-block { display:none; }
     .lang-block.active { display:block; }
+
 
     /* RISK */
     .risk {
@@ -295,7 +368,8 @@
       padding:28px 0 38px;
     }
 
-    /* BOTTOM FALLING CTA */
+
+    /* BOTTOM CTA */
     #bottomCta {
       position: fixed;
       bottom: -120px;
@@ -372,7 +446,6 @@
 
 <body>
 
-<!-- Snowflakes -->
 <script>
 for (let i = 0; i < 28; i++) {
   const flake = document.createElement("div");
@@ -384,7 +457,6 @@ for (let i = 0; i < 28; i++) {
 }
 </script>
 
-<!-- HEADER -->
 <header class="header">
   <div class="header-left">
     <img src="ScreenshotXMTrading_logo.png" alt="XMTrading" class="header-logo">
@@ -405,7 +477,6 @@ for (let i = 0; i < 28; i++) {
   </div>
 </header>
 
-<!-- HERO -->
 <div class="hero-wrap">
   <div class="glow g1"></div>
   <div class="glow g2"></div>
@@ -414,7 +485,6 @@ for (let i = 0; i < 28; i++) {
 
     <div class="hero-left">
 
-      <!-- JP -->
       <div class="lang-block active" id="lang-ja">
         <div class="promo-period">
           クリスマス入金ボーナスキャンペーン
@@ -424,12 +494,10 @@ for (let i = 0; i < 28; i++) {
           入金ボーナス<br><span>最大総額 $25,000*</span>
         </h1>
         <p class="hero-sub">
-          XMTradingの冬限定プロモーション。取引量に応じてボーナス枠が拡大し、
-          トレーダーから高い注目を集めています。
+          XMTradingの冬限定プロモーション。取引量に応じてボーナス枠が拡大します。
         </p>
       </div>
 
-      <!-- EN -->
       <div class="lang-block" id="lang-en">
         <div class="promo-period">
           Christmas Deposit Bonus
@@ -439,35 +507,33 @@ for (let i = 0; i < 28; i++) {
           Deposit Bonus<br><span>Up to $25,000*</span>
         </h1>
         <p class="hero-sub">
-          A limited-time winter promotion from XMTrading. The more you trade, the more bonus room you unlock.
+          A limited-time winter promotion from XMTrading.
         </p>
       </div>
 
-      <!-- KR -->
       <div class="lang-block" id="lang-kr">
         <div class="promo-period">
           크리스마스 입금 보너스 이벤트
-          <span>프로모션 기간: 2025년 11월 18일 ~ 12월 8일</span>
+          <span>11월 18일 ~ 12월 8일</span>
         </div>
         <h1 class="hero-title">
           입금 보너스<br><span>최대 총 $25,000*</span>
         </h1>
         <p class="hero-sub">
-          XMTrading의 겨울 한정 프로모션입니다. 거래량에 따라 보너스 한도가 증가합니다.
+          XMTrading 겨울 시즌 한정 혜택입니다.
         </p>
       </div>
 
-      <!-- CN -->
       <div class="lang-block" id="lang-cn">
         <div class="promo-period">
           圣诞入金赠金活动
-          <span>活动时间：2025年11月18日–12月8日</span>
+          <span>2025年11月18日–12月8日</span>
         </div>
         <h1 class="hero-title">
           入金赠金<br><span>最高总额 $25,000*</span>
         </h1>
         <p class="hero-sub">
-          XMTrading 冬季限时优惠。交易越多，赠金额度越高。
+          XMTrading 冬季限时优惠。
         </p>
       </div>
 
@@ -477,48 +543,57 @@ for (let i = 0; i < 28; i++) {
           <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6">*利用規約適用。</a>
         </div>
       </div>
+
     </div>
 
     <div class="hero-right">
-      <img src="ScreenshotXMTrading_img1.png" alt="Bonus Promotion">
+      <img src="Tr_Bonus.png" alt="Bonus Promotion">
     </div>
 
   </section>
 </div>
 
-<!-- TRUST -->
+<!-- TRUST SECTION -->
+<div class="trust-title-wrap">
+  <h2 class="trust-title">クリスマス入金ボーナスキャンペーン</h2>
+
+  <div class="snow-bg"></div>
+
+  <div class="sparkle s1"></div>
+  <div class="sparkle s2"></div>
+  <div class="sparkle s3"></div>
+</div>
+
 <section class="trust-area">
-  <div class="trust-box reveal">
+  <div class="trust-box">
     <span class="trust-icon">⭐</span>
     15年以上の実績
   </div>
-  <div class="trust-box reveal">
+  <div class="trust-box">
     <span class="trust-icon">🌍</span>
-    世界500万人のトレーダーが利用
+    世界500万人以上が利用
   </div>
-  <div class="trust-box reveal">
+  <div class="trust-box">
     <span class="trust-icon">⚡</span>
-    高速約定・低コスト
+    高速約定と低スプレッド
   </div>
 </section>
 
-<!-- MINI SECTIONS -->
-<section id="trade" class="mini-section reveal">
+<section id="trade" class="mini-section">
   <h2>取引について</h2>
   <p>FX、貴金属、指数など多様な商品を取引できます。</p>
 </section>
 
-<section id="platforms" class="mini-section reveal">
+<section id="platforms" class="mini-section">
   <h2>プラットフォーム</h2>
-  <p>PC・スマホのどちらからでもスムーズな取引が可能です。</p>
+  <p>PCとスマホのどちらからでもスムーズに市場へアクセス可能。</p>
 </section>
 
-<section id="tools" class="mini-section reveal">
+<section id="tools" class="mini-section">
   <h2>取引ツール</h2>
-  <p>経済カレンダー、チャート分析、教育動画などが利用できます。</p>
+  <p>分析ツール、経済カレンダー、学習素材などが充実。</p>
 </section>
 
-<!-- RISK -->
 <div class="risk">
   海外FXにはリスクが伴います。必ず自己判断でご利用ください。
 </div>
@@ -527,7 +602,7 @@ for (let i = 0; i < 28; i++) {
   © 2025 XM Trading – Affiliate Pre-lander Page
 </footer>
 
-<!-- BOTTOM FALLING CTA -->
+<!-- BOTTOM CTA -->
 <div id="bottomCta">
   <div class="bottomCta-inner">
 
@@ -540,6 +615,7 @@ for (let i = 0; i < 28; i++) {
     </a>
 
     <button class="bottomCta-close">✕</button>
+
   </div>
 </div>
 
@@ -551,7 +627,7 @@ for (let i = 0; i < 28; i++) {
     document.getElementById("lang-" + lang).classList.add("active");
   });
 
-  // Reveal on scroll
+  // reveal on scroll
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -563,7 +639,7 @@ for (let i = 0; i < 28; i++) {
 
   document.querySelectorAll(".trust-box, .mini-section").forEach(el => observer.observe(el));
 
-  // Bottom CTA show after scroll
+  // Bottom CTA slide in
   let ctaShown = false;
   window.addEventListener("scroll", () => {
     if (!ctaShown && window.scrollY > 300) {
@@ -572,7 +648,7 @@ for (let i = 0; i < 28; i++) {
     }
   });
 
-  // Close button
+  // Close CTA
   document.querySelector(".bottomCta-close").addEventListener("click", () => {
     document.getElementById("bottomCta").style.display = "none";
   });
@@ -580,4 +656,3 @@ for (let i = 0; i < 28; i++) {
 
 </body>
 </html>
-
