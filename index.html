@@ -98,28 +98,31 @@
 
 
     /* HERO */
-   .hero-wrap{
+  .hero-wrap{
   position:relative;
   background:url("hero.webp") center/cover no-repeat;
 }
+
 .hero-wrap::after{
   content:"";
   position:absolute;
   inset:0;
   background:rgba(8,15,30,.55);
   pointer-events:none;
+  z-index:0; /* 🔑 overlay е под текста */
 }
-    .hero {
-      max-width:1200px;
-      margin:0 auto;
-      padding:60px 24px 70px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:30px;
-      position:relative;
-      z-index:2;
-    }
+
+.hero{
+  max-width:1200px;
+  margin:0 auto;
+  padding:60px 24px 70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:30px;
+  position:relative;
+  z-index:1; /* 🔑 съдържанието е над overlay */
+}
 
     .hero-left,
     .hero-right { flex:1 1 50%; }
@@ -223,7 +226,7 @@
       text-align:center;
       margin-bottom:40px;
       padding:30px 0;
-      opacity:0;
+      opacity:1;
     }
 
   .trust-title {
@@ -417,7 +420,7 @@
       <option value="kr">한국어</option>
       <option value="cn">中文</option>
     </select>
-    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" class="top-cta">口座開設</a>
+    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" class="top-cta" target="_blank" rel="noopener noreferrer">口座開設</a>
   </div>
 </header>
 
@@ -480,9 +483,11 @@
       </div>
 
       <div class="hero-cta">
-        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" class="hero-cta-main">ボーナス詳細を見る</a>
+        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" class="hero-cta-main target="_blank" rel="noopener noreferrer">ボーナス詳細を見る</a>
+       
+        
         <div class="hero-cta-note">
-          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6">*利用規約適用。</a>
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" target="_blank" rel="noopener noreferrer">*利用規約適用。</a>
         </div>
       </div>
 
@@ -550,7 +555,7 @@
       ¥15000の取引ボーナスでFX、仮想通貨CFDなどを取引しよう。入金不要。（利用規約適用）
     </div>
 
-    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" class="bottomCta-btn">
+    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" class="bottomCta-btn"target="_blank" rel="noopener noreferrer">
       こちらから口座開設 ▶
     </a>
 
@@ -596,6 +601,7 @@
 
 </body>
 </html>
+
 
 
 
