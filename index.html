@@ -98,11 +98,17 @@
 
 
     /* HERO */
-    .hero-wrap {
-      background:linear-gradient(to bottom, #0f5132, #064e3b);
-      position:relative;
-      overflow:hidden;
-    }
+   .hero-wrap{
+  position:relative;
+  background:url("hero.webp") center/cover no-repeat;
+}
+.hero-wrap::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(8,15,30,.55);
+  pointer-events:none;
+}
     .hero {
       max-width:1200px;
       margin:0 auto;
@@ -112,25 +118,7 @@
       justify-content:space-between;
       gap:30px;
       position:relative;
-      z-index:1;
-    }
-
-    /* glow */
-    .glow {
-      position:absolute;
-      width:160px;
-      height:160px;
-      background:radial-gradient(circle, rgba(255,255,255,.22), transparent 70%);
-      filter:blur(18px);
-      animation:glowmove 14s infinite alternate ease-in-out;
-      pointer-events:none;
-    }
-    .glow.g1 { top:40px; left:-40px; }
-    .glow.g2 { bottom:-40px; right:-20px; animation-delay:2s; }
-
-    @keyframes glowmove {
-      from { transform:translate(0,0); }
-      to   { transform:translate(60px,40px); }
+      z-index:2;
     }
 
     .hero-left,
@@ -195,25 +183,30 @@
       text-decoration:underline;
     }
 
-    .hero-right {
-      display:flex;
-      justify-content:flex-end;
-      opacity:0;
-      transform:translateX(40px);
-      animation:slideIn 1.6s ease forwards;
-      animation-delay:.2s;
-    }
+   .hero-right {
+  display:flex;
+  justify-content:flex-end;
+  opacity:0;
+  animation:fadeInUp 1.2s ease forwards;
+  animation-delay:.2s;
+}
+
     .hero-right img {
       max-width:500px;
       border-radius:10px;
     }
+    
+    @media(max-width:900px){
+  .hero-right img{
+    max-width:280px;
+  }
+}
+
 
     @keyframes fadeInUp {
       to { opacity:1; transform:translateY(0); }
     }
-    @keyframes slideIn {
-      to { opacity:1; transform:translateX(0); }
-    }
+   
 
 
     /* TRUST SECTION — enhanced title */
@@ -224,60 +217,14 @@
       margin-bottom:40px;
       padding:30px 0;
       opacity:0;
-      animation:fadeInUp 1.2s ease forwards;
     }
 
-    .trust-title {
-      font-size:22px;
-      font-weight:900;
-      background: var(--gold-gradient);
-      -webkit-background-clip: text;
-      color: transparent;
-      letter-spacing: 0.05em;
-      position:relative;
-      z-index:2;
-      text-shadow: 0 0 6px rgba(255,255,200,0.4);
-    }
-
-    /* snowfall background behind title */
-    .snow-bg {
-      position:absolute;
-      inset:0;
-      background-image:
-        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><text x='0' y='32' font-size='32' opacity='0.45'>❄</text></svg>");
-      background-size: 60px 60px;
-      background-repeat: repeat;
-      opacity: 0.25;
-      animation: snowDrift 18s linear infinite;
-      filter: blur(1px);
-    }
-
-    @keyframes snowDrift {
-      0%   { transform: translateY(0) translateX(0); }
-      100% { transform: translateY(40px) translateX(20px); }
-    }
-
-    /* sparkles */
-    .sparkle {
-      position:absolute;
-      width:8px;
-      height:8px;
-      background: radial-gradient(circle, #fff, transparent);
-      border-radius:50%;
-      animation: sparkleFloat 6s infinite ease-in-out;
-      opacity:.9;
-      pointer-events:none;
-    }
-
-    .sparkle.s1 { top:12px; left:50%; animation-delay:0s; }
-    .sparkle.s2 { top:40px; left:45%; animation-delay:1.5s; }
-    .sparkle.s3 { top:20px; left:55%; animation-delay:3s; }
-
-    @keyframes sparkleFloat {
-      0%   { transform:scale(0.4) translateY(0); opacity:.5; }
-      50%  { transform:scale(1) translateY(-10px); opacity:1; }
-      100% { transform:scale(0.4) translateY(0); opacity:.5; }
-    }
+  .trust-title {
+  font-size:20px;
+  font-weight:700;
+  color:#e5e7eb;
+  letter-spacing:0.06em;
+}
 
 
     /* TRUST BOXES */
@@ -334,23 +281,6 @@
       font-size:18px;
       margin-bottom:6px;
       color:var(--gold);
-    }
-
-
-    /* SNOWFLAKES */
-    .snowflake {
-      position:fixed;
-      top:-10px;
-      color:#fff;
-      font-size:12px;
-      animation:fall linear infinite;
-      opacity:0.7;
-      pointer-events:none;
-      z-index:0;
-    }
-    @keyframes fall {
-      0% { transform:translateY(-10px) translateX(0); opacity:1; }
-      100% { transform:translateY(110vh) translateX(25px); opacity:0; }
     }
 
 
@@ -455,17 +385,6 @@
 </head>
 
 <body>
-
-<script>
-for (let i = 0; i < 28; i++) {
-  const flake = document.createElement("div");
-  flake.className = "snowflake";
-  flake.textContent = "❄";
-  flake.style.left = Math.random()*100 + "vw";
-  flake.style.animationDuration = (6 + Math.random()*6) + "s";
-  document.body.appendChild(flake);
-}
-</script>
 
 <header class="header">
   <div class="header-left">
@@ -669,6 +588,7 @@ for (let i = 0; i < 28; i++) {
 
 </body>
 </html>
+
 
 
 
