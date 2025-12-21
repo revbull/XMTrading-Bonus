@@ -130,6 +130,13 @@
       transform:translateY(20px);
       animation:fadeInUp 1.2s ease forwards;
     }
+    .hero-wrap{
+  pointer-events:none;
+}
+.hero{
+  pointer-events:auto;
+}
+
     .promo-period {
       font-size:16px;
       letter-spacing:.18em;
@@ -367,6 +374,14 @@
     }
     .bottomCta-close:hover { color: #fff; }
 
+    #bottomCta{
+  pointer-events:auto;
+}
+#bottomCta.show ~ *{
+  pointer-events:auto;
+}
+
+
     @media (max-width: 700px) {
       .bottomCta-inner {
         flex-direction: column;
@@ -407,8 +422,6 @@
 </header>
 
 <div class="hero-wrap">
-  <div class="glow g1"></div>
-  <div class="glow g2"></div>
 
   <section class="hero">
 
@@ -484,16 +497,11 @@
 
 <!-- TRUST SECTION -->
 <div class="trust-title-wrap">
-  <h2 class="trust-title">XMTradingで他のボーナスを獲得することはできますか？
+  <h2 class="trust-title">XMTradingで他のボーナスを獲得することはできますか？</h2>
+  <p class="trust-desc">
+はい、新規のお客様は登録後に¥15,000の口座開設ボーナス*をお受け取りいただけます。既存のお客様も、対象となる他のボーナスを獲得いただくことが可能です。既存の入金ボーナスプログラムは、本プロモーションの期間限定入金ボーナスを全額ご獲得後に適用されます。</p>
 
-
-はい、新規のお客様は登録後に¥15,000の口座開設ボーナス*をお受け取りいただけます。既存のお客様も、対象となる他のボーナスを獲得いただくことが可能です。既存の入金ボーナスプログラムは、本プロモーションの期間限定入金ボーナスを全額ご獲得後に適用されます。</h2>
-
-  <div class="snow-bg"></div>
-
-  <div class="sparkle s1"></div>
-  <div class="sparkle s2"></div>
-  <div class="sparkle s3"></div>
+ 
 </div>
 
 <section class="trust-area">
@@ -588,6 +596,7 @@
 
 </body>
 </html>
+
 
 
 
