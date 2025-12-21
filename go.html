@@ -61,6 +61,24 @@
       opacity:.8;
     }
   </style>
+  <script>
+    const LINKS = {
+      "0": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=0",
+      "1": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=1",
+      "2": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=2",
+      "6": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=6",
+      "18": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=18",
+      "22": "https://clicks.affstrack.com/c?c=1120254&l=ja&p=22"
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const p = params.get("p") || "6";
+
+    const target = LINKS[p] || LINKS["6"];
+
+    window.location.replace(target);
+  </script>
+  
 </head>
 
 <body>
@@ -72,10 +90,7 @@
       獲得チャンス！
     </p>
 
-    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6">
-      今すぐ口座を開設して参加する
-    </a>
-
+    
     <div class="note">
       自動的に移動します…
     </div>
