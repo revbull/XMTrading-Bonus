@@ -18,9 +18,9 @@
   <style>
     /* ベーススタイル */
     :root {
-      --primary: #006747; /* 深緑 - 信頼と安定 */
-      --secondary: #D4AF37; /* ゴールド - 豊かさと成功 */
-      --accent: #C8102E; /* 赤 - 緊急性と興奮 */
+      --primary: #006747;
+      --secondary: #D4AF37;
+      --accent: #C8102E;
       --light: #F5F5F5;
       --dark: #1A1A1A;
       --gray: #6B7280;
@@ -33,6 +33,7 @@
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Noto Sans JP', 'Inter', sans-serif;
       line-height: 1.7;
@@ -40,6 +41,7 @@
       background-color: #ffffff;
       overflow-x: hidden;
     }
+
     .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     section { padding: 80px 0; }
 
@@ -64,10 +66,11 @@
     h3 { font-size: 1.8rem; }
 
     p { margin-bottom: 1.5rem; font-size: 1.1rem; color: #444; }
+
     .text-center { text-align: center; }
     .text-center h2:after { left: 50%; transform: translateX(-50%); }
 
-    /* ボタンスタイル */
+    /* ボタン */
     .btn {
       display: inline-block;
       padding: 18px 42px;
@@ -87,10 +90,8 @@
     .btn:before {
       content: '';
       position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
       background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
       transition: left 0.7s ease;
       z-index: -1;
@@ -99,10 +100,13 @@
 
     .btn-primary { background: linear-gradient(135deg, var(--secondary), #E8C547); color: var(--dark); }
     .btn-primary:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(212, 175, 55, 0.4); }
+
     .btn-secondary { background-color: var(--primary); color: white; }
     .btn-secondary:hover { background-color: #00563a; transform: translateY(-5px); }
+
     .btn-accent { background-color: var(--accent); color: white; }
     .btn-accent:hover { background-color: #b00e29; transform: translateY(-5px); }
+
     .btn-large { padding: 22px 50px; font-size: 1.3rem; }
 
     /* ヘッダー */
@@ -118,7 +122,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: relative; /* mobile menu button positioning */
+      position: relative;
     }
     .logo {
       display: flex;
@@ -144,10 +148,8 @@
     nav a:after {
       content: '';
       position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
+      bottom: -5px; left: 0;
+      width: 0; height: 2px;
       background-color: var(--secondary);
       transition: width 0.3s ease;
     }
@@ -163,7 +165,7 @@
       cursor: pointer;
     }
 
-    /* ヒーローセクション */
+    /* ヒーロー */
     .hero {
       background:
         linear-gradient(rgba(0, 40, 30, 0.85), rgba(0, 40, 30, 0.9)),
@@ -210,28 +212,7 @@
       100% { transform: scale(1); box-shadow: 0 10px 25px rgba(200, 16, 46, 0.4); }
     }
 
-    .countdown {
-      background-color: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-      padding: 25px;
-      max-width: 600px;
-      margin-top: 40px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-    .countdown h3 { color: white; margin-bottom: 20px; font-size: 1.5rem; }
-    .countdown-timer { display: flex; justify-content: space-between; max-width: 500px; }
-    .countdown-item {
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.2);
-      border-radius: 10px;
-      padding: 15px 10px;
-      min-width: 100px;
-    }
-    .countdown-number { font-size: 2.5rem; font-weight: 900; color: white; line-height: 1; }
-    .countdown-label { font-size: 0.9rem; color: rgba(255, 255, 255, 0.9); margin-top: 5px; }
-
-    /* 特長セクション */
+    /* 特長 */
     .features { background-color: var(--light); }
     .features-grid {
       display: grid;
@@ -252,7 +233,7 @@
     .feature-icon { font-size: 3.5rem; color: var(--primary); margin-bottom: 25px; }
     .feature-card h3 { font-size: 1.6rem; margin-bottom: 15px; color: var(--dark); }
 
-    /* ボーナス詳細セクション */
+    /* ボーナス詳細 */
     .bonus-details { background-color: white; }
     .bonus-container {
       display: grid;
@@ -265,6 +246,7 @@
     .bonus-amount span { color: var(--secondary); font-size: 6rem; }
     .bonus-subtitle { font-size: 1.5rem; color: var(--gray); margin-bottom: 30px; }
     .bonus-image { max-width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-lg); }
+
     .bonus-steps { display: flex; flex-direction: column; gap: 30px; }
     .step { display: flex; align-items: flex-start; gap: 20px; }
     .step-number {
@@ -279,7 +261,7 @@
     }
     .step-content h4 { font-size: 1.4rem; margin-bottom: 10px; color: var(--dark); }
 
-    /* プログラム紹介セクション */
+    /* プログラム */
     .programs { background-color: var(--light); }
     .programs-grid {
       display: grid;
@@ -307,7 +289,7 @@
     .program-body li { margin-bottom: 12px; padding-left: 30px; position: relative; }
     .program-body li:before { content: '✓'; position: absolute; left: 0; color: var(--secondary); font-weight: bold; }
 
-    /* CTAセクション */
+    /* CTA */
     .cta {
       background: linear-gradient(135deg, var(--primary), #003d2b);
       color: white;
@@ -349,6 +331,21 @@
     .footer-col li { margin-bottom: 12px; }
     .footer-col a { color: rgba(255, 255, 255, 0.8); text-decoration: none; transition: var(--transition); }
     .footer-col a:hover { color: var(--secondary); padding-left: 5px; }
+
+    /* フッター内ボタンエリア（追加） */
+    .footer-cta {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+    .footer-cta .btn {
+      padding: 12px 18px;
+      font-size: 1rem;
+      box-shadow: none;
+    }
+
     .copyright {
       text-align: center;
       padding-top: 30px;
@@ -357,7 +354,7 @@
       font-size: 0.9rem;
     }
 
-    /* レスポンシブデザイン */
+    /* レスポンシブ */
     @media (max-width: 992px) {
       h1 { font-size: 2.8rem; }
       h2 { font-size: 2.2rem; }
@@ -367,25 +364,20 @@
     @media (max-width: 768px) {
       .header-container { flex-direction: column; text-align: center; }
       .logo { margin-bottom: 15px; }
+
       nav ul { flex-wrap: wrap; justify-content: center; }
       nav li { margin: 0 10px 10px; }
 
       .mobile-menu-btn {
         display: block;
         position: absolute;
-        top: 20px;
-        right: 20px;
+        top: 20px; right: 20px;
       }
       .nav-menu { display: none; width: 100%; margin-top: 15px; }
       .nav-menu.active { display: block; }
 
       .hero h1 { font-size: 2.4rem; }
       .bonus-badge { font-size: 1.5rem; padding: 12px 25px; }
-
-      .countdown-timer { flex-wrap: wrap; justify-content: center; gap: 15px; }
-      .countdown-item { min-width: 80px; }
-      .countdown-number { font-size: 2rem; }
-
       .bonus-amount { font-size: 4rem; }
       .bonus-amount span { font-size: 4.5rem; }
     }
@@ -441,30 +433,26 @@
     </div>
   </header>
 
-  <!-- ヒーローセクション -->
+  <!-- ヒーロー -->
   <section class="hero" id="hero">
     <div class="container">
       <div class="hero-content fade-in">
         <div class="bonus-badge">🎁 入金不要ボーナス 13,000円 🎁</div>
         <h1>最大<span>13,000円</span>のボーナスでFX取引をスタート！</h1>
         <p>
-          XM Trading.comが特別なボーナスをご用意しました。今なら口座開設だけで13,000円の取引ボーナスをプレゼント！
+          XM Tradingが特別なボーナスをご用意しました。今なら口座開設だけで13,000円の取引ボーナスをプレゼント！
           経験豊富なトレーダーも初心者も、このチャンスをお見逃しなく。
         </p>
 
-        <a
-          href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6"
-          class="btn btn-primary btn-large"
-        >
-          今すぐボーナスを獲得する <i class="fas fa-arrow-right"></i>
+        <!-- 修正: ボタンのリンクをプレースホルダーにし、テキストを指定内容へ -->
+        <a href="YOUR_LINK_HERE" class="btn btn-primary btn-large">
+          🎁 入金不要ボーナス 13,000円 🎁 <i class="fas fa-arrow-right"></i>
         </a>
-
-        <!-- 追加: JSが参照するカウントダウンのHTML（元コードでは欠落していました） -->
-       </div>
+      </div>
     </div>
   </section>
 
-  <!-- 特長セクション -->
+  <!-- 特長 -->
   <section class="features" id="features">
     <div class="container">
       <h2 class="text-center">XM Tradingが選ばれる理由</h2>
@@ -500,7 +488,7 @@
     </div>
   </section>
 
-  <!-- ボーナス詳細セクション -->
+  <!-- ボーナス詳細 -->
   <section class="bonus-details" id="bonus">
     <div class="container">
       <h2 class="text-center">13,000円ボーナスの詳細</h2>
@@ -551,11 +539,7 @@
             </div>
           </div>
 
-          <a
-            href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1"
-            class="btn btn-accent"
-            style="margin-top: 20px;"
-          >
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="btn btn-accent" style="margin-top: 20px;">
             今すぐ口座開設する
           </a>
         </div>
@@ -563,7 +547,7 @@
     </div>
   </section>
 
-  <!-- プログラム紹介セクション -->
+  <!-- プログラム -->
   <section class="programs" id="programs">
     <div class="container">
       <h2 class="text-center">その他の魅力的なプログラム</h2>
@@ -571,7 +555,6 @@
         XMTradingでは、現在お客様のご入金に対し2段階のボーナスを提供しております。こちらはお客様の投資額に対して合計で$10,500もの金額が付加されるもので、お客様にはより多くの証拠金にてお取引を開始いただけます。
       </p>
 
-      <!-- 修正: programs-grid を二重にネストしていたため、1つに統一 -->
       <div class="programs-grid">
         <div class="program-card fade-in">
           <div class="program-header">
@@ -646,7 +629,7 @@
     </div>
   </section>
 
-  <!-- CTAセクション -->
+  <!-- CTA -->
   <section class="cta" id="cta">
     <div class="container">
       <h2 class="text-center">今すぐ始めて、ボーナスを獲得しよう！</h2>
@@ -654,7 +637,6 @@
         この機会にXM TradingでFX取引を始めませんか？13,000円の入金不要ボーナスに加えて、様々な特典があなたを待っています。初心者でも安心のサポート体制と豊富な学習教材をご用意しています。
       </p>
 
-      <!-- 修正: href="#" だとページトップに戻るだけなので、意図が登録ならリンクを合わせる -->
       <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="btn btn-primary btn-large">
         無料で口座開設する <i class="fas fa-user-plus"></i>
       </a>
@@ -681,6 +663,13 @@
             <a href="#" style="margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-facebook"></i></a>
             <a href="#" style="margin-right: 15px; font-size: 1.2rem;"><i class="fab fa-youtube"></i></a>
             <a href="#" style="font-size: 1.2rem;"><i class="fab fa-instagram"></i></a>
+          </div>
+
+          <!-- 追加: フッターに「ボタン（リンク）」をまとめて配置 -->
+          <div class="footer-cta">
+            <a href="YOUR_LINK_HERE" class="btn btn-primary">🎁 入金不要ボーナス 13,000円 🎁</a>
+            <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="btn btn-accent">今すぐ口座開設する</a>
+            <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" class="btn btn-secondary">コンテストを見る</a>
           </div>
         </div>
 
@@ -735,11 +724,9 @@
     mobileMenuBtn.addEventListener('click', function () {
       navMenu.classList.toggle('active');
 
-      // aria-expanded 更新
       const expanded = this.getAttribute('aria-expanded') === 'true';
       this.setAttribute('aria-expanded', String(!expanded));
 
-      // アイコンの切り替え
       const icon = this.querySelector('i');
       if (icon.classList.contains('fa-bars')) {
         icon.classList.remove('fa-bars');
@@ -750,31 +737,8 @@
       }
     });
 
-    // カウントダウンタイマー
-    function updateCountdown() {
-      const now = new Date();
-      const target = new Date();
-      target.setDate(now.getDate() + 5); // 5日後をターゲット
-
-      const diff = target - now;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById('days').textContent = String(days).padStart(2, '0');
-      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
     // スクロール時に要素をフェードイン
     const fadeElements = document.querySelectorAll('.fade-in');
-
     function fadeInOnScroll() {
       fadeElements.forEach((element) => {
         const elementTop = element.getBoundingClientRect().top;
@@ -784,7 +748,6 @@
         }
       });
     }
-
     fadeInOnScroll();
     window.addEventListener('scroll', fadeInOnScroll);
 
@@ -798,7 +761,6 @@
 
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-          // モバイルメニューを閉じる
           if (window.innerWidth <= 768) {
             navMenu.classList.remove('active');
             mobileMenuBtn.setAttribute('aria-expanded', 'false');
@@ -827,4 +789,3 @@
   </script>
 </body>
 </html>
-
