@@ -29,16 +29,18 @@
         }
 
         /* --- Header & Hero --- */
-       header {
-    background: #212121;
-    color: white;
-    padding: 15px 20px;
-    font-size: 0.9rem;
+        header {
+            background: #212121;
+            color: white;
+            padding: 15px 20px;
+            font-size: 0.9rem;
 
-    /* ВАЖНИТЕ НАСТРОЙКИ ЗА ПОДРЕЖДАНЕ: */
-    display: flex;                   /* 1. Прави лентата гъвкава */
-    align-items: center;             /* 2. Центрира ги вертикално */
-    justify-content: space-between;
+            /* ВАЖНИТЕ НАСТРОЙКИ ЗА ПОДРЕЖДАНЕ: */
+            display: flex;                   /* 1. Прави лентата гъвкава */
+            align-items: center;             /* 2. Центрира ги вертикално */
+            justify-content: space-between;  /* 3. Лого вляво, текст вдясно */
+        }
+
         .hero {
             background: linear-gradient(135deg, #212121 0%, #000000 100%);
             color: white;
@@ -295,19 +297,20 @@
             padding: 20px;
             background: #eee;
         }
+        
         /* === НОВО: Стил за логото === */
-.header-logo {
-    height: 40px; /* <-- Промени това число, ако искаш да е по-голямо/по-малко */
-    width: auto;
-    margin-right: 15px;
-}
+        .header-logo {
+            height: 40px; 
+            width: auto;
+            margin-right: 15px;
+        }
     </style>
 </head>
 <body>
 
     <header>
         <img src="FXfacts4.png" alt="FXfacts Logo" class="header-logo">
-        FXfacts 編集部監修｜XMTrading公認パートナー情報
+        <span>FXfacts 編集部監修｜XMTrading公認パートナー情報</span>
     </header>
 
     <div class="hero">
@@ -435,9 +438,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
