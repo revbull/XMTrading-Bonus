@@ -1,537 +1,476 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-  <title>【2026年版】XMTrading 入金不要ボーナス13,000円｜条件と注意点を整理</title>
-  <meta name="description" content="XMTradingの入金不要ボーナス13,000円と入金ボーナスの条件・注意点・リスクを中立的に整理。公式条件の確認導線付き。" />
-  <meta name="robots" content="noindex,nofollow" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <style>
-    :root{
-      /* Core Colors */
-      --bg: #fcfcfc;
-      --text: #2c3e50;
-      --text-strong: #111827;
-      --muted: #64748b;
-      --border: #e2e8f0;
-      --soft: #f1f5f9;
-      
-      /* Brand & Accent Colors */
-      --xm: #006747;        /* XM Green */
-      --xm-dark: #004d35;
-      --accent: #d4af37;    /* Subtle Gold for high value */
-      --accent-grad: linear-gradient(135deg, #006747 0%, #004d35 100%);
-      --warn: #dc2626;
-      
-      /* Layout & Spacing */
-      --max: 720px;
-      --radius: 16px;
-      --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
-      --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
-      --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XMTrading - 3,000円の未入金ボーナスを獲得しよう</title>
+    <meta name="description" content="XMTradingで口座開設して3,000円の未入金ボーナスを獲得。最大レバレッジ1000倍、追証なし、入出金手数料無料。">
+    <style>
+        /* --- Reset & Base Styles --- */
+        :root {
+            --xm-black: #000000;
+            --xm-red: #d5112e;
+            --xm-dark-grey: #1a1a1a;
+            --xm-light-grey: #f4f4f4;
+            --xm-white: #ffffff;
+            --xm-gold: #cfaa3d;
+            --font-main: "Noto Sans JP", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+        }
 
-    /* Reset & Typography */
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth;}
-    body{
-      margin:0;padding:0;
-      background:var(--bg);
-      color:var(--text);
-      /* Modern Japanese Font Stack */
-      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic Medium", "Yu Gothic", Meiryo, sans-serif;
-      line-height:1.8;
-      -webkit-font-smoothing: antialiased;
-    }
-    a{color:var(--xm);text-decoration:none;transition: color 0.2s;}
-    a:hover{color:var(--xm-dark);text-decoration:underline}
-    strong, b { font-weight: 700; color: var(--text-strong); }
-    
-    .wrap{max-width:var(--max);margin:0 auto;padding:0 20px; position: relative;}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    /* Top Navigation */
-    .topbar{
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom:1px solid var(--border);
-      position:sticky;top:0;z-index:100;
-    }
-    .topbar-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 20px; max-width: var(--max); margin: 0 auto;}
-    .brand{display:flex;flex-direction:column;}
-    .brand b{font-size:15px;letter-spacing:.5px; color: var(--xm-dark);}
-    .brand span{font-size:11px;color:var(--muted);}
-    .toplinks{display:none;} /* Hidden on mobile for cleaner look, shown on desktop */
-    @media(min-width: 640px) {
-      .toplinks{display:flex;gap:16px;}
-      .toplinks a{font-size:13px;color:var(--muted); font-weight: 600;}
-      .toplinks a:hover{color:var(--xm);}
-    }
+        body {
+            font-family: var(--font-main);
+            background-color: var(--xm-black);
+            color: var(--xm-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
 
-    /* Hero Section (The Hook) */
-    header {
-      padding: 30px 0 20px;
-      background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
-      border-bottom: 1px solid var(--border);
-    }
-    .pill-container { text-align: center; margin-bottom: 16px; }
-    .pill{
-      display:inline-flex;align-items:center;gap:6px;
-      background:#fff; border:1px solid var(--xm);
-      box-shadow: var(--shadow-sm);
-      border-radius:99px;padding:4px 12px;
-      font-size:12px;color:var(--xm-dark);
-    }
-    .pill strong{color:var(--xm);font-weight:800}
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; display: block; }
 
-    h1{
-      font-size:26px;
-      line-height:1.4;
-      margin:16px 0;
-      text-align: center;
-      font-feature-settings: "palt";
-      letter-spacing: 0.02em;
-    }
-    @media(min-width: 640px) { h1 { font-size: 32px; } }
+        /* --- Components --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-    .highlight-amount {
-      display: block;
-      font-size: 1.4em;
-      font-weight: 800;
-      color: var(--xm);
-      background: linear-gradient(135deg, var(--xm) 30%, var(--accent) 90%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-top: 4px;
-    }
+        .btn {
+            display: inline-block;
+            background-color: var(--xm-red);
+            color: var(--xm-white);
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 15px 40px;
+            border-radius: 5px;
+            transition: transform 0.2s, background-color 0.2s;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(213, 17, 46, 0.4);
+            cursor: pointer;
+            border: none;
+        }
 
-    .meta{display:flex;justify-content:center;gap:12px;align-items:center;color:var(--muted);font-size:12px; margin-bottom: 24px;}
-    .meta .dot{width:4px;height:4px;border-radius:50%;background:var(--border);}
-    
-    .disclosure{
-      margin:0 auto 24px;
-      background:var(--soft);
-      border-radius:var(--radius);
-      padding:14px 18px;
-      font-size:12px;
-      color:var(--muted);
-      border-left: 4px solid var(--border);
-    }
+        .btn:hover {
+            background-color: #b00e26;
+            transform: translateY(-2px);
+        }
 
-    /* Card Styles (Facts, TOC, Content) */
-    .facts, .toc, .card {
-      background:#fff;
-      border-radius:var(--radius);
-      padding:20px;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-      margin-bottom: 24px;
-    }
-    .facts { border-top: 4px solid var(--xm); }
-    .toc { border-top: 4px solid var(--muted); }
+        .btn-large {
+            font-size: 1.4rem;
+            width: 100%;
+            max-width: 400px;
+        }
 
-    .facts b, .toc b, .card h4 {
-      display:block; font-size:16px; margin-bottom:12px;
-      display: flex; align-items: center; gap: 8px;
-    }
-    /* Adding small icons using CSS pseudo-elements for visual cues */
-    .facts b::before { content: '✓'; color: var(--xm); font-weight: 900; }
-    .toc b::before { content: '≡'; color: var(--muted); font-weight: 900; }
+        /* --- Header --- */
+        header {
+            background-color: var(--xm-black);
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    ul {margin:0;padding-left:20px;}
-    li {margin:8px 0;font-size:15px;}
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    /* Content Typography */
-    article{padding:20px 0 40px;}
-    h2{
-      font-size:22px;
-      margin:36px 0 16px;
-      padding-bottom: 12px;
-      border-bottom: 2px solid var(--border);
-      position: relative;
-    }
-    h2::after {
-      content: ''; position: absolute; bottom: -2px; left: 0; width: 60px; height: 2px; background: var(--xm);
-    }
-    h3{font-size:18px;margin:24px 0 12px; color: var(--text-strong);}
-    p{margin:16px 0; font-size: 15px;}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+        .logo span { color: var(--xm-white); }
+        
+        .header-cta {
+            display: none;
+        }
+        
+        @media(min-width: 768px) {
+            .header-cta {
+                display: block;
+                font-size: 0.9rem;
+                padding: 8px 20px;
+            }
+        }
 
-    .note{
-      border-left:4px solid var(--accent);
-      padding:16px;
-      background:#fffaf0; /* Very light gold/cream */
-      border-radius: 8px;
-      margin:20px 0;
-      color:var(--text-strong);
-      font-size:14px;
-      box-shadow: var(--shadow-sm);
-    }
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            padding: 80px 0 60px;
+            background: radial-gradient(circle at center, #2a2a2a 0%, #000000 100%);
+            text-align: center;
+            overflow: hidden;
+        }
 
-    /* Improved Screenshots Frames */
-    figure.shot{
-      margin:24px 0;
-      border-radius:var(--radius);
-      overflow:hidden;
-      background:#fff;
-      box-shadow: var(--shadow-md);
-      border: 1px solid var(--border);
-    }
-    .shot .ph{
-      background: linear-gradient(135deg, #eceff1 0%, #ffffff 100%);
-      height:240px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:20px;
-      color:var(--muted);
-      font-size:13px;
-      font-weight: 600;
-      border-bottom: 1px solid var(--border);
-      position: relative;
-    }
-    /* Fake browser dots for professionalism */
-    .shot .ph::before {
-      content: '•••'; letter-spacing: -2px; position: absolute; top: 8px; left: 12px; font-size: 20px; color: #d1d5db;
-    }
-    .shot figcaption{padding:12px 16px;font-size:12px;color:var(--muted);background: #fafafa;}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://via.placeholder.com/1920x800/000000/333333?text=XM+Trading+Background') center/cover no-repeat;
+            opacity: 0.2;
+            z-index: 0;
+        }
 
-    /* High-Converting CTA Blocks */
-    .cta{
-      background: #fff;
-      border-radius: var(--radius);
-      padding: 24px;
-      margin: 32px 0;
-      box-shadow: var(--shadow-lg);
-      border: 1px solid var(--border);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    /* Subtle accent indicating action */
-    .cta::before {
-      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--accent-grad);
-    }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
 
-    .cta .title b{font-size:18px; display: block; margin-bottom: 8px;}
-    .cta .small{font-size:13px;color:var(--muted); display: block; margin-bottom: 16px;}
+        .badge {
+            background-color: var(--xm-gold);
+            color: var(--xm-black);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
 
-    .btnrow{display:flex; flex-direction: column; gap:12px; margin-top:20px; align-items: center;}
-    @media(min-width: 640px) { .btnrow { flex-direction: row; justify-content: center; } }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
 
-    .btn, .btn-xm{
-      display:inline-flex; align-items: center; justify-content: center; gap: 8px;
-      padding:14px 24px;
-      border-radius: 99px;
-      font-weight:700; font-size:16px;
-      text-decoration:none;
-      transition: all 0.3s ease;
-      width: 100%; max-width: 320px;
-      box-shadow: var(--shadow-sm);
-    }
-    .btn-xm{
-      /* Main Conversion Button */
-      background: var(--accent-grad);
-      border:none;
-      color: #fff;
-      box-shadow: 0 4px 12px rgba(0, 103, 71, 0.3);
-    }
-    .btn-xm:hover{
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0, 103, 71, 0.4);
-    }
-    .btn{
-      /* Secondary button */
-      background:#fff; color:var(--muted);
-      border:2px solid var(--border);
-    }
-    .btn:hover{border-color: var(--muted); color: var(--text-strong);}
+        .hero h1 span {
+            color: var(--xm-red);
+            display: block;
+            font-size: 3.5rem;
+            margin-top: 10px;
+        }
 
-    /* Add arrows to buttons */
-    .btn-xm::after { content: '→'; transition: transform 0.2s; }
-    .btn-xm:hover::after { transform: translateX(4px); }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
 
-    .fineprint{font-size:11px;color:var(--muted);margin-top:16px;}
-    .cta-risk{
-      margin-top:12px; font-size:11px; line-height:1.5; color:var(--muted);
-      padding-top: 12px; border-top: 1px dashed var(--border);
-    }
+        /* --- Features/USP --- */
+        .features {
+            background-color: var(--xm-white);
+            color: var(--xm-dark-grey);
+            padding: 60px 0;
+        }
 
-    /* Risk & FAQ */
-    .risk{
-      border:1px solid #fecaca; background:#fef2f2;
-      border-radius:var(--radius); padding:20px; margin:24px 0;
-      color: var(--warn); font-size: 14px;
-      display: flex; gap: 12px;
-    }
-    .risk::before { content: '⚠'; font-size: 24px; }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: var(--xm-black);
+        }
 
-    .faq details{
-      border:1px solid var(--border); border-radius:12px;
-      padding:16px; background:#fff; margin:12px 0;
-      box-shadow: var(--shadow-sm); transition: all 0.2s;
-    }
-    .faq details[open] { background: var(--soft); }
-    .faq summary{cursor:pointer;font-weight:700; color: var(--xm);}
+        .section-title span {
+            border-bottom: 3px solid var(--xm-red);
+            padding-bottom: 10px;
+        }
 
-    /* Footer */
-    footer{border-top:1px solid var(--border);background:#fff;padding:40px 0;}
-    footer h3{font-size:14px;margin:0 0 12px; color: var(--text-strong);}
-    footer p, footer li{font-size:12px;color:var(--muted);}
-    .footergrid{display:grid;grid-template-columns:1fr;gap:30px;}
-    @media(min-width:640px){.footergrid{grid-template-columns:1fr 1fr; gap: 50px;}}
-    .sep{height:1px;background:var(--border);margin:20px 0}
-  </style>
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media(min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 5px solid var(--xm-red);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--xm-red);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- Bonus Details --- */
+        .bonus-section {
+            padding: 60px 0;
+            background-color: #111;
+        }
+
+        .bonus-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media(min-width: 992px) {
+            .bonus-container {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .bonus-info {
+            flex: 1;
+        }
+
+        .bonus-info h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .bonus-info ul {
+            margin-bottom: 30px;
+        }
+
+        .bonus-info li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .bonus-info li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: var(--xm-red);
+            font-weight: bold;
+        }
+
+        .bonus-visual {
+            flex: 1;
+            width: 100%;
+        }
+
+        .bonus-visual img {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        /* --- Competitions & Loyalty --- */
+        .rewards-section {
+            padding: 60px 0;
+            background: var(--xm-white);
+            color: var(--xm-black);
+            text-align: center;
+        }
+
+        .rewards-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        @media(min-width: 768px) {
+            .rewards-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .reward-box {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .reward-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--xm-red);
+        }
+
+        .reward-box p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* --- CTA Bottom --- */
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--xm-red) 0%, #a1001a 100%);
+            text-align: center;
+            color: var(--xm-white);
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-btn-white {
+            background-color: var(--xm-white);
+            color: var(--xm-red);
+        }
+        .cta-btn-white:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #000;
+            padding: 40px 0;
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+        }
+        
+        .footer-links a {
+            margin: 0 10px;
+            text-decoration: underline;
+        }
+        
+        .risk-warning {
+            margin-top: 20px;
+            border-top: 1px solid #222;
+            padding-top: 20px;
+            font-size: 0.75rem;
+        }
+
+        /* Responsive Tweaks */
+        @media(max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero h1 span { font-size: 2.5rem; }
+            .btn { width: 100%; }
+        }
+    </style>
 </head>
-
 <body>
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand" aria-label="サイト情報">
-        <b>FXfacts 編集部</b>
-        <span>ボーナス条件を中立的に整理</span>
-      </div>
-      <nav class="toplinks" aria-label="ページ内リンク">
-        <a href="#overview">結論</a>
-        <a href="#conditions">重要条件</a>
-        <a href="#howto">手順</a>
-        <a href="#risk">リスク</a>
-      </nav>
-    </div>
-  </div>
 
-  <div class="wrap">
     <header>
-      <div class="pill-container">
-        <span class="pill"><strong>最終確認</strong> 2026年1月21日</span>
-      </div>
-      <h1>XMTrading<br>新規口座開設ボーナス<span class="highlight-amount">13,000円</span>を解説</h1>
-      
-      <div class="meta">
-        <span>対象: 初心者〜中級者</span><span class="dot"></span>
-        <span>読了目安: 3分</span>
-      </div>
-
-      <div class="facts" aria-label="要点">
-        <b>忙しい方のための要点まとめ</b>
-        <ul>
-          <li><b>入金不要ボーナス:</b> 13,000円（新規限定・条件あり）</li>
-          <li><b>入金ボーナス:</b> 別途、入金額に応じた段階別ボーナスあり</li>
-          <li><b>重要:</b> ボーナス自体は「取引資金」であり、原則出金できません。</li>
-        </ul>
-      </div>
-
-      <div class="disclosure" role="note" aria-label="アフィリエイト開示">
-        <b>広告に関する開示:</b> 本ページはアフィリエイト広告を利用しています。リンク先で口座開設等が行われた場合、当サイトが報酬を受け取ることがあります。内容は中立的な情報提供を目的としており、投資助言ではありません。
-      </div>
-
-      <div class="cta" aria-label="早めの確認CTA">
-        <div class="title">
-          <b>すでにXMTradingをご存じの方（ショートカット）</b>
-          <span class="small">最新の適用条件を公式ページで確認して進んでください。</span>
+        <div class="container header-inner">
+            <div class="logo">
+                <span style="font-size: 1.8rem;">XM</span>TRADING
+            </div>
+            <a href="https://www.xmtrading.com/jp/register" class="btn header-cta">口座を開設する</a>
         </div>
-        <div class="btnrow">
-          <a class="btn-xm" href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" rel="nofollow sponsored noopener">
-            公式サイトで条件を確認する
-          </a>
-          <a class="btn" href="#conditions">先に注意点を読む ↓</a>
-        </div>
-        <p class="cta-risk">
-          リスク警告：FX/CFD取引には元本以上の損失リスクが伴います。利用規約を必ず確認してください。
-        </p>
-      </div>
-
-      <div class="toc" aria-label="目次">
-        <b>目次</b>
-        <ul>
-          <li><a href="#overview">まず結論（試すべき人・やめるべき人）</a></li>
-          <li><a href="#bonus">13,000円ボーナスと入金ボーナスの違い</a></li>
-          <li><a href="#conditions">【重要】知っておくべき条件と注意点</a></li>
-          <li><a href="#howto">申し込みから受け取りまでの流れ</a></li>
-          <li><a href="#risk">リスクと留意事項</a></li>
-          <li><a href="#faq">よくある質問</a></li>
-        </ul>
-      </div>
     </header>
 
-    <article>
-      <section id="overview">
-        <h2>まず結論: こういう人は「試す価値あり」</h2>
-        <p>XMTradingのボーナスは、自己資金を使わずにリアルな取引環境を試せる点が最大のメリットです。</p>
-        <div class="card" style="border-left: 4px solid var(--xm);">
-          <h4>向いている人</h4>
-          <ul>
-            <li>まずは少額でツールや操作感を確認したい</li>
-            <li>ボーナスの「出金ルール」を理解して利用できる</li>
-            <li>いきなり大きな資金を賭けず、検証・学習として始めたい</li>
-          </ul>
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="badge">新規のお客様限定</div>
+            <h1>
+                リスクなしで取引スタート
+                <span>3,000円 ボーナス</span>
+            </h1>
+            <p>入金不要。口座を開設するだけで、即座に取引資金を獲得できます。<br>利益は全額出金可能。</p>
+            <a href="https://www.xmtrading.com/jp/register" class="btn btn-large">今すぐボーナスを受け取る</a>
+            <p style="font-size: 0.8rem; margin-top: 15px; color: #888;">*利用規約が適用されます</p>
         </div>
-        <div class="card" style="border-left: 4px solid var(--muted); background: var(--soft);">
-          <h4>向かない人（注意）</h4>
-          <ul>
-            <li>「確実に儲かる」目的で探している（投資に絶対はありません）</li>
-            <li>利用規約を読むのが面倒で、勢いで登録してしまう</li>
-            <li>レバレッジのリスクを理解せずに始めようとしている</li>
-          </ul>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title"><span>選ばれる4つの理由</span></h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>最大$10,500の入金ボーナス</h3>
+                    <p>100%入金ボーナス（最大$500）と20%入金ボーナス（最大$10,000）で、資金を大幅に増やして取引開始。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>レバレッジ1000倍</h3>
+                    <p>少額資金でも大きな取引が可能。ゼロカットシステム採用で、入金額以上の損失はありません。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>手数料0円</h3>
+                    <p>入出金手数料はXMTradingが全額負担。隠れたコストを気にせず、利益を最大化できます。</p>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section id="bonus">
-        <h2>ボーナスの種類（概要）</h2>
-
-        <h3>1) 新規口座開設ボーナス：13,000円</h3>
-        <p>
-          これが「入金不要ボーナス」と呼ばれるものです。新規で口座を開設し、本人確認（KYC）を完了させることで、取引口座にクレジットとして付与されるのが一般的です。
-        </p>
-
-        <figure class="shot" aria-label="スクリーンショット：XM公式ボーナス">
-          <div class="ph">
-            【ここに画像をアップロード】<br>
-            XM公式サイトの「13,000円ボーナス」案内画面の<br>スクリーンショットを配置してください。
-          </div>
-          <figcaption>
-            ※画像はイメージです。最新の金額や条件は必ず公式ページでご確認ください。
-          </figcaption>
-        </figure>
-
-        <h3>2) 入金ボーナス（2段階式など）</h3>
-        <p>
-          資金を入金した際に受け取れるボーナスです。「5万円まで100%＋それ以降20%」のように、入金額に応じて付与率が変わるのが特徴です。
-        </p>
-        <div class="note">
-          <b>超重要：ボーナスの「消滅」ルール</b><br>
-          多くの海外FX業者と同様、XMTradingでも「口座から現金を出金すると、その額に応じて（または全額）ボーナスが消滅する」というルールが一般的です。出金前に必ず規約を確認しましょう。
+    <section class="bonus-section">
+        <div class="container bonus-container">
+            <div class="bonus-visual">
+                <img src="https://via.placeholder.com/600x400/222222/d5112e?text=XM+Trading+App+Preview" alt="XMTrading Platform">
+            </div>
+            <div class="bonus-info">
+                <h2>業界最高水準のトレード環境</h2>
+                <p style="margin-bottom: 20px; color:#ddd;">
+                    初心者からプロまで、世界中のトレーダーに愛用されるXMTradingで、あなたの可能性を広げましょう。
+                </p>
+                <ul>
+                    <li><strong>賞金総額$120,000のコンテスト:</strong> 毎月開催されるトレード大会で、現金賞金を獲得するチャンス。</li>
+                    <li><strong>ロイヤルティプログラム:</strong> 取引するたびにXMP（ポイント）が貯まり、ボーナスや現金に換金可能。</li>
+                    <li><strong>安心の日本語サポート:</strong> 24時間年中無休のライブチャットで、いつでもあなたをサポートします。</li>
+                </ul>
+                <a href="https://www.xmtrading.com/jp/register" class="btn">口座を開設する</a>
+            </div>
         </div>
+    </section>
 
-        <div class="cta" aria-label="中盤CTA">
-          <div class="title">
-            <b>ここで一度、公式条件をチェック（読み違い防止）</b>
-          </div>
-          <div class="btnrow">
-            <a class="btn-xm" href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" rel="nofollow sponsored noopener">
-              公式サイトで最新ボーナスを見る
-            </a>
-          </div>
-          <p class="cta-risk">
-            リスク警告：FXとデリバティブ取引には高い損失リスクが伴います。
-          </p>
+    <section class="rewards-section">
+        <div class="container">
+            <h2 class="section-title"><span>さらなる特典</span></h2>
+            <div class="rewards-grid">
+                <div class="reward-box">
+                    <h3>🏆 コンテスト</h3>
+                    <p>スキルを試して賞金を狙おう。デモ口座でも参加可能なコンテストを開催中。リスクフリーで実力を証明できます。</p>
+                </div>
+                <div class="reward-box">
+                    <h3>💎 ロイヤルティ</h3>
+                    <p>ステータスが上がるほど還元率アップ。貯まったXMPは取引証拠金としてすぐに利用可能です。</p>
+                </div>
+            </div>
         </div>
-      </section>
+    </section>
 
-      <section id="conditions">
-        <h2>条件と注意点（ここが最も重要です）</h2>
-        <p>
-          「思っていたのと違う」とならないために、申し込み前に最低限チェックすべきリストです。
-        </p>
-
-        <div class="card">
-          <h4>チェックリスト</h4>
-          <ul>
-            <li><b>対象者:</b> 過去にXMで口座を作ったことがないか（完全新規か）</li>
-            <li><b>付与条件:</b> 口座開設後、期限内に本人確認書類を提出したか</li>
-            <li><b>対象口座:</b> ボーナス対象外の口座タイプを選んでいないか（Zero口座など）</li>
-            <li><b>出金の扱い:</b> 現金を出金した時、ボーナスがどう減るか理解しているか</li>
-            <li><b>有効期限:</b> 一定期間取引がないとボーナスが消滅するルールがあるか</li>
-          </ul>
+    <section class="cta-section">
+        <div class="container">
+            <h2>まずは3,000円で始めよう</h2>
+            <p>リスクゼロでFXの世界を体験。約2分で登録完了。</p>
+            <a href="https://www.xmtrading.com/jp/register" class="btn btn-large cta-btn-white">今すぐ口座開設（無料）</a>
         </div>
-      </section>
+    </section>
 
-      <section id="howto">
-        <h2>申し込みの流れ（KYC含む）</h2>
-        <p>スムーズに進めば数分〜数時間で完了する流れが一般的です。</p>
-        <ol style="padding-left:20px; font-weight:700; color:var(--xm);">
-          <li style="margin-bottom:12px;"><span style="color:var(--text)">公式サイトのフォームから基本情報を入力</span></li>
-          <li style="margin-bottom:12px;"><span style="color:var(--text)">届いたメールを確認し、会員ページへログイン</span></li>
-          <li style="margin-bottom:12px;"><span style="color:var(--text)">本人確認書類（身分証・住所確認書類）をアップロード</span></li>
-          <li style="margin-bottom:12px;"><span style="color:var(--text)">審査完了後、条件を満たせばボーナスが口座に反映</span></li>
-        </ol>
-
-        <figure class="shot" aria-label="スクリーンショット：口座開設フロー">
-          <div class="ph">
-            【ここに画像をアップロード】<br>
-            口座開設フォームや本人確認書類提出画面の<br>スクリーンショットを配置してください。
-          </div>
-        </figure>
-      </section>
-
-      <section id="risk">
-        <h2>リスクと留意事項</h2>
-        <div class="risk" role="note" aria-label="リスク警告">
-          <div>
-            <b>リスク警告:</b><br> FX/CFDはレバレッジ商品であり、預託した証拠金以上の損失が発生する可能性があります。市場の急変時など、リスクが高いことを十分に理解した上で取引を行ってください。
-          </div>
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">プライバシーポリシー</a>
+                <a href="#">利用規約</a>
+                <a href="#">リスク開示</a>
+            </div>
+            <div class="risk-warning">
+                <p>リスク警告：FXおよびCFD取引には高いリスクが伴い、投資元本を失う可能性があります。レバレッジ商品は全てのお客様に適しているわけではありません。取引を始める前に、リスクを十分に理解していることを確認してください。</p>
+                <p style="margin-top:10px;">&copy; 2024 XMTrading. All Rights Reserved.</p>
+            </div>
         </div>
-        <p>
-          ボーナスは資金効率を高めてくれますが、同時にレバレッジによる損失額も大きくなり得ます。最初は最小ロットで慎重に取引を始めることを強く推奨します。
-        </p>
-      </section>
+    </footer>
 
-      <section class="faq" id="faq">
-        <h2>よくある質問</h2>
-        <details>
-          <summary>受け取ったボーナスはそのまま出金できますか？</summary>
-          <p>
-            いいえ、原則できません。ボーナスは「取引に使えるクレジット」として付与されます。ボーナスを使って得た「利益」は出金条件を満たせば出金可能です。
-          </p>
-        </details>
-
-        <details>
-          <summary>13,000円ボーナスはいつまで実施していますか？</summary>
-          <p>
-            金額や実施期間は、XMTradingの裁量により予告なく変更・終了する場合があります。必ず申し込み時点で公式サイトに表示されている内容を優先してください。
-          </p>
-        </details>
-      </section>
-
-      <div class="cta" aria-label="最終CTA">
-        <div class="title">
-          <b>最終ステップ：公式ページで条件を確認して口座開設へ</b>
-          <span class="small">条件確認 → 申し込み の順序が安全です。</span>
-        </div>
-        <div class="btnrow">
-          <a class="btn-xm" href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" rel="nofollow sponsored noopener">
-            公式サイトで条件を確認する
-          </a>
-          <a class="btn" href="#conditions">条件と注意点に戻る ↑</a>
-        </div>
-        <p class="fineprint">※上記ボタンはアフィリエイトリンクです。</p>
-        <p class="cta-risk">
-          リスク警告：FXとデリバティブ取引には高い損失リスクが伴います。<a href="https://cloud.xmtrading-cdn.com/static/pdf/System-PDFs/XMTrading-Terms-and-Conditions-Bonus-Program-100-and-20-upto-10000.pdf?v=123d705b39c1a1c798f31bda7b89c556" target="_blank" rel="noopener nofollow" style="text-decoration: underline;">規約を確認する</a>。
-        </p>
-      </div>
-
-    </article>
-  </div>
-
-  <footer>
-    <div class="wrap">
-      <div class="footergrid" aria-label="フッター情報">
-        <div>
-          <h3>運営者情報・目的</h3>
-          <p>
-            本ページは、海外FX業者XMTradingのボーナス条件について、利用者が誤解なくサービスを利用できるよう情報を整理したアフィリエイトサイトです。<br>
-            お問い合わせ: <a href="mailto:support@fxfacts.example" rel="noopener">support@fxfacts.example</a>
-          </p>
-        </div>
-
-        <div>
-          <h3>免責・開示事項</h3>
-          <p>
-            本ページの情報は一般的な情報提供のみを目的としており、特定の金融商品の売買を推奨するものではありません。投資の最終判断はご自身の責任で行ってください。
-          </p>
-          <div class="sep"></div>
-          <p>
-            <b>広告開示:</b> 本ページ内のリンクにはアフィリエイト広告が含まれます。
-          </p>
-        </div>
-      </div>
-
-      <div class="sep"></div>
-      <p class="small" style="text-align: center;">© 2026 FXfacts. All rights reserved.</p>
-    </div>
-  </footer>
 </body>
 </html>
-
-
