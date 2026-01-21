@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>【2026年版】XMTradingの口座開設ボーナスは使える？条件と注意点を整理</title>
-  <meta name="description" content="XMTradingの口座開設ボーナス（入金不要）と入金ボーナスの概要、受け取り条件、注意点、リスクを中立的に整理します。" />
+  <title>【2026年版】XMTrading 入金不要ボーナス13,000円｜条件と注意点を整理</title>
+  <meta name="description" content="XMTradingの入金不要ボーナス13,000円と入金ボーナスの条件・注意点・リスクを中立的に整理。公式条件の確認導線付き。" />
   <meta name="robots" content="noindex,nofollow" />
 
   <style>
@@ -14,16 +14,16 @@
       --muted:#6b7280;
       --border:#e5e7eb;
       --soft:#f9fafb;
-      --accent:#0f766e;
-      --accent2:#111827;
+      --xm:#006747;             /* XM-like green */
+      --xmSoft: rgba(0,103,71,.08);
+      --xmBorder: rgba(0,103,71,.28);
       --warn:#b91c1c;
-      --link:#0f766e;
       --max:760px;
       --radius:12px;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,Arial,sans-serif;line-height:1.75}
-    a{color:var(--link);text-decoration:none}
+    a{color:var(--xm);text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--max);margin:0 auto;padding:0 18px}
     .topbar{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid var(--border);z-index:50}
@@ -32,12 +32,12 @@
     .brand b{font-size:14px;letter-spacing:.2px}
     .brand span{font-size:12px;color:var(--muted)}
     .toplinks{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
-    .toplinks a{font-size:13px;color:var(--accent2)}
-    .toplinks a:hover{color:var(--accent)}
+    .toplinks a{font-size:13px;color:var(--text)}
+    .toplinks a:hover{color:var(--xm)}
+    header{padding:22px 0 10px}
     .pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:#fff;border-radius:999px;padding:6px 10px;font-size:12px;color:var(--muted)}
     .pill strong{color:var(--text);font-weight:700}
-    header{padding:22px 0 10px}
-    h1{font-size:28px;line-height:1.25;margin:10px 0 12px}
+    h1{font-size:28px;line-height:1.25;margin:10px 0 10px}
     .meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;color:var(--muted);font-size:12px}
     .meta .dot{width:3px;height:3px;border-radius:50%;background:var(--border);display:inline-block}
     .disclosure{
@@ -45,21 +45,21 @@
       border:1px solid var(--border);
       background:var(--soft);
       border-radius:var(--radius);
-      padding:12px 12px;
+      padding:12px;
       font-size:12.5px;
       color:var(--muted);
     }
     .disclosure b{color:var(--text)}
-    .hero{
-      margin:16px 0 18px;
+    .facts{
+      margin:16px 0 0;
       border:1px solid var(--border);
+      background:#fff;
       border-radius:var(--radius);
-      overflow:hidden;
-      background:linear-gradient(135deg,#f8fafc,#ffffff);
+      padding:12px;
     }
-    .hero-inner{padding:14px 14px 12px}
-    .hero h2{font-size:18px;margin:0 0 8px}
-    .hero p{margin:0;color:var(--muted);font-size:14px}
+    .facts b{display:block;font-size:13px;margin-bottom:8px}
+    .facts ul{margin:0;padding-left:18px}
+    .facts li{margin:6px 0;font-size:14px}
     .toc{
       margin:16px 0;
       border:1px solid var(--border);
@@ -75,12 +75,38 @@
     h3{font-size:16px;margin:16px 0 8px}
     p{margin:10px 0}
     .note{border-left:3px solid var(--border);padding:10px 12px;background:var(--soft);border-radius:10px;margin:12px 0;color:var(--muted);font-size:14px}
-    .goodbad{display:grid;grid-template-columns:1fr;gap:12px;margin:14px 0}
-    @media(min-width:720px){.goodbad{grid-template-columns:1fr 1fr}}
-    .card{border:1px solid var(--border);border-radius:var(--radius);padding:14px;background:#fff}
+    .card{border:1px solid var(--border);border-radius:var(--radius);padding:14px;background:#fff;margin:12px 0}
     .card h4{margin:0 0 6px;font-size:14px}
     .card ul{margin:0;padding-left:18px}
     .card li{margin:6px 0;font-size:14px}
+
+    /* Screenshot placeholders */
+    figure.shot{
+      margin:14px 0;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      overflow:hidden;
+      background:#fff;
+    }
+    .shot .ph{
+      background:linear-gradient(135deg,#f3f4f6,#ffffff);
+      height:220px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .shot figcaption{
+      padding:10px 12px;
+      border-top:1px solid var(--border);
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    /* CTA blocks */
     .cta{
       border:1px solid var(--border);
       border-radius:var(--radius);
@@ -90,6 +116,7 @@
     }
     .cta .title{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
     .cta .title b{font-size:14px}
+    .small{font-size:12px;color:var(--muted)}
     .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
     .btn{
       display:inline-block;
@@ -99,15 +126,29 @@
       font-size:14px;
       border:1px solid var(--border);
       background:#fff;
-      color:var(--accent2);
-    }
-    .btn-primary{
-      border-color:rgba(15,118,110,.25);
-      background:rgba(15,118,110,.08);
-      color:#0f766e;
+      color:var(--text);
     }
     .btn:hover{text-decoration:none;filter:brightness(0.98)}
+    .btn-xm{
+      border:1px solid var(--xmBorder);
+      background:var(--xmSoft);
+      color:var(--xm);
+      text-decoration:none;
+    }
+    .btn-xm:hover{text-decoration:none;filter:brightness(0.98)}
     .fineprint{font-size:12px;color:var(--muted);margin-top:10px}
+    .cta-risk{
+      margin-top:10px;
+      font-size:11.5px;
+      line-height:1.55;
+      color:var(--muted);
+    }
+    .cta-risk a.cta-terms{
+      color:var(--xm);
+      text-decoration:underline;
+      text-underline-offset:2px;
+    }
+
     .risk{
       border:1px solid rgba(185,28,28,.25);
       background:rgba(185,28,28,.05);
@@ -116,31 +157,30 @@
       margin:18px 0;
     }
     .risk b{color:var(--warn)}
-    .faq details{border:1px solid var(--border);border-radius:var(--radius);padding:12px 12px;background:#fff;margin:10px 0}
+    .faq details{border:1px solid var(--border);border-radius:var(--radius);padding:12px;background:#fff;margin:10px 0}
     .faq summary{cursor:pointer;font-weight:700}
     footer{border-top:1px solid var(--border);background:#fff;padding:22px 0 34px}
     footer h3{font-size:14px;margin:12px 0 8px}
     footer p, footer li{font-size:12.5px;color:var(--muted)}
     .footergrid{display:grid;grid-template-columns:1fr;gap:14px}
     @media(min-width:720px){.footergrid{grid-template-columns:1fr 1fr}}
-    .small{font-size:12px;color:var(--muted)}
     .sep{height:1px;background:var(--border);margin:14px 0}
   </style>
 </head>
 
 <body>
-  <!-- Top bar: minimal, non-salesy -->
   <div class="topbar">
     <div class="wrap topbar-inner">
       <div class="brand" aria-label="サイト情報">
         <b>FXfacts 編集部</b>
-        <span>FX/CFDの基礎とボーナス条件を整理する情報サイト</span>
+        <span>FX/CFDの基礎とボーナス条件を整理する情報ページ</span>
       </div>
       <nav class="toplinks" aria-label="ページ内リンク">
-        <a href="#bonus">ボーナス概要</a>
-        <a href="#conditions">条件と注意点</a>
+        <a href="#overview">結論</a>
+        <a href="#bonus">ボーナス</a>
+        <a href="#conditions">注意点</a>
+        <a href="#accounttypes">口座タイプ</a>
         <a href="#risk">リスク</a>
-        <a href="#faq">FAQ</a>
       </nav>
     </div>
   </div>
@@ -148,7 +188,7 @@
   <div class="wrap">
     <header>
       <span class="pill"><strong>更新</strong> 2026-01-21</span>
-      <h1>【2026年版】XMTradingの口座開設ボーナスは使える？条件と注意点を整理</h1>
+      <h1>XMTrading 入金不要ボーナス（13,000円）｜条件と注意点を中立的に整理</h1>
 
       <div class="meta">
         <span>FXfacts 編集部</span><span class="dot"></span>
@@ -156,29 +196,53 @@
         <span>所要目安: 3–5分</span>
       </div>
 
-      <!-- Visible disclosure near top -->
       <div class="disclosure" role="note" aria-label="アフィリエイト開示">
-        <b>開示:</b> 本ページにはアフィリエイト広告が含まれます。リンク先でお申し込み等が発生した場合、当サイトが報酬を受け取ることがあります。内容は一般情報であり、投資助言ではありません。
+        <b>開示:</b> 本ページにはアフィリエイト広告が含まれます。リンク先でお申し込み等が発生した場合、当サイトが報酬を受け取ることがあります。
+        内容は一般情報であり、投資助言ではありません。最終的な条件は公式ページの記載を優先してください。
       </div>
 
-      <div class="hero" aria-label="この記事の要点">
-        <div class="hero-inner">
-          <h2>この記事でわかること</h2>
-          <p>
-            XMTradingの「入金不要（口座開設）ボーナス」および「入金ボーナス」について、
-            <b>受け取り条件</b>、<b>出金ルールの考え方</b>、<b>注意点</b>を中立的に整理します。
-            ボーナス金額や条件は変更される場合があるため、最終的には<b>公式ページ</b>で確認してください。
-          </p>
+      <div class="facts" aria-label="要点">
+        <b>要点（まずここだけ確認）</b>
+        <ul>
+          <li><b>入金不要ボーナス:</b> 13,000円（※新規・条件あり）</li>
+          <li><b>入金ボーナス:</b> 条件により段階式の案内がある場合（例: 100% + 20% 等）</li>
+          <li><b>重要:</b> ボーナスは出金できない設計が一般的。詳細条件は必ず公式で確認</li>
+        </ul>
+      </div>
+
+      <!-- EARLY SOFT CTA -->
+      <div class="cta" aria-label="早めの確認CTA">
+        <div class="title">
+          <b>すでにXMTradingをご存じの方へ（ショートカット）</b>
+          <span class="small">まず条件を確認してから進むのが安全です</span>
         </div>
+        <div class="btnrow">
+          <a class="btn-xm" href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" rel="nofollow sponsored noopener">
+            公式サイトで条件を確認する
+          </a>
+          <a class="btn" href="#conditions">先に注意点を見る</a>
+        </div>
+        <p class="fineprint">
+          ※上記リンクはアフィリエイトリンクです。登録や利用により当サイトが報酬を受け取る場合があります。
+        </p>
+        <p class="cta-risk">
+          リスク警告：FXとデリバティブ取引には高い損失リスクが伴います。
+          <a class="cta-terms"
+             href="https://cloud.xmtrading-cdn.com/static/pdf/System-PDFs/XMTrading-Terms-and-Conditions-Bonus-Program-100-and-20-upto-10000.pdf?v=123d705b39c1a1c798f31bda7b89c556"
+             target="_blank" rel="noopener nofollow">
+            入金ボーナス規約
+          </a>。
+        </p>
       </div>
 
       <div class="toc" aria-label="目次">
         <b>目次</b>
         <ul>
           <li><a href="#overview">まず結論（向いている人／向かない人）</a></li>
-          <li><a href="#bonus">ボーナスの種類（口座開設・入金）</a></li>
+          <li><a href="#bonus">入金不要ボーナス（13,000円）と入金ボーナス</a></li>
           <li><a href="#conditions">条件と注意点（ここが重要）</a></li>
           <li><a href="#howto">申し込みの流れ（KYC含む）</a></li>
+          <li><a href="#accounttypes">口座タイプの選び方（概要）</a></li>
           <li><a href="#risk">リスクと留意事項</a></li>
           <li><a href="#faq">よくある質問</a></li>
         </ul>
@@ -187,61 +251,94 @@
 
     <article>
       <section id="overview">
-        <h2>まず結論: こういう人には「試す価値あり」</h2>
-        <div class="goodbad">
-          <div class="card">
-            <h4>向いている人</h4>
-            <ul>
-              <li>少額で環境を試し、取引ツールや約定感を確認したい</li>
-              <li>ボーナスの条件を読んだ上で、ルールを守って利用できる</li>
-              <li>学習・検証目的で、いきなり大きく賭けない</li>
-            </ul>
-          </div>
-          <div class="card">
-            <h4>向かない人</h4>
-            <ul>
-              <li>「確実に儲かる」目的で探している（そのような商品ではありません）</li>
-              <li>条件確認が面倒で、勢いで登録してしまう</li>
-              <li>レバレッジ商品のリスクを理解せずに始めようとしている</li>
-            </ul>
-          </div>
+        <h2>まず結論: こういう人は「試す価値あり」</h2>
+        <div class="card">
+          <h4>向いている人</h4>
+          <ul>
+            <li>まずは少額で取引環境（ツール／操作感）を確認したい</li>
+            <li>ボーナスの条件を読んだ上で、ルールを守って利用できる</li>
+            <li>いきなり大きく賭けず、検証・学習の一環として始めたい</li>
+          </ul>
         </div>
-
+        <div class="card">
+          <h4>向かない人</h4>
+          <ul>
+            <li>「確実に儲かる」目的で探している（そのような保証はありません）</li>
+            <li>条件確認が面倒で、勢いで登録してしまう</li>
+            <li>レバレッジ商品のリスクを理解せずに始めようとしている</li>
+          </ul>
+        </div>
         <div class="note">
-          ポイント: MGIDのようなネイティブ広告経由では、まず「条件と注意点」を理解した上で進む方が失敗しにくいです。
+          ネイティブ広告経由は「読んで納得して進む」方が失敗しにくいです。条件を確認してから行動するのが最も安全です。
         </div>
       </section>
 
       <section id="bonus">
         <h2>ボーナスの種類（概要）</h2>
 
-        <h3>1) 口座開設（入金不要）ボーナス</h3>
+        <h3>1) 入金不要ボーナス：13,000円</h3>
         <p>
-          口座開設後、本人確認（KYC）などの条件を満たすことで付与されるタイプのボーナスです。
-          <b>金額や提供状況は時期により変わる</b>ため、表示されている条件は必ず公式で確認してください。
+          XMTradingでは、新規口座開設者向けに<b>入金不要ボーナス（13,000円）</b>が案内されています。
+          受け取りには、口座開設に加えて本人確認（KYC）完了などの条件が必要になる場合があります。
+          最終的な適用条件は公式ページの記載を優先してください。
         </p>
+
+        <figure class="shot" aria-label="スクリーンショット：XM公式ボーナス">
+          <div class="ph">
+            【スクリーンショット差し替え用】<br/>
+            XMTrading公式サイト：入金不要ボーナス（13,000円）案内画面<br/>
+            （ここに実際の公式ページのスクショを配置）
+          </div>
+          <figcaption>
+            画像は証拠・視認性のための枠です。条件は公式ページの記載が優先です。
+          </figcaption>
+        </figure>
 
         <h3>2) 入金ボーナス</h3>
         <p>
-          入金額に応じて付与されるタイプのボーナスです。一般的に「段階式（例: 100% + 20%など）」で案内されることがあります。
-          <b>ボーナスは出金不可</b>で、利益の出金条件や出金時の扱いにルールがあるケースが多い点に注意が必要です。
+          入金額に応じて付与されるタイプのボーナスです。案内内容は時期や条件で変わる場合があります。
+          なお、一般的にボーナスは取引資金として利用され、<b>ボーナス自体は出金不可</b>の設計であることが多い点に注意してください。
         </p>
 
-        <!-- Mid CTA: soft, informational -->
-        <div class="cta" aria-label="公式で条件を確認">
+        <figure class="shot" aria-label="スクリーンショット：入金ボーナス規約">
+          <div class="ph">
+            【スクリーンショット差し替え用】<br/>
+            入金ボーナス規約（条件・制限・出金時の扱い等）<br/>
+            （ここに該当ページのスクショを配置）
+          </div>
+          <figcaption>
+            規約の読み飛ばしがトラブルの原因になりやすいです。必ず内容を確認してください。
+          </figcaption>
+        </figure>
+
+        <!-- MID CTA (after bonus explanation) -->
+        <div class="cta" aria-label="中盤CTA">
           <div class="title">
-            <b>最新のボーナス条件は公式ページで確認（※条件は変更される場合があります）</b>
-            <span class="small">確認してから進むのが安全です</span>
+            <b>ここで一度、公式条件を確認（読み違い防止）</b>
+            <span class="small">ボーナスは条件次第で扱いが変わる場合があります</span>
           </div>
           <div class="btnrow">
-            <a class="btn btn-primary" href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" rel="nofollow sponsored noopener">
-              公式で条件を確認する
+            <a class="btn-xm" href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" rel="nofollow sponsored noopener">
+              公式サイトで条件を確認する
             </a>
-            <a class="btn" href="#conditions">先に注意点を見る</a>
           </div>
-          <div class="fineprint">
-            ※上記リンクはアフィリエイトリンクです。登録や利用により当サイトが報酬を受け取る場合があります。
-          </div>
+          <p class="fineprint">※上記リンクはアフィリエイトリンクです。</p>
+          <p class="cta-risk">
+            リスク警告：FXとデリバティブ取引には高い損失リスクが伴います。
+            <a class="cta-terms"
+               href="https://cloud.xmtrading-cdn.com/static/pdf/System-PDFs/XMTrading-Terms-and-Conditions-Bonus-Program-100-and-20-upto-10000.pdf?v=123d705b39c1a1c798f31bda7b89c556"
+               target="_blank" rel="noopener nofollow">
+              入金ボーナス規約
+            </a>。
+          </p>
+        </div>
+
+        <div class="note">
+          参考リンク（情報確認用）：
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=6" rel="nofollow sponsored noopener">プロモーション一覧</a>
+          ／
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=18" rel="nofollow sponsored noopener">サポート</a>
+          （※どちらもアフィリエイトリンクです）
         </div>
       </section>
 
@@ -255,15 +352,15 @@
           <h4>チェックすべきポイント</h4>
           <ul>
             <li><b>付与条件:</b> 本人確認（KYC）完了が必要か／対象口座タイプは何か</li>
-            <li><b>有効期限:</b> ボーナス・口座の期限、未使用時の失効条件</li>
-            <li><b>出金の扱い:</b> ボーナス自体は出金不可か／出金時にボーナスが減額される条件があるか</li>
+            <li><b>有効期限:</b> ボーナスの失効条件、未使用時の扱い</li>
+            <li><b>出金の扱い:</b> 出金時にボーナスが減額・消滅する条件があるか</li>
             <li><b>対象者:</b> 新規のみか／過去に口座がある場合は対象外か</li>
-            <li><b>禁止事項:</b> 規約違反（複数口座等）で没収・制限されうるか</li>
+            <li><b>禁止事項:</b> 規約違反で制限・没収となる可能性</li>
           </ul>
         </div>
 
         <div class="note">
-          重要: 当ページは一般的な整理であり、最終判断は必ず公式の条件・規約を確認してください。
+          最終判断は必ず公式の条件・規約を確認してください（当ページは一般情報の整理です）。
         </div>
       </section>
 
@@ -273,60 +370,104 @@
           <li style="margin:8px 0;">口座開設フォーム入力（基本情報）</li>
           <li style="margin:8px 0;">メール確認・会員ページへログイン</li>
           <li style="margin:8px 0;">本人確認書類提出（KYC）</li>
-          <li style="margin:8px 0;">条件を満たした場合にボーナス付与（付与条件は公式参照）</li>
+          <li style="margin:8px 0;">条件を満たした場合にボーナス付与</li>
         </ol>
 
+        <figure class="shot" aria-label="スクリーンショット：口座開設フロー">
+          <div class="ph">
+            【スクリーンショット差し替え用】<br/>
+            XMTrading公式サイト：口座開設フォーム／本人確認手順の画面<br/>
+            （ここに公式サイトのスクショを配置）
+          </div>
+          <figcaption>
+            画像は視認性・証拠目的の枠です。実際の表示や条件は公式サイトに従います。
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="accounttypes">
+        <h2>口座タイプの選び方（概要）</h2>
+        <p>
+          XMTradingには複数の口座タイプがあります。取引スタイルやコスト構造（スプレッド/手数料）などが異なる場合があります。
+          口座タイプの詳細は公式で確認してください。
+        </p>
         <div class="note">
-          KYC審査は提出内容により時間がかかる場合があります。画像が不鮮明・情報不一致などは差し戻し原因になりやすいです。
+          参考リンク（情報確認用）：
+          <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=2" rel="nofollow sponsored noopener">口座タイプの詳細</a>
+          （※アフィリエイトリンク）
         </div>
+
+        <figure class="shot" aria-label="スクリーンショット：口座タイプ一覧">
+          <div class="ph">
+            【スクリーンショット差し替え用】<br/>
+            XMTrading公式サイト：口座タイプ一覧・比較画面<br/>
+            （ここに公式サイトのスクショを配置）
+          </div>
+          <figcaption>
+            口座タイプごとの条件や対象キャンペーンが異なる場合があります。公式の記載を優先してください。
+          </figcaption>
+        </figure>
       </section>
 
       <section id="risk">
         <h2>リスクと留意事項</h2>
         <div class="risk" role="note" aria-label="リスク警告">
-          <b>リスク警告:</b> FX/CFDなどの証拠金取引は高いリスクを伴い、損失が発生する可能性があります。レバレッジ取引はすべての投資家に適しているとは限りません。取引開始前に仕組みとリスクを理解し、必要に応じて独立した専門家へ相談してください。
+          <b>リスク警告:</b> FX/CFDなどの証拠金取引は高いリスクを伴い、損失が発生する可能性があります。
+          レバレッジ取引はすべての投資家に適しているとは限りません。取引開始前に仕組みとリスクを理解し、必要に応じて独立した専門家へ相談してください。
         </div>
-
         <p>
-          ボーナスは「資金効率」を高める一方で、レバレッジ商品では損失も拡大し得ます。まずは少額・小さなロットで環境を検証し、無理な取引は避けてください。
+          ボーナスは「資金効率」を高める一方で、レバレッジ商品では損失も拡大し得ます。まずは少額・小さなロットで検証するのが無難です。
         </p>
       </section>
 
       <section class="faq" id="faq">
         <h2>よくある質問</h2>
-
         <details>
           <summary>ボーナスは現金として出金できますか？</summary>
-          <p>多くのボーナスは「取引資金としてのみ利用可」で、ボーナス自体は出金不可の設計が一般的です。出金時の取り扱い（減額等）は公式条件で確認してください。</p>
+          <p>
+            多くのボーナスは取引資金としてのみ利用でき、ボーナス自体は出金できない設計が一般的です。
+            出金時の扱い（減額・消滅等）は条件により異なる場合があるため、公式の規約を確認してください。
+          </p>
         </details>
 
         <details>
-          <summary>口座開設ボーナスは誰でももらえますか？</summary>
-          <p>新規限定・KYC必須などの条件があることが多いです。対象国や口座タイプ等の条件は変更される場合があるため、公式ページの最新条件が優先です。</p>
+          <summary>入金不要ボーナス（13,000円）は誰でも受け取れますか？</summary>
+          <p>
+            新規対象・本人確認（KYC）など、条件を満たした場合に付与されるケースが一般的です。詳細は公式条件が優先です。
+          </p>
         </details>
 
         <details>
-          <summary>MGIDなどの広告経由でも条件は同じですか？</summary>
-          <p>原則は公式条件が基準です。ただしキャンペーン導線・表示が異なる場合があります。登録前に公式の条件・規約を確認してください。</p>
+          <summary>どこを確認すれば「読み違い」が減りますか？</summary>
+          <p>
+            「対象者」「対象口座」「付与タイミング」「出金時の扱い」「禁止事項」の5点を先に確認すると、トラブルが減ります。
+          </p>
         </details>
       </section>
 
-      <!-- Bottom CTA: final, still soft -->
-      <div class="cta" aria-label="最終確認CTA">
+      <!-- FINAL CTA -->
+      <div class="cta" aria-label="最終CTA">
         <div class="title">
-          <b>次のステップ: 公式ページで条件を確認してから申し込む</b>
-          <span class="small">拙速な登録は損をしやすいです</span>
+          <b>最終ステップ：公式ページで条件を確認してから口座開設へ</b>
+          <span class="small">条件確認→申し込みの順が安全です</span>
         </div>
         <div class="btnrow">
-          <a class="btn btn-primary" href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" rel="nofollow sponsored noopener">
-            公式で条件を確認する
+          <a class="btn-xm" href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" rel="nofollow sponsored noopener">
+            公式サイトで条件を確認する
           </a>
           <a class="btn" href="#conditions">条件と注意点に戻る</a>
         </div>
-        <div class="fineprint">
-          ※上記リンクはアフィリエイトリンクです。登録や利用により当サイトが報酬を受け取る場合があります。
-        </div>
+        <p class="fineprint">※上記リンクはアフィリエイトリンクです。</p>
+        <p class="cta-risk">
+          リスク警告：FXとデリバティブ取引には高い損失リスクが伴います。
+          <a class="cta-terms"
+             href="https://cloud.xmtrading-cdn.com/static/pdf/System-PDFs/XMTrading-Terms-and-Conditions-Bonus-Program-100-and-20-upto-10000.pdf?v=123d705b39c1a1c798f31bda7b89c556"
+             target="_blank" rel="noopener nofollow">
+            入金ボーナス規約
+          </a>。
+        </p>
       </div>
+
     </article>
   </div>
 
@@ -360,7 +501,5 @@
       <p class="small">© 2026 FXfacts. All rights reserved.</p>
     </div>
   </footer>
-
-  <!-- No heavy JS: keep MGID-friendly and fast -->
 </body>
 </html>
