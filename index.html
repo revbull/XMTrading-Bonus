@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart FX Facts | Global Trading Guide 2026</title>
-    <meta name="description" content="Expert guides for XMTrading, Exness, and eToro. Get the best bonuses and trading conditions for 2026.">
+    <meta name="description" content="Expert guides for XMTrading, Exness, and eToro. Get the best trading conditions for 2026.">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTMQSP8BPQ"></script>
     <script>
@@ -48,7 +48,7 @@
         .sticky-footer { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(8px); border-top: 1px solid #cbd5e1; padding: 12px 20px; z-index: 100; text-align: center; }
         .sticky-btn { display: block; background: var(--col-gold); color: white; font-weight: 900; padding: 14px; border-radius: 8px; font-size: 1.1rem; }
         
-        /* Japan Specific Classes */
+        /* Japan Styles */
         .chat-section { background: #f0fdf4; border: 2px solid #bbf7d0; }
         .chat-row { display: flex; gap: 15px; margin-bottom: 15px; }
         .chat-row.reverse { flex-direction: row-reverse; }
@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="sticky-footer">
-            <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" class="sticky-btn">今すぐ13,000円を受け取る ＞</a>
+            <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" onclick="triggerPropellerConversion()" class="sticky-btn">今すぐ13,000円を受け取る ＞</a>
         </div>
     </div>
 
@@ -88,28 +88,36 @@
 
     <div id="geo-uk-eu" style="display:none;"></div>
 
-    <div class="disclaimer-box" style="padding: 20px; font-size: 0.7rem; color: #64748b; text-align: center;">
-        <p>© 2026 Smart FX Facts. Trading involves risk.</p>
+    <div class="disclaimer-box">
+        <div style="max-width:700px; margin:0 auto;">
+            <p>© 2026 Smart FX Facts. All rights reserved.</p>
+        </div>
     </div>
 
     <script>
-        // 1. CHAMELEON SWITCHER
+        // 1. SMART SWITCHER
         async function smartFxSwitcher() {
             try {
                 const response = await fetch('/cdn-cgi/trace');
                 const text = await response.text();
                 const country = text.match(/loc=([A-Z]{2})/)[1];
 
+                // Hide all
                 document.getElementById('geo-japan').style.display = 'none';
+                document.getElementById('geo-sea').style.display = 'none';
+                document.getElementById('geo-uk-eu').style.display = 'none';
                 
                 if (country === 'JP') {
                     document.getElementById('geo-japan').style.display = 'block';
+                    document.documentElement.lang = "ja";
                 } else if (['TH', 'VN', 'PH', 'MY'].includes(country)) {
                     renderExnessSEA();
                     document.getElementById('geo-sea').style.display = 'block';
+                    document.documentElement.lang = "en";
                 } else if (['GB', 'IT', 'FR', 'ES'].includes(country)) {
                     renderEtoroUK();
                     document.getElementById('geo-uk-eu').style.display = 'block';
+                    document.documentElement.lang = "en";
                 } else {
                     document.getElementById('geo-japan').style.display = 'block';
                 }
@@ -118,53 +126,54 @@
             }
         }
 
-        // 2. SEA CONTENT INJECTOR
+        // 2. EXNESS INJECTOR
         function renderExnessSEA() {
             document.getElementById('geo-sea').innerHTML = `
-                <div class="ad-disclosure">Advertiser Disclosure: This page contains affiliate links.</div>
+                <div class="ad-disclosure">Advertiser Disclosure: This page contains promotions.</div>
                 <header><span class="header-badge" style="background:#10b981;">PRO</span><span>Exness SE Asia Hub</span></header>
                 <div class="hero" style="background: linear-gradient(160deg, #064e3b 0%, #022c22 100%);">
-                    <div class="hero-tag" style="background:#10b981;">LOWEST SPREADS</div>
+                    <div class="hero-tag" style="background:#10b981;">BEST CONDITIONS</div>
                     <h1>SE Asia Trading Pro<br><span class="hero-amount" style="color:#10b981;">0.0 PIPS</span>Instant Payouts</h1>
                 </div>
                 <div class="container">
                     <div class="card">
-                        <h2 class="section-title">Why Exness?</h2>
-                        <p>✓ Instant Withdrawals to Local Banks<br>✓ Unlimited Leverage<br>✓ 0.0 Spreads on Gold</p>
-                        <a href="YOUR_EXNESS_LINK" class="btn-shiny" style="background:#10b981; box-shadow:0 6px 0 #065f46;">Start Trading Now</a>
+                        <p>✓ Instant Local Bank Withdrawals<br>✓ Unlimited Leverage<br>✓ 0.0 Spreads on Gold & Majors</p>
+                        <a href="ТВОЯ_EXNESS_ВРЪЗКА" onclick="triggerPropellerConversion()" class="btn-shiny" style="background:#10b981; box-shadow:0 6px 0 #065f46;">Open Zero Spread Account</a>
                     </div>
                 </div>
-                <div class="sticky-footer"><a href="YOUR_EXNESS_LINK" class="sticky-btn" style="background:#10b981;">Claim Zero Spread Account ＞</a></div>
+                <div class="sticky-footer"><a href="ТВОЯ_EXNESS_ВРЪЗКА" class="sticky-btn" style="background:#10b981;">Start Trading Now ＞</a></div>
             `;
         }
 
-        // 3. UK CONTENT INJECTOR
+        // 3. ETORO INJECTOR
         function renderEtoroUK() {
             document.getElementById('geo-uk-eu').innerHTML = `
                 <div class="ad-disclosure">FCA Regulated | Capital at Risk</div>
-                <header><span class="header-badge" style="background:#008144;">UK</span><span>eToro Investment Network</span></header>
+                <header><span class="header-badge" style="background:#008144;">UK</span><span>eToro Official Guide</span></header>
                 <div class="hero" style="background: #008144;">
-                    <h1>The UK's Top Social Network<br><span class="hero-amount">0% Commission</span>on Real Stocks</h1>
+                    <h1>The UK's Social Investment Network<br><span class="hero-amount">0% Commission</span>Real Stocks</h1>
                 </div>
                 <div class="container">
                     <div class="card">
-                        <p>Join 30M+ users. Copy top UK investors or buy FTSE 100 stocks with zero markups.</p>
-                        <a href="YOUR_ETORO_LINK" class="btn-shiny" style="background:#008144; box-shadow:0 6px 0 #004d29;">Open eToro Account</a>
-                        <p style="font-size:10px; margin-top:10px;">51% of retail CFD accounts lose money.</p>
+                        <p>Join 30M+ users. Copy top UK investors or buy stocks with 0% commission.</p>
+                        <a href="ТВОЯ_ETORO_ВРЪЗКА" onclick="triggerPropellerConversion()" class="btn-shiny" style="background:#008144; box-shadow:0 6px 0 #004d29;">Open eToro Account</a>
+                        <p style="font-size:10px; margin-top:10px; color:#64748b;">51% of retail CFD accounts lose money.</p>
                     </div>
                 </div>
             `;
         }
 
-        // 4. PROPELLER CONVERSION
+        // 4. CONVERSION TRACKING
         function triggerPropellerConversion() {
             const clickId = new URLSearchParams(window.location.search).get('clickid');
             if (clickId) {
                 const pixel = new Image();
                 pixel.src = "https://ad.propellerads.com/conversion.php?aid=1063015&pid=&tid=114050&visitor_id=" + clickId;
+                console.log("Propeller conversion fired.");
             }
         }
 
+        // SECURITY (Optional - removed disable right click for better SEO)
         smartFxSwitcher();
     </script>
 </body>
