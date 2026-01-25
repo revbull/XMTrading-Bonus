@@ -300,23 +300,27 @@
 </head>
 <body>
     <div id="geo-japan" style="display:none;">
-        </div>
+        
 
-    <div id="geo-sea" style="display:none;">
-        </div>
-
-    <div id="geo-uk-eu" style="display:none;">
-        </div>
+    
 
     <div class="ad-disclosure">
         広告に関する開示：本サイトはプロモーションが含まれています。記事内で紹介するサービスへの登録により、運営者が報酬を受け取る場合があります。
     </div>
 
-    <div class="promo-banner">
+    <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=1" 
+       onclick="gtag('event', 'XMclick', {'debug_mode': true}); triggerPropellerConversion()" 
+       class="promo-banner" 
+       style="text-decoration: none;">
         <span class="promo-tag">期間限定</span>
         <span>【お年玉プロモ】今なら入金ボーナス100%リセット中！（〜1/31まで）</span>
-    </div>
+    </a>
+        </div>
+<div id="geo-sea" style="display:none;">
+        </div>
 
+    <div id="geo-uk-eu" style="display:none;">
+        </div>
     <header>
         <span class="header-badge">特集</span>
         <span>FXfacts 編集部｜XMTrading徹底解説メディア</span>
@@ -574,5 +578,48 @@
     }
     </script>
 
+    ```javascript
+<script>
+async function smartFxSwitcher() {
+    try {
+        // 1. Get location from Cloudflare
+        const response = await fetch('/cdn-cgi/trace');
+        const text = await response.text();
+        const country = text.match(/loc=([A-Z]{2})/)[1];
+
+        // 2. Hide everything initially
+        document.getElementById('geo-japan').style.display = 'none';
+        document.getElementById('geo-sea').style.display = 'none';
+
+        // 3. Logic Switch
+        if (country === 'JP') {
+            document.getElementById('geo-japan').style.display = 'block';
+        } 
+        else if (['TH', 'VN', 'PH', 'MY'].includes(country)) {
+            // Run the function I gave you earlier to 'write' the Exness content
+            renderExnessSEA(); 
+            document.getElementById('geo-sea').style.display = 'block';
+        } 
+        else {
+            // Default: Show Japan or your preferred global broker
+            document.getElementById('geo-japan').style.display = 'block';
+        }
+    } catch (e) {
+        document.getElementById('geo-japan').style.display = 'block';
+    }
+}
+
+// 4. THE EXNESS CONTENT INJECTOR (Paste the renderExnessSEA code here)
+function renderExnessSEA() {
+    const hub = document.getElementById('geo-sea');
+    hub.innerHTML = `
+        `;
+}
+
+// Start the switcher
+smartFxSwitcher();
+</script>
+
 </body>
 </html>
+
