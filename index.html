@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AvaTrade France | AvaProtect™ & Copy Trading Premium</title>
+  <title>AvaTrade France | Trading Maîtrisé & AvaProtect™</title>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
       --white: #ffffff;
       --gray-bg: #f8fafc;
       --text-dark: #1e293b;
-      --glass: rgba(255, 255, 255, 0.03);
+      --muted: #64748b;
       --radius: 20px;
     }
 
@@ -25,10 +25,10 @@
     body {
       margin: 0; font-family: 'Plus Jakarta Sans', sans-serif;
       color: var(--text-dark); background-color: var(--gray-bg);
-      line-height: 1.6;
+      line-height: 1.6; padding-bottom: 80px;
     }
 
-    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
     /* --- HEADER --- */
     header {
@@ -36,75 +36,67 @@
       position: sticky; top: 0; z-index: 1000;
     }
     .nav { display: flex; justify-content: space-between; align-items: center; }
-    .logo img { height: 38px; }
-    .reg-status { font-size: 11px; font-weight: 700; color: var(--navy); border: 1.5px solid #cbd5e1; padding: 6px 12px; border-radius: 8px; text-transform: uppercase; }
+    .logo img { height: 35px; }
+    .reg-status { font-size: 11px; font-weight: 700; color: var(--navy); border: 1.5px solid #cbd5e1; padding: 5px 12px; border-radius: 8px; }
 
-    /* --- HERO SECTION (AvaProtect Focus) --- */
+    /* --- HERO --- */
     .hero {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
-      color: #fff; padding: 80px 0 100px; position: relative; overflow: hidden;
+      color: #fff; padding: 70px 0 90px; position: relative; overflow: hidden;
     }
-    /* Декоративен елемент като в оригиналното LP */
-    .hero::after {
-      content: ""; position: absolute; top: -10%; right: -5%; width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(255,184,0,0.15) 0%, transparent 70%);
-      filter: blur(60px);
-    }
-
     .hero-flex { display: flex; align-items: center; gap: 40px; position: relative; z-index: 5; }
     .hero-text { flex: 1.2; }
-    .hero-img { flex: 0.8; text-align: right; }
-    .hero-img img { max-width: 100%; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3)); }
+    h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.1; font-weight: 800; margin: 0 0 20px; }
+    .hero p { font-size: 1.15rem; opacity: 0.9; margin-bottom: 30px; max-width: 600px; }
 
-    .tagline { color: var(--gold); font-weight: 800; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; display: block; }
-    h1 { font-size: clamp(2.5rem, 5vw, 3.8rem); line-height: 1.1; font-weight: 800; margin: 0 0 25px; }
-    .hero p { font-size: 1.2rem; opacity: 0.9; margin-bottom: 35px; max-width: 550px; }
-
-    /* --- BUTTONS --- */
+    /* --- ACTIONS --- */
     .btn {
-      display: inline-flex; align-items: center; padding: 18px 40px; border-radius: 14px;
-      font-weight: 700; text-decoration: none; transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex; align-items: center; padding: 16px 35px; border-radius: 12px;
+      font-weight: 700; text-decoration: none; transition: 0.3s; cursor: pointer; border: none;
     }
     .btn-gold { background: var(--gold); color: var(--navy); }
-    .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255, 184, 0, 0.4); }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(255, 184, 0, 0.3); }
 
-    /* --- FEATURES GRID (Copytrading, Forex, Crypto) --- */
-    .features-section { margin-top: -60px; position: relative; z-index: 10; padding-bottom: 80px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
-    
+    /* --- FEATURES GRID --- */
+    .features { margin-top: -50px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
     .card {
-      background: var(--white); padding: 40px; border-radius: var(--radius);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.05); border: 1px solid rgba(226, 232, 240, 0.5);
-      transition: 0.3s;
+      background: var(--white); padding: 35px; border-radius: var(--radius);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.06); transition: 0.3s;
     }
-    .card:hover { transform: translateY(-10px); border-color: var(--gold); }
-    .card .icon { font-size: 40px; margin-bottom: 20px; display: block; }
-    .card h3 { font-size: 1.4rem; color: var(--navy); margin-bottom: 15px; font-weight: 700; }
-    .card p { color: #64748b; font-size: 1rem; margin: 0; }
+    .card h3 { font-size: 1.25rem; color: var(--navy); margin-bottom: 12px; font-weight: 700; }
+    .card p { color: var(--muted); font-size: 0.95rem; }
+    .icon { font-size: 32px; margin-bottom: 15px; display: block; }
 
-    /* --- SECONDARY CONTENT (Copytrading Deep Dive) --- */
-    .content-block { padding: 100px 0; background: #fff; }
-    .flex-block { display: flex; align-items: center; gap: 60px; }
-    .text-side { flex: 1; }
-    .image-side { flex: 1; background: var(--gray-bg); border-radius: 30px; padding: 50px; text-align: center; font-size: 6rem; }
-
-    /* --- RISK DISCLAIMER --- */
-    .risk-box {
-      background: #f1f5f9; padding: 30px; border-radius: 15px; border-left: 5px solid var(--navy);
-      margin: 60px 0; font-size: 0.85rem; color: #475569;
+    /* --- HOW IT WORKS: AvaProtect --- */
+    .how-it-works { padding: 80px 0; background: #fff; margin: 40px 0; border-radius: 30px; }
+    .section-title { text-align: center; margin-bottom: 50px; }
+    .step-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; }
+    .step { text-align: center; }
+    .step-num { 
+      width: 40px; height: 40px; background: var(--navy); color: #fff; 
+      border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+      margin: 0 auto 20px; font-weight: 800;
     }
 
-    /* --- STICKY FOOTER --- */
-    .sticky-bar {
-      position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(15px); border-top: 1px solid #e2e8f0; padding: 15px 0; z-index: 1000;
+    /* --- DISCLAIMER & RISK --- */
+    .transparency-notice {
+      background: #f8fafc; border: 1px solid #e2e8f0; padding: 25px;
+      border-radius: 15px; margin: 40px 0; font-size: 0.9rem; color: var(--muted);
     }
-    .sticky-wrap { display: flex; justify-content: space-between; align-items: center; }
+    .risk-banner {
+      background: #fff5f5; border: 1px solid #feb2b2; padding: 20px;
+      border-radius: 12px; color: #c53030; font-size: 0.85rem; margin-top: 30px;
+    }
 
-    @media (max-width: 850px) {
-      .hero-flex, .flex-block { flex-direction: column; text-align: center; }
-      .hero-img, .image-side { display: none; }
-      .hero p { margin: 0 auto 30px; }
+    /* --- STICKY --- */
+    .sticky {
+      position: fixed; bottom: 0; width: 100%; background: #fff;
+      padding: 15px 0; border-top: 1px solid #e2e8f0; z-index: 100;
+    }
+    .sticky-flex { display: flex; justify-content: space-between; align-items: center; }
+
+    @media (max-width: 768px) {
+      .sticky-flex { flex-direction: column; gap: 10px; text-align: center; }
     }
   </style>
 </head>
@@ -112,76 +104,80 @@
 
 <header>
   <div class="wrap nav">
-    <div class="logo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/AvaTrade_Logo.svg" alt="AvaTrade Logo">
-    </div>
-    <div class="reg-status">Courtier Mondial Régulé</div>
+    <div class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/AvaTrade_Logo.svg" alt="AvaTrade"></div>
+    <div class="reg-status">Régulation Européenne (CBI)</div>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap hero-flex">
     <div class="hero-text">
-      <span class="tagline">Exclusivité AvaTrade</span>
-      <h1>Tradez sans crainte avec AvaProtect™</h1>
-      <p>La technologie révolutionnaire qui vous <b>rembourse 100% de vos pertes</b> sur vos trades Forex, Or и Crypto. Reprenez le contrôle total.</p>
-      <a href="PLACEHOLDER_LINK" class="btn btn-gold">Protéger mes Trades Maintenant →</a>
-    </div>
-    <div class="hero-img">
-      <img src="https://www.avatrade.fr/wp-content/uploads/2021/04/AvaProtect-Shield.png" alt="AvaProtect Shield">
+      <h1>Optimisez votre gestion du risque.</h1>
+      <p>Découvrez <b>AvaProtect™</b>, un outil innovant pour protéger vos positions Forex et Gold, combiné à la puissance du Copy Trading et des Cryptos.</p>
+      <a href="PLACEHOLDER_LINK" class="btn btn-gold">Découvrir la plateforme →</a>
     </div>
   </div>
 </section>
 
-<section class="features-section wrap">
-  <div class="grid">
+<div class="wrap">
+  <section class="features">
+    <div class="card">
+      <span class="icon">🛡️</span>
+      <h3>AvaProtect™</h3>
+      <p>Un outil de gestion du risque optionnel qui vous permet de définir une protection sur des trades spécifiques moyennant un coût (Premium).</p>
+    </div>
     <div class="card">
       <span class="icon">👥</span>
       <h3>Copy Trading</h3>
-      <p>Pas encore sûr de vos capacités ? Copiez automatiquement les stratégies des meilleurs traders et apprenez en gagnant.</p>
+      <p>Idéal si vous manquez d'assurance : répliquez automatiquement les positions de traders expérimentés via AvaSocial.</p>
     </div>
-
     <div class="card">
-      <span class="icon">💹</span>
-      <h3>Forex Premium</h3>
-      <p>Accédez aux spreads les plus bas du marché sur l'EUR/USD et plus de 50 paires de devises avec une exécution ultra-rapide.</p>
+      <span class="icon">🪙</span>
+      <h3>Forex & Crypto</h3>
+      <p>Accédez à plus de 50 paires de devises et aux cryptos majeures (BTC, ETH) avec des outils d'analyse de pointe.</p>
     </div>
+  </section>
 
-    <div class="card">
-      <span class="icon">₿</span>
-      <h3>Crypto 24/7</h3>
-      <p>Bitcoin, Ethereum, Solana... Tradez les cryptomonnaies les plus populaires même le week-end, sans avoir besoin de portefeuille.</p>
+  <section class="how-it-works wrap">
+    <div class="section-title">
+      <h2>Comment fonctionne AvaProtect™ ?</h2>
+      <p>Une protection active, étape par étape.</p>
     </div>
-  </div>
-</section>
-
-<main class="content-block">
-  <div class="wrap">
-    <div class="flex-block">
-      <div class="image-side">📊</div>
-      <div class="text-side">
-        <h2 style="font-size: 2.5rem; color: var(--navy); margin-bottom: 20px;">L'incertitude appartient au passé</h2>
-        <p style="font-size: 1.1rem; color: #475569; margin-bottom: 30px;">
-          Que vous soyez attiré par la volatilité du <b>Forex</b> ou les opportunités explosives de la <b>Crypto</b>, AvaTrade vous offre les outils pour réussir. 
-          Si vous hésitez encore sur vos analyses, notre plateforme de <b>Social Trading</b> vous permet de rejoindre une communauté d'experts et de répliquer leurs positions en un clic.
-        </p>
-        <a href="PLACEHOLDER_LINK" class="btn btn-gold">Essayer le Copy Trading</a>
+    <div class="step-grid">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Sélection</h4>
+        <p>Choisissez l'instrument (Forex/Or) et activez AvaProtect avant d'ouvrir votre position.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Coût (Premium)</h4>
+        <p>Un coût de protection est calculé selon la durée choisie. Ce montant est non remboursable.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Indemnisation</h4>
+        <p>Si votre position est perdante à la fin de la période, AvaTrade crédite les pertes sur votre compte.</p>
       </div>
     </div>
+  </section>
 
-    <div class="risk-box">
-      <strong>Avertissement de Risque :</strong> Les CFD sont des instruments complexes et présentent un risque élevé de perte rapide en capital en raison de l'effet de levier. 
-      <strong>76% des comptes d'investisseurs particuliers perdent de l'argent</strong> lorsqu'ils négocient des CFD avec ce fournisseur. 
-      Vous devez vous assurer que vous comprenez le fonctionnement des CFD et si vous pouvez vous permettre de prendre le risque élevé de perdre votre argent.
-    </div>
+  <div class="transparency-notice">
+    <strong>Note sur la transparence :</strong> AvaProtect™ n'est pas une fonction automatique. Il s'agit d'une option payante par trade. La protection ne couvre que la perte commerciale et ne rembourse pas le "Premium" payé pour l'activation. Sans cet outil, les pertes sont à la charge exclusive du trader.
   </div>
-</main>
 
-<div class="sticky-bar">
-  <div class="wrap sticky-wrap">
+  <div class="risk-banner">
+    <strong>Avertissement :</strong> Le trading de CFD comporte un risque de perte élevé. 
+    <strong>76% des comptes de particuliers perdent de l'argent.</strong> 
+    Le trading n'est pas une garantie de profit. AvaProtect™ est un outil de gestion du risque et n'élimine pas les risques inhérents au marché.
+  </div>
+</div>
+
+<div class="sticky">
+  <div class="wrap sticky-flex">
     <div>
-      <span style="font-weight: 800; font-size: 1.2rem; color: var(--navy); display: block;">AvaProtect™ + Copy Trading</span>
-      <span style="font-size: 0.8rem; color: #64748b;">Régulation Européenne • Support 24/5 en Français</span>
+      <span style="font-weight: 800; color: var(--navy);">AvaTrade France</span>
+      <span style="display: block; font-size: 0.8rem; color: var(--muted);">Forex, Crypto & Copy Trading</span>
     </div>
     <a href="PLACEHOLDER_LINK" class="btn btn-gold" style="padding: 12px 25px;">Ouvrir un compte</a>
   </div>
