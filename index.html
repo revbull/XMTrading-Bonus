@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert Bourse 24 | Partenaire Oracle Red Bull Racing</title>
-    <meta name="description" content="Plateforme de trading haute performance. AvaProtect, Copy Trading et technologie de pointe.">
+    <title>Expert Bourse 24 | Signaux Gratuits & AvaProtect</title>
+    <meta name="description" content="Trading sans commission. Recevez des signaux de trading gratuits, automatisez avec DupliTrade et protégez vos pertes avec AvaProtect.">
 
     <script type="text/javascript">
         (function() {
@@ -40,8 +40,7 @@
             --rb-red: #ea1d2c;      /* Racing Red */
             --rb-yellow: #fbb800;   /* Bull Yellow */
             --text-dark: #1a1a1a;
-            --text-light: #f4f4f4;
-            --bg-light: #f8f9fc;
+            --bg-light: #f4f6f9;
         }
 
         * { box-sizing: border-box; }
@@ -55,10 +54,10 @@
         }
 
         h1, h2, h3, .brand, .btn-main {
-            font-family: 'Kanit', sans-serif; /* Sporty Font */
+            font-family: 'Kanit', sans-serif;
         }
 
-        /* --- HEADER & LOGOS --- */
+        /* --- HEADER (Fixed SVG Logos) --- */
         header {
             background: var(--rb-navy);
             padding: 10px 20px;
@@ -68,38 +67,17 @@
             border-bottom: 2px solid var(--rb-red);
         }
         
-        .brand {
-            font-size: 1.1rem; font-weight: 800; color: white;
-            text-transform: uppercase; font-style: italic; letter-spacing: 0.5px;
-            display: none; /* Скриваме на много малки екрани */
-        }
-        @media (min-width: 380px) { .brand { display: block; } }
-
-        .logos-wrapper { display: flex; align-items: center; gap: 12px; }
-        
-        .logo-img {
-            height: 28px; /* Идеален размер за мобилни */
-            width: auto; display: block;
-        }
-        @media (min-width: 400px) { .logo-img { height: 32px; } }
-        
-        .separator { width: 1px; height: 20px; background: rgba(255,255,255,0.2); }
-
         /* --- HERO SECTION --- */
         .hero {
             background: linear-gradient(160deg, var(--rb-navy) 0%, #152242 100%);
             color: white;
             text-align: center;
-            padding: 50px 20px 80px;
+            padding: 40px 20px 60px;
             position: relative;
             overflow: hidden;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-        }
-
-        .hero::before {
-            content: ''; position: absolute; top: 0; right: 0; width: 100px; height: 100%;
-            background: linear-gradient(to left, rgba(234, 29, 44, 0.1), transparent);
-            transform: skewX(-20deg);
+            /* Модерна крива отдолу */
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
         }
 
         .tag-pill {
@@ -110,15 +88,14 @@
         }
 
         .hero h1 {
-            font-size: 2.2rem; margin: 0 0 15px 0; line-height: 1.1; font-weight: 800;
-            text-transform: uppercase;
+            font-size: 2.2rem; margin: 0 0 15px 0; line-height: 1.1; font-weight: 800; text-transform: uppercase;
         }
         .hero h1 span { color: var(--rb-yellow); }
-        .hero p { opacity: 0.8; font-size: 1.1rem; max-width: 500px; margin: 0 auto 30px; font-weight: 300; }
+        .hero p { opacity: 0.9; font-size: 1.1rem; max-width: 600px; margin: 0 auto 25px; font-weight: 300; }
 
         .btn-main {
             background: linear-gradient(90deg, var(--rb-yellow) 0%, #ffcc00 100%);
-            color: black; padding: 18px 40px; border-radius: 4px;
+            color: black; padding: 16px 40px; border-radius: 4px;
             font-weight: 800; text-transform: uppercase; text-decoration: none; font-size: 1rem;
             display: inline-block; box-shadow: 0 10px 30px rgba(251, 184, 0, 0.3);
             transform: skewX(-10deg); transition: all 0.3s;
@@ -126,71 +103,76 @@
         .btn-main span { display: block; transform: skewX(10deg); }
         .btn-main:active { transform: skewX(-10deg) scale(0.95); }
 
-        /* --- FEATURES --- */
-        .features {
-            max-width: 900px; margin: -50px auto 40px; padding: 0 20px;
+        /* --- 0% COMMISSION BANNER (Native CSS) --- */
+        .commission-banner {
+            background: white;
+            max-width: 800px; margin: -30px auto 30px;
+            border-radius: 12px;
+            padding: 15px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: flex; align-items: center; justify-content: center; gap: 15px;
             position: relative; z-index: 10;
+            border: 1px solid #eee;
+        }
+        .comm-text { font-size: 1.1rem; font-weight: 800; color: var(--rb-navy); text-transform: uppercase; }
+        .comm-badge { 
+            background: var(--rb-red); color: white; padding: 5px 12px; 
+            border-radius: 4px; font-weight: 900; font-size: 1.2rem; transform: skewX(-10deg);
         }
 
+        /* --- FEATURES GRID (The 4 Pillars) --- */
+        .features-grid {
+            display: grid; grid-template-columns: 1fr; gap: 20px;
+            max-width: 800px; margin: 0 auto 40px; padding: 0 20px;
+        }
+        @media (min-width: 600px) { .features-grid { grid-template-columns: 1fr 1fr; } }
+
         .card {
-            background: white; border-radius: 12px; padding: 25px; margin-bottom: 20px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            background: white; border-radius: 12px; padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
             position: relative; overflow: hidden;
             border-top: 4px solid transparent; transition: transform 0.3s;
+            display: flex; flex-direction: column; justify-content: space-between;
         }
         .card:hover { transform: translateY(-5px); }
 
-        .card.protect { border-top-color: var(--rb-blue); }
-        .card.protect::after {
-            content: '🛡️'; font-size: 80px; position: absolute; right: -10px; bottom: -20px; 
-            opacity: 0.05; transform: rotate(-15deg);
-        }
-
-        .card.copy { border-top-color: var(--rb-red); }
-        .card.copy::after {
-            content: '👥'; font-size: 80px; position: absolute; right: -10px; bottom: -20px; 
-            opacity: 0.05; transform: rotate(-15deg);
-        }
-
-        .card h3 { margin: 0 0 10px 0; font-size: 1.4rem; color: var(--rb-navy); }
-        .card p { color: #555; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5; }
+        .card h3 { margin: 10px 0 5px 0; font-size: 1.3rem; color: var(--rb-navy); }
+        .card p { color: #555; font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
+        .card-icon { font-size: 2rem; margin-bottom: 10px; }
         
-        .link-arrow {
-            color: var(--rb-blue); font-weight: 700; text-decoration: none;
-            text-transform: uppercase; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;
+        .link-btn {
+            background: #f4f6f9; color: var(--rb-blue); text-decoration: none;
+            padding: 10px; text-align: center; border-radius: 6px; font-weight: 700;
+            font-size: 0.9rem; text-transform: uppercase; transition: background 0.2s;
         }
+        .link-btn:hover { background: #e0e5ec; }
+
+        /* Card Specifics */
+        .card.signals { border-top-color: #27ae60; } /* Green */
+        .card.protect { border-top-color: var(--rb-blue); } /* Blue */
+        .card.dupli { border-top-color: var(--rb-red); } /* Red */
+        .card.copy { border-top-color: var(--rb-yellow); } /* Yellow */
 
         /* --- MARKETS --- */
-        .markets-section { padding: 40px 20px; text-align: center; }
+        .markets-section { padding: 20px; text-align: center; background: white; border-top: 1px solid #eee;}
         .markets-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
             max-width: 800px; margin: 20px auto 0;
         }
         .m-item {
-            background: white; padding: 15px 5px; border-radius: 8px;
+            background: #f9f9f9; padding: 10px; border-radius: 8px;
             border: 1px solid #eee; font-weight: 700; font-size: 0.8rem; color: var(--rb-navy);
-            display: flex; flex-direction: column; align-items: center; gap: 5px;
         }
-        .m-icon { font-size: 1.2rem; }
 
         /* --- FOOTER --- */
-        .compliance {
-            background: #eef1f5; padding: 30px 20px; font-size: 0.7rem; color: #888;
-            text-align: justify; margin-top: 20px;
-        }
-
+        .compliance { background: #eef1f5; padding: 30px 20px; font-size: 0.7rem; color: #888; text-align: justify; }
         .sticky-footer {
             position: fixed; bottom: 0; left: 0; right: 0;
-            background: rgba(6, 16, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 12px 20px;
-            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+            background: rgba(6, 16, 42, 0.95); backdrop-filter: blur(10px);
+            padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; z-index: 1000;
             border-top: 2px solid var(--rb-yellow);
         }
-        .sticky-left { color: white; font-family: 'Kanit', sans-serif; line-height: 1.1; }
         .sticky-left strong { display: block; font-size: 0.9rem; color: var(--rb-yellow); }
-        .sticky-left small { font-size: 0.75rem; opacity: 0.8; }
-        
         .btn-sticky {
             background: var(--rb-red); color: white; padding: 8px 20px; border-radius: 30px;
             font-weight: 700; text-decoration: none; font-size: 0.85rem; text-transform: uppercase;
@@ -199,89 +181,99 @@
 </head>
 <body>
 
-   <header>
+    <header>
         <div class="brand" style="display:flex; flex-direction:column; line-height:1;">
-            <div style="font-size:1.2rem; font-weight:900; letter-spacing:-0.5px;">EXPERT<span style="color:#fbb800;">24</span></div>
-            <div style="font-size:0.55rem; opacity:0.7; letter-spacing:1px; font-weight:400;">PARTENAIRE OFFICIEL</div>
+            <div style="font-size:1.2rem; font-weight:900; letter-spacing:-0.5px; color:white;">EXPERT<span style="color:#fbb800;">24</span></div>
         </div>
         
         <div class="logos-wrapper" style="display:flex; align-items:center; gap:15px;">
-             
             <svg width="100" height="35" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="15" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="white" letter-spacing="1">ORACLE</text>
-                <text x="0" y="42" font-family="Arial, sans-serif" font-weight="900" font-size="24" fill="#ea1d2c" font-style="italic">Red Bull</text>
-                <text x="110" y="42" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#1c3664" font-style="italic">Racing</text>
+                <text x="0" y="15" font-family="Arial" font-weight="bold" font-size="14" fill="white" letter-spacing="1">ORACLE</text>
+                <text x="0" y="42" font-family="Arial" font-weight="900" font-size="24" fill="#ea1d2c" font-style="italic">Red Bull</text>
+                <text x="110" y="42" font-family="Arial" font-weight="bold" font-size="24" fill="#1c3664" font-style="italic">Racing</text>
                 <circle cx="95" cy="35" r="5" fill="#fbb800" opacity="0.8" />
             </svg>
-            
             <div style="width:1px; height:25px; background:rgba(255,255,255,0.2);"></div>
-            
             <svg width="100" height="28" viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10,20 L20,5 L30,20 L25,28 L15,28 Z" fill="#0099ff" />
                 <path d="M20,35 L10,20 L30,20 Z" fill="#0040e5" />
-                <text x="40" y="28" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="white" letter-spacing="-0.5">AVATRADE</text>
+                <text x="40" y="28" font-family="Arial" font-weight="bold" font-size="24" fill="white" letter-spacing="-0.5">AVATRADE</text>
             </svg>
         </div>
     </header>
 
     <div class="hero">
-        <div class="tag-pill">
-            <span>🏁</span> Partenaire Officiel
-        </div>
-        <h1>Performance <br> <span>& Sécurité</span></h1>
-        <p>Rejoignez l'équipe gagnante. Tradez avec la technologie utilisée par les champions du monde.</p>
+        <div class="tag-pill"><span>🏆</span> Partenaire Officiel</div>
+        <h1>L'Écosystème <br> <span>Complet</span></h1>
+        <p>Signaux gratuits, Automatisation et Protection. Tous les outils pour réussir en un seul endroit.</p>
         
-        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="btn-main">
-            <span>Démarrer</span>
+        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35001&adTheme=759&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Ftrading-v3%2Fsignaux-de-trading-new" class="btn-main">
+            <span>Essayer Gratuitement</span>
         </a>
     </div>
 
-    <div class="features">
+    <div class="commission-banner">
+        <div class="comm-text">Commission</div>
+        <div class="comm-badge">0%</div>
+        <div class="comm-text" style="font-size:0.8rem; opacity:0.7;">Sur Stocks & FX</div>
+    </div>
+
+    <div class="features-grid">
         
+        <div class="card signals">
+            <div class="card-icon">📊</div>
+            <h3>Signaux Gratuits</h3>
+            <p>Ne ratez plus aucune opportunité. Recevez des alertes d'achat et de vente en temps réel sur votre mobile.</p>
+            <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35001&adTheme=759&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Ftrading-v3%2Fsignaux-de-trading-new" class="link-btn">Obtenir les Signaux</a>
+        </div>
+
+        <div class="card dupli">
+            <div class="card-icon">⚙️</div>
+            <h3>DupliTrade™</h3>
+            <p>Automatisez votre trading. Copiez les stratégies d'experts auditées directement sur votre compte MT4/MT5.</p>
+            <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36153&adTheme=794&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Faff_duplitrade-lp" class="link-btn">Activer DupliTrade</a>
+        </div>
+
         <div class="card protect">
+            <div class="card-icon">🛡️</div>
             <h3>AvaProtect™</h3>
-            <p>La seule assurance trading qui vous rembourse 100% de vos pertes. Prenez des risques calculés, comme un pro.</p>
-            <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="link-arrow">
-                Activer la Protection →
-            </a>
+            <p>L'assurance ultime. Faites-vous rembourser à 100% sur vos trades perdants. Zéro stress.</p>
+            <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="link-btn">Voir l'Assurance</a>
         </div>
 
         <div class="card copy">
-            <h3>Copy Trading</h3>
-            <p>Pas le temps d'analyser ? Copiez automatiquement les stratégies des meilleurs investisseurs de la plateforme.</p>
-            <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35140&adTheme=778&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favasocial-copy-trade-repeat" class="link-arrow">
-                Voir les Traders →
-            </a>
+            <div class="card-icon">👥</div>
+            <h3>AvaSocial</h3>
+            <p>Rejoignez la communauté. Discutez avec d'autres traders et copiez leurs positions automatiquement.</p>
+            <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35140&adTheme=778&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favasocial-copy-trade-repeat" class="link-btn">Lancer AvaSocial</a>
         </div>
 
     </div>
 
     <div class="markets-section">
-        <h3 style="color:var(--rb-navy); margin-bottom:5px;">Marchés Globaux</h3>
-        <p style="font-size:0.9rem; color:#666; margin:0;">Accès direct à +1250 instruments</p>
-        
+        <h3 style="color:var(--rb-navy); margin-bottom:15px;">Accès à +1250 Marchés</h3>
         <div class="markets-grid">
-            <div class="m-item"><span class="m-icon">💱</span> Forex</div>
-            <div class="m-item"><span class="m-icon">₿</span> Crypto</div>
-            <div class="m-item"><span class="m-icon">📈</span> Actions</div>
-            <div class="m-item"><span class="m-icon">🛢️</span> Pétrole</div>
-            <div class="m-item"><span class="m-icon">🥇</span> Or</div>
-            <div class="m-item"><span class="m-icon">📊</span> Indices</div>
+            <div class="m-item">Forex</div>
+            <div class="m-item">Crypto</div>
+            <div class="m-item">Actions</div>
+            <div class="m-item">Or & Pétrole</div>
+            <div class="m-item">Indices</div>
+            <div class="m-item">ETF</div>
         </div>
     </div>
 
     <div class="compliance">
-        <p><strong>Avertissement sur les risques :</strong> Les CFD sont des instruments complexes et présentent un risque élevé de perte rapide en capital en raison de l'effet de levier. <strong>76% des comptes d'investisseurs particuliers perdent de l'argent lorsqu'ils investissent sur les CFD avec ce fournisseur.</strong></p>
-        <p>AvaTrade est un courtier régulé (CBI No. C53877). Expert24 agit en tant que partenaire marketing.</p>
+        <p><strong>Avertissement :</strong> Les CFD sont des instruments complexes et présentent un risque élevé de perte rapide en capital en raison de l'effet de levier. <strong>76% des comptes d'investisseurs particuliers perdent de l'argent lorsqu'ils investissent sur les CFD avec ce fournisseur.</strong></p>
+        <p>AvaTrade est régulé (CBI No. C53877). Expert24 est un partenaire marketing.</p>
     </div>
 
     <div class="sticky-footer">
-        <div class="sticky-left">
+        <div class="sticky-left" style="color:white; font-family:'Kanit',sans-serif;">
             <strong>AVATRADE</strong>
-            <small>Partenaire Red Bull Racing</small>
+            <small style="opacity:0.8;">Signaux & Protection</small>
         </div>
-        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="btn-sticky">
-            S'INSCRIRE
+        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35001&adTheme=759&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Ftrading-v3%2Fsignaux-de-trading-new" class="btn-sticky">
+            OUVRIR UN COMPTE
         </a>
     </div>
 
@@ -312,4 +304,3 @@
 
 </body>
 </html>
-
