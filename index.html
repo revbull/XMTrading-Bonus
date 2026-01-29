@@ -61,7 +61,7 @@
         /* --- HEADER & LOGOS --- */
         header {
             background: var(--rb-navy);
-            padding: 12px 20px;
+            padding: 10px 20px;
             display: flex; justify-content: space-between; align-items: center;
             position: sticky; top: 0; z-index: 999;
             box-shadow: 0 4px 20px rgba(0,0,0,0.4);
@@ -199,21 +199,28 @@
 </head>
 <body>
 
-    <header>
-        <div class="brand">EXPERT<span>24</span></div>
+   <header>
+        <div class="brand" style="display:flex; flex-direction:column; line-height:1;">
+            <div style="font-size:1.2rem; font-weight:900; letter-spacing:-0.5px;">EXPERT<span style="color:#fbb800;">24</span></div>
+            <div style="font-size:0.55rem; opacity:0.7; letter-spacing:1px; font-weight:400;">PARTENAIRE OFFICIEL</div>
+        </div>
         
-        <div class="logos-wrapper">
-             <img src="https://cdn.worldvectorlogo.com/logos/oracle-red-bull-racing-logo.svg" 
-                 alt="Red Bull" 
-                 class="logo-img" 
-                 style="filter: brightness(0) invert(1);">
+        <div class="logos-wrapper" style="display:flex; align-items:center; gap:15px;">
+             
+            <svg width="100" height="35" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+                <text x="0" y="15" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="white" letter-spacing="1">ORACLE</text>
+                <text x="0" y="42" font-family="Arial, sans-serif" font-weight="900" font-size="24" fill="#ea1d2c" font-style="italic">Red Bull</text>
+                <text x="110" y="42" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#1c3664" font-style="italic">Racing</text>
+                <circle cx="95" cy="35" r="5" fill="#fbb800" opacity="0.8" />
+            </svg>
             
-            <div class="separator"></div>
+            <div style="width:1px; height:25px; background:rgba(255,255,255,0.2);"></div>
             
-             <img src="https://cdn.worldvectorlogo.com/logos/avatrade.svg" 
-                 alt="AvaTrade" 
-                 class="logo-img"
-                 style="filter: brightness(0) invert(1);">
+            <svg width="100" height="28" viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10,20 L20,5 L30,20 L25,28 L15,28 Z" fill="#0099ff" />
+                <path d="M20,35 L10,20 L30,20 Z" fill="#0040e5" />
+                <text x="40" y="28" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="white" letter-spacing="-0.5">AVATRADE</text>
+            </svg>
         </div>
     </header>
 
@@ -305,3 +312,4 @@
 
 </body>
 </html>
+
