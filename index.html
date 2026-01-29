@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert Bourse 24 | Plateforme de Trading Régulée & AvaProtect</title>
-    <meta name="description" content="Accédez aux marchés mondiaux : Forex, Actions, Crypto, Indices. Protégez vos trades avec AvaProtect.">
+    <title>Expert Bourse 24 | Bonus 20% & Stratégie Gagnante</title>
+    <meta name="description" content="Rejoignez l'équipe gagnante. Bonus de 20%, AvaProtect et Copy Trading. Plateforme régulée.">
 
     <script type="text/javascript">
         (function() {
@@ -33,14 +33,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
     <style>
-        /* --- PROFESSIONAL FINANCIAL THEME --- */
+        /* --- THEME COLORS --- */
         :root {
-            --col-primary: #001e62; /* AvaTrade Navy Blue */
-            --col-secondary: #0040e5; /* Ava Blue */
-            --col-accent: #ff9900;  /* Action Orange */
-            --col-text: #333333;
-            --col-bg: #f8f9fa;
-            --col-border: #e0e0e0;
+            --col-navy: #001e62;    /* Ava/RedBull Navy */
+            --col-blue: #0040e5;    /* Ava Bright Blue */
+            --col-orange: #ff9900;  /* Action */
+            --col-red: #cc0000;     /* Red Bull Red */
+            --col-bg: #f4f6f9;
+            --col-text: #333;
         }
 
         * { box-sizing: border-box; }
@@ -50,299 +50,220 @@
             color: var(--col-text);
             margin: 0;
             line-height: 1.6;
-            padding-bottom: 90px;
+            padding-bottom: 90px; /* Space for sticky footer */
         }
 
-        /* HEADER */
+        /* --- HEADER (Official Partner Look) --- */
         header {
             background: white;
-            padding: 15px 20px;
-            border-bottom: 1px solid var(--col-border);
+            padding: 10px 20px;
+            border-bottom: 1px solid #ddd;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky; top:0; z-index:999;
+            position: sticky; top: 0; z-index: 999;
         }
-        .brand {
-            font-size: 1.3rem;
-            font-weight: 900;
-            color: var(--col-primary);
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-            display: flex; align-items: center; gap: 8px;
+        .brand-name {
+            font-size: 1.1rem; font-weight: 900; color: var(--col-navy);
+            text-transform: uppercase; line-height: 1.1;
         }
-        .brand span { color: var(--col-accent); }
-        .reg-badge {
-            font-size: 0.65rem;
-            color: #555;
-            background: #eee;
-            padding: 4px 8px;
-            border-radius: 4px;
-            text-transform: uppercase;
-            font-weight: 500;
+        .brand-name span { color: var(--col-orange); }
+        .official-logo img {
+            height: 45px; /* Размер на логото на Ava */
+            width: auto;
+            display: block;
         }
 
-        /* HERO SECTION */
-        .hero {
-            background: white;
+        /* --- HERO: RED BULL BONUS (Custom CSS Banner) --- */
+        .hero-bonus {
+            background: linear-gradient(135deg, #001e62 0%, #102a6b 100%);
+            color: white;
             text-align: center;
-            padding: 40px 20px 20px;
-            border-bottom: 1px solid var(--col-border);
-        }
-        .hero h1 {
-            color: var(--col-primary);
-            font-size: 1.8rem;
-            margin: 0 0 10px 0;
-            line-height: 1.2;
-        }
-        .hero p {
-            color: #666;
-            font-size: 1rem;
-            max-width: 600px;
-            margin: 0 auto 20px;
-        }
-
-        /* BANNER CONTAINER (Fixes width issue on mobile) */
-        .banner-wrapper {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
+            padding: 30px 20px 40px;
+            position: relative;
             overflow: hidden;
         }
-        /* Тъй като банерът е фиксиран на 600px, на мобилни го смаляваме */
-        @media (max-width: 620px) {
-            .banner-wrapper {
-                transform: scale(0.6); /* Намалява го на 60% */
-                margin-top: -80px;      /* Обира празното място */
-                margin-bottom: -80px;
-            }
+        /* Декоративна лента */
+        .hero-bonus::after {
+            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 6px;
+            background: linear-gradient(90deg, #f1c40f, #cc0000);
         }
-
-        /* INSTRUMENTS GRID (Full Spectrum) */
-        .instruments-section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-        .section-head { text-align: center; margin-bottom: 30px; }
-        .section-head h2 { color: var(--col-primary); margin: 0 0 5px 0; font-size: 1.5rem; }
         
+        .rb-tag {
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3);
+            display: inline-block; padding: 5px 12px; border-radius: 20px;
+            font-size: 0.75rem; font-weight: bold; margin-bottom: 15px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        
+        .bonus-title { font-size: 1.8rem; font-weight: 900; margin: 0 0 5px 0; line-height: 1.2; }
+        .bonus-amount { 
+            display: block; font-size: 3rem; color: #f1c40f; 
+            font-weight: 900; text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            margin: 5px 0;
+        }
+        .bonus-sub { font-size: 1rem; opacity: 0.9; max-width: 500px; margin: 0 auto 20px; }
+
+        .btn-hero {
+            background: var(--col-orange); color: white;
+            display: inline-block; padding: 15px 30px; border-radius: 50px;
+            font-weight: 800; text-transform: uppercase; text-decoration: none;
+            box-shadow: 0 5px 15px rgba(255,153,0,0.4);
+            transition: transform 0.2s;
+        }
+        .btn-hero:active { transform: scale(0.98); }
+
+        /* --- STRATEGY SECTION (The Plan) --- */
+        .strategy-container {
+            max-width: 800px; margin: 0 auto; padding: 30px 20px;
+        }
+        .section-heading { text-align: center; margin-bottom: 30px; color: var(--col-navy); }
+        .section-heading h2 { margin: 0; font-size: 1.5rem; }
+        .section-heading p { color: #666; font-size: 0.9rem; }
+
+        /* Strategy Cards */
+        .strat-card {
+            background: white; border-radius: 12px; padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex; align-items: flex-start;
+            position: relative;
+            border-left: 5px solid #ccc;
+        }
+        
+        /* Specific Styles for Cards */
+        .strat-card.protect { border-left-color: var(--col-blue); }
+        .strat-card.copy { border-left-color: #27ae60; }
+
+        .strat-icon {
+            font-size: 2rem; margin-right: 20px; flex-shrink: 0;
+            background: #f4f6f9; width: 60px; height: 60px;
+            display: flex; align-items: center; justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .strat-content h3 { margin: 0 0 5px 0; font-size: 1.1rem; color: var(--col-navy); }
+        .strat-content p { margin: 0 0 15px 0; font-size: 0.9rem; color: #555; }
+        
+        .text-link {
+            color: var(--col-blue); font-weight: bold; text-decoration: none;
+            font-size: 0.9rem; display: inline-flex; align-items: center;
+        }
+        .text-link:hover { text-decoration: underline; }
+
+        /* --- INSTRUMENTS GRID (Kept as requested) --- */
+        .instruments-bg { background: white; padding: 40px 20px; border-top: 1px solid #eee; }
         .grid-container {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 колони на мобилно */
-            gap: 15px;
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
+            max-width: 800px; margin: 0 auto;
         }
-        @media (min-width: 600px) {
-            .grid-container { grid-template-columns: repeat(4, 1fr); } /* 4 колони на десктоп */
+        .i-card {
+            background: #f9f9f9; padding: 10px; border-radius: 6px; text-align: center;
+            border: 1px solid #eee;
         }
+        .i-name { font-weight: bold; font-size: 0.8rem; color: #333; display: block; }
+        .i-sub { font-size: 0.7rem; color: #888; }
 
-        .instrument-card {
-            background: white;
-            padding: 15px;
-            border-radius: 6px;
-            text-align: center;
-            border: 1px solid var(--col-border);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .instrument-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); border-color: var(--col-secondary); }
-        .i-icon { font-size: 1.8rem; display: block; margin-bottom: 8px; }
-        .i-name { font-weight: 700; color: var(--col-primary); display: block; font-size: 0.9rem; }
-        .i-sub { font-size: 0.7rem; color: #777; margin-top: 4px; display: block; }
-
-        /* AVAPROTECT SECTION */
-        .protect-bg {
-            background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%);
-            padding: 40px 20px;
-            border-top: 1px solid var(--col-border);
-            border-bottom: 1px solid var(--col-border);
-        }
-        .protect-box {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            border-left: 5px solid var(--col-accent);
-        }
-        .protect-steps { margin-top: 25px; }
-        .step-row { display: flex; gap: 15px; margin-bottom: 20px; align-items: flex-start; }
-        .step-num { 
-            background: var(--col-primary); color: white; 
-            width: 25px; height: 25px; border-radius: 50%; 
-            display: flex; align-items: center; justify-content: center; 
-            font-size: 0.8rem; font-weight: bold; flex-shrink: 0; margin-top: 3px;
-        }
-        
-        /* CTA BUTTON */
-        .btn-cta {
-            display: block; width: 100%;
-            background: var(--col-accent);
-            color: white; text-align: center;
-            padding: 16px; border-radius: 4px;
-            text-decoration: none; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.5px; margin-top: 20px;
-            box-shadow: 0 4px 10px rgba(255, 153, 0, 0.3);
-            transition: background 0.2s;
-        }
-        .btn-cta:hover { background: #e68a00; }
-
-        /* FOOTER & COMPLIANCE */
+        /* --- FOOTER & DISCLAIMER --- */
         .compliance {
-            background: #f1f1f1;
-            padding: 30px 20px 100px; /* Extra padding for sticky footer */
-            font-size: 0.7rem;
-            color: #888;
-            text-align: justify;
+            font-size: 0.65rem; color: #999; padding: 20px;
+            text-align: justify; background: #f4f6f9;
         }
-        
+
         .sticky-footer {
             position: fixed; bottom: 0; left: 0; right: 0;
-            background: white; padding: 12px 20px;
+            background: white; padding: 10px 20px;
             box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
             display: flex; align-items: center; justify-content: space-between; z-index: 999;
-            border-top: 2px solid var(--col-primary);
+            border-top: 3px solid var(--col-navy);
         }
-        .sticky-text { font-weight: 700; color: var(--col-primary); font-size: 0.85rem; }
+        .sticky-text { font-weight: 800; color: var(--col-navy); font-size: 0.9rem; line-height: 1.1; }
+        .sticky-sub { font-weight: 400; font-size: 0.75rem; color: var(--col-orange); }
         .sticky-btn {
-            background: var(--col-secondary); color: white;
+            background: var(--col-orange); color: white;
             text-decoration: none; padding: 10px 20px;
-            border-radius: 4px; font-weight: 700; font-size: 0.9rem;
+            border-radius: 30px; font-weight: 800; font-size: 0.9rem;
         }
+
     </style>
 </head>
 <body>
 
     <header>
-        <div class="brand">EXPERT BOURSE<span>24</span></div>
-        <div class="reg-badge">RÉGULÉ PAR LA CBI</div>
+        <div class="brand-name">EXPERT BOURSE<span>24</span></div>
+        <div class="official-logo">
+            <img src="https://tracking.avapartner.com/imp/?affid=207628&logoId=35112&adTheme=766&campaign=225565&campaignName=FR&tag=207628" alt="AvaTrade Official Partner">
+        </div>
     </header>
 
-    <div class="hero">
-        <h1>Accédez à 1250+ instruments financiers</h1>
-        <p>Une plateforme unique. Des spreads compétitifs. Une protection du capital.</p>
-
-        <div class="banner-wrapper">
-            <script class="avaJavaCode" type="text/javascript">
-            (function () {
-            const url = "https://tracking.avapartner.com/impression/?affid=207628&html5Id=37246&adTheme=833&campaign=225565&campaignName=FR&tag=207628";
-            if (!window.aSC) window.aSC = 0;
-            window.aSC += 1;
-            const cIX = window.aSC - 1;
-            const ifr = document.createElement("iframe");
-            ifr.setAttribute("src", url + "&sid=" + Math.random());
-            ifr.setAttribute("frameborder", "0");
-            ifr.setAttribute("scrolling","no");
-            ifr.setAttribute("style", "width:600px;height:425px;");
-            const cP = document.getElementsByClassName("avaJavaCode")[cIX];
-            cP.parentNode.insertBefore(ifr, cP);
-            }());
-            </script>
-        </div>
-
-        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="btn-cta" style="max-width:400px; margin: 0 auto;">
-            Ouvrir un Compte Réel
-        </a>
-    </div>
-
-    <div class="instruments-section">
-        <div class="section-head">
-            <h2>Instruments de Trading</h2>
-            <p style="font-size:0.9rem; color:#666;">Diversifiez votre portefeuille avec un courtier global.</p>
-        </div>
+    <div class="hero-bonus">
+        <div class="rb-tag">🏎️ Oracle Red Bull Racing</div>
+        <div class="bonus-title">Rejoignez l'équipe gagnante</div>
+        <span class="bonus-amount">+20% BONUS</span>
+        <p class="bonus-sub">Déposez et recevez un bonus de 20% pour trader avec plus de capital. Offre exclusive AvaTrade.</p>
         
-        <div class="grid-container">
-            <div class="instrument-card">
-                <span class="i-icon">💱</span>
-                <span class="i-name">Forex</span>
-                <span class="i-sub">EUR/USD, GBP/USD</span>
-            </div>
-            <div class="instrument-card">
-                <span class="i-icon">📈</span>
-                <span class="i-name">Actions (CFD)</span>
-                <span class="i-sub">Tesla, Apple, LVMH</span>
-            </div>
-            <div class="instrument-card">
-                <span class="i-icon">₿</span>
-                <span class="i-name">Crypto-monnaies</span>
-                <span class="i-sub">Bitcoin, Ethereum, Solana</span>
-            </div>
-            <div class="instrument-card">
-                <span class="i-icon">📊</span>
-                <span class="i-name">Indices Boursiers</span>
-                <span class="i-sub">CAC40, S&P500, DAX</span>
-            </div>
-            <div class="instrument-card">
-                <span class="i-icon">🛢️</span>
-                <span class="i-name">Matières 1ères</span>
-                <span class="i-sub">Or, Pétrole, Argent</span>
-            </div>
-            <div class="instrument-card">
-                <span class="i-icon">🧺</span>
-                <span class="i-name">ETF</span>
-                <span class="i-sub">MSCI World, Vanguard</span>
-            </div>
-            <div class="instrument-card">
-                <span class="i-icon">⚙️</span>
-                <span class="i-name">FX Options</span>
-                <span class="i-sub">Stratégies avancées</span>
-            </div>
-            <div class="instrument-card">
-                <span class="i-icon">📜</span>
-                <span class="i-name">Obligations</span>
-                <span class="i-sub">Euro Bund, T-Notes</span>
-            </div>
-        </div>
+        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=37296&adTheme=833&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Forbr-x-avatrade-bonus" class="btn-hero">
+            Réclamer mon Bonus
+        </a>
+        <p style="font-size:0.6rem; margin-top:10px; opacity:0.7;">*Termes et conditions applicables.</p>
     </div>
 
-    <div class="protect-bg">
-        <div class="protect-box">
-            <h2 style="color:#001e62; margin-top:0;">AvaProtect™ : Votre Filet de Sécurité</h2>
-            <p style="font-size:0.95rem; color:#444;">Une fonctionnalité exclusive de l'application AvaTradeGO qui agit comme une assurance pour vos positions.</p>
-            
-            <div class="protect-steps">
-                <div class="step-row">
-                    <div class="step-num">1</div>
-                    <div>
-                        <strong style="color:#001e62;">Activez la couverture</strong>
-                        <div style="font-size:0.85rem; color:#666;">Lors de l'ouverture d'un trade, cochez la case AvaProtect.</div>
-                    </div>
-                </div>
-                <div class="step-row">
-                    <div class="step-num">2</div>
-                    <div>
-                        <strong style="color:#001e62;">Définissez la durée</strong>
-                        <div style="font-size:0.85rem; color:#666;">Protégez-vous pendant une période de volatilité (ex: annonce économique).</div>
-                    </div>
-                </div>
-                <div class="step-row">
-                    <div class="step-num">3</div>
-                    <div>
-                        <strong style="color:#001e62;">Remboursement Garanti</strong>
-                        <div style="font-size:0.85rem; color:#666;">Si le trade est perdant à la fin de la période, AvaTrade vous <strong>rembourse 100%</strong> de la perte (coût de couverture exclu).</div>
-                    </div>
-                </div>
-            </div>
+    <div class="strategy-container">
+        <div class="section-heading">
+            <h2>Votre Stratégie en 3 Étapes</h2>
+            <p>Comment maximiser vos profits tout en limitant les risques.</p>
+        </div>
 
-            <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="btn-cta">
-                Activer AvaProtect
-            </a>
+        <div class="strat-card protect">
+            <div class="strat-icon" style="color:var(--col-blue)">🛡️</div>
+            <div class="strat-content">
+                <div style="text-transform:uppercase; font-size:0.7rem; color:#888; margin-bottom:5px;">Étape 1 : Sécuriser</div>
+                <h3>AvaProtect™ : L'Assurance Trading</h3>
+                <p>Ne craignez plus la volatilité. Activez AvaProtect sur l'app et faites-vous rembourser à 100% sur vos trades perdants.</p>
+                <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="text-link">
+                    Voir comment ça marche →
+                </a>
+            </div>
+        </div>
+
+        <div class="strat-card copy">
+            <div class="strat-icon" style="color:#27ae60">👥</div>
+            <div class="strat-content">
+                <div style="text-transform:uppercase; font-size:0.7rem; color:#888; margin-bottom:5px;">Étape 2 : Automatiser</div>
+                <h3>Copy Trading : Suivez les Pros</h3>
+                <p>Pas d'expérience ? Copiez automatiquement les positions des meilleurs traders de la plateforme avec AvaSocial.</p>
+                <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35140&adTheme=778&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favasocial-copy-trade-repeat" class="text-link">
+                    Découvrir le Copy Trading →
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="instruments-bg">
+        <h3 style="text-align:center; color:var(--col-navy); margin-bottom:20px;">Accédez à tous les marchés</h3>
+        <div class="grid-container">
+            <div class="i-card"><span class="i-name">FOREX</span><span class="i-sub">EUR/USD, JPY</span></div>
+            <div class="i-card"><span class="i-name">CRYPTO</span><span class="i-sub">Bitcoin, ETF</span></div>
+            <div class="i-card"><span class="i-name">ACTIONS</span><span class="i-sub">Tesla, Nvidia</span></div>
+            <div class="i-card"><span class="i-name">MATIÈRES</span><span class="i-sub">Or, Pétrole</span></div>
+            <div class="i-card"><span class="i-name">INDICES</span><span class="i-sub">CAC40, S&P500</span></div>
+            <div class="i-card"><span class="i-name">ETF</span><span class="i-sub">Vanguard, MSCI</span></div>
         </div>
     </div>
 
     <div class="compliance">
-        <p><strong>Avertissement sur les risques :</strong> Les CFD sont des instruments complexes et présentent un risque élevé de perte rapide en capital en raison de l'effet de levier. <strong>76% des comptes d'investisseurs particuliers perdent de l'argent lorsqu'ils investissent sur les CFD avec ce fournisseur.</strong> Vous devez vous assurer que vous comprenez comment les CFD fonctionnent et si vous pouvez vous permettre de prendre le risque élevé de perdre votre argent.</p>
-        <p>AvaTrade est un courtier régulé par la Banque Centrale d'Irlande (No. C53877). Expert Bourse 24 agit en tant que partenaire marketing.</p>
+        <p><strong>Avertissement :</strong> Les CFD sont des instruments complexes et présentent un risque élevé de perte rapide en capital en raison de l'effet de levier. <strong>76% des comptes d'investisseurs particuliers perdent de l'argent lorsqu'ils investissent sur les CFD avec ce fournisseur.</strong> Vous devez vous assurer que vous comprenez comment les CFD fonctionnent et si vous pouvez vous permettre de prendre le risque élevé de perdre votre argent.</p>
+        <p>Expert Bourse 24 est un partenaire marketing indépendant.</p>
     </div>
 
     <div class="sticky-footer">
-        <div class="sticky-text">
-            AVATRADE<br>
-            <span style="font-weight:400; font-size:0.75rem; color:#666;">Partenaire Officiel</span>
+        <div>
+            <div class="sticky-text">OFFRE SPÉCIALE</div>
+            <div class="sticky-sub">Bonus 20% Disponible</div>
         </div>
-        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="sticky-btn">
-            S'INSCRIRE
+        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=37296&adTheme=833&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Forbr-x-avatrade-bonus" class="sticky-btn">
+            PROFITER
         </a>
     </div>
 
@@ -354,23 +275,20 @@
             }
         }
 
-        // 2. Server-to-Server Tracking (MGID Click ID -> AvaTrade)
+        // 2. Server-to-Server Tracking (S2S)
+        // Този код автоматично намира всички линкове (Bonus, Copy, Protect) и им слага ID-то
         document.addEventListener("DOMContentLoaded", function() {
             const links = document.querySelectorAll('a');
             const urlParams = new URLSearchParams(window.location.search);
-            // Търсим clickid, click_id или adclid (както MGID го изпрати)
             const clickId = urlParams.get('clickid') || urlParams.get('click_id') || urlParams.get('adclid');
 
             links.forEach(link => {
                 link.addEventListener('click', handleAdClick);
                 
-                // Ако имаме ID, го добавяме към линка за постбек
                 if (clickId) {
                     let href = link.getAttribute('href');
-                    // Проверяваме дали линкът е към AvaPartner
                     if (href && href.includes('avapartner')) {
                         const separator = href.includes('?') ? '&' : '?';
-                        // Добавяме параметъра affSub1, който настроихме в панела на AvaTrade
                         link.setAttribute('href', href + separator + 'affSub1=' + clickId);
                     }
                 }
