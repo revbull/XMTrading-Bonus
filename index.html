@@ -58,26 +58,34 @@
             font-family: 'Kanit', sans-serif; /* Sporty Font */
         }
 
-        /* --- MODERN HEADER --- */
+        /* --- HEADER & LOGOS --- */
         header {
             background: var(--rb-navy);
-            padding: 15px 20px;
+            padding: 12px 20px;
             display: flex; justify-content: space-between; align-items: center;
             position: sticky; top: 0; z-index: 999;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
             border-bottom: 2px solid var(--rb-red);
         }
         
         .brand {
-            font-size: 1.2rem; font-weight: 800; color: white;
+            font-size: 1.1rem; font-weight: 800; color: white;
             text-transform: uppercase; font-style: italic; letter-spacing: 0.5px;
+            display: none; /* Скриваме на много малки екрани */
         }
-        .brand span { color: var(--rb-yellow); }
-        
-        /* Висококачествено SVG лого */
-        .partner-logo { height: 35px; width: auto; }
+        @media (min-width: 380px) { .brand { display: block; } }
 
-        /* --- HERO SECTION (Dark & Premium) --- */
+        .logos-wrapper { display: flex; align-items: center; gap: 12px; }
+        
+        .logo-img {
+            height: 28px; /* Идеален размер за мобилни */
+            width: auto; display: block;
+        }
+        @media (min-width: 400px) { .logo-img { height: 32px; } }
+        
+        .separator { width: 1px; height: 20px; background: rgba(255,255,255,0.2); }
+
+        /* --- HERO SECTION --- */
         .hero {
             background: linear-gradient(160deg, var(--rb-navy) 0%, #152242 100%);
             color: white;
@@ -85,10 +93,9 @@
             padding: 50px 20px 80px;
             position: relative;
             overflow: hidden;
-            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Модерно изрязване */
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
         }
 
-        /* Декоративни линии */
         .hero::before {
             content: ''; position: absolute; top: 0; right: 0; width: 100px; height: 100%;
             background: linear-gradient(to left, rgba(234, 29, 44, 0.1), transparent);
@@ -107,21 +114,19 @@
             text-transform: uppercase;
         }
         .hero h1 span { color: var(--rb-yellow); }
-        
         .hero p { opacity: 0.8; font-size: 1.1rem; max-width: 500px; margin: 0 auto 30px; font-weight: 300; }
 
         .btn-main {
             background: linear-gradient(90deg, var(--rb-yellow) 0%, #ffcc00 100%);
-            color: black; padding: 18px 40px; border-radius: 4px; /* Racy corners */
+            color: black; padding: 18px 40px; border-radius: 4px;
             font-weight: 800; text-transform: uppercase; text-decoration: none; font-size: 1rem;
             display: inline-block; box-shadow: 0 10px 30px rgba(251, 184, 0, 0.3);
-            transform: skewX(-10deg); /* Състезателен наклон */
-            transition: all 0.3s;
+            transform: skewX(-10deg); transition: all 0.3s;
         }
-        .btn-main span { display: block; transform: skewX(10deg); /* Изправяме текста */ }
+        .btn-main span { display: block; transform: skewX(10deg); }
         .btn-main:active { transform: skewX(-10deg) scale(0.95); }
 
-        /* --- FEATURES GRID (The Engine) --- */
+        /* --- FEATURES --- */
         .features {
             max-width: 900px; margin: -50px auto 40px; padding: 0 20px;
             position: relative; z-index: 10;
@@ -131,20 +136,16 @@
             background: white; border-radius: 12px; padding: 25px; margin-bottom: 20px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.08);
             position: relative; overflow: hidden;
-            display: flex; flex-direction: column; align-items: flex-start;
-            border-top: 4px solid transparent;
-            transition: transform 0.3s;
+            border-top: 4px solid transparent; transition: transform 0.3s;
         }
         .card:hover { transform: translateY(-5px); }
 
-        /* AvaProtect Card Styling */
         .card.protect { border-top-color: var(--rb-blue); }
         .card.protect::after {
             content: '🛡️'; font-size: 80px; position: absolute; right: -10px; bottom: -20px; 
             opacity: 0.05; transform: rotate(-15deg);
         }
 
-        /* Copy Trading Card Styling */
         .card.copy { border-top-color: var(--rb-red); }
         .card.copy::after {
             content: '👥'; font-size: 80px; position: absolute; right: -10px; bottom: -20px; 
@@ -159,7 +160,7 @@
             text-transform: uppercase; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;
         }
 
-        /* --- MARKET INSTRUMENTS (Dashboard) --- */
+        /* --- MARKETS --- */
         .markets-section { padding: 40px 20px; text-align: center; }
         .markets-grid {
             display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
@@ -172,16 +173,15 @@
         }
         .m-icon { font-size: 1.2rem; }
 
-        /* --- COMPLIANCE --- */
+        /* --- FOOTER --- */
         .compliance {
             background: #eef1f5; padding: 30px 20px; font-size: 0.7rem; color: #888;
             text-align: justify; margin-top: 20px;
         }
 
-        /* --- STICKY FOOTER --- */
         .sticky-footer {
             position: fixed; bottom: 0; left: 0; right: 0;
-            background: rgba(6, 16, 42, 0.95); /* Semi-transparent Navy */
+            background: rgba(6, 16, 42, 0.95);
             backdrop-filter: blur(10px);
             padding: 12px 20px;
             display: flex; justify-content: space-between; align-items: center; z-index: 1000;
@@ -201,10 +201,19 @@
 
     <header>
         <div class="brand">EXPERT<span>24</span></div>
-        <div style="display:flex; align-items:center; gap:15px;">
-             <img src="https://upload.wikimedia.org/wikipedia/en/2/2b/Oracle_Red_Bull_Racing_logo.svg" alt="Red Bull" style="height:25px; opacity:0.9;">
-            <div style="width:1px; height:20px; background:rgba(255,255,255,0.3);"></div>
-             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/AvaTrade_Logo.svg" alt="AvaTrade" class="partner-logo" style="filter: brightness(0) invert(1);">
+        
+        <div class="logos-wrapper">
+             <img src="https://cdn.worldvectorlogo.com/logos/oracle-red-bull-racing-logo.svg" 
+                 alt="Red Bull" 
+                 class="logo-img" 
+                 style="filter: brightness(0) invert(1);">
+            
+            <div class="separator"></div>
+            
+             <img src="https://cdn.worldvectorlogo.com/logos/avatrade.svg" 
+                 alt="AvaTrade" 
+                 class="logo-img"
+                 style="filter: brightness(0) invert(1);">
         </div>
     </header>
 
