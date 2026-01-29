@@ -174,6 +174,70 @@
             background: var(--accent-blue); color: white; padding: 8px 24px; border-radius: 4px;
             font-weight: 700; text-decoration: none; font-size: 0.85rem; text-transform: uppercase;
         }
+       /* --- NEW FEES GRID STYLES --- */
+    .fees-wrapper {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: flex-start;
+        margin: 20px 0;
+        width: 100%;
+        position: relative;
+    }
+    
+    .fee-col {
+        flex: 1;
+        text-align: center;
+        padding: 0 10px;
+        position: relative;
+    }
+
+    /* Вертикални разделители между колоните */
+    .fee-col:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 10%;
+        height: 80%;
+        width: 1px;
+        background: rgba(255,255,255,0.15);
+    }
+
+    .fee-price {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--text-white);
+        font-family: 'Inter', sans-serif;
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+    
+    .fee-label {
+        font-size: 0.75rem;
+        color: var(--text-gray);
+        text-transform: uppercase;
+        line-height: 1.2;
+    }
+
+    /* Специален бутон за картата */
+    .btn-card-action {
+        background: transparent;
+        border: 1px solid var(--accent-blue);
+        color: var(--accent-blue);
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        text-decoration: none;
+        transition: all 0.2s;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    .btn-card-action:hover {
+        background: var(--accent-blue);
+        color: white;
+        box-shadow: 0 0 15px rgba(0, 122, 255, 0.4);
+    }
     </style>
 </head>
 <body>
@@ -223,10 +287,33 @@
         
         <div class="futures-grid">
             
-            <div class="f-card f-card-wide" style="border-color: var(--accent-blue);">
-                <div class="f-icon-box">🎁</div>
-                <div class="f-title">Trades Sans Commission</div>
-                <div class="f-desc">Payez 0€ de commission sur vos <strong>100 premiers trades*</strong>. Un départ économique pour votre portefeuille. (*T&C Apply)</div>
+            <div class="f-card f-card-wide" style="border-color: var(--accent-blue); align-items:center; text-align:center;">
+                
+                <h3 style="color:white; margin-top:0;">Tradez plus avec AvaFutures</h3>
+                <p style="color:#a1aab5; font-size:0.95rem; margin-bottom:15px;">
+                    Profitez de dépôts minimums bas, de frais compétitifs et jusqu'à <strong>100 trades sans commission*</strong>.
+                </p>
+
+                <div class="fees-wrapper">
+                    <div class="fee-col">
+                        <div class="fee-price">0$</div>
+                        <div class="fee-label">Frais de Dépôt<br> Retrait</div>
+                    </div>
+                    <div class="fee-col">
+                        <div class="fee-price">0$</div>
+                        <div class="fee-label">Frais de<br>Plateforme</div>
+                    </div>
+                    <div class="fee-col">
+                        <div class="fee-price">0$</div>
+                        <div class="fee-label">Frais dedonnées<br>de marché</div>
+                    </div>
+                </div>
+
+                <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35123&adTheme=773&campaign=225565&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avafutures.com%2Ffr%2Ffutures-trading-v2-fr" class="btn-card-action">
+                    TRADER DES FUTURES
+                </a>
+                
+                <div style="margin-top:10px; font-size:0.7rem; color:#555;">*T&Cs Apply</div>
             </div>
 
             <div class="f-card">
@@ -324,6 +411,7 @@
     </script>
 </body>
 </html>
+
 
 
 
