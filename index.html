@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert Bourse 24 | AvaTrade - Partenaire Officiel Red Bull Racing</title>
-    <meta name="description" content="Plateforme de trading régulée en France. Découvrez AvaProtect et le Copy Trading. Partenaire d'Oracle Red Bull Racing.">
+    <title>Expert Bourse 24 | Partenaire Oracle Red Bull Racing</title>
+    <meta name="description" content="Plateforme de trading haute performance. AvaProtect, Copy Trading et technologie de pointe.">
 
     <script type="text/javascript">
         (function() {
@@ -30,197 +30,242 @@
       gtag('config', 'G-XXXXXXXXXX');
     </script>
     
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;500;700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* --- THEME COLORS --- */
+        /* --- RED BULL RACING PALETTE --- */
         :root {
-            --col-navy: #001e62;    
-            --col-blue: #0040e5;    
-            --col-orange: #ff9900;  
-            --col-bg: #f4f6f9;
-            --col-text: #333;
+            --rb-navy: #06102a;     /* Dark Matte Navy */
+            --rb-blue: #1c3664;     /* Lighter Navy */
+            --rb-red: #ea1d2c;      /* Racing Red */
+            --rb-yellow: #fbb800;   /* Bull Yellow */
+            --text-dark: #1a1a1a;
+            --text-light: #f4f4f4;
+            --bg-light: #f8f9fc;
         }
 
         * { box-sizing: border-box; }
+        
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: var(--col-bg);
-            color: var(--col-text);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             margin: 0;
-            line-height: 1.6;
-            padding-bottom: 90px;
+            padding-bottom: 100px;
         }
 
-        /* HEADER */
+        h1, h2, h3, .brand, .btn-main {
+            font-family: 'Kanit', sans-serif; /* Sporty Font */
+        }
+
+        /* --- MODERN HEADER --- */
         header {
-            background: white;
-            padding: 10px 20px;
-            border-bottom: 1px solid #ddd;
+            background: var(--rb-navy);
+            padding: 15px 20px;
             display: flex; justify-content: space-between; align-items: center;
             position: sticky; top: 0; z-index: 999;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            border-bottom: 2px solid var(--rb-red);
         }
-        .brand-name { font-size: 1.1rem; font-weight: 900; color: var(--col-navy); text-transform: uppercase; }
-        .brand-name span { color: var(--col-orange); }
-        .official-logo img { height: 40px; width: auto; display: block; }
+        
+        .brand {
+            font-size: 1.2rem; font-weight: 800; color: white;
+            text-transform: uppercase; font-style: italic; letter-spacing: 0.5px;
+        }
+        .brand span { color: var(--rb-yellow); }
+        
+        /* Висококачествено SVG лого */
+        .partner-logo { height: 35px; width: auto; }
 
-        /* HERO: RED BULL (PRESTIGE, NO BONUS) */
-        .hero-prestige {
-            background: linear-gradient(135deg, #001e62 0%, #102a6b 100%);
+        /* --- HERO SECTION (Dark & Premium) --- */
+        .hero {
+            background: linear-gradient(160deg, var(--rb-navy) 0%, #152242 100%);
             color: white;
             text-align: center;
-            padding: 30px 20px 50px;
+            padding: 50px 20px 80px;
             position: relative;
-        }
-        .hero-prestige::after {
-            content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 5px;
-            background: linear-gradient(90deg, #f1c40f, #cc0000); /* Red Bull Colors Stripe */
-        }
-        
-        .rb-tag {
-            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3);
-            display: inline-block; padding: 5px 12px; border-radius: 20px;
-            font-size: 0.7rem; font-weight: bold; margin-bottom: 15px;
-            text-transform: uppercase; letter-spacing: 1px;
-        }
-        
-        .hero-title { font-size: 1.8rem; font-weight: 900; margin: 0 0 10px 0; line-height: 1.2; }
-        .hero-sub { font-size: 1rem; opacity: 0.9; max-width: 500px; margin: 0 auto 25px; }
-
-        .btn-hero {
-            background: var(--col-orange); color: white;
-            display: inline-block; padding: 15px 30px; border-radius: 50px;
-            font-weight: 800; text-transform: uppercase; text-decoration: none;
-            box-shadow: 0 5px 15px rgba(255,153,0,0.4);
-            transition: transform 0.2s;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); /* Модерно изрязване */
         }
 
-        /* STRATEGY CARDS */
-        .strategy-container { max-width: 800px; margin: 0 auto; padding: 30px 20px; }
-        .section-heading { text-align: center; margin-bottom: 30px; color: var(--col-navy); }
+        /* Декоративни линии */
+        .hero::before {
+            content: ''; position: absolute; top: 0; right: 0; width: 100px; height: 100%;
+            background: linear-gradient(to left, rgba(234, 29, 44, 0.1), transparent);
+            transform: skewX(-20deg);
+        }
+
+        .tag-pill {
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+            color: var(--rb-yellow); padding: 5px 15px; border-radius: 30px;
+            font-size: 0.8rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+            display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem; margin: 0 0 15px 0; line-height: 1.1; font-weight: 800;
+            text-transform: uppercase;
+        }
+        .hero h1 span { color: var(--rb-yellow); }
         
-        .strat-card {
+        .hero p { opacity: 0.8; font-size: 1.1rem; max-width: 500px; margin: 0 auto 30px; font-weight: 300; }
+
+        .btn-main {
+            background: linear-gradient(90deg, var(--rb-yellow) 0%, #ffcc00 100%);
+            color: black; padding: 18px 40px; border-radius: 4px; /* Racy corners */
+            font-weight: 800; text-transform: uppercase; text-decoration: none; font-size: 1rem;
+            display: inline-block; box-shadow: 0 10px 30px rgba(251, 184, 0, 0.3);
+            transform: skewX(-10deg); /* Състезателен наклон */
+            transition: all 0.3s;
+        }
+        .btn-main span { display: block; transform: skewX(10deg); /* Изправяме текста */ }
+        .btn-main:active { transform: skewX(-10deg) scale(0.95); }
+
+        /* --- FEATURES GRID (The Engine) --- */
+        .features {
+            max-width: 900px; margin: -50px auto 40px; padding: 0 20px;
+            position: relative; z-index: 10;
+        }
+
+        .card {
             background: white; border-radius: 12px; padding: 25px; margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; align-items: flex-start;
-            border-left: 5px solid #ccc;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            position: relative; overflow: hidden;
+            display: flex; flex-direction: column; align-items: flex-start;
+            border-top: 4px solid transparent;
+            transition: transform 0.3s;
         }
-        .strat-card.protect { border-left-color: var(--col-blue); }
-        .strat-card.copy { border-left-color: #27ae60; }
+        .card:hover { transform: translateY(-5px); }
 
-        .strat-icon {
-            font-size: 2rem; margin-right: 20px; flex-shrink: 0;
-            background: #f4f6f9; width: 60px; height: 60px;
-            display: flex; align-items: center; justify-content: center; border-radius: 50%;
-        }
-        
-        .strat-content h3 { margin: 0 0 5px 0; font-size: 1.1rem; color: var(--col-navy); }
-        .strat-content p { margin: 0 0 15px 0; font-size: 0.9rem; color: #555; }
-        
-        .text-link {
-            color: var(--col-blue); font-weight: bold; text-decoration: none;
-            font-size: 0.9rem; display: inline-flex; align-items: center;
+        /* AvaProtect Card Styling */
+        .card.protect { border-top-color: var(--rb-blue); }
+        .card.protect::after {
+            content: '🛡️'; font-size: 80px; position: absolute; right: -10px; bottom: -20px; 
+            opacity: 0.05; transform: rotate(-15deg);
         }
 
-        /* MARKETS GRID */
-        .instruments-bg { background: white; padding: 40px 20px; border-top: 1px solid #eee; }
-        .grid-container {
-            display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
-            max-width: 800px; margin: 0 auto;
+        /* Copy Trading Card Styling */
+        .card.copy { border-top-color: var(--rb-red); }
+        .card.copy::after {
+            content: '👥'; font-size: 80px; position: absolute; right: -10px; bottom: -20px; 
+            opacity: 0.05; transform: rotate(-15deg);
         }
-        .i-card { background: #f9f9f9; padding: 10px; border-radius: 6px; text-align: center; border: 1px solid #eee; }
-        .i-name { font-weight: bold; font-size: 0.8rem; color: #333; display: block; }
 
-        /* FOOTER */
-        .compliance { font-size: 0.65rem; color: #999; padding: 20px; text-align: justify; background: #f4f6f9; }
+        .card h3 { margin: 0 0 10px 0; font-size: 1.4rem; color: var(--rb-navy); }
+        .card p { color: #555; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.5; }
         
+        .link-arrow {
+            color: var(--rb-blue); font-weight: 700; text-decoration: none;
+            text-transform: uppercase; font-size: 0.85rem; display: flex; align-items: center; gap: 5px;
+        }
+
+        /* --- MARKET INSTRUMENTS (Dashboard) --- */
+        .markets-section { padding: 40px 20px; text-align: center; }
+        .markets-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+            max-width: 800px; margin: 20px auto 0;
+        }
+        .m-item {
+            background: white; padding: 15px 5px; border-radius: 8px;
+            border: 1px solid #eee; font-weight: 700; font-size: 0.8rem; color: var(--rb-navy);
+            display: flex; flex-direction: column; align-items: center; gap: 5px;
+        }
+        .m-icon { font-size: 1.2rem; }
+
+        /* --- COMPLIANCE --- */
+        .compliance {
+            background: #eef1f5; padding: 30px 20px; font-size: 0.7rem; color: #888;
+            text-align: justify; margin-top: 20px;
+        }
+
+        /* --- STICKY FOOTER --- */
         .sticky-footer {
             position: fixed; bottom: 0; left: 0; right: 0;
-            background: white; padding: 10px 20px;
-            box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
-            display: flex; align-items: center; justify-content: space-between; z-index: 999;
-            border-top: 3px solid var(--col-navy);
+            background: rgba(6, 16, 42, 0.95); /* Semi-transparent Navy */
+            backdrop-filter: blur(10px);
+            padding: 12px 20px;
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+            border-top: 2px solid var(--rb-yellow);
         }
-        .sticky-btn {
-            background: var(--col-orange); color: white; text-decoration: none;
-            padding: 10px 25px; border-radius: 30px; font-weight: 800; font-size: 0.9rem;
+        .sticky-left { color: white; font-family: 'Kanit', sans-serif; line-height: 1.1; }
+        .sticky-left strong { display: block; font-size: 0.9rem; color: var(--rb-yellow); }
+        .sticky-left small { font-size: 0.75rem; opacity: 0.8; }
+        
+        .btn-sticky {
+            background: var(--rb-red); color: white; padding: 8px 20px; border-radius: 30px;
+            font-weight: 700; text-decoration: none; font-size: 0.85rem; text-transform: uppercase;
         }
-
     </style>
 </head>
 <body>
 
     <header>
-        <div class="brand-name">EXPERT BOURSE<span>24</span></div>
-        <div class="official-logo">
-            <img src="https://tracking.avapartner.com/imp/?affid=207628&logoId=35112&adTheme=766&campaign=225565&campaignName=FR&tag=207628" alt="AvaTrade Official Partner">
+        <div class="brand">EXPERT<span>24</span></div>
+        <div style="display:flex; align-items:center; gap:15px;">
+             <img src="https://upload.wikimedia.org/wikipedia/en/2/2b/Oracle_Red_Bull_Racing_logo.svg" alt="Red Bull" style="height:25px; opacity:0.9;">
+            <div style="width:1px; height:20px; background:rgba(255,255,255,0.3);"></div>
+             <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/AvaTrade_Logo.svg" alt="AvaTrade" class="partner-logo" style="filter: brightness(0) invert(1);">
         </div>
     </header>
 
-    <div class="hero-prestige">
-        <div class="rb-tag">🏎️ Oracle Red Bull Racing</div>
-        <div class="hero-title">La Performance Rencontre la Sécurité</div>
-        <p class="hero-sub">Tradez avec un courtier partenaire des champions. Technologie de pointe et exécution ultra-rapide.</p>
+    <div class="hero">
+        <div class="tag-pill">
+            <span>🏁</span> Partenaire Officiel
+        </div>
+        <h1>Performance <br> <span>& Sécurité</span></h1>
+        <p>Rejoignez l'équipe gagnante. Tradez avec la technologie utilisée par les champions du monde.</p>
         
-        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="btn-hero">
-            Commencer à Trader
+        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="btn-main">
+            <span>Démarrer</span>
         </a>
     </div>
 
-    <div class="strategy-container">
-        <div class="section-heading">
-            <h2>L'Avantage AvaTrade</h2>
-            <p>Deux outils puissants pour les investisseurs modernes.</p>
+    <div class="features">
+        
+        <div class="card protect">
+            <h3>AvaProtect™</h3>
+            <p>La seule assurance trading qui vous rembourse 100% de vos pertes. Prenez des risques calculés, comme un pro.</p>
+            <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="link-arrow">
+                Activer la Protection →
+            </a>
         </div>
 
-        <div class="strat-card protect">
-            <div class="strat-icon" style="color:var(--col-blue)">🛡️</div>
-            <div class="strat-content">
-                <div style="text-transform:uppercase; font-size:0.7rem; color:#888; margin-bottom:5px;">Protection</div>
-                <h3>AvaProtect™ : Remboursement des Pertes</h3>
-                <p>La seule fonctionnalité qui vous rembourse 100% de vos pertes sur un trade perdant. Idéal pour débuter sans stress.</p>
-                <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="text-link">
-                    Découvrir AvaProtect →
-                </a>
-            </div>
+        <div class="card copy">
+            <h3>Copy Trading</h3>
+            <p>Pas le temps d'analyser ? Copiez automatiquement les stratégies des meilleurs investisseurs de la plateforme.</p>
+            <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35140&adTheme=778&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favasocial-copy-trade-repeat" class="link-arrow">
+                Voir les Traders →
+            </a>
         </div>
 
-        <div class="strat-card copy">
-            <div class="strat-icon" style="color:#27ae60">👥</div>
-            <div class="strat-content">
-                <div style="text-transform:uppercase; font-size:0.7rem; color:#888; margin-bottom:5px;">Automation</div>
-                <h3>Copy Trading</h3>
-                <p>Connectez-vous à la communauté mondiale. Copiez les stratégies des meilleurs traders en temps réel avec AvaSocial.</p>
-                <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35140&adTheme=778&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favasocial-copy-trade-repeat" class="text-link">
-                    Voir le Copy Trading →
-                </a>
-            </div>
-        </div>
     </div>
 
-    <div class="instruments-bg">
-        <h3 style="text-align:center; color:var(--col-navy); margin-bottom:20px;">Marchés Disponibles</h3>
-        <div class="grid-container">
-            <div class="i-card"><span class="i-name">FOREX</span></div>
-            <div class="i-card"><span class="i-name">CRYPTO</span></div>
-            <div class="i-card"><span class="i-name">ACTIONS</span></div>
-            <div class="i-card"><span class="i-name">INDICES</span></div>
-            <div class="i-card"><span class="i-name">OR & PÉTROLE</span></div>
-            <div class="i-card"><span class="i-name">ETF</span></div>
+    <div class="markets-section">
+        <h3 style="color:var(--rb-navy); margin-bottom:5px;">Marchés Globaux</h3>
+        <p style="font-size:0.9rem; color:#666; margin:0;">Accès direct à +1250 instruments</p>
+        
+        <div class="markets-grid">
+            <div class="m-item"><span class="m-icon">💱</span> Forex</div>
+            <div class="m-item"><span class="m-icon">₿</span> Crypto</div>
+            <div class="m-item"><span class="m-icon">📈</span> Actions</div>
+            <div class="m-item"><span class="m-icon">🛢️</span> Pétrole</div>
+            <div class="m-item"><span class="m-icon">🥇</span> Or</div>
+            <div class="m-item"><span class="m-icon">📊</span> Indices</div>
         </div>
     </div>
 
     <div class="compliance">
-        <p><strong>Avertissement :</strong> Les CFD sont des instruments complexes et présentent un risque élevé de perte rapide en capital en raison de l'effet de levier. <strong>76% des comptes d'investisseurs particuliers perdent de l'argent lorsqu'ils investissent sur les CFD avec ce fournisseur.</strong></p>
-        <p>Expert Bourse 24 est un partenaire marketing indépendant.</p>
+        <p><strong>Avertissement sur les risques :</strong> Les CFD sont des instruments complexes et présentent un risque élevé de perte rapide en capital en raison de l'effet de levier. <strong>76% des comptes d'investisseurs particuliers perdent de l'argent lorsqu'ils investissent sur les CFD avec ce fournisseur.</strong></p>
+        <p>AvaTrade est un courtier régulé (CBI No. C53877). Expert24 agit en tant que partenaire marketing.</p>
     </div>
 
     <div class="sticky-footer">
-        <div>
-            <div class="sticky-text" style="color:var(--col-navy);">AVATRADE</div>
-            <div class="sticky-sub" style="color:#666;">Protection & Copy Trading</div>
+        <div class="sticky-left">
+            <strong>AVATRADE</strong>
+            <small>Partenaire Red Bull Racing</small>
         </div>
-        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="sticky-btn">
-            OUVRIR UN COMPTE
+        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="btn-sticky">
+            S'INSCRIRE
         </a>
     </div>
 
