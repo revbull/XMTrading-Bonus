@@ -3,40 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expert Bourse 24 | Futures, Crypto & CFD</title>
+    <title>Traders Pulse | Futures, Crypto & CFD</title>
     <meta name="description" content="Plateforme de trading tout-en-un. Futures, Options, CFD. Jusqu'à 100 trades sans commission.">
 
-    <script type="text/javascript">
-        (function() {
-            var d = document, w = window;
-            w.MgSensorData = w.MgSensorData || [];
-            w.MgSensorData.push({ cid:897661, project: "a.mgid.com" });
-            var l = "a.mgid.com";
-            var n = d.getElementsByTagName("script")[0];
-            var s = d.createElement("script");
-            s.type = "text/javascript";
-            s.async = true;
-            var dt = !Date.now?new Date().valueOf():Date.now();
-            s.src = "https://" + l + "/mgsensor.js?d=" + dt;
-            n.parentNode.insertBefore(s, n);
-        })();
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://tracking.avapartner.com">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+
+      // Взимаме параметрите за по-добър GA4 анализ
+      var trackingParams = {};
+      var urlParams = new URLSearchParams(window.location.search);
+      urlParams.forEach(function(value, key) {
+          trackingParams[key] = value;
+      });
+
+      gtag('config', 'G-XXXXXXXXXX', trackingParams);
     </script>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-   <style>
-        /* --- AVAFUTURES DARK THEME (3D ULTRA MODERN) --- */
+    <style>
+        /* --- TRADERS PULSE THEME (DARK) --- */
         :root {
             --bg-dark: #0b0e14;       /* Deep Black/Blue */
-            --bg-card-grad: linear-gradient(145deg, #161b28, #0f131c); /* 3D Gradient */
+            --bg-card: #151a25;       /* Card Background */
+            --bg-card-grad: linear-gradient(145deg, #161b28, #0f131c);
             --accent-blue: #007aff;   /* Neon Blue */
             --accent-glow: rgba(0, 122, 255, 0.4);
             --text-white: #ffffff;
@@ -44,7 +40,7 @@
         }
 
         * { box-sizing: border-box; }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-dark);
@@ -55,18 +51,25 @@
         }
 
         h1, h2, h3 { font-weight: 800; letter-spacing: -0.5px; }
-        
-        /* HEADER & TICKER (Без промяна) */
+
+        /* HEADER */
         header {
-            background: rgba(11, 14, 20, 0.95); padding: 15px 20px;
+            background: rgba(11, 14, 20, 0.95);
+            padding: 15px 20px;
             display: flex; justify-content: space-between; align-items: center;
             position: sticky; top: 0; z-index: 999;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .affiliate-badge {
-            font-size: 0.6rem; color: #888; text-transform: uppercase; 
-            border: 1px solid #333; padding: 3px 6px; border-radius: 4px; margin-top: 5px;
+        .brand-logo {
+            font-size: 1.1rem; font-weight: 900; color: white; text-transform: uppercase; letter-spacing: -0.5px;
         }
+        .affiliate-badge {
+            font-size: 0.6rem; color: #666; text-transform: uppercase;
+            border: 1px solid #333; padding: 3px 6px; border-radius: 4px;
+            margin-top: 5px; display: inline-block;
+        }
+
+        /* TICKER */
         .markets-bar {
             background: #000; border-bottom: 1px solid #222;
             padding: 10px; overflow-x: auto; white-space: nowrap;
@@ -77,89 +80,104 @@
             margin-right: 10px; font-weight: 600;
         }
 
-        /* HERO (Без промяна) */
+        /* HERO */
         .hero {
-            text-align: center; padding: 50px 20px 40px;
+            text-align: center;
+            padding: 50px 20px 40px;
             background: radial-gradient(circle at center, #1a253a 0%, var(--bg-dark) 80%);
         }
         .hero h1 {
-            font-size: 2.4rem; margin: 0 0 15px 0; line-height: 1.1;
+            font-size: 2.2rem; margin: 0 0 15px 0; line-height: 1.1;
             background: linear-gradient(90deg, #fff 0%, #a1aab5 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .hero p { color: var(--text-gray); font-size: 1rem; max-width: 600px; margin: 0 auto 30px; }
+        .hero p { color: var(--text-gray); font-size: 1rem; max-width: 650px; margin: 0 auto 28px; }
+
         .btn-main {
-            background: var(--accent-blue); color: white; padding: 16px 35px; border-radius: 6px;
+            background: var(--accent-blue);
+            color: white; padding: 16px 35px; border-radius: 6px;
             font-weight: 700; text-transform: uppercase; text-decoration: none; font-size: 1rem;
-            display: inline-block; box-shadow: 0 0 25px var(--accent-glow);
+            display: inline-block; box-shadow: 0 0 20px rgba(0, 122, 255, 0.4);
             transition: transform 0.2s;
         }
-        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 0 40px var(--accent-glow); }
+        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0, 122, 255, 0.6); }
 
-        /* --- NEW 3D FEATURES GRID --- */
-        .features-section { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 40px; }
-        .section-title h2 { font-size: 1.6rem; line-height: 1.3; max-width: 800px; margin: 0 auto; }
+        /* --- FEATURES GRID --- */
+        .features-section {
+            padding: 40px 20px; max-width: 1000px; margin: 0 auto;
+        }
+        .section-title { text-align: center; margin-bottom: 34px; }
+        .section-title h2 { font-size: 1.55rem; line-height: 1.3; max-width: 820px; margin: 0 auto; }
         .section-title span { color: var(--accent-blue); text-shadow: 0 0 15px var(--accent-glow); }
 
-        .futures-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
+        .futures-grid {
+            display: grid; grid-template-columns: 1fr; gap: 25px;
+        }
         @media (min-width: 600px) { .futures-grid { grid-template-columns: repeat(2, 1fr); } }
         @media (min-width: 900px) { .futures-grid { grid-template-columns: repeat(3, 1fr); } }
 
         .f-card-wide { grid-column: 1 / -1; }
-        
-        /* 3D CARD STYLE */
+
+        /* CARD STYLE */
         .f-card {
-            background: var(--bg-card-grad); /* Градиент за дълбочина */
+            background: var(--bg-card-grad);
             padding: 30px; border-radius: 16px;
             border: 1px solid rgba(255,255,255,0.08);
-            /* СЛОЖНА СЯНКА ЗА 3D ЕФЕКТ */
-            box-shadow: 
-                0 10px 20px rgba(0,0,0,0.3), /* Основна сянка */
-                inset 0 1px 1px rgba(255,255,255,0.1); /* Горен светъл ръб */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.1);
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             display: flex; flex-direction: column; align-items: flex-start;
             position: relative; overflow: hidden;
         }
-        /* Hover Ефект: Повдигане и Светене */
         .f-card:hover {
-            transform: translateY(-7px) scale(1.01);
-            border-color: var(--accent-blue);
-            box-shadow: 
-                0 20px 40px rgba(0, 122, 255, 0.2), /* Синьо сияние */
-                inset 0 1px 1px rgba(255,255,255,0.1);
+            transform: translateY(-5px); border-color: var(--accent-blue);
+            box-shadow: 0 20px 40px rgba(0, 122, 255, 0.15), inset 0 1px 1px rgba(255,255,255,0.1);
         }
-        
-        /* NEW NEON ICON BOX */
+
+        /* ICONS */
         .f-icon-box {
-            width: 55px; height: 55px;
+            width: 50px; height: 50px;
             background: linear-gradient(135deg, rgba(0,122,255,0.15), rgba(0,0,0,0));
-            border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.8rem; margin-bottom: 20px;
-            color: var(--accent-blue);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; margin-bottom: 20px; color: var(--accent-blue);
             border: 1px solid rgba(0,122,255,0.3);
-            box-shadow: 0 0 20px rgba(0,122,255,0.2); /* Вътрешно сияние */
-            transition: all 0.3s;
-        }
-        .f-card:hover .f-icon-box {
-            background: var(--accent-blue); color: white;
-            box-shadow: 0 0 30px var(--accent-glow);
-            transform: rotateY(360deg); /* Завъртане при ховър */
+            box-shadow: 0 0 15px rgba(0,122,255,0.1);
         }
 
         .f-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: white; }
         .f-desc { font-size: 0.9rem; color: var(--text-gray); line-height: 1.5; }
 
-        /* FOOTER & HOOKS (Без промяна) */
+        /* --- 3-COLUMN FEE GRID --- */
+        .fees-wrapper {
+            display: flex; justify-content: space-between; align-items: flex-start;
+            margin: 25px 0; width: 100%; position: relative;
+        }
+        .fee-col { flex: 1; text-align: center; padding: 0 5px; position: relative; }
+        .fee-col:not(:last-child)::after {
+            content: ''; position: absolute; right: 0; top: 10%; height: 80%; width: 1px;
+            background: rgba(255,255,255,0.15);
+        }
+        .fee-price { font-size: 1.8rem; font-weight: 800; color: white; line-height: 1; margin-bottom: 8px; }
+        .fee-label { font-size: 0.7rem; color: var(--text-gray); text-transform: uppercase; line-height: 1.2; }
+
+        .btn-card-action {
+            background: transparent; border: 1px solid var(--accent-blue); color: var(--accent-blue);
+            padding: 12px 30px; border-radius: 30px; font-weight: 700; text-transform: uppercase;
+            font-size: 0.85rem; text-decoration: none; transition: all 0.2s; margin-top: 10px; display: inline-block;
+        }
+        .btn-card-action:hover {
+            background: var(--accent-blue); color: white; box-shadow: 0 0 15px rgba(0, 122, 255, 0.4);
+        }
+
+        /* BOTTOM HOOKS */
         .hooks-grid {
             display: grid; grid-template-columns: 1fr; gap: 15px;
-            max-width: 900px; margin: 40px auto; padding: 40px 20px 0;
-            border-top: 1px solid #222;
+            max-width: 900px; margin: 40px auto; padding: 40px 20px 0; border-top: 1px solid #222;
         }
         @media (min-width: 600px) { .hooks-grid { grid-template-columns: 1fr 1fr 1fr; } }
         .h-card { background: #111; padding: 20px; border-radius: 8px; border: 1px solid #222; }
         .h-link { color: var(--accent-blue); font-weight: 700; text-decoration: none; font-size: 0.85rem; }
+
+        /* FOOTER */
         .compliance {
             background: #05070a; padding: 40px 20px; font-size: 0.7rem; color: #555;
             text-align: justify; border-top: 1px solid #222; margin-top: 40px;
@@ -174,82 +192,24 @@
             background: var(--accent-blue); color: white; padding: 8px 24px; border-radius: 4px;
             font-weight: 700; text-decoration: none; font-size: 0.85rem; text-transform: uppercase;
         }
-       /* --- NEW FEES GRID STYLES --- */
-    .fees-wrapper {
-        display: flex; 
-        justify-content: space-between; 
-        align-items: flex-start;
-        margin: 20px 0;
-        width: 100%;
-        position: relative;
-    }
-    
-    .fee-col {
-        flex: 1;
-        text-align: center;
-        padding: 0 10px;
-        position: relative;
-    }
 
-    /* Вертикални разделители между колоните */
-    .fee-col:not(:last-child)::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 10%;
-        height: 80%;
-        width: 1px;
-        background: rgba(255,255,255,0.15);
-    }
-
-    .fee-price {
-        font-size: 1.8rem;
-        font-weight: 800;
-        color: var(--text-white);
-        font-family: 'Inter', sans-serif;
-        line-height: 1;
-        margin-bottom: 5px;
-    }
-    
-    .fee-label {
-        font-size: 0.75rem;
-        color: var(--text-gray);
-        text-transform: uppercase;
-        line-height: 1.2;
-    }
-
-    /* Специален бутон за картата */
-    .btn-card-action {
-        background: transparent;
-        border: 1px solid var(--accent-blue);
-        color: var(--accent-blue);
-        padding: 10px 25px;
-        border-radius: 30px;
-        font-weight: 700;
-        text-transform: uppercase;
-        font-size: 0.85rem;
-        text-decoration: none;
-        transition: all 0.2s;
-        margin-top: 10px;
-        display: inline-block;
-    }
-    .btn-card-action:hover {
-        background: var(--accent-blue);
-        color: white;
-        box-shadow: 0 0 15px rgba(0, 122, 255, 0.4);
-    }
+        /* Light surgery: make partner logos feel less "official" */
+        .partner-logos { opacity: 0.65; filter: grayscale(100%) brightness(180%); }
+        @media (max-width: 520px) {
+            .partner-logos { display:none; }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div>
-            <div style="font-size:1.1rem; font-weight:900; color:white;">EXPERT<span style="color:var(--accent-blue);">24</span></div>
+            <div class="brand-logo">TRADERS<span style="color:var(--accent-blue);">PULSE</span></div>
             <div class="affiliate-badge">Partenaire Marketing</div>
         </div>
-        
-        <div style="display:flex; align-items:center; gap:15px; opacity:0.9;">
-            <svg width="80" height="30" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" style="filter: grayscale(100%) brightness(200%);">
+
+        <div class="partner-logos" style="display:flex; align-items:center; gap:15px;">
+            <svg width="80" height="30" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
                 <text x="0" y="15" font-family="Arial" font-weight="bold" font-size="14" fill="white">ORACLE</text>
                 <text x="0" y="42" font-family="Arial" font-weight="900" font-size="24" fill="white" font-style="italic">Red Bull</text>
                 <text x="110" y="42" font-family="Arial" font-weight="bold" font-size="24" fill="white" font-style="italic">Racing</text>
@@ -271,27 +231,39 @@
         <div class="m-pill">CRUDE OIL <span style="color:#00d084">+1.5%</span></div>
     </div>
 
+    <!-- HERO (light surgery) -->
     <div class="hero">
-        <h1>Futures. Crypto. CFD.<br><span style="color:var(--accent-blue)">Une Plateforme.</span></h1>
-        <p>Accédez aux marchés mondiaux. Spreads serrés sur Bitcoin, Gold et Indices. Technologie de pointe.</p>
-        
-        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35001&adTheme=759&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Ftrading-v3%2Fsignaux-de-trading-new" class="btn-main">
-            Ouvrir un Compte Gratuit
+        <h1>
+            Pourquoi de plus en plus de traders<br>
+            changent de plateforme en 2025
+        </h1>
+        <p>
+            Les marchés évoluent vite. La technologie, les frais et l’exécution
+            font aujourd’hui toute la différence — surtout en période volatile.
+        </p>
+
+        <!-- href unchanged -->
+        <a href="https://tracking.avapartner.com/click/?affid=207628&videoId=35222&adTheme=780&controls=true&muted=true&autoplay=false&campaign=225565&campaignName=FR&tag=207628&linkDirection=https%3A%2F%2Fwww.avatrade.fr%3Ftag%3D207628" class="btn-main">
+            Découvrir la plateforme
         </a>
     </div>
 
     <div class="features-section">
         <div class="section-title">
-            <h2>Découvrez le trading de contrats à terme à la pointe de l’innovation avec jusqu’à <span>100 ordres de bourse sans commission</span></h2>
+            <h2>
+                Ce que les traders regardent vraiment avant de passer à l’action :
+                <span>stabilité, outils, et support</span>
+            </h2>
         </div>
-        
+
         <div class="futures-grid">
-            
-            <div class="f-card f-card-wide" style="border-color: var(--accent-blue); align-items:center; text-align:center;">
-                
-                <h3 style="color:white; margin-top:0;">Tradez plus avec AvaFutures</h3>
+
+            <!-- Keep the wide card but soften wording + CTA (href unchanged) -->
+            <div class="f-card f-card-wide" style="border-color: rgba(0,122,255,0.55); align-items:center; text-align:center;">
+                <h3 style="color:white; margin-top:0;">Une offre futures pensée pour être simple</h3>
                 <p style="color:#a1aab5; font-size:0.95rem; margin-bottom:15px;">
-                    Profitez de dépôts minimums bas, de frais compétitifs et jusqu'à <strong>100 trades sans commission*</strong>.
+                    Des coûts compétitifs et des conditions claires selon le type de compte.
+                    Jusqu'à <strong>100 trades sans commission*</strong> peuvent s'appliquer.
                 </p>
 
                 <div class="fees-wrapper">
@@ -305,33 +277,41 @@
                     </div>
                     <div class="fee-col">
                         <div class="fee-price">0$</div>
-                        <div class="fee-label">Frais données<br>de marché</div>
+                        <div class="fee-label">Frais Données<br>de Marché</div>
                     </div>
                 </div>
 
                 <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35123&adTheme=773&campaign=225565&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avafutures.com%2Ffr%2Ffutures-trading-v2-fr" class="btn-card-action">
-                    TRADER LES FUTURES
+                    Voir les conditions futures
                 </a>
-                
+
                 <div style="margin-top:10px; font-size:0.7rem; color:#555;">*T&Cs Apply</div>
             </div>
 
+            <!-- KEEP only 3 feature cards (light surgery: reduce overload) -->
             <div class="f-card">
                 <div class="f-icon-box">💻</div>
                 <div class="f-title">Plateformes de Pointe</div>
-                <div class="f-desc">Expérience utilisateur intuitive, graphiques avancés et trading automatisé (MT4/MT5).</div>
-            </div>
-
-            <div class="f-card">
-                <div class="f-icon-box">💳</div>
-                <div class="f-title">Dépôts Rapides</div>
-                <div class="f-desc">Vos fonds circulent rapidement et en toute sécurité avec plusieurs méthodes, y compris cartes bancaires.</div>
+                <div class="f-desc">Interface intuitive, graphiques avancés et options d’automatisation (MT4/MT5).</div>
             </div>
 
             <div class="f-card">
                 <div class="f-icon-box">📊</div>
                 <div class="f-title">Données Niveau 2</div>
-                <div class="f-desc">GRATUIT. Voyez ce qui se passe sur le marché en temps réel pour prendre de meilleures décisions.</div>
+                <div class="f-desc">Accès aux informations de marché pour mieux lire la liquidité et le flux.</div>
+            </div>
+
+            <div class="f-card">
+                <div class="f-icon-box">🌍</div>
+                <div class="f-title">Support 24h/24</div>
+                <div class="f-desc">Une équipe dédiée pour vous aider au bon moment, quand le marché bouge.</div>
+            </div>
+
+            <!-- COMMENTED OUT (kept for later tests)
+            <div class="f-card">
+                <div class="f-icon-box">💳</div>
+                <div class="f-title">Dépôts Rapides</div>
+                <div class="f-desc">Vos fonds circulent rapidement et en toute sécurité avec plusieurs méthodes, y compris cartes bancaires.</div>
             </div>
 
             <div class="f-card">
@@ -341,16 +321,11 @@
             </div>
 
             <div class="f-card">
-                <div class="f-icon">🌍</div>
-                <div class="f-title">Support 24h/24</div>
-                <div class="f-desc">Notre équipe d'experts dédiée parle votre langue et est là pour vous guider à tout moment.</div>
-            </div>
-
-            <div class="f-card">
-                <div class="f-icon">🚀</div>
+                <div class="f-icon-box">🚀</div>
                 <div class="f-title">Inscription Ultra-Rapide</div>
                 <div class="f-desc">Commencez à trader en quelques minutes grâce à notre processus d'inscription simplifié.</div>
             </div>
+            -->
 
         </div>
     </div>
@@ -358,12 +333,13 @@
     <div class="hooks-grid">
         <div class="h-card">
             <h3 style="color:white; margin-top:0;">Signaux Gratuits</h3>
-            <p style="color:#888; font-size:0.8rem;">Ne tradez pas seul. Recevez des alertes.</p>
+            <p style="color:#888; font-size:0.8rem;">Recevez des alertes pour suivre l’action du marché.</p>
             <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35001&adTheme=759&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Ftrading-v3%2Fsignaux-de-trading-new" class="h-link">OBTENIR →</a>
         </div>
         <div class="h-card">
             <h3 style="color:white; margin-top:0;">AvaProtect™</h3>
-            <p style="color:#888; font-size:0.8rem;">Remboursement des pertes à 100%.</p>
+            <!-- light surgery: safer phrasing -->
+            <p style="color:#888; font-size:0.8rem;">Protection contre la volatilité*</p>
             <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="h-link">VOIR →</a>
         </div>
         <div class="h-card">
@@ -375,44 +351,104 @@
 
     <div class="compliance">
         <p><strong>Avertissement sur les risques :</strong> Le trading de Futures et de CFD implique un risque de perte substantiel. 76% des comptes d'investisseurs particuliers perdent de l'argent lorsqu'ils tradent des CFD avec ce fournisseur.</p>
-        <p>Expert Bourse 24 est un partenaire marketing indépendant. AvaTrade est un courtier régulé (CBI No. C53877).</p>
+        <p>Traders Pulse est un partenaire marketing indépendant. AvaTrade est un courtier régulé (CBI No. C53877).</p>
+        <p style="margin-top:10px;">*Les conditions et l’éligibilité peuvent varier selon l’offre.</p>
     </div>
 
     <div class="sticky-footer">
         <div style="color:white; font-size:0.9rem; font-weight:700;">
-            AVATRADE <span style="font-weight:400; color:#888; font-size:0.8rem;">| Crypto & Futures</span>
+            TRADERS PULSE <span style="font-weight:400; color:#888; font-size:0.8rem;">| Accès marchés</span>
         </div>
+        <!-- href unchanged -->
         <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35001&adTheme=759&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Ftrading-v3%2Fsignaux-de-trading-new" class="btn-sticky">
-            OUVRIR UN COMPTE
+            CONTINUER →
         </a>
     </div>
 
-    <script>
-        function handleAdClick() {
-            if (typeof gtag === 'function') {
-                gtag('event', 'AvaConversion', { 'event_category': 'conversion' });
-            }
-        }
-        document.addEventListener("DOMContentLoaded", function() {
-            const links = document.querySelectorAll('a');
-            const urlParams = new URLSearchParams(window.location.search);
-            const clickId = urlParams.get('clickid') || urlParams.get('click_id') || urlParams.get('adclid');
-            links.forEach(link => {
-                link.addEventListener('click', handleAdClick);
-                if (clickId) {
-                    let href = link.getAttribute('href');
-                    if (href && href.includes('avapartner')) {
-                        const separator = href.includes('?') ? '&' : '?';
-                        link.setAttribute('href', href + separator + 'affSub1=' + clickId);
+   <script type="text/javascript">
+    (function() {
+        var d = document, w = window;
+        w.MgSensorData = w.MgSensorData || [];
+        w.MgSensorData.push({ cid:897661, project: "a.mgid.com" });
+        var l = "a.mgid.com";
+        var s = d.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        var dt = !Date.now?new Date().valueOf():Date.now();
+        s.src = "https://" + l + "/mgsensor.js?d=" + dt;
+        d.body.appendChild(s);
+    })();
+   </script>
+
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // 1. Identify Traffic Source Parameters
+        // RichAds sends "click_id", MGID sends "clickid" or "click_id"
+        const richAdsClickId = urlParams.get('click_id');
+        const mgidClickId = urlParams.get('clickid') || urlParams.get('click_id');
+
+        const links = document.querySelectorAll('a');
+
+        links.forEach(link => {
+            // Check if it's an AvaTrade link or Action Button
+            let isTargetLink = link.href.includes("tracking.avapartner") ||
+                               link.classList.contains('btn-main') ||
+                               link.classList.contains('btn-sticky') ||
+                               link.classList.contains('btn-card-action') ||
+                               link.classList.contains('h-link');
+
+            if (isTargetLink) {
+
+                // --- A) Update Link with Tracking ID for AvaTrade Panel ---
+                let currentHref = link.href;
+                if (currentHref.includes('avapartner')) {
+                    // Decide which ID to pass to AvaTrade (Prioritize RichAds if both exist)
+                    let trackingId = richAdsClickId || mgidClickId;
+
+                    if (trackingId) {
+                        const separator = currentHref.includes('?') ? '&' : '?';
+                        // Using "TrafficSource" as the parameter to see it in AvaTrade reports
+                        link.href = currentHref + separator + 'TrafficSource=' + trackingId;
                     }
                 }
-            });
+
+                // --- B) Conversion Signaling (Postback) on Click ---
+                link.addEventListener('click', function() {
+                    console.log("Conversion Click Triggered");
+
+                    // 1. GA4 Event
+                    if (typeof gtag === 'function') {
+                        gtag('event', 'AvaConversion', { 'event_category': 'conversion' });
+                    }
+
+                    // 2. RichAds Postback (us.ahows.co)
+                    if (richAdsClickId) {
+                         const richAdsPostback = 'https://us.ahows.co/log?action=conversion&key=' + richAdsClickId;
+                         // Use beacon for reliability (works even if page closes)
+                         if (navigator.sendBeacon) {
+                            navigator.sendBeacon(richAdsPostback);
+                        } else {
+                            fetch(richAdsPostback, { mode: 'no-cors', keepalive: true });
+                        }
+                    }
+
+                    // 3. MGID Postback
+                    if (mgidClickId) {
+                        // MGID usually requires an event name like "conversion" or custom
+                        const mgidPostback = "https://a.mgid.com/postback/897661?c=" + mgidClickId + "&e=conversion";
+                        if (navigator.sendBeacon) {
+                            navigator.sendBeacon(mgidPostback);
+                        } else {
+                            new Image().src = mgidPostback;
+                        }
+                    }
+                });
+            }
         });
-    </script>
+    });
+   </script>
+
 </body>
 </html>
-
-
-
-
-
