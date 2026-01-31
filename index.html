@@ -193,7 +193,6 @@
             font-weight: 700; text-decoration: none; font-size: 0.85rem; text-transform: uppercase;
         }
 
-        /* Light surgery: make partner logos feel less "official" */
         .partner-logos { opacity: 0.65; filter: grayscale(100%) brightness(180%); }
         @media (max-width: 520px) {
             .partner-logos { display:none; }
@@ -231,7 +230,6 @@
         <div class="m-pill">CRUDE OIL <span style="color:#00d084">+1.5%</span></div>
     </div>
 
-    <!-- HERO (light surgery) -->
     <div class="hero">
         <h1>
             Pourquoi de plus en plus de traders<br>
@@ -242,7 +240,6 @@
             font aujourd’hui toute la différence — surtout en période volatile.
         </p>
 
-        <!-- href unchanged -->
         <a href="https://tracking.avapartner.com/click/?affid=207628&videoId=35222&adTheme=780&controls=true&muted=true&autoplay=false&campaign=225565&campaignName=FR&tag=207628&linkDirection=https%3A%2F%2Fwww.avatrade.fr%3Ftag%3D207628" class="btn-main">
             Découvrir la plateforme
         </a>
@@ -258,7 +255,6 @@
 
         <div class="futures-grid">
 
-            <!-- Keep the wide card but soften wording + CTA (href unchanged) -->
             <div class="f-card f-card-wide" style="border-color: rgba(0,122,255,0.55); align-items:center; text-align:center;">
                 <h3 style="color:white; margin-top:0;">Une offre futures pensée pour être simple</h3>
                 <p style="color:#a1aab5; font-size:0.95rem; margin-bottom:15px;">
@@ -288,7 +284,6 @@
                 <div style="margin-top:10px; font-size:0.7rem; color:#555;">*T&Cs Apply</div>
             </div>
 
-            <!-- KEEP only 3 feature cards (light surgery: reduce overload) -->
             <div class="f-card">
                 <div class="f-icon-box">💻</div>
                 <div class="f-title">Plateformes de Pointe</div>
@@ -307,26 +302,6 @@
                 <div class="f-desc">Une équipe dédiée pour vous aider au bon moment, quand le marché bouge.</div>
             </div>
 
-            <!-- COMMENTED OUT (kept for later tests)
-            <div class="f-card">
-                <div class="f-icon-box">💳</div>
-                <div class="f-title">Dépôts Rapides</div>
-                <div class="f-desc">Vos fonds circulent rapidement et en toute sécurité avec plusieurs méthodes, y compris cartes bancaires.</div>
-            </div>
-
-            <div class="f-card">
-                <div class="f-icon-box">🎓</div>
-                <div class="f-title">Formation Approfondie</div>
-                <div class="f-desc">Apprenez à trader efficacement avec des webinaires, des cours complets et des leçons interactives.</div>
-            </div>
-
-            <div class="f-card">
-                <div class="f-icon-box">🚀</div>
-                <div class="f-title">Inscription Ultra-Rapide</div>
-                <div class="f-desc">Commencez à trader en quelques minutes grâce à notre processus d'inscription simplifié.</div>
-            </div>
-            -->
-
         </div>
     </div>
 
@@ -338,7 +313,6 @@
         </div>
         <div class="h-card">
             <h3 style="color:white; margin-top:0;">AvaProtect™</h3>
-            <!-- light surgery: safer phrasing -->
             <p style="color:#888; font-size:0.8rem;">Protection contre la volatilité*</p>
             <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36376&adTheme=793&campaign=213134&campaignName=Default%20Campaign&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favaprotect" class="h-link">VOIR →</a>
         </div>
@@ -359,7 +333,6 @@
         <div style="color:white; font-size:0.9rem; font-weight:700;">
             TRADERS PULSE <span style="font-weight:400; color:#888; font-size:0.8rem;">| Accès marchés</span>
         </div>
-        <!-- href unchanged -->
         <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35001&adTheme=759&campaign=225565&campaignName=FR&tag=207628&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Ftrading-v3%2Fsignaux-de-trading-new" class="btn-sticky">
             CONTINUER →
         </a>
@@ -384,15 +357,15 @@
     document.addEventListener("DOMContentLoaded", function() {
         const urlParams = new URLSearchParams(window.location.search);
 
-        // 1. Identify Traffic Source Parameters
-        // RichAds sends "click_id", MGID sends "clickid" or "click_id"
+        // 1. Идентифициране на трафика
+        // RichAds ползва "click_id", MGID ползва "clickid"
         const richAdsClickId = urlParams.get('click_id');
         const mgidClickId = urlParams.get('clickid') || urlParams.get('click_id');
 
         const links = document.querySelectorAll('a');
 
         links.forEach(link => {
-            // Check if it's an AvaTrade link or Action Button
+            // Проверяваме дали е линк към AvaTrade или бутон за действие
             let isTargetLink = link.href.includes("tracking.avapartner") ||
                                link.classList.contains('btn-main') ||
                                link.classList.contains('btn-sticky') ||
@@ -401,20 +374,20 @@
 
             if (isTargetLink) {
 
-                // --- A) Update Link with Tracking ID for AvaTrade Panel ---
+                // --- A) Модификация на линка (добавяне на ID към AvaTrade) ---
                 let currentHref = link.href;
                 if (currentHref.includes('avapartner')) {
-                    // Decide which ID to pass to AvaTrade (Prioritize RichAds if both exist)
+                    // Приоритет на RichAds ID, ако има и двете
                     let trackingId = richAdsClickId || mgidClickId;
 
                     if (trackingId) {
                         const separator = currentHref.includes('?') ? '&' : '?';
-                        // Using "TrafficSource" as the parameter to see it in AvaTrade reports
+                        // Записваме ID-то в "TrafficSource", за да се вижда в репортите
                         link.href = currentHref + separator + 'TrafficSource=' + trackingId;
                     }
                 }
 
-                // --- B) Conversion Signaling (Postback) on Click ---
+                // --- B) Изпращане на сигнал (Postback) при КЛИК ---
                 link.addEventListener('click', function() {
                     console.log("Conversion Click Triggered");
 
@@ -426,17 +399,12 @@
                     // 2. RichAds Postback (us.ahows.co)
                     if (richAdsClickId) {
                          const richAdsPostback = 'https://us.ahows.co/log?action=conversion&key=' + richAdsClickId;
-                         // Use beacon for reliability (works even if page closes)
-                         if (navigator.sendBeacon) {
-                            navigator.sendBeacon(richAdsPostback);
-                        } else {
-                            fetch(richAdsPostback, { mode: 'no-cors', keepalive: true });
-                        }
+                         // Използваме fetch с keepalive (GET заявка, която не умира при затваряне)
+                         fetch(richAdsPostback, { mode: 'no-cors', keepalive: true });
                     }
 
                     // 3. MGID Postback
                     if (mgidClickId) {
-                        // MGID usually requires an event name like "conversion" or custom
                         const mgidPostback = "https://a.mgid.com/postback/897661?c=" + mgidClickId + "&e=conversion";
                         if (navigator.sendBeacon) {
                             navigator.sendBeacon(mgidPostback);
@@ -452,3 +420,4 @@
 
 </body>
 </html>
+
