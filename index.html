@@ -24,13 +24,13 @@
     </script>
 
     <style>
-        /* --- FXFacts LIGHT SPRING THEME (TRUST & CLARITY) --- */
+        /* --- FXFacts LIGHT SPRING THEME (FINAL) --- */
         :root {
-            --bg-body: #f9f9f9;
+            --bg-body: #fdfdfd;
             --bg-white: #ffffff;
             
             --xm-red: #d62828;
-            --xm-red-hover: #b91c1c;
+            --xm-red-dark: #b91c1c;
             --sakura-pink: #ff99aa;
             --sakura-light: #fff0f3;
             --gold: #ffcc00;
@@ -46,22 +46,20 @@
             font-family: 'Noto Sans JP', sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
-            margin: 0; padding-bottom: 130px; line-height: 1.6;
-            padding-top: 45px; /* Mobile Top Bar Space */
-            /* Subtle Sakura Background Pattern */
-            background-image: radial-gradient(var(--sakura-pink) 0.5px, transparent 0.5px), radial-gradient(var(--sakura-pink) 0.5px, transparent 0.5px);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
+            margin: 0; padding-bottom: 140px; line-height: 1.6;
+            padding-top: 45px;
+            background-image: radial-gradient(var(--sakura-pink) 0.5px, transparent 0.5px);
+            background-size: 30px 30px;
         }
 
         h1, h2, h3 { font-weight: 900; letter-spacing: 0.05em; margin: 0; }
         a { text-decoration: none; color: inherit; }
         strong { color: var(--xm-red); }
 
-        /* --- 1. PROMO BAR (Dark Red for Contrast) --- */
+        /* --- 1. PROMO BAR --- */
         .promo-bar {
             position: fixed; top: 0; left: 0; right: 0;
-            background: #b91c1c; /* Official XM Dark Red */
+            background: var(--xm-red-dark);
             color: white; text-align: center;
             padding: 8px 10px; z-index: 2000;
             font-size: 0.8rem; font-weight: 700;
@@ -75,60 +73,59 @@
             font-size: 0.7rem; font-weight: 900;
         }
 
-        /* --- 2. HEADER (Responsive Switching) --- */
+        /* --- 2. HEADER --- */
         .header-wrapper {
             background: var(--bg-white);
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #e5e5e5;
             position: sticky; top: 38px; z-index: 900;
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
 
         header {
-            max-width: 1200px; 
+            max-width: 1100px; 
             margin: 0 auto; 
-            padding: 10px 15px;
+            padding: 12px 20px;
             display: flex; 
             justify-content: space-between; 
             align-items: center;
+            gap: 15px;
         }
         
         .logo-box { display: flex; flex-direction: column; }
         .logo { 
-            font-size: 1.4rem; font-weight: 900; color: #000; 
-            line-height: 1; letter-spacing: -0.5px;
+            font-size: 1.5rem; font-weight: 900; color: #000; 
+            line-height: 1; letter-spacing: -1px;
         }
-        .logo span { font-size: 0.8rem; font-weight: 500; color: #555; margin-left: 5px; }
-        .pr-badge { 
-            font-size: 0.6rem; color: #999; 
-            border: 1px solid #ddd; padding: 1px 4px; 
-            border-radius: 3px; width: fit-content; margin-top: 2px; 
-        }
-
-        /* BANNER LOGIC */
-        .banner-desktop { display: none; } /* Hidden by default */
-        .banner-mobile { display: block; } /* Visible on mobile */
+        .logo span { font-size: 0.75rem; font-weight: 500; color: #777; margin-left: 5px; }
         
-        .banner-mobile img {
-            height: 50px; width: auto; border: 1px solid #eee; border-radius: 4px;
+        /* PR BADGE */
+        .pr-badge { 
+            font-size: 0.6rem; color: #aaa; 
+            border: 1px solid #eee; padding: 1px 4px; 
+            border-radius: 3px; width: fit-content; margin-top: 3px; 
         }
 
-        /* DESKTOP MEDIA QUERY */
-        @media (min-width: 900px) {
+        /* RIGHT SIDE WIDGET (Replaces Image Banner) */
+        .partner-widget {
+            background: #000; color: white;
+            padding: 8px 15px; border-radius: 4px;
+            display: flex; flex-direction: column; align-items: flex-end;
+            text-align: right; border-left: 4px solid var(--xm-red);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .pw-title { font-size: 0.9rem; font-weight: 900; line-height: 1; margin-bottom: 2px; }
+        .pw-sub { font-size: 0.65rem; color: #ccc; font-weight: 400; text-transform: uppercase; }
+
+        @media (min-width: 768px) {
             body { padding-top: 50px; }
             .header-wrapper { top: 40px; }
-            
-            .banner-desktop { display: block; }
-            .banner-mobile { display: none; }
-            
             .logo { font-size: 1.8rem; }
-            .logo span { font-size: 1rem; }
-            
-            .banner-desktop img {
-                width: 728px; height: 90px;
-            }
+            .partner-widget { padding: 10px 20px; }
+            .pw-title { font-size: 1.1rem; }
+            .pw-sub { font-size: 0.75rem; }
         }
 
-        /* --- 3. HERO SECTION (Clean White with Pink Glow) --- */
+        /* --- 3. HERO SECTION --- */
         .hero {
             text-align: center; padding: 40px 15px;
             background: linear-gradient(to bottom, #fff, var(--sakura-light));
@@ -138,8 +135,8 @@
         .hero-sub { color: var(--xm-red); font-weight: bold; font-size: 0.9rem; letter-spacing: 1px; }
         
         .hero h1 { 
-            font-size: 1.8rem; line-height: 1.3; margin: 10px 0;
-            color: #000;
+            font-size: 1.8rem; line-height: 1.3; margin: 15px 0;
+            color: #111;
         }
         @media (min-width: 768px) { .hero h1 { font-size: 2.8rem; } }
 
@@ -150,12 +147,12 @@
         .hero p { font-size: 0.95rem; color: #555; max-width: 600px; margin: 0 auto 25px; }
 
         /* BUTTONS */
-        .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+        .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 25px; }
         
         .btn-main {
             background: var(--xm-red); color: white; 
             font-size: 1.1rem; font-weight: 800;
-            padding: 16px 35px; border-radius: 50px;
+            padding: 16px 40px; border-radius: 50px;
             box-shadow: 0 4px 15px rgba(214, 40, 40, 0.3);
             display: inline-block; width: 100%; max-width: 300px;
             transition: transform 0.2s;
@@ -165,26 +162,21 @@
         .btn-sub {
             background: white; border: 2px solid var(--xm-red); color: var(--xm-red);
             font-size: 1rem; font-weight: 700;
-            padding: 14px 35px; border-radius: 50px;
+            padding: 14px 40px; border-radius: 50px;
             display: inline-block; width: 100%; max-width: 300px;
         }
 
         .risk-micro { font-size: 0.65rem; color: #888; margin-top: 15px; line-height: 1.4; }
 
-        /* --- 4. CONTENT CARDS (Clean UI) --- */
+        /* --- 4. CONTENT CARDS --- */
         .content-section { padding: 30px 15px; max-width: 900px; margin: 0 auto; }
         
         .info-card {
             background: var(--bg-white); 
             border: 1px solid var(--border-color);
             padding: 25px 20px; border-radius: 12px; margin-bottom: 25px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
             position: relative; overflow: hidden;
-        }
-        /* Sakura Decoration */
-        .info-card::before {
-            content: '🌸'; position: absolute; top: -5px; right: 10px;
-            font-size: 4rem; opacity: 0.1; color: var(--sakura-pink);
         }
         
         .card-header { font-size: 1.2rem; color: var(--xm-red); margin-bottom: 15px; border-bottom: 2px solid var(--sakura-light); padding-bottom: 10px; }
@@ -196,13 +188,12 @@
         }
         .check-list li::before { content: '✔'; color: var(--xm-red); font-weight: bold; flex-shrink: 0; }
 
-        /* DOUBLE BONUS BOX */
         .double-bonus-box {
             border: 2px solid var(--sakura-light);
-            background: #fffafb; /* Very light pink tint */
+            background: #fffafb;
         }
 
-        /* --- 5. FEATURES GRID (ICONS) --- */
+        /* --- 5. FEATURES GRID --- */
         .section-title { text-align: center; margin: 40px 0 20px; }
         .section-title h2 { font-size: 1.5rem; color: #222; }
         .section-title span { color: var(--xm-red); }
@@ -228,6 +219,9 @@
         .f-title { font-size: 1rem; font-weight: 700; margin-bottom: 5px; color: #222; }
         .f-desc { font-size: 0.85rem; color: #666; line-height: 1.5; }
 
+        /* --- 6. TRADINGVIEW SPEEDOMETER (Technical Analysis) --- */
+        .tv-wrapper { margin: 20px auto; max-width: 450px; height: 400px; }
+
         /* --- COMPLIANCE --- */
         .compliance-note {
             font-size: 0.7rem; color: #888; background: #fff; 
@@ -235,7 +229,7 @@
             text-align: justify; border: 1px solid #eee;
         }
 
-        /* --- 6. STICKY FOOTER --- */
+        /* --- STICKY FOOTER --- */
         .sticky-footer {
             position: fixed; bottom: 0; left: 0; right: 0;
             background: white;
@@ -275,17 +269,10 @@
                 <div class="pr-badge">PR / Ad</div>
             </div>
             
-            <div class="banner-desktop">
-                <a href="https://clicks.affstrack.com/c?m=9260&amp;c=935595" class="xm-tracker-link" referrerpolicy="no-referrer-when-downgrade">
-                    <img src="https://ads.affstrack.com/i/9260?c=935595" alt="XMTrading 100% Bonus">
-                </a>
-            </div>
-
-            <div class="banner-mobile">
-                <a href="https://clicks.affstrack.com/c?m=23149&amp;c=935595" class="xm-tracker-link" referrerpolicy="no-referrer-when-downgrade">
-                    <img src="https://ads.affstrack.com/i/23149?c=935595" alt="XMTrading 100% Bonus">
-                </a>
-            </div>
+            <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="partner-widget xm-tracker-link">
+                <div class="pw-title">XMTrading</div>
+                <div class="pw-sub">提携メディア (Partner Site)</div>
+            </a>
         </header>
     </div>
 
@@ -293,12 +280,12 @@
         <span class="hero-sub">🌸 早春100%ボーナスキャンペーン</span>
         <h1>
             最大$500*まで<br>
-            取引資金を<span class="hero-highlight">増額</span>
+            取引資金を<span class="hero-highlight">増額可能</span>
         </h1>
         
         <p>
             最大$500*までの100%追加ボーナス*で取引資金をパワーアップ。<br>
-            期間限定で入金額が<strong>2倍</strong>に。
+            期間限定で入金額が<strong>2倍</strong>になるチャンス。
         </p>
 
         <div class="btn-group">
@@ -337,6 +324,28 @@
             <p style="font-size:0.9rem; color:#666;">
                 早春キャンペーンにより、最大$500*のボーナスを受け取ることができます。最大$500*のロイヤルティ100%入金ボーナスをまだ受け取っていない場合、2つの100%ボーナスキャンペーンを合わせて、合計最大$1,000*のボーナスを獲得いただけます。
             </p>
+        </div>
+
+        <div class="section-title">
+            <h2>市場センチメント <span>(USD/JPY)</span></h2>
+        </div>
+        <div class="tv-wrapper">
+            <div class="tradingview-widget-container">
+              <div class="tradingview-widget-container__widget"></div>
+              <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+              {
+              "interval": "1m",
+              "width": "100%",
+              "isTransparent": true,
+              "height": "100%",
+              "symbol": "FX:USDJPY",
+              "showIntervalTabs": true,
+              "displayMode": "single",
+              "locale": "ja",
+              "colorTheme": "light"
+              }
+              </script>
+            </div>
         </div>
 
         <div class="section-title">
