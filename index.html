@@ -24,15 +24,19 @@
     </script>
 
     <style>
-        /* --- FXFacts ULTIMATE THEME --- */
+        /* --- FXFacts SPRING EDITION THEME 🌸 --- */
         :root {
-            --bg-dark: #0a0a0a;
-            --bg-card: #141414;
-            --bg-card-grad: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+            --bg-dark: #0f0505; /* Very dark brownish/black for warmth */
+            --bg-card: #1a0f0f;
+            --bg-card-grad: linear-gradient(145deg, #241212, #0d0000);
+            
             --xm-red: #d62828;
             --xm-gold: #ffcc00;
+            --sakura-pink: #ff99aa; /* Spring Accent */
+            --sakura-glow: #ffc2d1;
+            
             --text-white: #ffffff;
-            --text-gray: #b0b0b0;
+            --text-gray: #c0b0b0;
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -43,18 +47,19 @@
             color: var(--text-white);
             margin: 0; padding-bottom: 130px; line-height: 1.6;
             padding-top: 50px; /* Space for Top Bar */
+            background-image: radial-gradient(circle at 50% 0%, #330000 0%, #0f0505 60%); /* Spring night vibe */
         }
 
         h1, h2, h3 { font-weight: 900; letter-spacing: 0.05em; margin: 0; }
         a { text-decoration: none; color: inherit; }
         strong { color: var(--xm-gold); }
 
-        /* --- 1. PROMO BAR (UPDATED) --- */
+        /* --- 1. PROMO BAR (Spring Style) --- */
         .promo-bar {
             position: fixed; top: 0; left: 0; right: 0;
-            background: linear-gradient(90deg, #b90000, #ff1a1a);
+            background: linear-gradient(90deg, #d62828, #ff6688); /* Red to Pink gradient */
             color: white; text-align: center;
-            padding: 10px; z-index: 2000;
+            padding: 8px 10px; z-index: 2000;
             font-size: 0.8rem; font-weight: 700;
             box-shadow: 0 2px 10px rgba(0,0,0,0.5);
             text-decoration: none; display: flex; 
@@ -65,119 +70,166 @@
             padding: 2px 6px; border-radius: 4px;
             font-size: 0.75rem; font-weight: 900;
         }
-        .promo-period { opacity: 0.9; font-weight: 400; font-size: 0.75rem; }
+        .promo-period { font-weight: 400; font-size: 0.75rem; color: #fff; }
 
-        /* --- 2. HEADER --- */
+        /* --- 2. HEADER (FLEX LAYOUT FIXED) --- */
         header {
-            background: rgba(10, 10, 10, 0.95);
-            padding: 8px 15px;
-            display: flex; justify-content: space-between; align-items: center;
-            border-bottom: 1px solid #333;
+            background: rgba(10, 5, 5, 0.95);
+            padding: 10px 15px;
+            display: flex; 
+            align-items: center; /* Vertically center */
+            gap: 15px; /* Space between logo and banner */
+            border-bottom: 1px solid #331111;
             position: sticky; top: 40px; z-index: 900;
-            height: 60px;
+            height: auto; min-height: 70px;
         }
         
-        .logo-box { display: flex; flex-direction: column; }
-        .logo { font-size: 1.3rem; font-weight: 900; color: white; letter-spacing: -1px; line-height: 1; }
-        .pr-badge { font-size: 0.6rem; color: #666; border: 1px solid #333; padding: 1px 4px; border-radius: 3px; width: fit-content; margin-top: 2px; }
+        /* Logo stays on the left, fixed size */
+        .logo-box { 
+            flex-shrink: 0; /* Prevent shrinking */
+            display: flex; flex-direction: column; 
+        }
+        .logo { 
+            font-size: 1.3rem; font-weight: 900; color: white; 
+            letter-spacing: -1px; line-height: 1;
+            text-shadow: 0 0 10px rgba(255, 153, 170, 0.5); /* Sakura Glow */
+        }
+        .pr-badge { 
+            font-size: 0.6rem; color: #ff99aa; 
+            border: 1px solid #552222; padding: 1px 4px; 
+            border-radius: 3px; width: fit-content; margin-top: 2px; 
+        }
         
-        /* Banner Adjustment */
+        /* Banner takes ALL remaining space */
+        .header-banner {
+            flex-grow: 1; /* Stretch to fill space */
+            display: flex;
+            justify-content: flex-end; /* Align image to right if it's small, or stretch */
+        }
+        
         .header-banner img {
-            max-height: 45px; width: auto;
-            border-radius: 4px; border: 1px solid #333;
+            width: 100%; /* Stretch width */
+            height: auto; /* Maintain aspect ratio */
+            max-height: 55px; /* Don't make header too tall */
+            object-fit: contain; /* Ensure text in banner is readable */
+            border-radius: 4px; 
+            border: 1px solid #441111;
         }
 
         /* --- TRADINGVIEW --- */
-        .tv-box { margin-top: 10px; }
+        .tv-box { margin-top: 0; border-bottom: 1px solid #221111; }
 
-        /* --- HERO SECTION --- */
+        /* --- HERO SECTION (Spring Vibe) --- */
         .hero {
-            text-align: center; padding: 30px 15px;
-            background: radial-gradient(circle at center, #2e0a0a 0%, #0a0a0a 90%);
-            border-bottom: 1px solid #222;
+            text-align: center; padding: 40px 15px;
+            /* Subtle falling petals effect via gradient spots */
+            background-image: radial-gradient(#ff99aa 1px, transparent 1px), radial-gradient(#ff99aa 1px, transparent 1px);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            background-color: transparent;
+            opacity: 1;
         }
         
         .hero h1 { 
-            font-size: 1.6rem; line-height: 1.4; margin-bottom: 10px;
-            background: linear-gradient(to right, #fff, #ffcccc);
+            font-size: 1.7rem; line-height: 1.4; margin-bottom: 10px;
+            /* Pink to White Gradient Text */
+            background: linear-gradient(to bottom, #fff, #ffc2d1);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(214, 40, 40, 0.5);
         }
         .hero-highlight {
-            font-size: 1.2rem; color: var(--xm-gold); display: block; margin-top: 5px;
+            font-size: 1.3rem; color: var(--xm-gold); display: block; margin-top: 5px;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.4);
         }
-        .hero p { font-size: 0.9rem; color: #ccc; max-width: 600px; margin: 0 auto 20px; }
+        .hero p { font-size: 0.95rem; color: #dacaca; max-width: 600px; margin: 0 auto 25px; }
 
         /* BUTTONS */
-        .btn-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 15px; }
+        .btn-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
         .btn-main {
-            background: var(--xm-red); color: white; font-size: 1rem; font-weight: 800;
-            padding: 15px 25px; border-radius: 8px;
-            box-shadow: 0 0 20px rgba(214, 40, 40, 0.4);
+            background: linear-gradient(135deg, #d62828, #ff4d6d); /* Red to Pinkish Red */
+            color: white; font-size: 1rem; font-weight: 800;
+            padding: 16px 25px; border-radius: 50px;
+            box-shadow: 0 0 25px rgba(255, 77, 109, 0.4);
             display: inline-block; width: 100%; max-width: 320px;
-            animation: pulse 2s infinite;
+            animation: pulse 2s infinite; border: 1px solid #ff99aa;
         }
         .btn-sub {
-            background: transparent; border: 1px solid #444; color: #ccc;
+            background: rgba(255, 153, 170, 0.1); 
+            border: 1px solid #ff99aa; color: #ffc2d1;
             font-size: 0.9rem; font-weight: 700;
-            padding: 12px 25px; border-radius: 8px;
+            padding: 14px 25px; border-radius: 50px;
             display: inline-block; width: 100%; max-width: 320px;
         }
 
-        .risk-micro { font-size: 0.65rem; color: #555; margin-top: 10px; line-height: 1.4; }
+        .risk-micro { font-size: 0.65rem; color: #885555; margin-top: 10px; line-height: 1.4; }
 
         /* --- CONTENT SECTION --- */
-        .content-section { padding: 30px 15px; max-width: 800px; margin: 0 auto; }
+        .content-section { padding: 20px 15px; max-width: 800px; margin: 0 auto; }
         
         /* PROMO CARD */
         .info-card {
-            background: var(--bg-card); border: 1px solid #222;
-            padding: 20px; border-radius: 12px; margin-bottom: 25px;
+            background: var(--bg-card); 
+            border: 1px solid #331111;
+            padding: 25px 20px; border-radius: 16px; margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative; overflow: hidden;
         }
-        .card-header { font-size: 1.1rem; color: var(--xm-gold); margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
+        /* Sakura decoration in card */
+        .info-card::after {
+            content: '🌸'; position: absolute; top: -10px; right: -10px;
+            font-size: 5rem; opacity: 0.05; transform: rotate(20deg); pointer-events: none;
+        }
+        
+        .card-header { font-size: 1.1rem; color: var(--sakura-pink); margin-bottom: 15px; border-bottom: 1px solid #331111; padding-bottom: 10px; }
 
         .check-list { list-style: none; padding: 0; margin: 0; }
         .check-list li { 
-            margin-bottom: 10px; font-size: 0.9rem; 
+            margin-bottom: 12px; font-size: 0.95rem; 
             display: flex; gap: 10px; align-items: flex-start;
         }
-        .check-list li::before { content: '✔'; color: var(--xm-red); font-weight: bold; flex-shrink: 0; }
+        .check-list li::before { content: '🌸'; color: var(--sakura-pink); font-size:0.8rem; margin-top:3px; flex-shrink: 0; }
+
+        /* DOUBLE BONUS LOGIC */
+        .double-bonus-box {
+            border: 1px solid var(--sakura-pink);
+            background: linear-gradient(180deg, rgba(255,153,170,0.05), transparent);
+        }
 
         /* --- FEATURES GRID --- */
-        .section-title { text-align: center; margin: 30px 0 20px; }
-        .section-title h2 { font-size: 1.3rem; }
-        .section-title span { color: var(--xm-red); }
+        .section-title { text-align: center; margin: 40px 0 20px; }
+        .section-title h2 { font-size: 1.4rem; color: white; }
+        .section-title span { color: var(--sakura-pink); }
 
         .features-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
         @media (min-width: 600px) { .features-grid { grid-template-columns: 1fr 1fr; } }
 
         .f-card {
-            background: var(--bg-card-grad); padding: 20px; border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: var(--bg-card-grad); padding: 20px; border-radius: 12px;
+            border: 1px solid rgba(255,153,170,0.1);
             display: flex; flex-direction: column; align-items: flex-start;
         }
         .f-icon-box {
             width: 40px; height: 40px; margin-bottom: 10px;
-            background: rgba(214,40,40,0.1); border-radius: 8px;
+            background: rgba(255,153,170,0.1); border-radius: 8px;
             display: flex; align-items: center; justify-content: center;
-            font-size: 1.2rem; color: var(--xm-red); border: 1px solid rgba(214,40,40,0.3);
+            font-size: 1.2rem; color: var(--sakura-pink); border: 1px solid rgba(255,153,170,0.3);
         }
-        .f-title { font-size: 1rem; font-weight: 700; margin-bottom: 5px; color: white; }
-        .f-desc { font-size: 0.8rem; color: var(--text-gray); line-height: 1.4; }
+        .f-title { font-size: 1rem; font-weight: 700; margin-bottom: 5px; color: #ffc2d1; }
+        .f-desc { font-size: 0.8rem; color: #b0a0a0; line-height: 1.4; }
 
         /* --- COMPLIANCE --- */
         .compliance-note {
-            font-size: 0.65rem; color: #555; background: #111; padding: 15px; border-radius: 8px; margin-top: 30px; text-align: justify;
+            font-size: 0.65rem; color: #776666; background: #0f0505; padding: 15px; border-radius: 8px; margin-top: 30px; text-align: justify; border: 1px solid #221111;
         }
 
         /* --- STICKY FOOTER --- */
         .sticky-footer {
             position: fixed; bottom: 0; left: 0; right: 0;
-            background: rgba(15, 15, 15, 0.98);
-            border-top: 2px solid var(--xm-red);
+            background: rgba(20, 10, 10, 0.98);
+            border-top: 2px solid var(--sakura-pink);
             padding: 15px 20px; z-index: 1000;
             display: flex; flex-direction: column; gap: 8px;
-            box-shadow: 0 -10px 40px rgba(0,0,0,0.8);
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.9);
             text-align: center;
         }
         .footer-text { font-size: 0.85rem; font-weight: 700; color: white; line-height: 1.4; }
@@ -186,6 +238,7 @@
             width: 100%; text-align: center; padding: 14px 0;
             border-radius: 8px; font-weight: 900; font-size: 1.1rem;
             box-shadow: 0 0 15px rgba(214, 40, 40, 0.4);
+            animation: pulse 2s infinite;
         }
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(214, 40, 40, 0.7); }
@@ -208,7 +261,7 @@
             <div class="pr-badge">PR / Ad</div>
         </div>
         <a href="https://clicks.affstrack.com/c?m=23149&amp;c=935595" class="header-banner xm-tracker-link" referrerpolicy="no-referrer-when-downgrade">
-            <img src="https://ads.affstrack.com/i/23149?c=935595" alt="XM 0.0 Pips" width="320" height="100">
+            <img src="https://ads.affstrack.com/i/23149?c=935595" alt="XM 0.0 Pips">
         </a>
     </header>
 
@@ -228,11 +281,12 @@
     </div>
 
     <div class="hero">
-        <span style="color:#ffcc00; font-weight:bold; font-size:0.9rem;">🌸 早春100%ボーナスキャンペーン</span>
+        <span style="color:var(--sakura-pink); font-weight:bold; font-size:0.9rem;">🌸 早春100%ボーナスキャンペーン</span>
         <h1>
             最大$500*まで<br>
-            取引資金を<span style="color:var(--xm-red); font-size:1.8rem;">増額</span>
+            取引資金を<span style="color:var(--sakura-pink); font-size:1.8rem;">増額</span>
         </h1>
+        
         <p>
             最大$500*までの100%追加ボーナス*で取引資金をパワーアップ。<br>
             期間限定で入金額が<strong>2倍</strong>に。
@@ -257,7 +311,7 @@
         
         <div class="info-card">
             <h3 class="card-header">🚀 資金増額へのステップ</h3>
-            <p style="font-size:0.9rem; margin-bottom:15px;">
+            <p style="font-size:0.9rem; margin-bottom:15px; color:#ddd;">
                 最大$500*の期間限定・早春100％ボーナスで取引資金を倍増。資金に余裕のあるトレードが可能に。
             </p>
             <ul class="check-list">
@@ -265,11 +319,11 @@
                 <li>新規と既存のお客様が対象</li>
                 <li>ボーナスは対象となる入金の反映時に付与</li>
                 <li>利益はいつでも出金可能</li>
-                <li><strong style="color:#ff99aa;">2026年2月2日～27日の期間限定</strong></li>
+                <li><strong style="color:var(--sakura-pink);">2026年2月2日～27日の期間限定</strong></li>
             </ul>
         </div>
 
-        <div class="info-card" style="border-color:#333;">
+        <div class="info-card double-bonus-box">
             <h3 class="card-header">💰 ダブルボーナスについて</h3>
             <p style="font-size:0.85rem; color:#ccc;">
                 早春キャンペーンにより、最大$500*のボーナスを受け取ることができます。最大$500*のロイヤルティ100%入金ボーナスをまだ受け取っていない場合、2つの100%ボーナスキャンペーンを合わせて、合計最大$1,000*のボーナスを獲得いただけます。
