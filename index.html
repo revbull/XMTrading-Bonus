@@ -2,384 +2,271 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traders Pulse | XM Trading Japan Promo</title>
-    <meta name="description" content="XM Trading 2026年早春ボーナスプロモーション。100%入金ボーナス実施中。日本人トレーダー人気No.1。">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow">
+    <title>XMTrading | 13,000円口座開設ボーナス</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DTMQSP8BPQ"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
+      
+      // Взимаме параметрите за GA4
       var trackingParams = {};
       var urlParams = new URLSearchParams(window.location.search);
-      urlParams.forEach(function(value, key) {
-          trackingParams[key] = value;
-      });
+      urlParams.forEach(function(value, key) { trackingParams[key] = value; });
 
-      gtag('config', 'G-XXXXXXXXXX', trackingParams);
+      gtag('config', 'G-DTMQSP8BPQ', trackingParams);
     </script>
 
     <style>
-        /* --- XM JAPAN THEME --- */
+        /* --- ULTIMATE THEME (Dark + Gold/Red XM) --- */
         :root {
-            --bg-dark: #000000;
-            --bg-card: #111111;
-            --bg-card-grad: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-            --accent-red: #d62828;
-            --promo-gold: #ffcc00; /* New Promo Color */
+            --bg-dark: #0a0a0a;
+            --bg-card: #141414;
+            --xm-red: #d62828;
+            --xm-gold: #ffcc00;
             --text-white: #ffffff;
-            --text-gray: #b0b0b0;
+            --text-gray: #a0a0a0;
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         body {
             font-family: 'Noto Sans JP', sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-white);
-            margin: 0;
-            padding-bottom: 120px;
-            line-height: 1.6;
-            padding-top: 40px; /* Space for fixed promo bar */
+            margin: 0; padding-bottom: 110px; line-height: 1.6;
         }
 
         h1, h2, h3 { font-weight: 900; letter-spacing: 0.05em; }
-
-        /* --- NEW PROMO BAR --- */
-        .promo-bar {
-            position: fixed; top: 0; left: 0; right: 0;
-            background: linear-gradient(90deg, #b90000, #ff1a1a);
-            color: white; text-align: center;
-            padding: 8px 10px; z-index: 2000;
-            font-size: 0.85rem; font-weight: 700;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            display: flex; justify-content: center; align-items: center; gap: 10px;
-        }
-        .promo-tag {
-            background: var(--promo-gold); color: black;
-            padding: 1px 8px; border-radius: 4px;
-            font-size: 0.75rem; font-weight: 900;
-        }
-        .promo-date { opacity: 0.9; font-weight: 400; font-size: 0.8rem; margin-left: 5px; }
+        a { text-decoration: none; color: inherit; }
 
         /* HEADER */
         header {
-            background: rgba(0, 0, 0, 0.95);
-            padding: 15px 20px;
+            background: rgba(10, 10, 10, 0.95);
+            padding: 12px 20px;
             display: flex; justify-content: space-between; align-items: center;
-            position: sticky; top: 40px; /* Below promo bar */
-            z-index: 999;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid #333;
+            position: sticky; top: 0; z-index: 900;
         }
-        .brand-logo { font-size: 1.1rem; font-weight: 900; color: white; text-transform: uppercase; }
-        
-        /* HERO */
+        .logo { font-size: 1.1rem; font-weight: 900; color: white; }
+        .badge { background: #333; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; color: #aaa; }
+
+        /* HERO SECTION */
         .hero {
-            text-align: center;
-            padding: 40px 20px 40px;
-            background: radial-gradient(circle at center, #2a0a0a 0%, var(--bg-dark) 80%);
-        }
-        .hero h1 {
-            font-size: 1.8rem; margin: 0 0 15px 0; line-height: 1.4;
-            background: linear-gradient(90deg, #fff 0%, #ffcccb 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        /* Highlight for 100% Bonus */
-        .hero-highlight { color: var(--promo-gold); font-size: 1.1em; text-shadow: 0 0 20px rgba(255, 204, 0, 0.3); }
-
-        .hero p { color: var(--text-gray); font-size: 0.95rem; max-width: 650px; margin: 0 auto 28px; }
-
-        /* BUTTONS */
-        .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-
-        .btn-main {
-            background: var(--accent-red);
-            color: white; padding: 16px 30px; border-radius: 6px;
-            font-weight: 700; text-decoration: none; font-size: 1rem;
-            display: inline-block; box-shadow: 0 0 20px rgba(214, 40, 40, 0.4);
-            transition: transform 0.2s; border: 2px solid var(--accent-red);
-        }
-        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(214, 40, 40, 0.6); }
-
-        .btn-outline {
-            background: transparent; color: white; padding: 16px 30px; border-radius: 6px;
-            font-weight: 700; text-decoration: none; font-size: 1rem;
-            display: inline-block; border: 2px solid rgba(255, 255, 255, 0.2); transition: all 0.2s;
-        }
-        .btn-outline:hover { border-color: var(--accent-red); color: var(--accent-red); transform: translateY(-2px); }
-
-        /* FEATURES GRID */
-        .features-section { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
-        .section-title { text-align: center; margin-bottom: 34px; }
-        .section-title h2 { font-size: 1.5rem; line-height: 1.4; }
-        .section-title span { color: var(--accent-red); }
-
-        .futures-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
-        @media (min-width: 600px) { .futures-grid { grid-template-columns: repeat(2, 1fr); } }
-        .f-card-wide { grid-column: 1 / -1; }
-
-        .f-card {
-            background: var(--bg-card-grad); padding: 25px; border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-            display: flex; flex-direction: column; align-items: flex-start;
+            text-align: center; padding: 40px 20px;
+            background: radial-gradient(circle at center, #2e0a0a 0%, #0a0a0a 80%);
         }
         
-        .f-icon-box {
-            width: 45px; height: 45px; margin-bottom: 15px;
-            background: rgba(214,40,40,0.1); border-radius: 8px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1.4rem; color: var(--accent-red); border: 1px solid rgba(214,40,40,0.3);
-        }
-        .f-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: white; }
-        .f-desc { font-size: 0.9rem; color: var(--text-gray); }
-
-        /* FEES WRAPPER */
-        .fees-wrapper { display: flex; justify-content: space-between; width: 100%; margin: 25px 0; border-top:1px solid #333; border-bottom:1px solid #333; padding:15px 0;}
-        .fee-col { flex: 1; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
-        .fee-col:last-child { border-right: none; }
-        .fee-price { font-size: 1.4rem; font-weight: 800; color: white; margin-bottom: 5px; }
-        .fee-label { font-size: 0.75rem; color: #888; }
-
-        .btn-card-action {
-            width: 100%; text-align: center;
-            background: rgba(214,40,40,0.1); border: 1px solid var(--accent-red); color: var(--accent-red);
-            padding: 12px; border-radius: 6px; font-weight: 700;
-            font-size: 0.9rem; text-decoration: none; margin-top: 15px; display: inline-block;
+        /* 13,000 YEN HIGHLIGHT */
+        .bonus-amount {
+            font-size: 3.5rem; line-height: 1;
+            background: linear-gradient(to bottom, #ffeb3b, #fbc02d);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            font-weight: 900; display: block; margin: 10px 0;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
         }
 
-        /* HOOKS */
-        .hooks-grid { display: grid; grid-template-columns: 1fr; gap: 15px; max-width: 900px; margin: 40px auto; padding-top: 40px; border-top: 1px solid #222; }
-        @media (min-width: 600px) { .hooks-grid { grid-template-columns: 1fr 1fr 1fr; } }
-        .h-card { background: #111; padding: 20px; border-radius: 8px; border: 1px solid #222; display:flex; justify-content:space-between; align-items:center;}
-        .h-link { color: var(--accent-red); font-weight: 700; text-decoration: none; font-size: 0.9rem; }
+        .hero h1 { font-size: 1.4rem; margin: 0; }
+        .hero p { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 25px; }
 
-        /* FOOTER */
-        .compliance { background: #050505; padding: 40px 20px; font-size: 0.7rem; color: #555; text-align: justify; margin-top: 40px; }
+        /* INSTRUMENTS BADGES */
+        .badges-row { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-bottom: 30px; }
+        .inst-badge {
+            border: 1px solid #333; background: rgba(255,255,255,0.05);
+            color: #ccc; padding: 5px 12px; border-radius: 20px;
+            font-size: 0.75rem; font-weight: 700;
+        }
+
+        /* MAIN BUTTON (HERO) */
+        .btn-hero {
+            background: var(--xm-red); color: white;
+            font-size: 1.1rem; font-weight: 800;
+            padding: 16px 40px; border-radius: 50px;
+            box-shadow: 0 0 20px rgba(214, 40, 40, 0.4);
+            display: inline-block; animation: pulse 2s infinite;
+        }
+        
+        /* FEATURES GRID (The "Why XM" part) */
+        .grid-container { padding: 0 20px; max-width: 800px; margin: 0 auto; }
+        .card {
+            background: var(--bg-card); border: 1px solid #222;
+            padding: 20px; border-radius: 12px; margin-bottom: 15px;
+            display: flex; align-items: center; gap: 15px;
+        }
+        .card-icon { font-size: 1.8rem; }
+        .card-title { font-weight: 700; color: white; display: block; margin-bottom: 4px; }
+        .card-desc { font-size: 0.85rem; color: #888; }
+
+        /* FOOTER INFO */
+        .legal { text-align: center; font-size: 0.65rem; color: #444; margin-top: 40px; padding: 0 20px; }
+
+        /* STICKY FOOTER (The Request) */
         .sticky-footer {
             position: fixed; bottom: 0; left: 0; right: 0;
-            background: rgba(10, 10, 10, 0.98); 
-            backdrop-filter: blur(10px);
-            padding: 12px 20px; 
-            display: flex; flex-direction: column; align-items: center; gap: 8px;
-            z-index: 1000;
-            border-top: 2px solid var(--accent-red);
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.8);
+            background: rgba(15, 15, 15, 0.98);
+            border-top: 2px solid var(--xm-red);
+            padding: 12px 20px; z-index: 1000;
+            display: flex; flex-direction: column; gap: 8px;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.8);
         }
-        .footer-text { display: flex; align-items: center; gap: 8px; justify-content: center; }
-        .ft-title { color: white; font-weight: 700; font-size: 1rem; }
-        .ft-sub { color: var(--promo-gold); font-size: 0.85rem; font-weight: 700; }
         
-        .btn-sticky {
-            background: var(--accent-red); 
-            color: white; width: 100%; text-align: center; padding: 14px 0;
-            border-radius: 6px; font-weight: 800; text-decoration: none; font-size: 1.1rem;
-            box-shadow: 0 0 15px rgba(214, 40, 40, 0.5);
-            animation: pulse-red 2s infinite;
+        .footer-info {
+            display: flex; justify-content: center; align-items: center; gap: 10px;
+            font-size: 0.9rem; font-weight: 700; color: white;
         }
-        @keyframes pulse-red {
-            0% { box-shadow: 0 0 0 0 rgba(214, 40, 40, 0.7); }
-            70% { box-shadow: 0 0 0 10px rgba(214, 40, 40, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(214, 40, 40, 0); }
+        .tag-bonus {
+            background: var(--xm-gold); color: black; 
+            padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 900;
+        }
+
+        .btn-sticky {
+            background: var(--xm-red); color: white;
+            width: 100%; text-align: center; padding: 14px 0;
+            border-radius: 8px; font-weight: 900; font-size: 1.1rem;
+            box-shadow: 0 0 15px rgba(214, 40, 40, 0.4);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(214, 40, 40, 0.7); }
+            70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(214, 40, 40, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(214, 40, 40, 0); }
         }
     </style>
 </head>
 <body>
 
-    <div class="promo-bar">
-        <span class="promo-tag">NEW</span>
-        <div>
-            2026年 早春ボーナス：<span style="color:#ffeb3b;">100%入金ボーナス</span> 実施中！
-            <span class="promo-date">(期間: 2026/02/01 ~ 2026/04/30)</span>
-        </div>
-    </div>
-
     <header>
-        <div>
-            <div class="brand-logo">TRADERS<span style="color:var(--accent-red);">PULSE</span></div>
-        </div>
-        <div style="font-weight:900; color:white; font-style:italic; font-size:1.3rem;">
-            XM<span style="color:var(--accent-red);">///</span>
-        </div>
+        <div class="logo">XMTrading <span style="color:var(--xm-red);">///</span></div>
+        <div class="badge">公式パートナー</div>
     </header>
 
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-      {
-      "symbols": [
-        {"proName": "FX:USDJPY", "title": "USD/JPY"},
-        {"proName": "FX:EURJPY", "title": "EUR/JPY"},
-        {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
-        {"proName": "BITSTAMP:BTCUSD", "title": "Bitcoin"},
-        {"proName": "TVC:NI225", "title": "Nikkei 225"}
-      ],
-      "showSymbolLogo": true, "colorTheme": "dark", "isTransparent": false, "displayMode": "adaptive", "locale": "ja"
-      }
-      </script>
-    </div>
-
     <div class="hero">
-        <h1>
-            <span class="hero-highlight">100%入金ボーナス</span><br>
-            キャンペーン開催中
-        </h1>
+        <h1>まずは自己資金0円で。<br>リスクなしでスタート</h1>
+        
+        <span class="bonus-amount">¥13,000</span>
+        <p style="color:#ffcc00; font-weight:bold; margin-top:-10px;">口座開設ボーナス (入金不要)</p>
+
         <p>
-            期間限定の「早春プロモーション」で資金を倍増。<br>
-            日本No.1業者XMTradingで、最高のリスタートを。
+            日本人トレーダー人気No.1。<br>
+            登録は3分で完了。すぐに取引開始。
         </p>
 
-        <div class="btn-group">
-            <a href="ТВОЯТ_XM_ЛИНК?source=Header_Promo" class="btn-main">
-                ボーナスを受け取る
-            </a>
-            
-            <a href="ТВОЯТ_XM_ЛИНК?source=Header_App" class="btn-outline">
-                会員ページへ
-            </a>
+        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="btn-hero xm-tracker-link">
+            ボーナスを受け取る ➜
+        </a>
+
+        <div class="badges-row" style="margin-top:30px;">
+            <div class="inst-badge">USD/JPY</div>
+            <div class="inst-badge">GOLD</div>
+            <div class="inst-badge">Bitcoin</div>
+            <div class="inst-badge">Nikkei 225</div>
         </div>
     </div>
 
-    <div class="features-section">
-        <div class="section-title">
-            <h2>
-                今だけの<span>特別オファー</span>を見逃すな
-            </h2>
+    <div class="grid-container">
+        <div class="card">
+            <div class="card-icon">🎁</div>
+            <div>
+                <span class="card-title">100% 入金ボーナス</span>
+                <span class="card-desc">資金が2倍に。500ドル相当まで付与。</span>
+            </div>
         </div>
 
-        <div class="futures-grid">
-            <div class="f-card f-card-wide" style="border-color: #ffcc00; text-align:center; align-items:center; background: linear-gradient(145deg, #2a1a00, #0d0d0d);">
-                <h3 style="color:#ffcc00; margin-top:0;">2026年 早春プロモーション</h3>
-                <p style="color:#b0b0b0; font-size:0.9rem; margin-bottom:15px;">
-                    入金額に対して100%のボーナスが付与されます。<br>
-                    (例: 5万円入金 → 証拠金10万円で取引開始)
-                </p>
-
-                <div class="fees-wrapper">
-                    <div class="fee-col">
-                        <div class="fee-price" style="color:#ffcc00;">100%</div>
-                        <div class="fee-label">入金ボーナス</div>
-                    </div>
-                    <div class="fee-col">
-                        <div class="fee-price">即時</div>
-                        <div class="fee-label">ボーナス反映</div>
-                    </div>
-                    <div class="fee-col">
-                        <div class="fee-price">500$</div>
-                        <div class="fee-label">上限額相当</div>
-                    </div>
-                </div>
-
-                <a href="ТВОЯТ_XM_ЛИНК?source=Bonus_Card_100" class="btn-card-action" style="border-color:#ffcc00; color:#ffcc00;">
-                    今すぐ獲得する
-                </a>
+        <div class="card">
+            <div class="card-icon">⚡</div>
+            <div>
+                <span class="card-title">レバレッジ 1000倍</span>
+                <span class="card-desc">少額資金でも大きな利益を狙えます。</span>
             </div>
+        </div>
 
-            <div class="f-card">
-                <div class="f-icon-box">⚡</div>
-                <div class="f-title">圧倒的な約定力</div>
-                <div class="f-desc">全注文の99.35%が1秒以内に約定。リクオートなし。</div>
-            </div>
-
-            <div class="f-card">
-                <div class="f-icon-box">🛡️</div>
-                <div class="f-title">ゼロカットシステム</div>
-                <div class="f-desc">入金額以上の損失は発生しません。追証なしで安心。</div>
-            </div>
-
-            <div class="f-card">
-                <div class="f-icon-box">🇯🇵</div>
-                <div class="f-title">完全日本語サポート</div>
-                <div class="f-desc">日本人スタッフによる24時間ライブチャット・メールサポート。</div>
+        <div class="card">
+            <div class="card-icon">🛡️</div>
+            <div>
+                <span class="card-title">追証なし (ゼロカット)</span>
+                <span class="card-desc">借金のリスクはゼロ。入金額以上の損失なし。</span>
             </div>
         </div>
     </div>
 
-    <div class="hooks-grid">
-        <div class="h-card">
-            <h3 style="color:white; margin:0; font-size:1rem;">FX通貨ペア</h3>
-            <a href="ТВОЯТ_XM_ЛИНК?source=Hook_Forex" class="h-link">見る →</a>
-        </div>
-        <div class="h-card">
-            <h3 style="color:white; margin:0; font-size:1rem;">仮想通貨CFD</h3>
-            <a href="ТВОЯТ_XM_ЛИНК?source=Hook_Crypto" class="h-link">見る →</a>
-        </div>
-        <div class="h-card">
-            <h3 style="color:white; margin:0; font-size:1rem;">日経225・金</h3>
-            <a href="ТВОЯТ_XM_ЛИНК?source=Hook_Indices" class="h-link">見る →</a>
-        </div>
-    </div>
-
-    <div class="compliance">
-        <p><strong>リスク警告：</strong> FXおよびCFD取引には高レベルのリスクが伴い、投資元本を失う可能性があります。レバレッジを利用することで、利益だけでなく損失も拡大する恐れがあります。</p>
-        <p>Traders Pulseはマーケティングパートナーであり、金融サービス提供者ではありません。</p>
+    <div class="legal">
+        <p>リスク警告：FXおよびCFD取引にはリスクが伴います。<br>投資判断はご自身でお願いいたします。</p>
     </div>
 
     <div class="sticky-footer">
-        <div class="footer-text">
-            <span class="ft-title">XM Trading™</span>
-            <span class="ft-sub">| 100%入金ボーナス実施中</span>
+        <div class="footer-info">
+            <span class="tag-bonus">未入金OK</span>
+            <span>13,000円 ボーナス</span>
         </div>
         
-        <a href="ТВОЯТ_XM_ЛИНК?source=Sticky_Footer_Promo" class="btn-sticky">
-            ボーナスを獲得する ➜
+        <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="btn-sticky xm-tracker-link">
+            今すぐ獲得する ➜
         </a>
     </div>
 
-   <script>
+    <script type="text/javascript">
+    (function() {
+        var d = document, w = window; w.MgSensorData = w.MgSensorData || []; w.MgSensorData.push({ cid:897661, project: "a.mgid.com" }); var l = "a.mgid.com"; var s = d.createElement("script"); s.type = "text/javascript"; s.async = true; var dt = !Date.now?new Date().valueOf():Date.now(); s.src = "https://" + l + "/mgsensor.js?d=" + dt; d.body.appendChild(s);
+    })();
+    </script>
+
+    <script>
     document.addEventListener("DOMContentLoaded", function() {
-        /* --- XM TRACKING LOGIC --- */
+        /* --- ULTIMATE TRACKING LOGIC --- */
         const urlParams = new URLSearchParams(window.location.search);
         
+        // 1. Inputs
         const popadsId = urlParams.get('popads_id');
-        const websiteId = urlParams.get('website_id');
+        const websiteId = urlParams.get('website_id'); // Whitelist logic
+        const richAdsClickId = urlParams.get('click_id');
 
-        // PopAds Postback
-        const popadsPostbackUrl = "https://www.popads.net/users/postback/2s/1/aid/aa767929957b4ca372123fe3656e20ec/id/" + popadsId + "/value/0.01";
+        // 2. PopAds Postback (User: aa7679...)
+        const popadsPostbackUrl = "https://www.popads.net/users/postback/2s/0/aid/aa767929957b4ca372123fe3656e20ec/id/" + popadsId + "/value/0.10";
 
+        // 3. Fire Conversion (Robust)
         function fireConversion() {
             if (popadsId) {
                 if (navigator.sendBeacon) navigator.sendBeacon(popadsPostbackUrl);
                 else new Image().src = popadsPostbackUrl;
             }
+            if (richAdsClickId && navigator.sendBeacon) {
+                navigator.sendBeacon('https://us.ahows.co/log?action=conversion&key=' + richAdsClickId);
+            }
         }
 
-        const links = document.querySelectorAll('a');
-
+        // 4. Link Processor
+        const links = document.querySelectorAll('.xm-tracker-link');
         links.forEach(link => {
-            let isTargetLink = link.href.includes("xm.com") || 
-                               link.href.includes("pipaffiliates") ||
-                               link.classList.contains('btn-main') ||
-                               link.classList.contains('btn-sticky') ||
-                               link.classList.contains('btn-card-action');
+            let currentHref = link.href;
+            let separator = currentHref.includes('?') ? '&' : '?';
 
-            if (isTargetLink) {
-                let currentHref = link.href;
-                let separator = currentHref.includes('?') ? '&' : '?';
-                
-                if (popadsId) {
-                    link.href = currentHref + separator + 'subid=' + popadsId;
-                    if (websiteId) {
-                        link.href += '&subid2=' + websiteId;
-                    }
+            // ADD TRACKING PARAMS (subid1, subid2)
+            if (popadsId) {
+                link.href = currentHref + separator + 'subid1=' + popadsId;
+                if (websiteId) {
+                    link.href += '&subid2=' + websiteId; // Whitelist ID
                 }
-
-                link.addEventListener('click', function() {
-                    fireConversion();
-                    if (typeof gtag === 'function') {
-                        gtag('event', 'XM_Japan_Promo_Click', { 'event_category': 'conversion' });
-                    }
-                });
+            } else if (richAdsClickId) {
+                link.href = currentHref + separator + 'subid1=' + richAdsClickId;
             }
+
+            // Fire on Click
+            link.addEventListener('click', function() {
+                fireConversion();
+                if (typeof gtag === 'function') {
+                    gtag('event', 'XM_Click', { 'event_category': 'conversion' });
+                }
+            });
         });
 
-        /* --- BACK BUTTON (Stay Logic) --- */
+        /* --- BACK BUTTON TRAP --- */
         let historyPushed = false;
         function armBackButton() {
             if (historyPushed) return; 
@@ -396,15 +283,16 @@
         window.addEventListener("popstate", function() {
             if (historyPushed) {
                 history.replaceState(null, null, location.href);
-                fireConversion();
+                fireConversion(); // Count as conversion
                 
-                let fallbackUrl = "ТВОЯТ_XM_ЛИНК"; 
-                if(popadsId) fallbackUrl += "?subid=" + popadsId;
+                // Redirect to Offer (Main Affiliate Link)
+                let fallbackUrl = "https://clicks.affstrack.com/c?c=1120254&l=ja&p=0";
+                if(popadsId) fallbackUrl += "&subid1=" + popadsId;
+                
                 window.location.replace(fallbackUrl);
             }
         });
     });
-   </script>
-
+    </script>
 </body>
 </html>
