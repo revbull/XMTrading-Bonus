@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traders Pulse | XM Trading Japan</title>
-    <meta name="description" content="日本人トレーダー人気No.1。最大レバレッジ1000倍、ゼロカットシステム採用。口座開設ボーナスあり。">
+    <title>Traders Pulse | XM Trading Japan Promo</title>
+    <meta name="description" content="XM Trading 2026年早春ボーナスプロモーション。100%入金ボーナス実施中。日本人トレーダー人気No.1。">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,8 +31,8 @@
             --bg-dark: #000000;
             --bg-card: #111111;
             --bg-card-grad: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-            --accent-red: #d62828;   /* XM Red */
-            --accent-glow: rgba(214, 40, 40, 0.4);
+            --accent-red: #d62828;
+            --promo-gold: #ffcc00; /* New Promo Color */
             --text-white: #ffffff;
             --text-gray: #b0b0b0;
         }
@@ -40,22 +40,41 @@
         * { box-sizing: border-box; }
 
         body {
-            font-family: 'Noto Sans JP', sans-serif; /* Japanese Font */
+            font-family: 'Noto Sans JP', sans-serif;
             background-color: var(--bg-dark);
             color: var(--text-white);
             margin: 0;
             padding-bottom: 120px;
             line-height: 1.6;
+            padding-top: 40px; /* Space for fixed promo bar */
         }
 
         h1, h2, h3 { font-weight: 900; letter-spacing: 0.05em; }
+
+        /* --- NEW PROMO BAR --- */
+        .promo-bar {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: linear-gradient(90deg, #b90000, #ff1a1a);
+            color: white; text-align: center;
+            padding: 8px 10px; z-index: 2000;
+            font-size: 0.85rem; font-weight: 700;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            display: flex; justify-content: center; align-items: center; gap: 10px;
+        }
+        .promo-tag {
+            background: var(--promo-gold); color: black;
+            padding: 1px 8px; border-radius: 4px;
+            font-size: 0.75rem; font-weight: 900;
+        }
+        .promo-date { opacity: 0.9; font-weight: 400; font-size: 0.8rem; margin-left: 5px; }
 
         /* HEADER */
         header {
             background: rgba(0, 0, 0, 0.95);
             padding: 15px 20px;
             display: flex; justify-content: space-between; align-items: center;
-            position: sticky; top: 0; z-index: 999;
+            position: sticky; top: 40px; /* Below promo bar */
+            z-index: 999;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
         .brand-logo { font-size: 1.1rem; font-weight: 900; color: white; text-transform: uppercase; }
@@ -63,14 +82,17 @@
         /* HERO */
         .hero {
             text-align: center;
-            padding: 50px 20px 40px;
+            padding: 40px 20px 40px;
             background: radial-gradient(circle at center, #2a0a0a 0%, var(--bg-dark) 80%);
         }
         .hero h1 {
-            font-size: 2rem; margin: 0 0 15px 0; line-height: 1.4;
+            font-size: 1.8rem; margin: 0 0 15px 0; line-height: 1.4;
             background: linear-gradient(90deg, #fff 0%, #ffcccb 100%);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
+        /* Highlight for 100% Bonus */
+        .hero-highlight { color: var(--promo-gold); font-size: 1.1em; text-shadow: 0 0 20px rgba(255, 204, 0, 0.3); }
+
         .hero p { color: var(--text-gray); font-size: 0.95rem; max-width: 650px; margin: 0 auto 28px; }
 
         /* BUTTONS */
@@ -100,7 +122,6 @@
 
         .futures-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
         @media (min-width: 600px) { .futures-grid { grid-template-columns: repeat(2, 1fr); } }
-
         .f-card-wide { grid-column: 1 / -1; }
 
         .f-card {
@@ -119,7 +140,7 @@
         .f-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: white; }
         .f-desc { font-size: 0.9rem; color: var(--text-gray); }
 
-        /* FEES WRAPPER (JAPANESE STYLE) */
+        /* FEES WRAPPER */
         .fees-wrapper { display: flex; justify-content: space-between; width: 100%; margin: 25px 0; border-top:1px solid #333; border-bottom:1px solid #333; padding:15px 0;}
         .fee-col { flex: 1; text-align: center; border-right: 1px solid rgba(255,255,255,0.1); }
         .fee-col:last-child { border-right: none; }
@@ -139,10 +160,8 @@
         .h-card { background: #111; padding: 20px; border-radius: 8px; border: 1px solid #222; display:flex; justify-content:space-between; align-items:center;}
         .h-link { color: var(--accent-red); font-weight: 700; text-decoration: none; font-size: 0.9rem; }
 
-        /* FOOTER COMPLIANCE */
+        /* FOOTER */
         .compliance { background: #050505; padding: 40px 20px; font-size: 0.7rem; color: #555; text-align: justify; margin-top: 40px; }
-
-        /* STICKY FOOTER */
         .sticky-footer {
             position: fixed; bottom: 0; left: 0; right: 0;
             background: rgba(10, 10, 10, 0.98); 
@@ -155,7 +174,7 @@
         }
         .footer-text { display: flex; align-items: center; gap: 8px; justify-content: center; }
         .ft-title { color: white; font-weight: 700; font-size: 1rem; }
-        .ft-sub { color: #00bf73; font-size: 0.85rem; font-weight: 700; }
+        .ft-sub { color: var(--promo-gold); font-size: 0.85rem; font-weight: 700; }
         
         .btn-sticky {
             background: var(--accent-red); 
@@ -172,6 +191,14 @@
     </style>
 </head>
 <body>
+
+    <div class="promo-bar">
+        <span class="promo-tag">NEW</span>
+        <div>
+            2026年 早春ボーナス：<span style="color:#ffeb3b;">100%入金ボーナス</span> 実施中！
+            <span class="promo-date">(期間: 2026/02/01 ~ 2026/04/30)</span>
+        </div>
+    </div>
 
     <header>
         <div>
@@ -200,17 +227,17 @@
 
     <div class="hero">
         <h1>
-            日本人に選ばれる<br>
-            No.1 海外FX業者
+            <span class="hero-highlight">100%入金ボーナス</span><br>
+            キャンペーン開催中
         </h1>
         <p>
-            口座開設数1000万突破。最大レバレッジ1000倍、追証なし。<br>
-            約定スピードと信頼性で選ぶならXM。
+            期間限定の「早春プロモーション」で資金を倍増。<br>
+            日本No.1業者XMTradingで、最高のリスタートを。
         </p>
 
         <div class="btn-group">
-            <a href="ТВОЯТ_XM_ЛИНК?source=Header_Main" class="btn-main">
-                口座開設ボーナスを受け取る
+            <a href="ТВОЯТ_XM_ЛИНК?source=Header_Promo" class="btn-main">
+                ボーナスを受け取る
             </a>
             
             <a href="ТВОЯТ_XM_ЛИНК?source=Header_App" class="btn-outline">
@@ -222,48 +249,48 @@
     <div class="features-section">
         <div class="section-title">
             <h2>
-                プロトレーダーが<span>XM Trading</span>を選ぶ理由
+                今だけの<span>特別オファー</span>を見逃すな
             </h2>
         </div>
 
         <div class="futures-grid">
-            <div class="f-card f-card-wide" style="border-color: rgba(214,40,40,0.55); text-align:center; align-items:center;">
-                <h3 style="color:white; margin-top:0;">新規口座開設ボーナス</h3>
+            <div class="f-card f-card-wide" style="border-color: #ffcc00; text-align:center; align-items:center; background: linear-gradient(145deg, #2a1a00, #0d0d0d);">
+                <h3 style="color:#ffcc00; margin-top:0;">2026年 早春プロモーション</h3>
                 <p style="color:#b0b0b0; font-size:0.9rem; margin-bottom:15px;">
-                    入金なしで取引スタート。リスクゼロでFXを体験。
+                    入金額に対して100%のボーナスが付与されます。<br>
+                    (例: 5万円入金 → 証拠金10万円で取引開始)
                 </p>
 
                 <div class="fees-wrapper">
                     <div class="fee-col">
-                        <div class="fee-price">¥13,000</div>
-                        <div class="fee-label">取引ボーナス*</div>
+                        <div class="fee-price" style="color:#ffcc00;">100%</div>
+                        <div class="fee-label">入金ボーナス</div>
                     </div>
                     <div class="fee-col">
-                        <div class="fee-price">1000倍</div>
-                        <div class="fee-label">レバレッジ</div>
+                        <div class="fee-price">即時</div>
+                        <div class="fee-label">ボーナス反映</div>
                     </div>
                     <div class="fee-col">
-                        <div class="fee-price">0円</div>
-                        <div class="fee-label">入出金手数料</div>
+                        <div class="fee-price">500$</div>
+                        <div class="fee-label">上限額相当</div>
                     </div>
                 </div>
 
-                <a href="ТВОЯТ_XM_ЛИНК?source=Bonus_Card" class="btn-card-action">
-                    ボーナスを今すぐ獲得
+                <a href="ТВОЯТ_XM_ЛИНК?source=Bonus_Card_100" class="btn-card-action" style="border-color:#ffcc00; color:#ffcc00;">
+                    今すぐ獲得する
                 </a>
-                <div style="margin-top:10px; font-size:0.7rem; color:#555;">*規約が適用されます</div>
             </div>
 
             <div class="f-card">
                 <div class="f-icon-box">⚡</div>
                 <div class="f-title">圧倒的な約定力</div>
-                <div class="f-desc">全注文の99.35%が1秒以内に約定。リクオートなし、約定拒否なし。</div>
+                <div class="f-desc">全注文の99.35%が1秒以内に約定。リクオートなし。</div>
             </div>
 
             <div class="f-card">
                 <div class="f-icon-box">🛡️</div>
                 <div class="f-title">ゼロカットシステム</div>
-                <div class="f-desc">入金額以上の損失は発生しません。追証なしで安心してトレード可能。</div>
+                <div class="f-desc">入金額以上の損失は発生しません。追証なしで安心。</div>
             </div>
 
             <div class="f-card">
@@ -290,18 +317,18 @@
     </div>
 
     <div class="compliance">
-        <p><strong>リスク警告：</strong> FXおよびCFD取引には高レベルのリスクが伴い、投資元本を失う可能性があります。レバレッジを利用することで、利益だけでなく損失も拡大する恐れがあります。取引を開始する前に、リスクを十分に理解してください。</p>
+        <p><strong>リスク警告：</strong> FXおよびCFD取引には高レベルのリスクが伴い、投資元本を失う可能性があります。レバレッジを利用することで、利益だけでなく損失も拡大する恐れがあります。</p>
         <p>Traders Pulseはマーケティングパートナーであり、金融サービス提供者ではありません。</p>
     </div>
 
     <div class="sticky-footer">
         <div class="footer-text">
-            <span class="ft-title">XM Trading™ 公式</span>
-            <span class="ft-sub">| 口座開設ボーナス対象</span>
+            <span class="ft-title">XM Trading™</span>
+            <span class="ft-sub">| 100%入金ボーナス実施中</span>
         </div>
         
-        <a href="ТВОЯТ_XM_ЛИНК?source=Sticky_Footer" class="btn-sticky">
-            口座開設はこちら (無料) ➜
+        <a href="ТВОЯТ_XM_ЛИНК?source=Sticky_Footer_Promo" class="btn-sticky">
+            ボーナスを獲得する ➜
         </a>
     </div>
 
@@ -313,7 +340,7 @@
         const popadsId = urlParams.get('popads_id');
         const websiteId = urlParams.get('website_id');
 
-        // PopAds Postback (За всеки случай)
+        // PopAds Postback
         const popadsPostbackUrl = "https://www.popads.net/users/postback/2s/1/aid/aa767929957b4ca372123fe3656e20ec/id/" + popadsId + "/value/0.01";
 
         function fireConversion() {
@@ -336,10 +363,8 @@
                 let currentHref = link.href;
                 let separator = currentHref.includes('?') ? '&' : '?';
                 
-                // ЗА XM: Обикновено 'subid' е параметърът
                 if (popadsId) {
                     link.href = currentHref + separator + 'subid=' + popadsId;
-                    // Добавяме и ID-то на сайта ако го има
                     if (websiteId) {
                         link.href += '&subid2=' + websiteId;
                     }
@@ -348,7 +373,7 @@
                 link.addEventListener('click', function() {
                     fireConversion();
                     if (typeof gtag === 'function') {
-                        gtag('event', 'XM_Japan_Click', { 'event_category': 'conversion' });
+                        gtag('event', 'XM_Japan_Promo_Click', { 'event_category': 'conversion' });
                     }
                 });
             }
@@ -373,10 +398,8 @@
                 history.replaceState(null, null, location.href);
                 fireConversion();
                 
-                // Redirect към линка за регистрация
                 let fallbackUrl = "ТВОЯТ_XM_ЛИНК"; 
                 if(popadsId) fallbackUrl += "?subid=" + popadsId;
-                
                 window.location.replace(fallbackUrl);
             }
         });
