@@ -28,6 +28,7 @@
         :root {
             --bg-dark: #0a0a0a;
             --bg-card: #141414;
+            --bg-card-grad: linear-gradient(145deg, #1a1a1a, #0d0d0d);
             --xm-red: #d62828;
             --xm-gold: #ffcc00;
             --text-white: #ffffff;
@@ -48,17 +49,23 @@
         a { text-decoration: none; color: inherit; }
         strong { color: var(--xm-gold); }
 
-        /* --- 1. CLICKABLE PROMO BAR --- */
+        /* --- 1. PROMO BAR (UPDATED) --- */
         .promo-bar {
             position: fixed; top: 0; left: 0; right: 0;
             background: linear-gradient(90deg, #b90000, #ff1a1a);
             color: white; text-align: center;
             padding: 10px; z-index: 2000;
-            font-size: 0.85rem; font-weight: 700;
+            font-size: 0.8rem; font-weight: 700;
             box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-            text-decoration: none; display: block;
+            text-decoration: none; display: flex; 
+            justify-content: center; align-items: center; gap: 5px; flex-wrap: wrap;
         }
-        .promo-date { background: rgba(0,0,0,0.3); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; margin-right: 5px; }
+        .promo-badge {
+            background: var(--xm-gold); color: black;
+            padding: 2px 6px; border-radius: 4px;
+            font-size: 0.75rem; font-weight: 900;
+        }
+        .promo-period { opacity: 0.9; font-weight: 400; font-size: 0.75rem; }
 
         /* --- 2. HEADER --- */
         header {
@@ -76,10 +83,8 @@
         
         /* Banner Adjustment */
         .header-banner img {
-            max-height: 45px; /* Mobile optimized */
-            width: auto;
-            border-radius: 4px;
-            border: 1px solid #333;
+            max-height: 45px; width: auto;
+            border-radius: 4px; border: 1px solid #333;
         }
 
         /* --- TRADINGVIEW --- */
@@ -100,15 +105,12 @@
         .hero-highlight {
             font-size: 1.2rem; color: var(--xm-gold); display: block; margin-top: 5px;
         }
-        
         .hero p { font-size: 0.9rem; color: #ccc; max-width: 600px; margin: 0 auto 20px; }
 
         /* BUTTONS */
         .btn-group { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 15px; }
-        
         .btn-main {
-            background: var(--xm-red); color: white;
-            font-size: 1rem; font-weight: 800;
+            background: var(--xm-red); color: white; font-size: 1rem; font-weight: 800;
             padding: 15px 25px; border-radius: 8px;
             box-shadow: 0 0 20px rgba(214, 40, 40, 0.4);
             display: inline-block; width: 100%; max-width: 320px;
@@ -121,26 +123,51 @@
             display: inline-block; width: 100%; max-width: 320px;
         }
 
-        /* RISK TEXT */
         .risk-micro { font-size: 0.65rem; color: #555; margin-top: 10px; line-height: 1.4; }
 
-        /* --- CONTENT CARDS --- */
+        /* --- CONTENT SECTION --- */
         .content-section { padding: 30px 15px; max-width: 800px; margin: 0 auto; }
         
+        /* PROMO CARD */
         .info-card {
             background: var(--bg-card); border: 1px solid #222;
-            padding: 20px; border-radius: 12px; margin-bottom: 20px;
+            padding: 20px; border-radius: 12px; margin-bottom: 25px;
         }
         .card-header { font-size: 1.1rem; color: var(--xm-gold); margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
 
-        /* BULLET POINTS */
         .check-list { list-style: none; padding: 0; margin: 0; }
         .check-list li { 
             margin-bottom: 10px; font-size: 0.9rem; 
             display: flex; gap: 10px; align-items: flex-start;
         }
-        .check-list li::before {
-            content: '✔'; color: var(--xm-red); font-weight: bold; flex-shrink: 0;
+        .check-list li::before { content: '✔'; color: var(--xm-red); font-weight: bold; flex-shrink: 0; }
+
+        /* --- FEATURES GRID --- */
+        .section-title { text-align: center; margin: 30px 0 20px; }
+        .section-title h2 { font-size: 1.3rem; }
+        .section-title span { color: var(--xm-red); }
+
+        .features-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
+        @media (min-width: 600px) { .features-grid { grid-template-columns: 1fr 1fr; } }
+
+        .f-card {
+            background: var(--bg-card-grad); padding: 20px; border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex; flex-direction: column; align-items: flex-start;
+        }
+        .f-icon-box {
+            width: 40px; height: 40px; margin-bottom: 10px;
+            background: rgba(214,40,40,0.1); border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; color: var(--xm-red); border: 1px solid rgba(214,40,40,0.3);
+        }
+        .f-title { font-size: 1rem; font-weight: 700; margin-bottom: 5px; color: white; }
+        .f-desc { font-size: 0.8rem; color: var(--text-gray); line-height: 1.4; }
+
+        /* --- COMPLIANCE --- */
+        .compliance-note {
+            font-size: 0.65rem; color: #555; background: #111; padding: 15px; border-radius: 8px; margin-top: 30px; text-align: justify;
         }
 
         /* --- STICKY FOOTER --- */
@@ -153,17 +180,13 @@
             box-shadow: 0 -10px 40px rgba(0,0,0,0.8);
             text-align: center;
         }
-        
         .footer-text { font-size: 0.85rem; font-weight: 700; color: white; line-height: 1.4; }
-        .footer-sub { display: block; font-size: 0.7rem; color: #777; font-weight: 400; margin-top: 2px; }
-
         .btn-sticky {
             background: var(--xm-red); color: white;
             width: 100%; text-align: center; padding: 14px 0;
             border-radius: 8px; font-weight: 900; font-size: 1.1rem;
             box-shadow: 0 0 15px rgba(214, 40, 40, 0.4);
         }
-
         @keyframes pulse {
             0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(214, 40, 40, 0.7); }
             70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(214, 40, 40, 0); }
@@ -174,8 +197,9 @@
 <body>
 
     <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="promo-bar xm-tracker-link">
-        <span class="promo-date">2026/02/02 ～ 02/27</span>
-        キャンペーン開催期間
+        <span class="promo-badge">NEW</span>
+        <span>2026年 早春ボーナス：<span style="color:#ffeb3b;">100%入金ボーナス</span> 実施中！</span>
+        <span class="promo-period">(期間: 2026/02/01 ~ 2026/04/30)</span>
     </a>
 
     <header>
@@ -209,18 +233,15 @@
             最大$500*まで<br>
             取引資金を<span style="color:var(--xm-red); font-size:1.8rem;">増額</span>
         </h1>
-        
         <p>
             最大$500*までの100%追加ボーナス*で取引資金をパワーアップ。<br>
-            期間限定で入金額が<strong>2倍</strong>に。<br>
-            この早春、トレードが大きく花開く。
+            期間限定で入金額が<strong>2倍</strong>に。
         </p>
 
         <div class="btn-group">
             <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="btn-main xm-tracker-link">
                 ボーナスを受け取る
             </a>
-            
             <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="btn-sub xm-tracker-link">
                 会員ページへ
             </a>
@@ -239,7 +260,6 @@
             <p style="font-size:0.9rem; margin-bottom:15px;">
                 最大$500*の期間限定・早春100％ボーナスで取引資金を倍増。資金に余裕のあるトレードが可能に。
             </p>
-            
             <ul class="check-list">
                 <li>既存の100%入金ボーナスに加えて適用</li>
                 <li>新規と既存のお客様が対象</li>
@@ -249,17 +269,6 @@
             </ul>
         </div>
 
-        <div class="info-card">
-            <h3 class="card-header">⚡ レバレッジ 1:1000</h3>
-            <div style="display:flex; gap:15px; align-items:center;">
-                <div style="font-size:2.5rem;">⚖️</div>
-                <div style="font-size:0.9rem;">
-                    少ない資金でも大きな取引が可能。<br>
-                    ゼロカットシステム採用で、入金額以上の損失リスクはありません。
-                </div>
-            </div>
-        </div>
-
         <div class="info-card" style="border-color:#333;">
             <h3 class="card-header">💰 ダブルボーナスについて</h3>
             <p style="font-size:0.85rem; color:#ccc;">
@@ -267,7 +276,34 @@
             </p>
         </div>
 
-        <div style="font-size:0.65rem; color:#555; background:#111; padding:15px; border-radius:8px; margin-top:20px;">
+        <div class="section-title">
+            <h2>プロが選ぶ<span>XMの理由</span></h2>
+        </div>
+        
+        <div class="features-grid">
+            <div class="f-card">
+                <div class="f-icon-box">⚡</div>
+                <div class="f-title">圧倒的な約定力</div>
+                <div class="f-desc">全注文の99.35%が1秒以内に約定。リクオートなし。</div>
+            </div>
+            <div class="f-card">
+                <div class="f-icon-box">⚖️</div>
+                <div class="f-title">レバレッジ 1:1000</div>
+                <div class="f-desc">少ない資金でも大きな取引が可能。</div>
+            </div>
+            <div class="f-card">
+                <div class="f-icon-box">🛡️</div>
+                <div class="f-title">ゼロカットシステム</div>
+                <div class="f-desc">入金額以上の損失は発生しません。追証なしで安心。</div>
+            </div>
+            <div class="f-card">
+                <div class="f-icon-box">🇯🇵</div>
+                <div class="f-title">日本語サポート</div>
+                <div class="f-desc">日本人スタッフによる24時間ライブチャット対応。</div>
+            </div>
+        </div>
+
+        <div class="compliance-note">
             <p style="margin:0;">
                 XMTrading Zero口座、KIWAMI極口座、投資家口座、キャッシュバックを行うアフィリエイトを経由して開設された口座は、本キャンペーンの対象外になります。<br>
                 リアル口座を開設するには、こちらをクリックしてください。<br>
@@ -296,18 +332,16 @@
 
     <script>
     document.addEventListener("DOMContentLoaded", function() {
-        /* --- OLD SITE TRACKING LOGIC (PORTED) --- */
+        /* --- TRACKING LOGIC --- */
         const urlParams = new URLSearchParams(window.location.search);
         
-        // 1. Get IDs
         const popadsId = urlParams.get('popads_id');
         const websiteId = urlParams.get('website_id'); 
         const richAdsClickId = urlParams.get('click_id');
 
-        // 2. PopAds Postback
+        // PopAds Postback
         const popadsPostbackUrl = "https://www.popads.net/users/postback/2s/0/aid/aa767929957b4ca372123fe3656e20ec/id/" + popadsId + "/value/0.10";
 
-        // 3. Fire Conversion
         function fireConversion() {
             if (popadsId) {
                 if (navigator.sendBeacon) navigator.sendBeacon(popadsPostbackUrl);
@@ -318,13 +352,11 @@
             }
         }
 
-        // 4. Link Processor (Using subid1 as per old site)
         const links = document.querySelectorAll('.xm-tracker-link');
         links.forEach(link => {
             let currentHref = link.href;
             let separator = currentHref.includes('?') ? '&' : '?';
 
-            // ADD TRACKING PARAMS
             if (popadsId) {
                 link.href = currentHref + separator + 'subid1=' + popadsId;
                 if (websiteId) {
@@ -334,7 +366,6 @@
                 link.href = currentHref + separator + 'subid1=' + richAdsClickId;
             }
 
-            // Fire on Click
             link.addEventListener('click', function() {
                 fireConversion();
                 if (typeof gtag === 'function') {
@@ -361,11 +392,8 @@
             if (historyPushed) {
                 history.replaceState(null, null, location.href);
                 fireConversion(); 
-                
-                // Redirect to Offer (Main Affiliate Link)
                 let fallbackUrl = "https://clicks.affstrack.com/c?c=1120254&l=ja&p=0";
                 if(popadsId) fallbackUrl += "&subid1=" + popadsId;
-                
                 window.location.replace(fallbackUrl);
             }
         });
