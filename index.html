@@ -24,7 +24,7 @@
     </script>
 
     <style>
-        /* --- FXFacts LIGHT SPRING THEME (FINAL) --- */
+        /* --- FXFacts LIGHT SPRING THEME (WEBP EDITION) --- */
         :root {
             --bg-body: #fdfdfd;
             --bg-white: #ffffff;
@@ -55,6 +55,7 @@
         h1, h2, h3 { font-weight: 900; letter-spacing: 0.05em; margin: 0; }
         a { text-decoration: none; color: inherit; }
         strong { color: var(--xm-red); }
+        img { display: block; max-width: 100%; height: auto; }
 
         /* --- 1. PROMO BAR --- */
         .promo-bar {
@@ -82,47 +83,56 @@
         }
 
         header {
-            max-width: 1100px; 
+            max-width: 1200px; 
             margin: 0 auto; 
-            padding: 12px 20px;
+            padding: 10px 15px;
             display: flex; 
             justify-content: space-between; 
             align-items: center;
             gap: 15px;
         }
         
-        .logo-box { display: flex; flex-direction: column; }
+        .logo-box { display: flex; flex-direction: column; justify-content: center; }
         .logo { 
             font-size: 1.5rem; font-weight: 900; color: #000; 
             line-height: 1; letter-spacing: -1px;
         }
         .logo span { font-size: 0.75rem; font-weight: 500; color: #777; margin-left: 5px; }
         
-        /* PR BADGE */
         .pr-badge { 
             font-size: 0.6rem; color: #aaa; 
             border: 1px solid #eee; padding: 1px 4px; 
             border-radius: 3px; width: fit-content; margin-top: 3px; 
         }
 
-        /* RIGHT SIDE WIDGET (Replaces Image Banner) */
-        .partner-widget {
-            background: #000; color: white;
-            padding: 8px 15px; border-radius: 4px;
-            display: flex; flex-direction: column; align-items: flex-end;
-            text-align: right; border-left: 4px solid var(--xm-red);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        /* --- BANNER SWITCHING LOGIC --- */
+        .banner-desktop { display: none; }
+        .banner-mobile { display: block; }
+        
+        /* Mobile Banner Styling */
+        .banner-mobile img {
+            max-height: 60px; /* Limit height so it fits header */
+            width: auto; 
+            margin-left: auto; /* Align right */
         }
-        .pw-title { font-size: 0.9rem; font-weight: 900; line-height: 1; margin-bottom: 2px; }
-        .pw-sub { font-size: 0.65rem; color: #ccc; font-weight: 400; text-transform: uppercase; }
 
-        @media (min-width: 768px) {
+        /* Desktop Media Query */
+        @media (min-width: 900px) {
             body { padding-top: 50px; }
             .header-wrapper { top: 40px; }
+            
+            .banner-desktop { display: block; }
+            .banner-mobile { display: none; }
+            
             .logo { font-size: 1.8rem; }
-            .partner-widget { padding: 10px 20px; }
-            .pw-title { font-size: 1.1rem; }
-            .pw-sub { font-size: 0.75rem; }
+            .logo span { font-size: 0.9rem; }
+            
+            /* Desktop Banner Styling */
+            .banner-desktop img { 
+                /* Ensures the 728x90 banner displays correctly */
+                max-width: 728px; 
+                height: auto; 
+            }
         }
 
         /* --- 3. HERO SECTION --- */
@@ -141,7 +151,8 @@
         @media (min-width: 768px) { .hero h1 { font-size: 2.8rem; } }
 
         .hero-highlight {
-            font-size: 1.4rem; color: var(--xm-red); display: block; margin-top: 5px;
+            font-size: 1.6rem; color: var(--xm-red); display: block; margin-top: 5px;
+            text-shadow: 0 2px 10px rgba(214, 40, 40, 0.1);
         }
         
         .hero p { font-size: 0.95rem; color: #555; max-width: 600px; margin: 0 auto 25px; }
@@ -219,7 +230,7 @@
         .f-title { font-size: 1rem; font-weight: 700; margin-bottom: 5px; color: #222; }
         .f-desc { font-size: 0.85rem; color: #666; line-height: 1.5; }
 
-        /* --- 6. TRADINGVIEW SPEEDOMETER (Technical Analysis) --- */
+        /* --- 6. TRADINGVIEW SPEEDOMETER --- */
         .tv-wrapper { margin: 20px auto; max-width: 450px; height: 400px; }
 
         /* --- COMPLIANCE --- */
@@ -269,18 +280,25 @@
                 <div class="pr-badge">PR / Ad</div>
             </div>
             
-            <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="partner-widget xm-tracker-link">
-                <div class="pw-title">XMTrading</div>
-                <div class="pw-sub">提携メディア (Partner Site)</div>
-            </a>
+            <div class="banner-desktop">
+                <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="xm-tracker-link">
+                    <img src="banner-desktop.webp" alt="XMTrading 100% Bonus">
+                </a>
+            </div>
+
+            <div class="banner-mobile">
+                <a href="https://clicks.affstrack.com/c?c=1120254&l=ja&p=0" class="xm-tracker-link">
+                    <img src="banner-mobile.webp" alt="XMTrading 100% Bonus">
+                </a>
+            </div>
         </header>
     </div>
 
     <div class="hero">
         <span class="hero-sub">🌸 早春100%ボーナスキャンペーン</span>
         <h1>
-            最大$500*まで<br>
-            取引資金を<span class="hero-highlight">増額可能</span>
+            XMTradingで<br>
+            <span class="hero-highlight">最大$500*の取引資金を獲得</span>
         </h1>
         
         <p>
