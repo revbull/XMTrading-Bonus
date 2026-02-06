@@ -24,7 +24,7 @@
     </script>
 
     <style>
-        /* --- FXFacts LIGHT SPRING THEME (WEBP EDITION) --- */
+        /* --- FXFacts LIGHT SPRING THEME (FINAL MASTER) --- */
         :root {
             --bg-body: #fdfdfd;
             --bg-white: #ffffff;
@@ -105,18 +105,17 @@
             border-radius: 3px; width: fit-content; margin-top: 3px; 
         }
 
-        /* --- BANNER SWITCHING LOGIC --- */
+        /* BANNER SWITCHING LOGIC */
         .banner-desktop { display: none; }
         .banner-mobile { display: block; }
         
-        /* Mobile Banner Styling */
         .banner-mobile img {
-            max-height: 60px; /* Limit height so it fits header */
+            height: 50px; 
             width: auto; 
-            margin-left: auto; /* Align right */
+            border: 1px solid #eee; border-radius: 4px;
+            display: block;
         }
 
-        /* Desktop Media Query */
         @media (min-width: 900px) {
             body { padding-top: 50px; }
             .header-wrapper { top: 40px; }
@@ -127,15 +126,17 @@
             .logo { font-size: 1.8rem; }
             .logo span { font-size: 0.9rem; }
             
-            /* Desktop Banner Styling */
             .banner-desktop img { 
-                /* Ensures the 728x90 banner displays correctly */
-                max-width: 728px; 
-                height: auto; 
+                width: 728px; height: 90px; 
+                display: block;
+                border: 1px solid #eee; border-radius: 4px;
             }
         }
 
-        /* --- 3. HERO SECTION --- */
+        /* --- 3. TRADINGVIEW BAR (Added) --- */
+        .tv-bar-container { border-bottom: 1px solid #eee; background: #fff; }
+
+        /* --- 4. HERO SECTION --- */
         .hero {
             text-align: center; padding: 40px 15px;
             background: linear-gradient(to bottom, #fff, var(--sakura-light));
@@ -179,7 +180,7 @@
 
         .risk-micro { font-size: 0.65rem; color: #888; margin-top: 15px; line-height: 1.4; }
 
-        /* --- 4. CONTENT CARDS --- */
+        /* --- 5. CONTENT CARDS --- */
         .content-section { padding: 30px 15px; max-width: 900px; margin: 0 auto; }
         
         .info-card {
@@ -204,7 +205,7 @@
             background: #fffafb;
         }
 
-        /* --- 5. FEATURES GRID --- */
+        /* --- 6. FEATURES GRID --- */
         .section-title { text-align: center; margin: 40px 0 20px; }
         .section-title h2 { font-size: 1.5rem; color: #222; }
         .section-title span { color: var(--xm-red); }
@@ -230,7 +231,7 @@
         .f-title { font-size: 1rem; font-weight: 700; margin-bottom: 5px; color: #222; }
         .f-desc { font-size: 0.85rem; color: #666; line-height: 1.5; }
 
-        /* --- 6. TRADINGVIEW SPEEDOMETER --- */
+        /* --- 7. TRADINGVIEW SPEEDOMETER --- */
         .tv-wrapper { margin: 20px auto; max-width: 450px; height: 400px; }
 
         /* --- COMPLIANCE --- */
@@ -292,6 +293,27 @@
                 </a>
             </div>
         </header>
+    </div>
+
+    <div class="tv-bar-container">
+        <div class="tradingview-widget-container">
+          <div class="tradingview-widget-container__widget"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+          {
+          "symbols": [
+            { "proName": "FX:USDJPY", "title": "USD/JPY" },
+            { "proName": "TVC:GOLD", "title": "Gold" },
+            { "proName": "TVC:NI225", "title": "Nikkei 225" },
+            { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" }
+          ],
+          "showSymbolLogo": true,
+          "colorTheme": "light",
+          "isTransparent": true,
+          "displayMode": "adaptive",
+          "locale": "ja"
+          }
+          </script>
+        </div>
     </div>
 
     <div class="hero">
