@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copy Trading France | Automatisez vos gains</title>
-    <meta name="description" content="Copiez les meilleurs traders automatiquement. Application officielle AvaSocial.">
+    <title>Copy Trading + Cashback | Offre Combinée</title>
+    <meta name="description" content="Automatisez votre trading et recevez du cashback sur chaque position copiée.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://tracking.avapartner.com">
@@ -27,13 +27,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* --- THEME: FRANCE COPY TRADING (BLUE/PURPLE/GREEN) --- */
+        /* --- THEME: HYBRID (Purple for Copy + Green for Cash) --- */
         :root {
             --bg-dark: #0b0e14;
             --bg-card: #151a25;
-            --accent-green: #00e676; /* Success/Money */
-            --accent-blue: #2962ff; /* Tech/App */
-            --accent-purple: #6200ea; /* Copy/Social */
+            --accent-green: #00e676; /* Cashback */
+            --accent-purple: #6200ea; /* Copy Trade */
             --text-white: #ffffff;
             --text-gray: #a1aab5;
         }
@@ -45,7 +44,7 @@
             background-color: var(--bg-dark);
             color: var(--text-white);
             margin: 0;
-            padding-bottom: 120px;
+            padding-bottom: 140px; /* Space for footer + disclaimer */
             line-height: 1.5;
         }
 
@@ -57,30 +56,27 @@
             position: sticky; top: 0; z-index: 999;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .app-badge {
-            font-size: 0.7rem; color: var(--accent-blue); text-transform: uppercase;
-            background: rgba(41, 98, 255, 0.1);
-            border: 1px solid var(--accent-blue); padding: 4px 8px; border-radius: 4px;
-            font-weight: 700;
+        .affiliate-badge {
+            font-size: 0.65rem; color: #888; text-transform: uppercase;
+            border: 1px solid #444; padding: 4px 8px; border-radius: 4px;
         }
 
         /* HERO */
         .hero {
             text-align: center;
             padding: 40px 20px 20px;
-            background: radial-gradient(circle at center, #1a253a 0%, var(--bg-dark) 90%);
+            background: radial-gradient(circle at center, #1e1b2e 0%, var(--bg-dark) 90%);
         }
         .hero h1 {
-            font-size: 2.5rem; margin: 0 0 15px 0; line-height: 1.1; font-weight: 900;
+            font-size: 2.2rem; margin: 0 0 15px 0; line-height: 1.1; font-weight: 900;
             text-transform: uppercase;
         }
-        .gradient-text {
-            background: linear-gradient(90deg, #2962ff, #00e676);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero p { color: var(--text-gray); font-size: 1.1rem; max-width: 650px; margin: 0 auto 28px; }
+        .hero p { color: var(--text-gray); font-size: 1rem; max-width: 650px; margin: 0 auto 28px; }
+        
+        .highlight-copy { color: var(--accent-purple); text-shadow: 0 0 15px rgba(98, 0, 234, 0.3); }
+        .highlight-cash { color: var(--accent-green); text-shadow: 0 0 15px rgba(0, 230, 118, 0.3); }
 
-        /* COUPON BOX (THE HOOK) */
+        /* COUPON BOX */
         .coupon-container {
             background: rgba(255,255,255,0.05);
             border: 1px dashed var(--accent-green);
@@ -93,15 +89,14 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .coupon-label {
-            font-size: 0.85rem; color: #aaa; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;
+            font-size: 0.8rem; color: #aaa; margin-bottom: 8px; text-transform: uppercase;
         }
         .coupon-code {
             font-size: 1.8rem; font-weight: 900; color: white; letter-spacing: 3px;
             background: #000; padding: 12px 25px; border-radius: 6px; display: inline-block;
             cursor: pointer; border: 1px solid #333; transition: all 0.2s;
         }
-        .coupon-code:hover { border-color: var(--accent-blue); transform: scale(1.02); }
-        .coupon-code:active { transform: scale(0.98); border-color: var(--accent-green); }
+        .coupon-code:hover { border-color: var(--accent-green); transform: scale(1.02); }
         
         .copy-msg {
             color: var(--accent-green); font-size: 0.8rem; margin-top: 8px; 
@@ -110,13 +105,13 @@
 
         /* BUTTONS */
         .btn-main {
-            background: var(--accent-blue);
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-green));
             color: white; padding: 18px 30px; border-radius: 8px;
             font-weight: 800; text-transform: uppercase; text-decoration: none; font-size: 1.1rem;
-            display: inline-block; box-shadow: 0 0 20px rgba(41, 98, 255, 0.4);
+            display: inline-block; box-shadow: 0 0 20px rgba(0, 230, 118, 0.2);
             transition: transform 0.2s; width: 100%; max-width: 380px;
         }
-        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(41, 98, 255, 0.6); }
+        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(0, 230, 118, 0.4); }
 
         /* STEPS GRID */
         .steps-section { padding: 30px 20px; max-width: 900px; margin: 0 auto; }
@@ -126,24 +121,18 @@
         @media (min-width: 700px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
 
         .step-card {
-            background: var(--bg-card); padding: 25px; border-radius: 12px;
+            background: var(--bg-card); padding: 20px; border-radius: 12px;
             border: 1px solid rgba(255,255,255,0.08); text-align: center;
         }
-        .step-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
-        .step-title { font-weight: 700; color: white; margin-bottom: 5px; font-size: 1.1rem; }
-        .step-desc { font-size: 0.9rem; color: var(--text-gray); }
+        .step-icon { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+        .step-title { font-weight: 700; color: white; margin-bottom: 5px; }
+        .step-desc { font-size: 0.85rem; color: var(--text-gray); }
 
-        /* SOCIAL PROOF / TRUST */
-        .trust-section {
-            text-align: center; margin-top: 30px; padding: 20px;
-            border-top: 1px solid #222;
+        /* DISCLAIMER FOOTER */
+        .disclaimer-section {
+            background: #050505; padding: 20px; font-size: 0.7rem; color: #555;
+            text-align: justify; margin-bottom: 80px; border-top: 1px solid #222;
         }
-        .stats-row {
-            display: flex; justify-content: center; gap: 30px; margin-bottom: 20px;
-        }
-        .stat-item { text-align: center; }
-        .stat-num { font-size: 1.5rem; font-weight: 800; color: white; }
-        .stat-lbl { font-size: 0.7rem; color: #666; text-transform: uppercase; }
 
         /* STICKY FOOTER */
         .sticky-footer {
@@ -151,7 +140,7 @@
             background: rgba(11, 14, 20, 0.95);
             backdrop-filter: blur(10px);
             padding: 15px 20px;
-            border-top: 1px solid var(--accent-blue);
+            border-top: 1px solid var(--accent-green);
             display: flex; flex-direction: column; align-items: center; gap: 10px;
             z-index: 1000;
         }
@@ -174,20 +163,19 @@
 <body>
 
     <header>
-        <div style="font-weight:900; font-size:1.2rem; color:white;">
-            Ava<span style="color:var(--accent-blue);">Social</span>™
+        <div style="font-weight:900; font-size:1.1rem; color:white;">
+            SMART<span style="color:var(--accent-green);">TRADER</span>
         </div>
-        <div class="app-badge">OFFICIEL</div>
+        <div class="affiliate-badge">Partenaire Marketing</div>
     </header>
 
     <div class="hero">
         <h1>
-            COPIER. TRADER.<br>
-            <span class="gradient-text">RÉPÉTER.</span>
+            <span class="highlight-copy">COPIEZ LES PROS.</span><br>
+            <span class="highlight-cash">GAGNEZ DU CASHBACK.</span>
         </h1>
         <p>
-            Pourquoi trader seul ? Laissez les experts faire le travail difficile pour vous.<br>
-            Automatisez vos positions dès aujourd'hui.
+            Pourquoi choisir ? Automatisez vos trades avec AvaSocial™ ET recevez un remboursement sur le volume généré.
         </p>
         
         <div class="coupon-container">
@@ -195,67 +183,59 @@
             <div class="coupon-code" onclick="copyCode(this)">207628</div>
             <div class="copy-msg" id="copyMsg">✔ CODE COPIÉ !</div>
             
-            <div style="margin-top:15px; font-size:0.9rem; color:#ccc; text-align:left;">
-                <div style="margin-bottom:5px;">ℹ️ <b>Instructions:</b></div>
-                <div style="color:#888;">1. Copiez le code ci-dessus.</div>
-                <div style="color:#888;">2. Collez-le dans le champ "Partner Code" lors de l'inscription.</div>
-                <div style="color:#888;">3. Déposez <b>100€</b> pour activer le Copy Trading.</div>
+            <div style="margin-top:15px; font-size:0.85rem; color:#ccc; text-align:left;">
+                <div style="color:#888;">1. Copiez le code.</div>
+                <div style="color:#888;">2. Collez-le dans "Partner Code" à l'inscription.</div>
+                <div style="color:#888;">3. Déposez <b>100€</b> pour tout activer.</div>
             </div>
         </div>
 
         <a href="https://tracking.avapartner.com/click/?affid=207628&campaign=213134&tag=207628&TargetUrl=https%3A%2F%2Fwww.avatrade.fr" class="btn-main">
-            COMMENCER À COPIER ➜
+            ACTIVER LE SYSTÈME ➜
         </a>
     </div>
 
     <div class="steps-section">
         <div class="steps-grid">
             <div class="step-card">
-                <span class="step-icon">📝</span>
-                <div class="step-title">1. Inscrivez-vous</div>
-                <div class="step-desc">Créez votre compte sécurisé en 2 min avec le code partenaire.</div>
+                <span class="step-icon">🤖</span>
+                <div class="step-title">Automatisation</div>
+                <div class="step-desc">Connectez votre compte à un trader expert. Il achète, vous achetez.</div>
             </div>
             <div class="step-card">
-                <span class="step-icon">👥</span>
-                <div class="step-title">2. Choisissez un Pro</div>
-                <div class="step-desc">Parcourez la liste des meilleurs traders et leurs performances.</div>
+                <span class="step-icon">💰</span>
+                <div class="step-title">Cashback</div>
+                <div class="step-desc">Chaque trade copié génère du volume qui vous rapporte du cash.</div>
             </div>
             <div class="step-card">
-                <span class="step-icon">🚀</span>
-                <div class="step-title">3. Automatisez</div>
-                <div class="step-desc">Cliquez sur "Copier". Quand ils gagnent, vous gagnez.</div>
+                <span class="step-icon">🛡️</span>
+                <div class="step-title">Sécurité</div>
+                <div class="step-desc">Courtier régulé en Europe. Vos fonds sont protégés.</div>
             </div>
         </div>
     </div>
 
-    <div class="trust-section">
-        <div class="stats-row">
-            <div class="stat-item">
-                <div class="stat-num">1M+</div>
-                <div class="stat-lbl">Utilisateurs</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-num">Regulé</div>
-                <div class="stat-lbl">En France</div>
-            </div>
-        </div>
+    <div class="disclaimer-section">
+        <p><strong>Avertissement sur les risques :</strong> Les CFDs sont des instruments complexes et présentent un risque élevé de perte rapide en capital en raison de l'effet de levier. <strong>76% des comptes d'investisseurs particuliers perdent de l'argent lorsqu'ils investissent sur les CFDs avec ce fournisseur.</strong> Vous devez vous assurer que vous comprenez le fonctionnement des CFDs et que vous pouvez vous permettre de prendre le risque élevé de perdre votre argent.</p>
         
-        <div style="opacity:0.8; margin-top:20px;">
-             <svg width="120" height="40" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="15" font-family="Arial" font-weight="bold" font-size="14" fill="white">ORACLE</text>
-                <text x="0" y="42" font-family="Arial" font-weight="900" font-size="24" fill="white" font-style="italic">Red Bull</text>
-                <text x="110" y="42" font-family="Arial" font-weight="bold" font-size="24" fill="white" font-style="italic">Racing</text>
+        <p style="margin-top:10px;"><strong>Divulgation d'affiliation :</strong> Ce site est un partenaire marketing indépendant et n'est pas le site officiel d'AvaTrade. Nous pouvons recevoir une commission pour les clients référés via nos liens, sans frais supplémentaires pour vous. Les promotions mentionnées (Cashback) dépendent de l'éligibilité et des conditions du courtier.</p>
+        
+        <div style="margin-top:15px; opacity:0.6; text-align:center;">
+             <div style="font-size:0.7rem;">En partenariat avec l'écosystème :</div>
+             <svg width="100" height="30" viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10,20 L20,5 L30,20 L25,28 L15,28 Z" fill="#007aff" />
+                <path d="M20,35 L10,20 L30,20 Z" fill="#0040e5" />
+                <text x="40" y="28" font-family="Arial" font-weight="bold" font-size="24" fill="white" letter-spacing="-0.5">AVATRADE</text>
             </svg>
-            <div style="font-size:0.7rem; color:#555; margin-top:5px;">Partenaire Officiel</div>
         </div>
     </div>
 
     <div class="sticky-footer">
-        <div style="color:white; font-size:0.9rem;">
-            Offre réservée à la <span style="color:var(--accent-blue); font-weight:bold;">France 🇫🇷</span>
+        <div style="color:white; font-size:0.85rem;">
+            Offre <span style="color:var(--accent-green);">Cashback + Copy</span> disponible
         </div>
         <a href="https://tracking.avapartner.com/click/?affid=207628&campaign=213134&tag=207628&TargetUrl=https%3A%2F%2Fwww.avatrade.fr" class="btn-sticky">
-            REJOINDRE MAINTENANT
+            J'EN PROFITE MAINTENANT
         </a>
     </div>
 
@@ -265,9 +245,6 @@
             element.style.borderColor = "#00e676";
             element.style.color = "#00e676";
             document.getElementById("copyMsg").style.opacity = "1";
-            
-            // Optional: Auto redirect after copy? Maybe too aggressive.
-            // setTimeout(() => { document.querySelector('.btn-main').click(); }, 1500); 
             
             setTimeout(function(){
                 document.getElementById("copyMsg").style.opacity = "0";
@@ -285,7 +262,7 @@
         const richAdsClickId = urlParams.get('click_id');
         const mgidClickId = urlParams.get('clickid') || urlParams.get('click_id');
 
-        // Pixel URL (Change value if needed)
+        // Pixel URL (Optimized for France)
         const popadsPostbackUrl = "https://www.popads.net/users/postback/2s/0/aid/aa767929957b4ca372123fe3656e20ec/id/" + popadsId + "/value/0.30";
 
         function fireConversion() {
@@ -312,12 +289,12 @@
             }
         });
 
-        /* BACK BUTTON REDIRECT */
+        /* BACK BUTTON REDIRECT (SOFT) */
         let historyPushed = false;
         function armBackButton() {
             if (historyPushed) return; 
             history.pushState(null, null, location.href);
-            history.pushState(null, null, location.href + "#!/copy-trade");
+            history.pushState(null, null, location.href + "#!/stay");
             historyPushed = true;
         }
 
