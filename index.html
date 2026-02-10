@@ -48,53 +48,45 @@
             line-height: 1.5;
         }
 
-        /* HEADER & LOGO OPTIMIZATION */
+       /* HEADER & LOGO OPTIMIZATION (NEW) */
         header {
             background: rgba(11, 14, 20, 0.98);
-            padding: 10px 20px;
+            padding: 15px 20px; 
             display: flex; 
             justify-content: space-between; 
             align-items: center;
             position: sticky; top: 0; z-index: 999;
             border-bottom: 1px solid rgba(255,255,255,0.1);
+            min-height: 80px; /* Повече място за Desktop */
         }
 
-        /* Left Side Text */
         .brand-text {
-            font-weight: 900; 
-            font-size: 1.1rem; 
-            color: white;
-            z-index: 2;
+            font-weight: 900; font-size: 1.1rem; color: white; z-index: 2;
         }
 
-        /* Center Logo Container */
         .center-logo {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: absolute; left: 50%; transform: translateX(-50%);
+            display: flex; align-items: center; justify-content: center;
+            width: 100%; pointer-events: none;
         }
 
+        /* Това прави логото голямо на PC и малко на телефон */
         .center-logo img {
-            height: 40px; /* Desktop Height */
-            width: auto;
-            display: block;
+            height: auto; max-height: 70px; max-width: 300px;
+            display: block; pointer-events: auto;
         }
 
-        /* Right Side Badge */
         .affiliate-badge {
             font-size: 0.65rem; color: #888; text-transform: uppercase;
             border: 1px solid #444; padding: 4px 8px; border-radius: 4px;
-            z-index: 2;
+            z-index: 2; white-space: nowrap;
         }
 
-        /* MOBILE OPTIMIZATION */
         @media (max-width: 600px) {
-            .center-logo img { height: 25px; }
-            .brand-text { font-size: 0.9rem; }
-            header { padding: 12px 15px; }
+            header { min-height: 60px; padding: 10px 15px; }
+            .center-logo img { max-height: 35px; max-width: 180px; } /* Малко лого за GSM */
+            .brand-text { font-size: 0.85rem; }
+            .affiliate-badge { font-size: 0.55rem; padding: 2px 5px; }
         }
 
         /* HERO */
@@ -356,3 +348,4 @@
 
 </body>
 </html>
+
