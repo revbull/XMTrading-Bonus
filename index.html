@@ -48,7 +48,7 @@
             line-height: 1.5;
         }
 
-      /* --- HEADER FIXED 33% LAYOUT --- */
+     /* --- HEADER STRICT 3-COLUMN GRID --- */
         header {
             background: rgba(11, 14, 20, 0.98);
             padding: 10px 20px;
@@ -57,44 +57,44 @@
             align-items: center;
             position: sticky; top: 0; z-index: 999;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            min-height: 70px; /* Позволява на хедъра да расте, ако логото е високо */
+            min-height: 70px;
         }
 
-        /* 1. Лявата част (33%) */
-        .brand-wrapper {
-            flex: 1; 
-            width: 33.33%;
+        /* ОБЩ КЛАС ЗА ТРИТЕ КОЛОНИ (За да са равни) */
+        .brand-wrapper, .center-logo, .badge-wrapper {
+            flex: 0 0 33.3333%; /* ТВЪРДО: Не свивай, не разтягай, бъди 1/3 */
+            max-width: 33.3333%; /* Лимит, за да не прелее */
+            box-sizing: border-box;
             display: flex;
-            justify-content: flex-start; 
+            align-items: center;
+        }
+
+        /* 1. Лявата част */
+        .brand-wrapper {
+            justify-content: flex-start; /* Вляво */
         }
         .brand-text {
             font-weight: 900; font-size: 1.1rem; color: white;
             white-space: nowrap;
+            overflow: hidden; text-overflow: ellipsis; /* Ако текстът е дълъг, слага ... */
         }
 
-        /* 2. ЛОГОТО (33%) */
+        /* 2. ЛОГОТО - Взима цялото налично място в своите 33% */
         .center-logo {
-            flex: 1; 
-            width: 33.33%; /* Контейнерът е 1/3 от екрана */
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
+            justify-content: center; /* Центрирано */
         }
 
         .center-logo img {
-            width: 100%;       /* ВАЖНО: Запълва целия 33% контейнер */
-            height: auto;      /* ВАЖНО: Височината се наглася спрямо ширината */
-            max-height: 80px;  /* Предпазна мярка да не стане прекалено високо */
-            object-fit: contain;
+            width: 100%;       /* Заема 100% от своите 33% (т.е. разпъва се) */
+            height: auto;      /* Височината се наглася автоматично */
+            max-height: 60px;  /* Ограничение да не стане твърде високо на големи екрани */
+            object-fit: contain; /* Запазва пропорциите */
             display: block;
         }
 
-        /* 3. Дясната част (33%) */
+        /* 3. Дясната част */
         .badge-wrapper {
-            flex: 1; 
-            width: 33.33%;
-            display: flex;
-            justify-content: flex-end; 
+            justify-content: flex-end; /* Вдясно */
         }
         .affiliate-badge {
             font-size: 0.65rem; color: #888; text-transform: uppercase;
@@ -107,8 +107,8 @@
             .brand-text { font-size: 0.8rem; }
             .affiliate-badge { font-size: 0.55rem; padding: 2px 5px; }
             
-            /* На мобилен може да искаш логото да е малко по-голямо */
-            .center-logo { min-width: 120px; } 
+            /* На мобилен може да искаш логото да вземе повече място за сметка на другите */
+            /* Ако искаш да си остане равно и на мобилен, не пипай нищо тук */
         }
 
         /* HERO */
@@ -396,5 +396,6 @@
 
 </body>
 </html>
+
 
 
