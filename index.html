@@ -27,16 +27,24 @@
             overflow-x: hidden;
         }
 
-        /* --- LUXURY HEADER --- */
+        /* --- LUXURY HEADER WITH SVG LOGO --- */
         header {
-            padding: 20px;
+            padding: 15px 20px; /* Slightly reduced padding for tighter fit */
             background: var(--premium-dark);
             color: white;
             display: flex; justify-content: center; align-items: center;
             box-shadow: 0 4px 20px rgba(10, 25, 48, 0.2);
+            height: 60px; /* Fixed height for stability */
+            box-sizing: border-box;
         }
-        .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -0.5px; }
-        .logo span { color: var(--premium-gold); }
+        
+        /* New Logo Styling */
+        .header-logo {
+            height: 32px;       /* Desired height */
+            width: auto;        /* Auto width to maintain aspect ratio */
+            display: block;
+            max-width: 200px;   /* Safety constraint */
+        }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -47,7 +55,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         
-        /* STYLE FOR THE GOLD TRUST SEAL (VARIANT 1) */
+        /* GOLD TRUST SEAL (VARIANT 1) */
         .gold-trust-seal {
             display: inline-flex;
             align-items: center;
@@ -61,7 +69,6 @@
             overflow: hidden;
         }
 
-        /* The shining effect */
         .gold-trust-seal::after {
             content: '';
             position: absolute;
@@ -93,7 +100,7 @@
 
         .sub-text { font-size: 1.1rem; color: var(--text-gray); line-height: 1.6; max-width: 500px; margin: 0 auto 30px; }
 
-        /* --- PREMIUM STATS BAR --- */
+        /* --- STATS BAR --- */
         .stats-bar {
             display: flex; justify-content: center; gap: 25px; margin-bottom: 10px;
             padding: 20px; background: var(--bg-light); border-radius: 16px;
@@ -102,7 +109,7 @@
         .stat-val { font-weight: 900; font-size: 1.5rem; color: var(--premium-dark); display: block; }
         .stat-lbl { font-size: 0.75rem; color: #888; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
 
-        /* --- TRUST FOOTER --- */
+        /* --- FOOTER --- */
         .trust-section {
             padding: 30px 20px; font-size: 0.7rem; color: #999;
         }
@@ -139,7 +146,7 @@
 <body>
 
     <header>
-        <div class="logo">AVA<span style="color:var(--premium-gold)">SOCIAL</span></div>
+        <img src="Ava_logo.svg" alt="AvaTrade" class="header-logo">
     </header>
 
     <div class="hero">
@@ -197,7 +204,6 @@
     </div>
 
     <script>
-        // Simple history push to prevent immediate back-button exit (Soft Exit Intent)
         try { 
             history.pushState(null, null, location.href); 
             window.onpopstate = function () { 
@@ -208,3 +214,4 @@
 
 </body>
 </html>
+
