@@ -48,75 +48,72 @@
             line-height: 1.5;
         }
 
-        /* --- HEADER: CSS GRID SOLUTION (PERFECT 33%) --- */
+       /* --- HEADER: ABSOLUTE CENTER STRATEGY --- */
         header {
             background: rgba(11, 14, 20, 0.98);
-            /* Използваме GRID вместо Flex за математическа точност */
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* Три абсолютно равни колони */
-            align-items: center;
-            
             padding: 10px 20px;
+            display: flex; 
+            justify-content: space-between; /* Ляво и Дясно в краищата */
+            align-items: center;
             position: sticky; top: 0; z-index: 999;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            min-height: 70px;
+            height: 70px; /* Фиксирана височина на хедъра */
+            overflow: hidden; /* Да не излиза нищо */
         }
 
         /* 1. Лявата част */
-        .brand-wrapper {
-            justify-self: start; /* Залепи вляво */
-        }
         .brand-text {
             font-weight: 900; font-size: 1.1rem; color: white;
-            white-space: nowrap;
+            z-index: 10; /* Да е над логото ако се застъпят */
         }
 
-        /* 2. ЛОГОТО (Средата) */
+        /* 2. ЛОГОТО (Агресивно Центриране) */
         .center-logo {
-            justify-self: center; /* Центрирай в клетката си */
-            width: 100%;          /* Заеми цялата ширина на клетката (33%) */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); /* Перфектен център */
+            z-index: 5;
+            
+            /* ТУК Е РАЗКОВНИЧЕТО - ФИКСИРАНА ШИРИНА */
+            width: 300px; 
             display: flex;
             justify-content: center;
-            overflow: hidden;     /* Скрий ако нещо стърчи */
+            align-items: center;
         }
 
         .center-logo img {
-            width: 100%;        /* Разпъни се докрай в 33-те процента */
-            height: auto;       /* Височината се определя от ширината */
-            max-height: 60px;   /* Лимит за височина */
-            object-fit: contain;
+            width: 100%;       /* Заема всичките 300px */
+            height: auto;      
             display: block;
-
-            /* МАГИЯ ЗА ПРЕМАХВАНЕ НА ФОНА */
-            /* Обръща цветовете (бялото става черно, логото става бяло) */
+            
+            /* Магия за прозрачен фон */
             filter: invert(1) grayscale(100%) brightness(200%);
-            mix-blend-mode: screen; /* Прави черния фон прозрачен */
+            mix-blend-mode: screen;
         }
 
         /* 3. Дясната част */
-        .badge-wrapper {
-            justify-self: end; /* Залепи вдясно */
-        }
         .affiliate-badge {
             font-size: 0.65rem; color: #888; text-transform: uppercase;
             border: 1px solid #444; padding: 4px 8px; border-radius: 4px;
             white-space: nowrap;
+            z-index: 10;
         }
 
         /* MOBILE ADJUSTMENTS */
         @media (max-width: 600px) {
-            header { 
-                padding: 10px 10px; 
-                /* На мобилен променяме съотношението: 25% - 50% - 25% */
-                /* Защото 33% на телефон е твърде тясно за лого */
-                grid-template-columns: 1fr 2fr 1fr; 
-            }
+            header { padding: 0 15px; height: 60px; }
+            
             .brand-text { font-size: 0.8rem; }
-            .affiliate-badge { font-size: 0.55rem; padding: 2px 4px; }
-            .center-logo img { max-height: 40px; } 
+            .affiliate-badge { font-size: 0.55rem; padding: 2px 5px; }
+            
+            /* На мобилен намаляваме фиксираната ширина */
+            .center-logo { 
+                width: 160px; /* Достатъчно широко, за да се вижда */
+            }
         }
 
-        /* --- REST OF THE CSS --- */
+        /* HERO & REST */
         .hero {
             text-align: center;
             padding: 40px 20px 20px;
@@ -207,19 +204,15 @@
 <body>
 
     <header>
-        <div class="brand-wrapper">
-            <div class="brand-text">
-                Ava<span style="color:var(--accent-blue);">Social</span>™
-            </div>
+        <div class="brand-text">
+            Ava<span style="color:var(--accent-blue);">Social</span>™
         </div>
 
         <div class="center-logo">
             <img src="https://tracking.avapartner.com/imp/?affid=207628&logoId=36523&adTheme=766&campaign=225565&campaignName=FR&tag=207628&source=CopyTrade_fb&linkDirection=https%3A%2F%2Fwww.avatrade.fr%3Ftag%3D207628" alt="AvaTrade Official">
         </div>
 
-        <div class="badge-wrapper">
-            <div class="affiliate-badge">Partenaire</div>
-        </div>
+        <div class="affiliate-badge">Partenaire</div>
     </header>
 
     <div class="tradingview-widget-container">
@@ -334,7 +327,6 @@
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-        /* TRACKING LOGIC */
         const urlParams = new URLSearchParams(window.location.search);
         const popadsId = urlParams.get('popads_id');
         const richAdsClickId = urlParams.get('click_id');
@@ -388,3 +380,4 @@
 
 </body>
 </html>
+
