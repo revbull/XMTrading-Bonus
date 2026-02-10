@@ -48,7 +48,7 @@
             line-height: 1.5;
         }
 
-       /* HEADER & LOGO OPTIMIZATION (NEW) */
+       /* HEADER & LOGO OPTIMIZATION */
         header {
             background: rgba(11, 14, 20, 0.98);
             padding: 15px 20px; 
@@ -57,7 +57,7 @@
             align-items: center;
             position: sticky; top: 0; z-index: 999;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            min-height: 80px; /* Повече място за Desktop */
+            min-height: 80px; 
         }
 
         .brand-text {
@@ -70,7 +70,6 @@
             width: 100%; pointer-events: none;
         }
 
-        /* Това прави логото голямо на PC и малко на телефон */
         .center-logo img {
             height: auto; max-height: 70px; max-width: 300px;
             display: block; pointer-events: auto;
@@ -84,7 +83,7 @@
 
         @media (max-width: 600px) {
             header { min-height: 60px; padding: 10px 15px; }
-            .center-logo img { max-height: 35px; max-width: 180px; } /* Малко лого за GSM */
+            .center-logo img { max-height: 35px; max-width: 180px; } 
             .brand-text { font-size: 0.85rem; }
             .affiliate-badge { font-size: 0.55rem; padding: 2px 5px; }
         }
@@ -203,6 +202,28 @@
 
         <div class="affiliate-badge">Partenaire</div>
     </header>
+
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+      "symbols": [
+        { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500" },
+        { "proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100" },
+        { "proName": "FX_IDC:EURUSD", "title": "EUR/USD" },
+        { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
+        { "proName": "BITSTAMP:ETHUSD", "title": "Ethereum" },
+        { "proName": "TVC:GOLD", "title": "Or" },
+        { "proName": "TVC:USOIL", "title": "Pétrole" }
+      ],
+      "showSymbolLogo": true,
+      "colorTheme": "dark",
+      "isTransparent": true,
+      "displayMode": "adaptive",
+      "locale": "fr"
+      }
+      </script>
+    </div>
 
     <div class="hero">
         <h1>
