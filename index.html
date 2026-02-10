@@ -48,16 +48,16 @@
             line-height: 1.5;
         }
 
-       /* --- HEADER FIXED 33% LAYOUT --- */
+      /* --- HEADER FIXED 33% LAYOUT --- */
         header {
             background: rgba(11, 14, 20, 0.98);
             padding: 10px 20px;
             display: flex; 
-            justify-content: space-between; /* Разпределя 3-те елемента */
+            justify-content: space-between; 
             align-items: center;
             position: sticky; top: 0; z-index: 999;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            min-height: 70px;
+            min-height: 70px; /* Позволява на хедъра да расте, ако логото е високо */
         }
 
         /* 1. Лявата част (33%) */
@@ -65,27 +65,28 @@
             flex: 1; 
             width: 33.33%;
             display: flex;
-            justify-content: flex-start; /* Подравняване вляво */
+            justify-content: flex-start; 
         }
         .brand-text {
             font-weight: 900; font-size: 1.1rem; color: white;
             white-space: nowrap;
         }
 
-        /* 2. ЛОГОТО (33%) - Центрирано */
+        /* 2. ЛОГОТО (33%) */
         .center-logo {
             flex: 1; 
-            width: 33.33%;
+            width: 33.33%; /* Контейнерът е 1/3 от екрана */
             display: flex; 
             align-items: center; 
-            justify-content: center; /* Центриране по средата */
+            justify-content: center; 
         }
 
         .center-logo img {
-            height: 40px;      /* Фиксирана височина, както поиска */
-            max-width: 33%;        /* Ширината се наглася спрямо височината */
+            width: 100%;       /* ВАЖНО: Запълва целия 33% контейнер */
+            height: auto;      /* ВАЖНО: Височината се наглася спрямо ширината */
+            max-height: 80px;  /* Предпазна мярка да не стане прекалено високо */
+            object-fit: contain;
             display: block;
-            max-width: 100%;   /* Да не излиза от контейнера на мобилни */
         }
 
         /* 3. Дясната част (33%) */
@@ -93,7 +94,7 @@
             flex: 1; 
             width: 33.33%;
             display: flex;
-            justify-content: flex-end; /* Подравняване вдясно */
+            justify-content: flex-end; 
         }
         .affiliate-badge {
             font-size: 0.65rem; color: #888; text-transform: uppercase;
@@ -102,10 +103,12 @@
         }
 
         @media (max-width: 600px) {
-            header { padding: 10px 10px; min-height: 60px; }
-            .brand-text { font-size: 0.85rem; }
+            header { padding: 5px 10px; }
+            .brand-text { font-size: 0.8rem; }
             .affiliate-badge { font-size: 0.55rem; padding: 2px 5px; }
-            .center-logo img { height: 30px; } /* Малко по-малко на телефон */
+            
+            /* На мобилен може да искаш логото да е малко по-голямо */
+            .center-logo { min-width: 120px; } 
         }
 
         /* HERO */
@@ -393,4 +396,5 @@
 
 </body>
 </html>
+
 
