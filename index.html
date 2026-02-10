@@ -1,383 +1,128 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copy Trading France | Automatisez vos gains</title>
-    <meta name="description" content="Copiez les meilleurs traders automatiquement avec AvaSocial.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://tracking.avapartner.com">
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H72F6JGW3R"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      var trackingParams = {};
-      var urlParams = new URLSearchParams(window.location.search);
-      urlParams.forEach(function(value, key) {
-          trackingParams[key] = value;
-      });
-
-      gtag('config', 'G-H72F6JGW3R', trackingParams);
-    </script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-
+    <title>XM | 2026年2月全球入金贈金活動</title>
     <style>
-        /* --- THEME: PURE COPY TRADING --- */
-        :root {
-            --bg-dark: #0b0e14;
-            --bg-card: #151a25;
-            --accent-blue: #2962ff;
-            --accent-purple: #6200ea;
-            --text-white: #ffffff;
-            --text-gray: #a1aab5;
-        }
-
-        * { box-sizing: border-box; }
-
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-white);
+            font-family: "Microsoft JhengHei", sans-serif;
+            background: #000;
+            color: #fff;
             margin: 0;
-            padding-bottom: 140px;
-            line-height: 1.5;
-        }
-
-       /* --- HEADER: ABSOLUTE CENTER STRATEGY --- */
-        header {
-            background: rgba(11, 14, 20, 0.98);
-            padding: 10px 20px;
-            display: flex; 
-            justify-content: space-between; /* Ляво и Дясно в краищата */
-            align-items: center;
-            position: sticky; top: 0; z-index: 999;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            height: 70px; /* Фиксирана височина на хедъра */
-            overflow: hidden; /* Да не излиза нищо */
-        }
-
-        /* 1. Лявата част */
-        .brand-text {
-            font-weight: 900; font-size: 1.1rem; color: white;
-            z-index: 10; /* Да е над логото ако се застъпят */
-        }
-
-        /* 2. ЛОГОТО (Агресивно Центриране) */
-        .center-logo {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%); /* Перфектен център */
-            z-index: 5;
-            
-            /* ТУК Е РАЗКОВНИЧЕТО - ФИКСИРАНА ШИРИНА */
-            width: 300px; 
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .center-logo img {
-            width: 100%;       /* Заема всичките 300px */
-            height: auto;      
-            display: block;
-            
-            /* Магия за прозрачен фон */
-            filter: invert(1) grayscale(100%) brightness(200%);
-            mix-blend-mode: screen;
-        }
-
-        /* 3. Дясната част */
-        .affiliate-badge {
-            font-size: 0.65rem; color: #888; text-transform: uppercase;
-            border: 1px solid #444; padding: 4px 8px; border-radius: 4px;
-            white-space: nowrap;
-            z-index: 10;
-        }
-
-        /* MOBILE ADJUSTMENTS */
-        @media (max-width: 600px) {
-            header { padding: 0 15px; height: 60px; }
-            
-            .brand-text { font-size: 0.8rem; }
-            .affiliate-badge { font-size: 0.55rem; padding: 2px 5px; }
-            
-            /* На мобилен намаляваме фиксираната ширина */
-            .center-logo { 
-                width: 160px; /* Достатъчно широко, за да се вижда */
-            }
-        }
-
-        /* HERO & REST */
-        .hero {
+            height: 100vh;
             text-align: center;
-            padding: 40px 20px 20px;
-            background: radial-gradient(circle at center, #1a1f35 0%, var(--bg-dark) 90%);
+            overflow: hidden;
         }
-        .hero h1 {
-            font-size: 2.4rem; margin: 0 0 15px 0; line-height: 1.1; font-weight: 900;
+        .container {
+            width: 90%;
+            max-width: 400px;
+            padding: 25px;
+            background: #111;
+            border: 2px solid #f3d03e; /* Златна рамка за акцент */
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(243, 208, 62, 0.2);
+        }
+        .date-header {
+            color: #f3d03e;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
             text-transform: uppercase;
         }
-        .hero p { color: var(--text-gray); font-size: 1.05rem; max-width: 650px; margin: 0 auto 28px; }
-        .highlight-purple { color: var(--accent-purple); text-shadow: 0 0 15px rgba(98, 0, 234, 0.4); }
-
-        .coupon-container {
-            background: rgba(255,255,255,0.05);
-            border: 1px dashed var(--accent-blue);
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .cta-btn {
+            display: block;
+            background: #c00;
+            color: #fff;
             padding: 20px;
-            border-radius: 12px;
-            margin: 0 auto 30px;
-            max-width: 450px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            animation: pulse 2s infinite;
         }
-        .coupon-label { font-size: 0.8rem; color: #aaa; margin-bottom: 8px; text-transform: uppercase; }
-        .coupon-code {
-            font-size: 1.8rem; font-weight: 900; color: white; letter-spacing: 3px;
-            background: #000; padding: 12px 25px; border-radius: 6px; display: inline-block;
-            cursor: pointer; border: 1px solid #333; transition: all 0.2s;
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(192, 0, 0, 0.7); }
+            70% { transform: scale(1.03); box-shadow: 0 0 0 10px rgba(192, 0, 0, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(192, 0, 0, 0); }
         }
-        .coupon-code:hover { border-color: var(--accent-purple); transform: scale(1.02); }
-        .copy-msg {
-            color: var(--accent-blue); font-size: 0.8rem; margin-top: 8px; 
-            font-weight: 700; opacity: 0; transition: opacity 0.3s;
+        .trust-icons {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            color: #777;
         }
-
-        .btn-main {
-            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
-            color: white; padding: 18px 30px; border-radius: 8px;
-            font-weight: 800; text-transform: uppercase; text-decoration: none; font-size: 1.1rem;
-            display: inline-block; box-shadow: 0 0 20px rgba(98, 0, 234, 0.3);
-            transition: transform 0.2s; width: 100%; max-width: 380px;
-        }
-        .btn-main:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(98, 0, 234, 0.5); }
-
-        .steps-section { padding: 30px 20px; max-width: 900px; margin: 0 auto; }
-        .steps-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
-        @media (min-width: 700px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
-
-        .step-card {
-            background: var(--bg-card); padding: 25px; border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.08); text-align: center;
-        }
-        .step-icon { font-size: 2rem; margin-bottom: 10px; display: block; }
-        .step-title { font-weight: 700; color: white; margin-bottom: 5px; }
-        .step-desc { font-size: 0.9rem; color: var(--text-gray); }
-
-        .trust-section { text-align: center; margin-top: 20px; margin-bottom: 20px; }
-
-        .disclaimer-section {
-            background: #050505; padding: 20px; font-size: 0.7rem; color: #777;
-            text-align: justify; border-top: 1px solid #222;
-        }
-
-        .sticky-footer {
-            position: fixed; bottom: 0; left: 0; right: 0;
-            background: rgba(11, 14, 20, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-top: 1px solid var(--accent-blue);
-            display: flex; flex-direction: column; align-items: center; gap: 10px;
+        /* Exit Modal */
+        #exit-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
             z-index: 1000;
+            justify-content: center;
+            align-items: center;
         }
-        .btn-sticky {
-            background: var(--accent-blue); color: white;
-            width: 100%; text-align: center; padding: 14px 0;
-            border-radius: 6px; font-weight: 900; text-decoration: none;
-            font-size: 1rem; text-transform: uppercase;
-            box-shadow: 0 0 15px rgba(41, 98, 255, 0.4);
-            animation: pulse-sticky 2s infinite;
+        .modal-box {
+            background: #fff;
+            color: #000;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 320px;
         }
-        @keyframes pulse-sticky {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
+        .modal-box h2 { color: #c00; margin-top: 0; }
+        .modal-btn {
+            background: #c00;
+            color: #fff;
+            padding: 15px;
+            display: block;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="brand-text">
-            Ava<span style="color:var(--accent-blue);">Social</span>™
-        </div>
+<div class="container">
+    <div class="date-header">2026年2月限定</div>
+    <h1>全球入金贈金活動</h1>
+    <p>立即註冊並獲取您的交易贈金</p>
 
-        <div class="center-logo">
-            <img src="https://tracking.avapartner.com/imp/?affid=207628&logoId=36523&adTheme=766&campaign=225565&campaignName=FR&tag=207628&source=CopyTrade_fb&linkDirection=https%3A%2F%2Fwww.avatrade.fr%3Ftag%3D207628" alt="AvaTrade Official">
-        </div>
+    <a href="https://clicks.pipaffiliates.com/c?c=1168956&amp;l=zh-hant&amp;p=5781" class="cta-btn">立即領取</a>
 
-        <div class="affiliate-badge">Partenaire</div>
-    </header>
-
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-      {
-      "symbols": [
-        { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500" },
-        { "proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100" },
-        { "proName": "FX_IDC:EURUSD", "title": "EUR/USD" },
-        { "proName": "BITSTAMP:BTCUSD", "title": "Bitcoin" },
-        { "proName": "BITSTAMP:ETHUSD", "title": "Ethereum" },
-        { "proName": "TVC:GOLD", "title": "Or" },
-        { "proName": "TVC:USOIL", "title": "Pétrole" }
-      ],
-      "showSymbolLogo": true,
-      "colorTheme": "dark",
-      "isTransparent": true,
-      "displayMode": "adaptive",
-      "locale": "fr"
-      }
-      </script>
+    <div class="trust-icons">
+        高達 $5,000 贈金 | 受監管經紀商 | 快速出金
     </div>
+</div>
 
-    <div class="hero">
-        <h1>
-            COPIER. TRADER.<br>
-            <span class="highlight-purple">RÉPÉTER.</span>
-        </h1>
-        <p>
-            Pourquoi trader seul ? Laissez les experts faire le travail difficile pour vous.<br>
-            Automatisez vos positions dès aujourd'hui avec l'application officielle.
-        </p>
-        
-        <div class="coupon-container">
-            <div class="coupon-label">Code Partenaire (Accès App):</div>
-            <div class="coupon-code" onclick="copyCode(this)">207628</div>
-            <div class="copy-msg" id="copyMsg">✔ CODE COPIÉ !</div>
-            
-            <div style="margin-top:15px; font-size:0.85rem; color:#ccc; text-align:left;">
-                <div style="color:#888;">1. Copiez le code ci-dessus.</div>
-                <div style="color:#888;">2. Collez-le dans "Partner Code" à l'inscription.</div>
-                <div style="color:#888;">3. Connectez l'application AvaSocial.</div>
-            </div>
-        </div>
-
-        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35140&adTheme=778&campaign=225565&campaignName=FR&tag=207628&source=CopyTrade_fb&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favasocial-copy-trade-repeat" class="btn-main">
-            COMMENCER À COPIER ➜
-        </a>
+<div id="exit-modal">
+    <div class="modal-box">
+        <h2>等待！</h2>
+        <p>您的入金獎勵即將過期。現在領取您的 2026年2月 專屬優惠！</p>
+        <a href="https://clicks.pipaffiliates.com/c?c=1168956&amp;l=zh-hant&amp;p=5781" class="modal-btn">領取贈金</a>
     </div>
+</div>
 
-    <div class="trust-section">
-         <div style="opacity:0.9;">
-             <svg width="120" height="40" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
-                <text x="0" y="15" font-family="Arial" font-weight="bold" font-size="14" fill="white">ORACLE</text>
-                <text x="0" y="42" font-family="Arial" font-weight="900" font-size="24" fill="white" font-style="italic">Red Bull</text>
-                <text x="110" y="42" font-family="Arial" font-weight="bold" font-size="24" fill="white" font-style="italic">Racing</text>
-            </svg>
-            <div style="font-size:0.7rem; color:#666; margin-top:5px; text-transform:uppercase; letter-spacing:1px;">Partenaire Officiel</div>
-        </div>
-    </div>
-
-    <div class="steps-section">
-        <div class="steps-grid">
-            <div class="step-card">
-                <span class="step-icon">📝</span>
-                <div class="step-title">1. Inscription</div>
-                <div class="step-desc">Créez votre compte sécurisé. Utilisez le code partenaire pour un suivi correct.</div>
-            </div>
-            <div class="step-card">
-                <span class="step-icon">👥</span>
-                <div class="step-title">2. Sélection</div>
-                <div class="step-desc">Parcourez la liste des meilleurs traders et vérifiez leurs performances.</div>
-            </div>
-            <div class="step-card">
-                <span class="step-icon">🚀</span>
-                <div class="step-title">3. Automatisation</div>
-                <div class="step-desc">Cliquez sur "Copier". Quand ils gagnent, vous gagnez.</div>
-            </div>
-        </div>
-    </div>
-
-    <div class="disclaimer-section">
-        <p><strong>Avertissement sur les risques :</strong> Les CFD sont des instruments complexes et présentent un risque élevé de perte rapide en capital en raison de l'effet de levier. <strong>57 % des comptes d'investisseurs particuliers perdent de l'argent lorsqu'ils investissent sur les CFD avec ce fournisseur.</strong> Vous devez vous assurer que vous comprenez le fonctionnement des CFD et que vous pouvez vous permettre de prendre le risque élevé de perdre votre argent.</p>
-        
-        <p style="margin-top:10px;"><strong>Divulgation d'affiliation :</strong> Ce site est un partenaire marketing indépendant. Nous pouvons recevoir une commission pour les clients référés via nos liens, sans frais supplémentaires pour vous. Ce site n'est pas le site officiel d'AvaTrade.</p>
-    </div>
-
-    <div class="sticky-footer">
-        <div style="color:white; font-size:0.85rem;">
-            Technologie <span style="color:var(--accent-blue); font-weight:bold;">AvaSocial™</span>
-        </div>
-        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36802&adTheme=800&campaign=225565&campaignName=FR&tag=207628&source=CopyTrade_fb&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Fapp-trading-avatrade-v3" class="btn-sticky">
-            LANCER L'APPLICATION
-        </a>
-    </div>
-
-   <script>
-    function copyCode(element) {
-        navigator.clipboard.writeText("207628").then(function() {
-            element.style.borderColor = "#2962ff";
-            element.style.color = "#2962ff";
-            document.getElementById("copyMsg").style.opacity = "1";
-            
-            setTimeout(function(){
-                document.getElementById("copyMsg").style.opacity = "0";
-                element.style.color = "white";
-            }, 3000);
-        }, function(err) {
-            console.error('Could not copy text: ', err);
-        });
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const popadsId = urlParams.get('popads_id');
-        const richAdsClickId = urlParams.get('click_id');
-        const mgidClickId = urlParams.get('clickid') || urlParams.get('click_id');
-        const popadsPostbackUrl = "https://www.popads.net/users/postback/2s/0/aid/aa767929957b4ca372123fe3656e20ec/id/" + popadsId + "/value/0.30";
-
-        function fireConversion() {
-            if (popadsId) {
-                if (navigator.sendBeacon) { navigator.sendBeacon(popadsPostbackUrl); } 
-                else { new Image().src = popadsPostbackUrl; }
-            }
-        }
-
-        const links = document.querySelectorAll('a');
-        links.forEach(link => {
-            if (true) { 
-                let currentHref = link.href;
-                let separator = currentHref.includes('?') ? '&' : '?';
-                
-                if (popadsId) link.href = currentHref + separator + 'affsub1=' + popadsId;
-                else if (richAdsClickId) link.href = currentHref + separator + 'affsub1=' + richAdsClickId;
-                else if (mgidClickId) link.href = currentHref + separator + 'affsub1=' + mgidClickId;
-
-                link.addEventListener('click', function() {
-                    fireConversion();
-                    if (typeof gtag === 'function') gtag('event', 'AvaFranceClick', { 'event_category': 'conversion' });
-                });
-            }
-        });
-
-        let historyPushed = false;
-        function armBackButton() {
-            if (historyPushed) return; 
-            history.pushState(null, null, location.href);
-            history.pushState(null, null, location.href + "#!/copy");
-            historyPushed = true;
-        }
-
-        document.body.addEventListener('click', armBackButton, { once: true });
-        document.body.addEventListener('touchstart', armBackButton, { once: true });
-        
-        window.addEventListener("popstate", function() {
-            if (historyPushed) {
-                let fallbackUrl = "https://tracking.avapartner.com/click/?affid=207628&campaign=213134&tag=207628&TargetUrl=https%3A%2F%2Fwww.avatrade.fr";
-                if(popadsId) fallbackUrl += "&affsub1=" + popadsId;
-                window.location.replace(fallbackUrl);
-            }
-        });
+<script>
+    // Exit intent desktop
+    document.addEventListener("mouseleave", function(e) {
+        if (e.clientY < 0) document.getElementById("exit-modal").style.display = "flex";
     });
-   </script>
+    // Back button mobile
+    window.addEventListener('popstate', function () {
+        document.getElementById("exit-modal").style.display = "flex";
+    });
+    history.pushState(null, null, location.href);
+</script>
 
 </body>
 </html>
-
