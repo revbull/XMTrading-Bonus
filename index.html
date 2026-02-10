@@ -48,44 +48,75 @@
             line-height: 1.5;
         }
 
-       /* HEADER & LOGO OPTIMIZATION */
+       /* --- HEADER & LOGO MAGIC BLEND --- */
         header {
             background: rgba(11, 14, 20, 0.98);
-            padding: 15px 20px; 
+            padding: 10px 0; /* Max width usage */
             display: flex; 
             justify-content: space-between; 
             align-items: center;
             position: sticky; top: 0; z-index: 999;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            min-height: 80px; 
+            min-height: 70px;
         }
 
+        /* 1. Лявата част (33%) */
+        .brand-wrapper {
+            flex: 1; /* Заема 33% */
+            display: flex;
+            justify-content: flex-start;
+            padding-left: 20px;
+        }
         .brand-text {
-            font-weight: 900; font-size: 1.1rem; color: white; z-index: 2;
+            font-weight: 900; font-size: 1.1rem; color: white;
         }
 
+        /* 2. ЛОГОТО (33%) - FIX WIDTH & BACKGROUND */
         .center-logo {
-            position: absolute; left: 50%; transform: translateX(-50%);
-            display: flex; align-items: center; justify-content: center;
-            width: 100%; pointer-events: none;
+            flex: 1; /* Заема точно 33% (1/3) от екрана */
+            max-width: 33%;
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            position: relative;
         }
 
         .center-logo img {
-            height: auto; max-height: 70px; max-width: 300px;
-            display: block; pointer-events: auto;
+            width: 100%;       /* Заема цялата широчина на контейнера */
+            height: auto;      /* Височината се наглася автоматично */
+            display: block;
+            
+            /* --- ТРИК ЗА ПРЕМАХВАНЕ НА ФОНА --- */
+            /* 1. Обръщаме цветовете (бялото става черно) */
+            filter: invert(1) hue-rotate(180deg) contrast(1.2);
+            /* 2. Казваме на черното да стане прозрачно */
+            mix-blend-mode: screen; 
+            
+            /* Опционално: леко затъмняване, за да не "свети" прекалено */
+            opacity: 0.9;
         }
 
+        /* 3. Дясната част (33%) */
+        .badge-wrapper {
+            flex: 1; /* Заема 33% */
+            display: flex;
+            justify-content: flex-end;
+            padding-right: 20px;
+        }
         .affiliate-badge {
             font-size: 0.65rem; color: #888; text-transform: uppercase;
             border: 1px solid #444; padding: 4px 8px; border-radius: 4px;
-            z-index: 2; white-space: nowrap;
+            white-space: nowrap;
         }
 
         @media (max-width: 600px) {
-            header { min-height: 60px; padding: 10px 15px; }
-            .center-logo img { max-height: 35px; max-width: 180px; } 
-            .brand-text { font-size: 0.85rem; }
+            header { min-height: 60px; }
+            .brand-text { font-size: 0.8rem; }
             .affiliate-badge { font-size: 0.55rem; padding: 2px 5px; }
+            
+            /* На мобилен логото остава широко, но може би трябва лек padding */
+            .center-logo { max-width: 40%; flex: 0 0 40%; }
+            .brand-wrapper, .badge-wrapper { flex: 0 0 30%; } /* Преразпределение за мобилни */
         }
 
         /* HERO */
@@ -192,15 +223,19 @@
 <body>
 
     <header>
-        <div class="brand-text">
-            Ava<span style="color:var(--accent-blue);">Social</span>™
+        <div class="brand-wrapper">
+            <div class="brand-text">
+                Ava<span style="color:var(--accent-blue);">Social</span>™
+            </div>
         </div>
 
         <div class="center-logo">
             <img src="https://tracking.avapartner.com/imp/?affid=207628&logoId=36523&adTheme=766&campaign=225565&campaignName=FR&tag=207628&source=CopyTrade_fb&linkDirection=https%3A%2F%2Fwww.avatrade.fr%3Ftag%3D207628" alt="AvaTrade Official">
         </div>
 
-        <div class="affiliate-badge">Partenaire</div>
+        <div class="badge-wrapper">
+            <div class="affiliate-badge">Partenaire</div>
+        </div>
     </header>
 
     <div class="tradingview-widget-container">
