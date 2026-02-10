@@ -30,13 +30,13 @@
         /* --- LUXURY HEADER --- */
         header {
             padding: 20px;
-            background: var(--premium-dark); /* Dark background for contrast */
+            background: var(--premium-dark);
             color: white;
             display: flex; justify-content: center; align-items: center;
             box-shadow: 0 4px 20px rgba(10, 25, 48, 0.2);
         }
         .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -0.5px; }
-        .logo span { color: var(--premium-gold); } /* Gold accent */
+        .logo span { color: var(--premium-gold); }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -47,31 +47,49 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         
-        /* Gold Badge */
-        .badge-gold {
-            background: var(--premium-gold-grad);
-            color: var(--premium-dark);
-            padding: 8px 16px; border-radius: 30px;
-            font-size: 0.75rem; font-weight: 800; text-transform: uppercase;
-            display: inline-block; margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        /* STYLE FOR THE GOLD TRUST SEAL (VARIANT 1) */
+        .gold-trust-seal {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(145deg, #ffffff, #f9f9f9);
+            border: 2px solid #D4AF37; /* Solid gold border */
+            border-radius: 50px;
+            padding: 6px 16px 6px 6px; 
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.25), inset 0 2px 5px white;
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
         }
+
+        /* The shining effect */
+        .gold-trust-seal::after {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+            transform: rotate(30deg);
+            animation: shimmer 3s infinite linear;
+        }
+        @keyframes shimmer { from {transform: translateX(-100%) rotate(30deg);} to {transform: translateX(100%) rotate(30deg);} }
+
+        .seal-icon-box {
+            width: 32px; height: 32px;
+            background: linear-gradient(135deg, #D4AF37, #F2C94C);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin-right: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+        .seal-text-box { text-align: left; z-index: 2; }
+        .seal-title { color: var(--premium-dark); font-weight: 900; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.5px; line-height: 1; margin-bottom: 2px; }
+        .seal-sub { color: #D4AF37; font-weight: 700; font-size: 0.65rem; text-transform: uppercase; }
 
         h1 {
             font-size: 2.4rem; font-weight: 900; margin: 0 0 15px;
             line-height: 1.1; color: var(--premium-dark);
         }
         h1 span { color: var(--blue-accent); }
-
-        /* Trust Badge (ADGM) High Up */
-        .reg-highlight {
-            display: inline-flex; align-items: center; gap: 8px;
-            border: 2px solid var(--premium-gold); /* Gold border */
-            padding: 8px 15px; border-radius: 12px;
-            font-size: 0.85rem; font-weight: 700; color: var(--premium-dark);
-            margin-bottom: 25px; background: #fff;
-        }
-        .reg-highlight span { font-size: 1.2rem; }
 
         .sub-text { font-size: 1.1rem; color: var(--text-gray); line-height: 1.6; max-width: 500px; margin: 0 auto 30px; }
 
@@ -84,7 +102,7 @@
         .stat-val { font-weight: 900; font-size: 1.5rem; color: var(--premium-dark); display: block; }
         .stat-lbl { font-size: 0.75rem; color: #888; text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
 
-        /* --- FEATURES & TRUST FOOTER --- */
+        /* --- TRUST FOOTER --- */
         .trust-section {
             padding: 30px 20px; font-size: 0.7rem; color: #999;
         }
@@ -92,26 +110,24 @@
         .f-item { display: flex; align-items: center; margin-bottom: 12px; font-weight: 600; color: var(--premium-dark); font-size: 1rem; }
         .check-gold { color: var(--premium-gold); margin-right: 10px; font-size: 1.2rem; }
 
-        /* DISCLAIMER (The Correction) */
         .disclaimer-box {
             background: #eef1f5; padding: 15px; border-radius: 8px;
             text-align: left; margin-bottom: 20px; font-size: 0.65rem; line-height: 1.4; color: #777;
         }
 
-        /* --- LUXURY STICKY BUTTON --- */
+        /* --- STICKY BUTTON --- */
         .sticky-cta {
             position: fixed; bottom: 0; left: 0; right: 0;
-            background: white; padding: 15px 20px 25px; /* More padding bottom for modern phones */
+            background: white; padding: 15px 20px 25px;
             box-shadow: 0 -10px 30px rgba(0,0,0,0.1); z-index: 100;
             border-top: 1px solid #eee;
         }
         .btn-main {
-            /* Gradient Blue Button with Gold Shadow glow */
             background: linear-gradient(135deg, #007aff, #005ecb);
             color: white; text-decoration: none; font-weight: 900;
             font-size: 1.2rem; padding: 18px; border-radius: 14px;
             text-transform: uppercase; display: block;
-            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.4), 0 0 0 2px rgba(212, 175, 55, 0.3); /* Subtle gold ring */
+            box-shadow: 0 8px 25px rgba(0, 122, 255, 0.4), 0 0 0 2px rgba(212, 175, 55, 0.3);
             transition: transform 0.1s; letter-spacing: 0.5px;
         }
         .btn-main:active { transform: scale(0.98); }
@@ -127,12 +143,20 @@
     </header>
 
     <div class="hero">
-        <span class="badge-gold">Exclusive Opportunity 🇦🇪</span>
-        <h1>Access Elite<br><span>UAE Traders.</span></h1>
-
-        <div class="reg-highlight">
-            <span>🏛️</span> Regulated by <strong>ADGM</strong> (Abu Dhabi)
+        
+        <div class="gold-trust-seal">
+            <div class="seal-icon-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+            </div>
+            <div class="seal-text-box">
+                <div class="seal-title">ADGM Regulated</div>
+                <div class="seal-sub">Licensed in Abu Dhabi</div>
+            </div>
         </div>
+
+        <h1>Access Elite<br><span>UAE Traders.</span></h1>
 
         <p class="sub-text">
             Don't just watch the market. Automatically copy the top-performing investors in the Emirates with one click.
@@ -166,15 +190,20 @@
     </div>
 
     <div class="sticky-cta">
-        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35132&campaign=225888&campaignName=UAE_Luxury&affsub1=[WEBSITEID]" class="btn-main">
+        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35105&adTheme=776&campaign=225888&campaignName=UAE&tag=207628&source=Expert_Traders&TargetUrl=https%3A%2F%2Flp.avatrade.com%2Favasocial-lp1-v2&affsub1=[WEBSITEID]" class="btn-main">
             START COPYING NOW ➜
         </a>
         <div class="btn-sub">⚡ No deposit required to <span>view traders</span></div>
     </div>
 
     <script>
-        // Soft Back-button capture (Optional)
-        try { history.pushState(null, null, location.href); window.onpopstate = function () { history.go(1); }; } catch(e){}
+        // Simple history push to prevent immediate back-button exit (Soft Exit Intent)
+        try { 
+            history.pushState(null, null, location.href); 
+            window.onpopstate = function () { 
+                history.go(1); 
+            }; 
+        } catch(e){}
     </script>
 
 </body>
