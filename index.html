@@ -31,8 +31,8 @@
         :root {
             --bg-dark: #0b0e14;
             --bg-card: #151a25;
-            --accent-blue: #2962ff; /* Tech/Trust */
-            --accent-purple: #6200ea; /* Social/App */
+            --accent-blue: #2962ff;
+            --accent-purple: #6200ea;
             --text-white: #ffffff;
             --text-gray: #a1aab5;
         }
@@ -48,17 +48,53 @@
             line-height: 1.5;
         }
 
-        /* HEADER */
+        /* HEADER & LOGO OPTIMIZATION */
         header {
             background: rgba(11, 14, 20, 0.98);
-            padding: 15px 20px;
-            display: flex; justify-content: space-between; align-items: center;
+            padding: 10px 20px;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
             position: sticky; top: 0; z-index: 999;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
+
+        /* Left Side Text */
+        .brand-text {
+            font-weight: 900; 
+            font-size: 1.1rem; 
+            color: white;
+            z-index: 2;
+        }
+
+        /* Center Logo Container */
+        .center-logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .center-logo img {
+            height: 40px; /* Desktop Height */
+            width: auto;
+            display: block;
+        }
+
+        /* Right Side Badge */
         .affiliate-badge {
             font-size: 0.65rem; color: #888; text-transform: uppercase;
             border: 1px solid #444; padding: 4px 8px; border-radius: 4px;
+            z-index: 2;
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 600px) {
+            .center-logo img { height: 25px; }
+            .brand-text { font-size: 0.9rem; }
+            header { padding: 12px 15px; }
         }
 
         /* HERO */
@@ -73,10 +109,9 @@
         }
         .hero p { color: var(--text-gray); font-size: 1.05rem; max-width: 650px; margin: 0 auto 28px; }
         
-        .highlight-blue { color: var(--accent-blue); text-shadow: 0 0 15px rgba(41, 98, 255, 0.4); }
         .highlight-purple { color: var(--accent-purple); text-shadow: 0 0 15px rgba(98, 0, 234, 0.4); }
 
-        /* COUPON BOX (The Hook) */
+        /* COUPON BOX */
         .coupon-container {
             background: rgba(255,255,255,0.05);
             border: 1px dashed var(--accent-blue);
@@ -129,13 +164,11 @@
         .step-desc { font-size: 0.9rem; color: var(--text-gray); }
 
         /* RED BULL TRUST */
-        .trust-section {
-            text-align: center; margin-top: 20px; margin-bottom: 20px;
-        }
+        .trust-section { text-align: center; margin-top: 20px; margin-bottom: 20px; }
 
         /* DISCLAIMER FOOTER */
         .disclaimer-section {
-            background: #050505; padding: 20px; font-size: 0.7rem; color: #555;
+            background: #050505; padding: 20px; font-size: 0.7rem; color: #777;
             text-align: justify; border-top: 1px solid #222;
         }
 
@@ -168,10 +201,15 @@
 <body>
 
     <header>
-        <div style="font-weight:900; font-size:1.1rem; color:white;">
+        <div class="brand-text">
             Ava<span style="color:var(--accent-blue);">Social</span>™
         </div>
-        <div class="affiliate-badge">Partenaire Marketing</div>
+
+        <div class="center-logo">
+            <img src="https://tracking.avapartner.com/imp/?affid=207628&logoId=36523&adTheme=766&campaign=225565&campaignName=FR&tag=207628&source=CopyTrade_fb&linkDirection=https%3A%2F%2Fwww.avatrade.fr%3Ftag%3D207628" alt="AvaTrade Official">
+        </div>
+
+        <div class="affiliate-badge">Partenaire</div>
     </header>
 
     <div class="hero">
@@ -196,7 +234,7 @@
             </div>
         </div>
 
-        <a href="https://tracking.avapartner.com/click/?affid=207628&campaign=213134&tag=207628&TargetUrl=https%3A%2F%2Fwww.avatrade.fr" class="btn-main">
+        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=35140&adTheme=778&campaign=225565&campaignName=FR&tag=207628&source=CopyTrade_fb&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Favasocial-copy-trade-repeat" class="btn-main">
             COMMENCER À COPIER ➜
         </a>
     </div>
@@ -233,7 +271,7 @@
     </div>
 
     <div class="disclaimer-section">
-        <p><strong>Avertissement sur les risques :</strong> Les CFDs sont des instruments complexes et présentent un risque élevé de perte rapide en capital en raison de l'effet de levier. <strong>76% des comptes d'investisseurs particuliers perdent de l'argent lorsqu'ils investissent sur les CFDs avec ce fournisseur.</strong> Vous devez vous assurer que vous comprenez le fonctionnement des CFDs et que vous pouvez vous permettre de prendre le risque élevé de perdre votre argent.</p>
+        <p><strong>Avertissement sur les risques :</strong> Les CFD sont des instruments complexes et présentent un risque élevé de perte rapide en capital en raison de l'effet de levier. <strong>57 % des comptes d'investisseurs particuliers perdent de l'argent lorsqu'ils investissent sur les CFD avec ce fournisseur.</strong> Vous devez vous assurer que vous comprenez le fonctionnement des CFD et que vous pouvez vous permettre de prendre le risque élevé de perdre votre argent.</p>
         
         <p style="margin-top:10px;"><strong>Divulgation d'affiliation :</strong> Ce site est un partenaire marketing indépendant. Nous pouvons recevoir une commission pour les clients référés via nos liens, sans frais supplémentaires pour vous. Ce site n'est pas le site officiel d'AvaTrade.</p>
     </div>
@@ -242,7 +280,7 @@
         <div style="color:white; font-size:0.85rem;">
             Technologie <span style="color:var(--accent-blue); font-weight:bold;">AvaSocial™</span>
         </div>
-        <a href="https://tracking.avapartner.com/click/?affid=207628&campaign=213134&tag=207628&TargetUrl=https%3A%2F%2Fwww.avatrade.fr" class="btn-sticky">
+        <a href="https://tracking.avapartner.com/click/?affid=207628&lpId=36802&adTheme=800&campaign=225565&campaignName=FR&tag=207628&source=CopyTrade_fb&TargetUrl=https%3A%2F%2Flp.avatrade.fr%2Fapp-trading-avatrade-v3" class="btn-sticky">
             LANCER L'APPLICATION
         </a>
     </div>
@@ -269,8 +307,6 @@
         const popadsId = urlParams.get('popads_id');
         const richAdsClickId = urlParams.get('click_id');
         const mgidClickId = urlParams.get('clickid') || urlParams.get('click_id');
-
-        // Pixel URL (Optimized for France)
         const popadsPostbackUrl = "https://www.popads.net/users/postback/2s/0/aid/aa767929957b4ca372123fe3656e20ec/id/" + popadsId + "/value/0.30";
 
         function fireConversion() {
@@ -297,7 +333,6 @@
             }
         });
 
-        /* BACK BUTTON REDIRECT (SOFT) */
         let historyPushed = false;
         function armBackButton() {
             if (historyPushed) return; 
