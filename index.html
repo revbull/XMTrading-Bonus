@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
     <style>
-        /* --- THEME: PURE COPY TRADING (Blue/Purple Tech) --- */
+        /* --- THEME: PURE COPY TRADING --- */
         :root {
             --bg-dark: #0b0e14;
             --bg-card: #151a25;
@@ -48,53 +48,54 @@
             line-height: 1.5;
         }
 
-     /* --- HEADER STRICT 3-COLUMN GRID --- */
+        /* --- HEADER: CSS GRID SOLUTION (PERFECT 33%) --- */
         header {
             background: rgba(11, 14, 20, 0.98);
-            padding: 10px 20px;
-            display: flex; 
-            justify-content: space-between; 
+            /* Използваме GRID вместо Flex за математическа точност */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Три абсолютно равни колони */
             align-items: center;
+            
+            padding: 10px 20px;
             position: sticky; top: 0; z-index: 999;
             border-bottom: 1px solid rgba(255,255,255,0.1);
             min-height: 70px;
         }
 
-        /* ОБЩ КЛАС ЗА ТРИТЕ КОЛОНИ (За да са равни) */
-        .brand-wrapper, .center-logo, .badge-wrapper {
-            flex: 0 0 33.3333%; /* ТВЪРДО: Не свивай, не разтягай, бъди 1/3 */
-            max-width: 33.3333%; /* Лимит, за да не прелее */
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-        }
-
         /* 1. Лявата част */
         .brand-wrapper {
-            justify-content: flex-start; /* Вляво */
+            justify-self: start; /* Залепи вляво */
         }
         .brand-text {
             font-weight: 900; font-size: 1.1rem; color: white;
             white-space: nowrap;
-            overflow: hidden; text-overflow: ellipsis; /* Ако текстът е дълъг, слага ... */
         }
 
-        /* 2. ЛОГОТО - Взима цялото налично място в своите 33% */
+        /* 2. ЛОГОТО (Средата) */
         .center-logo {
-            justify-content: center; /* Центрирано */
+            justify-self: center; /* Центрирай в клетката си */
+            width: 100%;          /* Заеми цялата ширина на клетката (33%) */
+            display: flex;
+            justify-content: center;
+            overflow: hidden;     /* Скрий ако нещо стърчи */
         }
 
         .center-logo img {
-            width: 100%;       /* Заема 100% от своите 33% (т.е. разпъва се) */
-            height: auto;      /* Височината се наглася автоматично */
-            max-height: 60px;  /* Ограничение да не стане твърде високо на големи екрани */
-            object-fit: contain; /* Запазва пропорциите */
+            width: 100%;        /* Разпъни се докрай в 33-те процента */
+            height: auto;       /* Височината се определя от ширината */
+            max-height: 60px;   /* Лимит за височина */
+            object-fit: contain;
             display: block;
+
+            /* МАГИЯ ЗА ПРЕМАХВАНЕ НА ФОНА */
+            /* Обръща цветовете (бялото става черно, логото става бяло) */
+            filter: invert(1) grayscale(100%) brightness(200%);
+            mix-blend-mode: screen; /* Прави черния фон прозрачен */
         }
 
         /* 3. Дясната част */
         .badge-wrapper {
-            justify-content: flex-end; /* Вдясно */
+            justify-self: end; /* Залепи вдясно */
         }
         .affiliate-badge {
             font-size: 0.65rem; color: #888; text-transform: uppercase;
@@ -102,16 +103,20 @@
             white-space: nowrap;
         }
 
+        /* MOBILE ADJUSTMENTS */
         @media (max-width: 600px) {
-            header { padding: 5px 10px; }
+            header { 
+                padding: 10px 10px; 
+                /* На мобилен променяме съотношението: 25% - 50% - 25% */
+                /* Защото 33% на телефон е твърде тясно за лого */
+                grid-template-columns: 1fr 2fr 1fr; 
+            }
             .brand-text { font-size: 0.8rem; }
-            .affiliate-badge { font-size: 0.55rem; padding: 2px 5px; }
-            
-            /* На мобилен може да искаш логото да вземе повече място за сметка на другите */
-            /* Ако искаш да си остане равно и на мобилен, не пипай нищо тук */
+            .affiliate-badge { font-size: 0.55rem; padding: 2px 4px; }
+            .center-logo img { max-height: 40px; } 
         }
 
-        /* HERO */
+        /* --- REST OF THE CSS --- */
         .hero {
             text-align: center;
             padding: 40px 20px 20px;
@@ -122,10 +127,8 @@
             text-transform: uppercase;
         }
         .hero p { color: var(--text-gray); font-size: 1.05rem; max-width: 650px; margin: 0 auto 28px; }
-        
         .highlight-purple { color: var(--accent-purple); text-shadow: 0 0 15px rgba(98, 0, 234, 0.4); }
 
-        /* COUPON BOX */
         .coupon-container {
             background: rgba(255,255,255,0.05);
             border: 1px dashed var(--accent-blue);
@@ -137,22 +140,18 @@
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .coupon-label {
-            font-size: 0.8rem; color: #aaa; margin-bottom: 8px; text-transform: uppercase;
-        }
+        .coupon-label { font-size: 0.8rem; color: #aaa; margin-bottom: 8px; text-transform: uppercase; }
         .coupon-code {
             font-size: 1.8rem; font-weight: 900; color: white; letter-spacing: 3px;
             background: #000; padding: 12px 25px; border-radius: 6px; display: inline-block;
             cursor: pointer; border: 1px solid #333; transition: all 0.2s;
         }
         .coupon-code:hover { border-color: var(--accent-purple); transform: scale(1.02); }
-        
         .copy-msg {
             color: var(--accent-blue); font-size: 0.8rem; margin-top: 8px; 
             font-weight: 700; opacity: 0; transition: opacity 0.3s;
         }
 
-        /* BUTTONS */
         .btn-main {
             background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
             color: white; padding: 18px 30px; border-radius: 8px;
@@ -162,11 +161,8 @@
         }
         .btn-main:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(98, 0, 234, 0.5); }
 
-        /* STEPS GRID */
         .steps-section { padding: 30px 20px; max-width: 900px; margin: 0 auto; }
-        .steps-grid {
-            display: grid; grid-template-columns: 1fr; gap: 15px;
-        }
+        .steps-grid { display: grid; grid-template-columns: 1fr; gap: 15px; }
         @media (min-width: 700px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
 
         .step-card {
@@ -177,16 +173,13 @@
         .step-title { font-weight: 700; color: white; margin-bottom: 5px; }
         .step-desc { font-size: 0.9rem; color: var(--text-gray); }
 
-        /* RED BULL TRUST */
         .trust-section { text-align: center; margin-top: 20px; margin-bottom: 20px; }
 
-        /* DISCLAIMER FOOTER */
         .disclaimer-section {
             background: #050505; padding: 20px; font-size: 0.7rem; color: #777;
             text-align: justify; border-top: 1px solid #222;
         }
 
-        /* STICKY FOOTER */
         .sticky-footer {
             position: fixed; bottom: 0; left: 0; right: 0;
             background: rgba(11, 14, 20, 0.95);
@@ -209,7 +202,6 @@
             50% { transform: scale(1.02); }
             100% { transform: scale(1); }
         }
-
     </style>
 </head>
 <body>
@@ -396,6 +388,3 @@
 
 </body>
 </html>
-
-
-
