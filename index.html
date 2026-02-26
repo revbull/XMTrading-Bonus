@@ -72,13 +72,13 @@
             max-width: 350px;
             text-decoration: none;
             color: inherit;
-            perspective: 1000px; /* Създава 3D пространството */
+            perspective: 1000px;
         }
         
         .card { 
             position: relative;
             width: 100%;
-            height: 190px;
+            height: 200px;
             transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
             transform-style: preserve-3d;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
@@ -86,7 +86,7 @@
         }
         
         .card-link:hover .card {
-            transform: rotateY(180deg); /* Обръща картата при hover */
+            transform: rotateY(180deg);
         }
         
         .card-front, .card-back {
@@ -94,7 +94,7 @@
             width: 100%;
             height: 100%;
             -webkit-backface-visibility: hidden;
-            backface-visibility: hidden; /* Скрива гърба, когато не е обърнат */
+            backface-visibility: hidden;
             border-radius: 16px;
             background: var(--bg-card);
             display: flex;
@@ -106,66 +106,62 @@
         }
         
         .card-back {
-            transform: rotateY(180deg); /* Завърта гърба на 180 градуса първоначално */
+            transform: rotateY(180deg);
             background: #11141a; 
         }
 
         .fxgt-border { border-top: 5px solid var(--fxgt); }
         .xm-border { border-top: 5px solid var(--xm); }
         
-        .card-front h2 { font-size: 2rem; margin-bottom: 10px; }
-        .card-front p { font-size: 1.1rem; font-weight: 700; }
+        .card-front h2 { font-size: 2.2rem; margin-bottom: 10px; }
+        .card-front p { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; }
         
-        /* Стилизирани лога за гърба */
-        .logo-placeholder { font-size: 2.3rem; font-weight: 900; margin-bottom: 15px; letter-spacing: 1px; }
+        /* Logos for the back */
+        .logo-placeholder { font-size: 2.3rem; font-weight: 900; margin-bottom: 20px; letter-spacing: 1px; }
         .visit-btn {
             font-size: 1rem;
             font-weight: 700;
             color: white;
             background: rgba(255, 255, 255, 0.1);
-            padding: 8px 24px;
+            padding: 10px 28px;
             border-radius: 30px;
             transition: background 0.3s, transform 0.2s;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         .card-link:hover .visit-btn { background: rgba(255, 255, 255, 0.25); transform: scale(1.05); }
 
-        .vs { font-size: 2.5rem; color: var(--text-muted); font-weight: 900; font-style: italic; }
+        .vs { font-size: 2.5rem; color: var(--text-muted); font-weight: 900; font-style: italic; margin: 0 10px; }
         /* ------------------------- */
 
         /* Comparison Table */
         .table-wrapper { width: 100%; overflow-x: auto; margin: 50px 0; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
         table { width: 100%; border-collapse: collapse; background: var(--bg-card); min-width: 600px; }
-        th, td { padding: 16px; text-align: center; border-bottom: 1px solid #2d3748; }
+        th, td { padding: 18px 15px; text-align: center; border-bottom: 1px solid #2d3748; }
         th { background: #252a36; color: white; font-weight: 700; font-size: 1.1rem; }
-        td:first-child { text-align: left; font-weight: 500; color: #cbd5e1; }
+        td:first-child { text-align: left; font-weight: 700; color: #e2e8f0; }
         .win { color: var(--win); font-weight: 900; }
         .tie { color: #f59e0b; font-weight: 700; }
+        .highlight-text { color: var(--fxgt); font-weight: bold; }
+        .xm-text { color: var(--xm); font-weight: bold; }
 
         /* CTA Button */
         .btn-wrapper { text-align: center; margin: 40px 0; }
         .btn-fxgt { 
             background: linear-gradient(135deg, var(--fxgt), var(--fxgt-dark)); 
-            color: #fff; font-size: 1.25rem; font-weight: 900; padding: 18px 40px; border-radius: 50px; 
-            text-decoration: none; display: inline-block; box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4); 
+            color: #000; font-size: 1.3rem; font-weight: 900; padding: 20px 45px; border-radius: 50px; 
+            text-decoration: none; display: inline-block; box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3); 
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        .btn-fxgt:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0, 212, 255, 0.6); }
+        .btn-fxgt:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 212, 255, 0.5); }
 
         /* Reviews */
         .reviews { margin: 60px 0; }
         .section-title { text-align: center; margin-bottom: 40px; font-size: 1.8rem; color: white; }
         .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .review { padding: 25px; background: var(--bg-card); border-top: 4px solid var(--fxgt); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .review.xm-review { border-top: 4px solid var(--xm); }
         .review p.quote { font-size: 1.05rem; font-style: italic; margin-bottom: 15px; }
         .review p.author { color: var(--text-muted); font-size: 0.85rem; text-align: right; }
-
-        /* FAQ */
-        .faq { margin: 60px 0; }
-        .faq-item { background: var(--bg-card); padding: 20px 25px; border-radius: 10px; margin-bottom: 15px; }
-        .faq h3 { font-size: 1.2rem; color: var(--fxgt); margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
-        .faq h3::before { content: 'Q.'; color: white; font-weight: 900; }
-        .faq p { color: var(--text-main); }
 
         /* Footer / Risk */
         .risk { font-size: 0.85rem; color: var(--text-muted); text-align: center; padding: 40px 20px 80px; background: #000; border-top: 1px solid #222; }
@@ -179,7 +175,7 @@
 <body>
 
     <div class="promo">
-        🔥 FXGT vs XMTrading – 日本人トレーダーに本当に最適なのはどっち？徹底比較 🔥
+        🔥 FXGT vs XMTrading – 2026年最新スペックで徹底比較！ 🔥
     </div>
 
     <section class="hero">
@@ -192,10 +188,10 @@
                     <div class="card">
                         <div class="card-front fxgt-border">
                             <h2 style="color:var(--fxgt);">FXGT</h2>
-                            <p>仮想通貨CFD ＆<br>高額ボーナス特化</p>
+                            <p>最大レバ 1:5000<br>新規登録ボーナスあり</p>
                         </div>
                         <div class="card-back fxgt-border">
-                            <div class="logo-placeholder" style="color:var(--fxgt);">FXGT.com</div>
+                            <div class="logo-placeholder" style="color:var(--fxgt);">FXGT</div>
                             <div class="visit-btn">公式サイトへ ➜</div>
                         </div>
                     </div>
@@ -207,7 +203,7 @@
                     <div class="card">
                         <div class="card-front xm-border">
                             <h2 style="color:var(--xm);">XMTrading</h2>
-                            <p>日本人シェアNo.1 ＆<br>圧倒的な信頼性</p>
+                            <p>¥13,000 入金不要<br>最大総額 $10,500ボーナス</p>
                         </div>
                         <div class="card-back xm-border">
                             <div class="logo-placeholder" style="color:var(--xm);">XMTrading</div>
@@ -230,114 +226,75 @@
                     <th>優位性</th>
                 </tr>
                 <tr>
-                    <td>入金不要ボーナス（新規）</td>
-                    <td>15,000円</td>
-                    <td>13,000円</td>
-                    <td class="win">FXGT</td>
+                    <td>入金不要ボーナス</td>
+                    <td>新規登録ボーナスあり<br><span style="font-size:0.85em; color:#aaa;">(ポップアップで確認可能)</span></td>
+                    <td class="xm-text">¥13,000<br><span style="font-size:0.85em; color:#aaa;">(利益出金可能)</span></td>
+                    <td class="win" style="color:var(--xm);">XM</td>
+                </tr>
+                <tr>
+                    <td>入金ボーナス枠</td>
+                    <td>多彩なキャンペーン有</td>
+                    <td class="xm-text">100%ボーナス(最大$500)<br>+ 20%枠(最大$10,000)</td>
+                    <td class="win" style="color:var(--xm);">XM</td>
                 </tr>
                 <tr>
                     <td>最大レバレッジ (FX)</td>
+                    <td class="highlight-text">1:5000 (OPTIMUS口座)<br>1:2000 (STANDARD口座)</td>
                     <td>1:1000</td>
-                    <td>1:1000</td>
-                    <td class="tie">引き分け</td>
+                    <td class="win">FXGT</td>
                 </tr>
                 <tr>
                     <td>仮想通貨CFD レバレッジ</td>
-                    <td>最大 1:1000</td>
-                    <td>最大 1:500</td>
+                    <td class="highlight-text">1:500 (CRYPTOX口座等)</td>
+                    <td>あり</td>
                     <td class="win">FXGT</td>
                 </tr>
                 <tr>
-                    <td>スプレッド (実質コスト)</td>
-                    <td>PRO口座が極狭</td>
-                    <td>KIWAMI極口座が優秀</td>
+                    <td>最小スプレッド</td>
+                    <td class="highlight-text">0.0 pips〜 (ECN ZERO)<br>0.5 pips〜 (PRO)</td>
+                    <td>極狭スプレッド提供</td>
                     <td class="tie">引き分け</td>
                 </tr>
                 <tr>
-                    <td>100%入金ボーナス枠</td>
-                    <td>最大 80,000円</td>
-                    <td>最大 $500 (約7.5万円)</td>
-                    <td class="win">FXGT</td>
-                </tr>
-                <tr>
-                    <td>日本語サポート</td>
-                    <td>24時間365日対応</td>
-                    <td>週5日 24時間対応</td>
-                    <td class="win">FXGT</td>
-                </tr>
-                <tr>
-                    <td>企業の信頼性・歴史</td>
-                    <td>2019年設立 (急成長中)</td>
-                    <td>2009年設立 (実績抜群)</td>
-                    <td class="win">XM</td>
+                    <td>ライセンス・安全性</td>
+                    <td>FSA, FSCA, VFSC, CySEC</td>
+                    <td>FSA, FSC, CySEC</td>
+                    <td class="tie">引き分け</td>
                 </tr>
             </table>
         </div>
 
         <div class="btn-wrapper">
             <a href="https://fxgt.link?refid=zyh1egxh93" class="btn-fxgt" target="_blank" rel="noopener noreferrer">
-                FXGTで15,000円ボーナスを獲得する →
+                FXGTで新規登録ボーナスを獲得する →
             </a>
-            <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 15px;">※登録は数分で完了。入金不要で即トレード開始可能です。</p>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 15px;">※OPTIMUS口座なら最大レバレッジ1:5000で取引可能！</p>
         </div>
 
         <section class="reviews">
             <h2 class="section-title">実際の日本人トレーダーの声</h2>
             <div class="review-grid">
                 <div class="review">
-                    <p class="quote">「XMを長年使っていましたが、ビットコインを取引したくてFXGTも開設。仮想通貨のレバ1000倍とスワップフリーはFXGTの圧勝です。」</p>
-                    <p class="author">– 30代男性 (SNSより)</p>
+                    <p class="quote">「FXGTのOPTIMUS口座でレバレッジ5000倍を体験しました。少額からでも爆発力があり、仮想通貨CFDの環境も完璧です。」</p>
+                    <p class="author">– 30代男性 (FXGTユーザー)</p>
+                </div>
+                <div class="review xm-review">
+                    <p class="quote">「XMTradingの13,000円入金不要ボーナスは本当にノーリスクでした。期間限定の100%ボーナスと合わせると資金効率が最強です。」</p>
+                    <p class="author">– 20代女性 (XMユーザー)</p>
                 </div>
                 <div class="review">
-                    <p class="quote">「入金不要ボーナス15,000円が本人確認後すぐに反映されました。ノーリスクで数万円の利益を出金できたのはありがたい。」</p>
-                    <p class="author">– 20代女性 (FXフォーラムより)</p>
-                </div>
-                <div class="review">
-                    <p class="quote">「安定感と約定力はやはりXMが一番ですが、ボーナスキャンペーンの頻度と豪華さで最近はFXGTをメインに使っています。」</p>
-                    <p class="author">– 40代男性 (トレーダーブログより)</p>
-                </div>
-                <div class="review">
-                    <p class="quote">「週末も日本語サポートが繋がるのはFXGTの良いところ。急なトラブルでも安心感があります。」</p>
-                    <p class="author">– 30代男性</p>
+                    <p class="quote">「両方使っていますが、FXで堅実に増やすならXMのXMP（ロイヤルティポイント）、仮想通貨のボラティリティを狙うならFXGTと使い分けています。」</p>
+                    <p class="author">– 40代男性 (専業トレーダー)</p>
                 </div>
             </div>
         </section>
 
-        <section class="faq">
-            <h2 class="section-title">よくある質問（FAQ）</h2>
-
-            <div class="faq-item">
-                <h3>FXGTとXM、初心者にはどちらがおすすめですか？</h3>
-                <p>どちらも初心者向けですが、仮想通貨（ビットコインなど）も取引したいなら「FXGT」、FX通貨ペア中心で圧倒的な安心感を求めるなら「XMTrading」がおすすめです。</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>FXGTの口座開設ボーナスは本当に出金できますか？</h3>
-                <p>ボーナス自体は出金できませんが、ボーナスを使って得た「利益」は、所定の取引条件（例：2GTロット以上の取引など）を満たせば出金可能です。</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>両方の業者の口座を持つことは違反ですか？</h3>
-                <p>全く違反ではありません。多くの専業トレーダーが、用途（FX用、仮想通貨用、ボーナス活用用）に合わせて両方の口座を使い分けています。</p>
-            </div>
-
-            <div class="faq-item">
-                <h3>FXGTは安全ですか？出金拒否の噂は？</h3>
-                <p>FXGTは金融ライセンス（FSA、FSCA等）を保有しており、正当な取引での悪質な出金拒否は確認されていません。規約違反（複数アカウント作成など）をした場合のみ出金制限がかかることがあります。</p>
-            </div>
-        </section>
-
-        <div class="btn-wrapper">
-            <a href="https://fxgt.link?refid=zyh1egxh93" class="btn-fxgt" target="_blank" rel="noopener noreferrer">
-                FXGT公式サイトはこちら →
-            </a>
-        </div>
     </div>
 
     <div class="risk">
-        <p><strong>リスク警告：</strong>FXおよびCFD取引はレバレッジを伴うため、投資元本を失う高いリスクがあります。ご自身の経験、目的、リスク許容度を十分に考慮した上でお取引ください。</p>
+        <p><strong>リスク警告：</strong>CFDは複雑な金融商品であり、レバレッジにより急速に損失を被る高レベルのリスクを伴います。失いたくないご資金は投資すべきではありません。</p>
         <p style="margin-top:15px;">
-            このページは情報提供を目的としており、投資勧誘を意図するものではありません。<br>
+            このページは情報提供を目的としており、日本国内の居住者を対象とした投資勧誘を意図するものではありません。<br>
             <strong>PR / Advertisement</strong> – 当サイトはアフィリエイトプログラムにより収益を得ています。
         </p>
     </div>
