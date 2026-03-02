@@ -4,298 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>FXGT vs XMTrading – 日本人トレーダーに本当に最適なのはどっち？徹底比較</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-
+    <title>FXGT vs XM Trading – 日本トレーダーに最適なブローカーは？</title>
     <style>
-        :root { 
-            --fxgt: #00d4ff; 
-            --fxgt-dark: #0088aa;
-            --xm: #d62828; 
-            --win: #00ff85; 
-            --bg-dark: #0f1115;
-            --bg-card: #1a1d24;
-            --text-main: #e2e8f0;
-            --text-muted: #94a3b8;
+        :root {
+            --fxgt: #00d4ff;
+            --xm: #d62828;
+            --win: #00ff85;
         }
-        
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        body { 
-            font-family: 'Noto Sans JP', sans-serif; 
-            background: var(--bg-dark); 
-            color: var(--text-main); 
-            line-height: 1.7; 
-            font-size: 16px;
-        }
-
-        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
-        
-        /* Promo Top Bar */
-        .promo { 
-            background: linear-gradient(90deg, #b91d1d, #d62828); 
-            color: white; 
-            text-align: center; 
-            padding: 12px; 
-            font-weight: 700; 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
-            font-size: 0.95rem; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        /* Hero Section */
-        .hero { 
-            text-align: center; 
-            padding: 60px 15px 40px; 
-            background: radial-gradient(circle at top, #1e222d 0%, var(--bg-dark) 80%); 
-        }
-        .battle-title { font-size: 2.2rem; margin-bottom: 30px; font-weight: 900; line-height: 1.3;}
-        
-        .vs-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        /* --- 3D FLIP CARDS CSS --- */
-        .card-link {
-            flex: 1;
-            min-width: 250px;
-            max-width: 350px;
-            text-decoration: none;
-            color: inherit;
-            perspective: 1000px;
-        }
-        
-        .card { 
-            position: relative;
-            width: 100%;
-            height: 200px;
-            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
-            transform-style: preserve-3d;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            border-radius: 16px;
-        }
-        
-        .card-link:hover .card {
-            transform: rotateY(180deg);
-        }
-        
-        .card-front, .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-            border-radius: 16px;
-            background: var(--bg-card);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-        }
-        
-        .card-back {
-            transform: rotateY(180deg);
-            background: #11141a; 
-        }
-
-        .fxgt-border { border-top: 5px solid var(--fxgt); }
-        .xm-border { border-top: 5px solid var(--xm); }
-        
-        .card-front h2 { font-size: 2.2rem; margin-bottom: 10px; }
-        .card-front p { font-size: 1.05rem; font-weight: 700; color: #cbd5e1; }
-        
-        /* Logos for the back */
-        .logo-placeholder { font-size: 2.3rem; font-weight: 900; margin-bottom: 20px; letter-spacing: 1px; }
-        .visit-btn {
-            font-size: 1rem;
-            font-weight: 700;
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a0033 100%);
             color: white;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px 28px;
-            border-radius: 30px;
-            transition: background 0.3s, transform 0.2s;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            line-height: 1.6;
         }
-        .card-link:hover .visit-btn { background: rgba(255, 255, 255, 0.25); transform: scale(1.05); }
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 15px; }
 
-        .vs { font-size: 2.5rem; color: var(--text-muted); font-weight: 900; font-style: italic; margin: 0 10px; }
-        /* ------------------------- */
-
-        /* Comparison Table */
-        .table-wrapper { width: 100%; overflow-x: auto; margin: 50px 0; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-        table { width: 100%; border-collapse: collapse; background: var(--bg-card); min-width: 600px; }
-        th, td { padding: 18px 15px; text-align: center; border-bottom: 1px solid #2d3748; }
-        th { background: #252a36; color: white; font-weight: 700; font-size: 1.1rem; }
-        td:first-child { text-align: left; font-weight: 700; color: #e2e8f0; }
-        .win { color: var(--win); font-weight: 900; }
-        .tie { color: #f59e0b; font-weight: 700; }
-        .highlight-text { color: var(--fxgt); font-weight: bold; }
-        .xm-text { color: var(--xm); font-weight: bold; }
-
-        /* CTA Button */
-        .btn-wrapper { text-align: center; margin: 40px 0; }
-        .btn-fxgt { 
-            background: linear-gradient(135deg, var(--fxgt), var(--fxgt-dark)); 
-            color: #000; font-size: 1.3rem; font-weight: 900; padding: 20px 45px; border-radius: 50px; 
-            text-decoration: none; display: inline-block; box-shadow: 0 8px 25px rgba(0, 212, 255, 0.3); 
-            transition: transform 0.2s, box-shadow 0.2s;
+        .promo {
+            background: linear-gradient(90deg, #ff0000, #ff3366);
+            text-align: center;
+            padding: 16px;
+            font-weight: 900;
+            font-size: 1.28rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(255,0,0,0.5);
         }
-        .btn-fxgt:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 212, 255, 0.5); }
 
-        /* Reviews */
-        .reviews { margin: 60px 0; }
-        .section-title { text-align: center; margin-bottom: 40px; font-size: 1.8rem; color: white; }
-        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .review { padding: 25px; background: var(--bg-card); border-top: 4px solid var(--fxgt); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .review.xm-review { border-top: 4px solid var(--xm); }
-        .review p.quote { font-size: 1.05rem; font-style: italic; margin-bottom: 15px; }
-        .review p.author { color: var(--text-muted); font-size: 0.85rem; text-align: right; }
+        .hero {
+            text-align: center;
+            padding: 85px 20px 65px;
+            position: relative;
+        }
+        .battle-title {
+            font-size: 3.3rem;
+            margin-bottom: 25px;
+            text-shadow: 0 0 30px rgba(0,212,255,0.7);
+        }
+        .vs {
+            font-size: 6rem;
+            color: var(--win);
+            margin: 0 40px;
+            animation: pulse 2.2s infinite;
+        }
+        @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.15); } }
 
-        /* Footer / Risk */
-        .risk { font-size: 0.85rem; color: var(--text-muted); text-align: center; padding: 40px 20px 80px; background: #000; border-top: 1px solid #222; }
+        .card {
+            display: inline-block;
+            width: 46%;
+            background: rgba(20,20,30,0.9);
+            border-radius: 22px;
+            padding: 35px 25px;
+            margin: 20px 10px;
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+            backdrop-filter: blur(10px);
+        }
+        .fxgt-card { border-color: var(--fxgt); }
+        .xm-card { border-color: var(--xm); }
+        .card:hover { transform: translateY(-18px); }
 
-        @media (min-width: 768px) {
-            .battle-title { font-size: 3rem; }
-            .promo { font-size: 1.1rem; }
+        table {
+            width: 100%;
+            margin: 60px 0;
+            background: rgba(20,20,30,0.85);
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
+        th, td { padding: 18px 12px; text-align: center; border-bottom: 1px solid #222; }
+        th { background: #1f1f2e; font-size: 1.15rem; }
+        .win { color: var(--win); font-weight: 900; font-size: 1.15rem; }
+
+        .btn-fxgt {
+            background: linear-gradient(90deg, #00d4ff, #0099ff);
+            color: #000;
+            font-size: 1.6rem;
+            font-weight: 900;
+            padding: 26px 85px;
+            border-radius: 60px;
+            text-decoration: none;
+            display: block;
+            margin: 55px auto 40px;
+            max-width: 520px;
+            text-align: center;
+            box-shadow: 0 18px 45px rgba(0,212,255,0.55);
+            animation: pulseBtn 2.3s infinite;
+            position: sticky;
+            bottom: 25px;
+            z-index: 999;
+        }
+        @keyframes pulseBtn { 0%,100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+
+        .risk {
+            font-size: 0.84rem;
+            color: #aaa;
+            text-align: center;
+            padding: 60px 20px;
+            background: #0a0a0a;
+            border-top: 1px solid #222;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="promo">
-        🔥 FXGT vs XMTrading – 2026年最新スペックで徹底比較！ 🔥
+        🔥 FXGT vs XM Trading – 2026年最新比較 🔥
     </div>
 
     <section class="hero">
         <div class="container">
-            <h1 class="battle-title">FXGT vs XMTrading<br>頂上決戦</h1>
+            <h1 class="battle-title">FXGT vs XM Trading</h1>
             
-            <div class="vs-container">
-                
-                <a href="https://fxgt.link?refid=zyh1egxh93" class="card-link" target="_blank" rel="noopener noreferrer">
-                    <div class="card">
-                        <div class="card-front fxgt-border">
-                            <h2 style="color:var(--fxgt);">FXGT</h2>
-                            <p>最大レバ 1:5000<br>新規登録ボーナスあり</p>
-                        </div>
-                        <div class="card-back fxgt-border">
-                            <div class="logo-placeholder" style="color:var(--fxgt);">FXGT</div>
-                            <div class="visit-btn">公式サイトへ ➜</div>
-                        </div>
-                    </div>
-                </a>
-                
+            <div>
+                <div class="card fxgt-card">
+                    <h2 style="color:var(--fxgt); font-size:2.6rem;">FXGT</h2>
+                    <p style="font-size:1.4rem; margin-top:10px;">¥7777 入金不要ボーナス</p>
+                </div>
                 <span class="vs">VS</span>
-                
-                <a href="/XMTrading" class="card-link" target="_blank" rel="noopener noreferrer">
-                    <div class="card">
-                        <div class="card-front xm-border">
-                            <h2 style="color:var(--xm);">XMTrading</h2>
-                            <p>¥13,000 入金不要<br>最大総額 $10,500ボーナス</p>
-                        </div>
-                        <div class="card-back xm-border">
-                            <div class="logo-placeholder" style="color:var(--xm);">XMTrading</div>
-                            <div class="visit-btn">公式サイトへ ➜</div>
-                        </div>
-                    </div>
-                </a>
-
+                <div class="card xm-card">
+                    <h2 style="color:var(--xm); font-size:2.6rem;">XM Trading</h2>
+                    <p style="font-size:1.4rem; margin-top:10px;">人気No.1ブローカー</p>
+                </div>
             </div>
         </div>
     </section>
 
     <div class="container">
-        <div class="table-wrapper">
-            <table>
-                <tr>
-                    <th>比較項目</th>
-                    <th>FXGT</th>
-                    <th>XMTrading</th>
-                    <th>優位性</th>
-                </tr>
-                <tr>
-                    <td>入金不要ボーナス</td>
-                    <td>新規登録ボーナスあり<br><span style="font-size:0.85em; color:#aaa;">(ポップアップで確認可能)</span></td>
-                    <td class="xm-text">¥13,000<br><span style="font-size:0.85em; color:#aaa;">(利益出金可能)</span></td>
-                    <td class="win" style="color:var(--xm);">XM</td>
-                </tr>
-                <tr>
-                    <td>入金ボーナス枠</td>
-                    <td>多彩なキャンペーン有</td>
-                    <td class="xm-text">100%ボーナス(最大$500)<br>+ 20%枠(最大$10,000)</td>
-                    <td class="win" style="color:var(--xm);">XM</td>
-                </tr>
-                <tr>
-                    <td>最大レバレッジ (FX)</td>
-                    <td class="highlight-text">1:5000 (OPTIMUS口座)<br>1:2000 (STANDARD口座)</td>
-                    <td>1:1000</td>
-                    <td class="win">FXGT</td>
-                </tr>
-                <tr>
-                    <td>仮想通貨CFD レバレッジ</td>
-                    <td class="highlight-text">1:500 (CRYPTOX口座等)</td>
-                    <td>あり</td>
-                    <td class="win">FXGT</td>
-                </tr>
-                <tr>
-                    <td>最小スプレッド</td>
-                    <td class="highlight-text">0.0 pips〜 (ECN ZERO)<br>0.5 pips〜 (PRO)</td>
-                    <td>極狭スプレッド提供</td>
-                    <td class="tie">引き分け</td>
-                </tr>
-                <tr>
-                    <td>ライセンス・安全性</td>
-                    <td>FSA, FSCA, VFSC, CySEC</td>
-                    <td>FSA, FSC, CySEC</td>
-                    <td class="tie">引き分け</td>
-                </tr>
-            </table>
-        </div>
+        <table>
+            <tr><th>項目</th><th>FXGT</th><th>XM Trading</th><th>勝者</th></tr>
+            <tr><td>入金不要ボーナス</td><td>¥7,777（即時付与）</td><td>なし（期間限定のみ）</td><td class="win">FXGT</td></tr>
+            <tr><td>最大レバレッジ</td><td>最大1:5000</td><td>最大1:1000</td><td class="win">FXGT</td></tr>
+            <tr><td>スプレッド (EUR/USD)</td><td>0.0 pips〜</td><td>0.6 pips〜</td><td class="win">FXGT</td></tr>
+            <tr><td>Google即登録</td><td>2分で完了</td><td>標準登録</td><td class="win">FXGT</td></tr>
+            <tr><td>仮想通貨CFDレバレッジ</td><td>1:1000</td><td>1:200〜500</td><td class="win">FXGT</td></tr>
+            <tr><td>規制機関</td><td>FSCA, FSA Seychelles, CySEC</td><td>CySEC, ASIC, DFSA, FSCA</td><td class="win">XM</td></tr>
+            <tr><td>日本語サポート</td><td>24時間365日</td><td>24/5</td><td class="win">FXGT</td></tr>
+            <tr><td>日本での人気</td><td>約9-10%</td><td>約52%</td><td class="win">XM</td></tr>
+        </table>
 
-        <div class="btn-wrapper">
-            <a href="https://fxgt.link?refid=zyh1egxh93" class="btn-fxgt" target="_blank" rel="noopener noreferrer">
-                FXGTで新規登録ボーナスを獲得する →
-            </a>
-            <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 15px;">※OPTIMUS口座なら最大レバレッジ1:5000で取引可能！</p>
-        </div>
-
-        <section class="reviews">
-            <h2 class="section-title">実際の日本人トレーダーの声</h2>
-            <div class="review-grid">
-                <div class="review">
-                    <p class="quote">「FXGTのOPTIMUS口座でレバレッジ5000倍を体験しました。少額からでも爆発力があり、仮想通貨CFDの環境も完璧です。」</p>
-                    <p class="author">– 30代男性 (FXGTユーザー)</p>
-                </div>
-                <div class="review xm-review">
-                    <p class="quote">「XMTradingの13,000円入金不要ボーナスは本当にノーリスクでした。期間限定の100%ボーナスと合わせると資金効率が最強です。」</p>
-                    <p class="author">– 20代女性 (XMユーザー)</p>
-                </div>
-                <div class="review">
-                    <p class="quote">「両方使っていますが、FXで堅実に増やすならXMのXMP（ロイヤルティポイント）、仮想通貨のボラティリティを狙うならFXGTと使い分けています。」</p>
-                    <p class="author">– 40代男性 (専業トレーダー)</p>
-                </div>
-            </div>
-        </section>
-
+        <a href="https://fxgt.link?refid=zyh1egxh93" class="btn-fxgt" target="_blank">
+            今すぐFXGTで¥7777ボーナスをGET → Googleで2分登録
+        </a>
     </div>
 
     <div class="risk">
-        <p><strong>リスク警告：</strong>CFDは複雑な金融商品であり、レバレッジにより急速に損失を被る高レベルのリスクを伴います。失いたくないご資金は投資すべきではありません。</p>
+        <p><strong>リスク警告：</strong>レバレッジ取引は元本を失う可能性があります。取引のリスクを十分にご理解の上、お取引ください。</p>
         <p style="margin-top:15px;">
-            このページは情報提供を目的としており、日本国内の居住者を対象とした投資勧誘を意図するものではありません。<br>
-            <strong>PR / Advertisement</strong> – 当サイトはアフィリエイトプログラムにより収益を得ています。
+            このページはFXGTのアフィリエイトパートナーによるプロモーションコンテンツです。<br>
+            <strong>PR / Advertisement</strong> – Affiliate Link使用
+        </p>
+        <p style="margin-top:20px; font-size:0.82rem;">
+            18歳以上対象。
         </p>
     </div>
 
