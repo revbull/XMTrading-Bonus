@@ -2,216 +2,372 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FXGT.com - 新規登録で10,000円ボーナス獲得</title>
-    <meta name="description" content="FXGT.comで本格的な取引を始めよう。新規登録で10,000円、さらに100%ウェルカムボーナス実施中！専用アプリでいつでもどこでもトレード。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="description" content="FXGT.comの新規登録で10,000円ボーナスを獲得！さらに100%ウェルカムボーナス実施中。FXGTのボーナス詳細と受け取り方を徹底解説。">
+    <title>FXGT 新規登録10,000円ボーナスキャンペーン | Smart FX Facts</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary: #f5a623; /* FXGT Gold/Orange */
-            --bg-dark: #12151c;
-            --bg-card: #1e222d;
-            --text-light: #ffffff;
-            --text-gray: #a0a5bb;
-            --accent-green: #00e676;
+            /* FXGT Brand Colors */
+            --bg-body: #0d1017; 
+            --bg-white: #171a21; /* Dark theme card bg */
+            --fxgt-gold: #f5a623; 
+            --fxgt-gold-dark: #d48b15;
+            --fxgt-accent: #00e676; /* Green for success/bonus */
+            --text-main: #ffffff;
+            --text-sub: #a0a5bb; 
+            --border-color: #2a2e39;
+            --bg-light: #1e222d;
         }
+        * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            font-size: 16px;
+            /* Subtle grid background for dark theme */
+            background-image: linear-gradient(var(--border-color) 1px, transparent 1px),
+            linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            background-attachment: fixed;
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 15px; }
+
+        /* Promo Bar - Always visible, sticky top */
+        .promo-bar {
+            background: #000000;
+            color: white;
+            text-align: center;
+            padding: 10px 15px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            position: sticky;
+            top: 0;
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid var(--fxgt-gold);
+        }
+        .promo-badge {
+            background: var(--fxgt-gold);
+            color: black;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 900;
+        }
+
+        /* Header */
+        .header-wrapper {
+            background: var(--bg-white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 45px; 
+            z-index: 900;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--fxgt-gold);
+        }
+        .logo span {
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-sub);
+            display: block;
+        }
+        .pr-badge {
+            font-size: 0.7rem;
+            color: #888;
+            border: 1px solid #555;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-top: 4px;
+            width: fit-content;
+        }
+
+        /* Hero */
+        .hero {
             text-align: center;
-            padding: 30px 0 10px;
+            padding: 45px 15px 35px;
+            background: radial-gradient(circle at center, var(--bg-light) 0%, var(--bg-body) 100%);
+            border-bottom: 1px solid var(--border-color);
         }
-        h1 {
-            color: var(--primary);
-            font-size: 2.8em;
-            margin-bottom: 5px;
+        .hero .limited {
+            font-size: 1.2rem;
+            color: var(--fxgt-gold);
+            font-weight: bold;
+            margin-bottom: 12px;
         }
-        .subtitle {
-            font-size: 1.2em;
-            color: var(--text-gray);
-            margin-bottom: 25px;
-        }
-        .hero-box {
-            background-color: var(--bg-card);
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            border: 2px solid var(--primary);
-            margin-bottom: 30px;
-            box-shadow: 0 4px 15px rgba(245, 166, 35, 0.2);
-        }
-        .hero-box h2 {
-            margin-top: 0;
-            font-size: 2em;
+        .hero h1 {
+            font-size: 2rem;
+            line-height: 1.3;
+            margin: 15px 0;
             color: #fff;
         }
-        .highlight {
-            color: var(--primary);
-            font-weight: bold;
-        }
-        .highlight-green {
-            color: var(--accent-green);
-            font-weight: bold;
-        }
-        .promo-list {
-            text-align: left;
-            display: inline-block;
-            color: var(--text-light);
-            font-size: 1.1em;
-            margin: 20px 0;
-            padding: 0 20px;
-        }
-        .promo-list li {
-            margin-bottom: 15px;
-        }
-        .terms {
-            font-size: 0.75em;
-            color: var(--text-gray);
+        .hero-highlight {
+            color: var(--fxgt-gold);
             display: block;
-            margin-top: 5px;
+            font-size: 1.6rem;
         }
-        .app-section {
-            background-color: #171a21;
-            padding: 20px;
-            border-radius: 8px;
+        .hero p {
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 20px auto;
+            color: var(--text-sub);
+        }
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+        .btn {
+            font-size: 1.15rem;
+            font-weight: 800;
+            padding: 16px 40px;
+            border-radius: 8px; /* Slightly squarer for tech/crypto feel */
             text-align: center;
-            margin-bottom: 30px;
-            border: 1px solid #2a2e39;
+            cursor: pointer;
+            transition: transform 0.15s, background-color 0.2s;
         }
-        .features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-        @media (max-width: 600px) {
-            .features { grid-template-columns: 1fr; }
-            h1 { font-size: 2.2em; }
-        }
-        .feature-card {
-            background-color: var(--bg-card);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid var(--primary);
-        }
-        .cta-button {
-            display: block;
-            width: 100%;
-            max-width: 320px;
-            margin: 0 auto;
-            background-color: var(--primary);
+        .btn:active { transform: scale(0.98); }
+        .btn-main {
+            background: var(--fxgt-gold);
             color: #000;
-            text-align: center;
-            padding: 16px 20px;
-            font-size: 1.3em;
+            box-shadow: 0 5px 15px rgba(245, 166, 35, 0.3);
+        }
+        .btn-main:hover { background: var(--fxgt-gold-dark); }
+        .btn-sub {
+            background: transparent;
+            border: 2px solid var(--fxgt-gold);
+            color: var(--fxgt-gold);
+        }
+        .btn-sub:hover { background: rgba(245, 166, 35, 0.1); }
+
+        /* Content */
+        .content-section {
+            padding: 35px 15px 80px; /* Extra bottom padding for sticky footer */
+        }
+        .info-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-color);
+            padding: 25px 18px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        h3 {
+            color: var(--fxgt-gold);
+            margin-bottom: 18px;
+            font-size: 1.35rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+        .check-list {
+            list-style: none;
+        }
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 14px;
+            font-size: 1.05rem;
+        }
+        .check-list li::before {
+            content: '✔';
+            color: var(--fxgt-accent);
             font-weight: bold;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background-color 0.3s, transform 0.2s;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            font-size: 1.4rem;
+            flex-shrink: 0;
         }
-        .cta-button:hover {
-            background-color: #e09600;
-            transform: translateY(-2px);
+        .steps ol {
+            padding-left: 22px;
+            font-size: 1.05rem;
+            color: var(--text-main);
         }
-        .cookie-banner {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            font-size: 0.8em;
+        .steps li {
+            margin-bottom: 14px;
+            padding-left: 5px;
+        }
+        .steps li::marker {
+            color: var(--fxgt-gold);
+            font-weight: bold;
+        }
+        .footnote {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        /* Sticky Footer */
+        .sticky-footer {
             position: fixed;
             bottom: 0;
-            width: 100%;
+            left: 0;
+            right: 0;
+            background: #0d1017;
+            border-top: 2px solid var(--fxgt-gold);
+            padding: 14px 15px;
             z-index: 1000;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+            text-align: center;
         }
-        footer {
-            margin-top: 40px;
-            padding: 20px 0;
-            border-top: 1px solid #2a2e39;
-            font-size: 0.8em;
-            color: var(--text-gray);
+        .sticky-text {
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .btn-sticky {
+            background: var(--fxgt-gold);
+            color: #000;
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 900;
+            font-size: 1.18rem;
+            animation: pulse 2.2s infinite;
+            display: block;
+            box-shadow: 0 4px 10px rgba(245, 166, 35, 0.4);
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        /* Risk Area */
+        .risk {
+            font-size: 0.75rem;
+            color: var(--text-sub);
             text-align: justify;
-            margin-bottom: 50px;
+            padding: 25px 15px 140px; /* Space for sticky footer */
+            background: #080a0e;
+            border-top: 1px solid var(--border-color);
+        }
+
+        /* Desktop optimizations */
+        @media (min-width: 768px) {
+            body { font-size: 17px; }
+            .hero { padding: 70px 20px 50px; }
+            .hero h1 { font-size: 3.2rem; }
+            .hero-highlight { font-size: 2.2rem; }
+            .hero .limited { font-size: 1.5rem; }
+            .hero p { font-size: 1.2rem; }
+            .btn-group { flex-direction: row; }
+            .btn { padding: 18px 55px; font-size: 1.25rem; min-width: 280px; }
+            .content-section { padding: 50px 20px; }
+            .info-card { padding: 35px 30px; }
+            .sticky-footer { padding: 18px 30px; display: flex; align-items: center; justify-content: center; gap: 20px;}
+            .sticky-text { margin-bottom: 0; font-size: 1.15rem; }
+            .btn-sticky { width: auto; padding: 14px 40px; margin: 0; }
+        }
+
+        @media (min-width: 1024px) {
+            .container { padding: 0 30px; }
+            .header-wrapper { top: 48px; }
+            .promo-bar { padding: 12px 30px; font-size: 1.05rem; }
         }
     </style>
 </head>
 <body>
+    
+    <a href="https://fxgt.link?refid=fxgtNihon" class="promo-bar" target="_blank" rel="noopener noreferrer">
+        <span class="promo-badge">注目</span>
+        <span>FXGT.com 新規登録で10,000円ボーナス獲得！入金不要で取引開始</span>
+    </a>
 
-    <div class="container">
-        <header>
-            <h1>FXGT.com</h1>
-            <p class="subtitle">限定ボーナスや特別プログラムで、お得にトレードをスタート！</p>
+    <div class="header-wrapper">
+        <header class="container">
+            <div>
+                <div class="logo">Smart FX Facts<span>海外FX徹底解説メディア</span></div>
+                <div class="pr-badge">PR / Ad</div>
+            </div>
         </header>
+    </div>
 
-        <section class="hero-box">
-            <h2>新規登録で <span class="highlight">10,000円</span> ボーナス獲得</h2>
-            
-            <ul class="promo-list">
-                <li>✅ <strong>新規登録ボーナス:</strong> アカウント認証完了で<span class="highlight-green">10,000円</span>が付与されます。（未入金で取引開始可能！）<br><span class="terms">*Optimus口座保有者が対象。利用規約が適用されます。</span></li>
-                <li>✅ <strong>Welcomeボーナス:</strong> 初回入金に対して<span class="highlight">100％ボーナス</span>（最大50,000円）。獲得した利益はすべて出金可能です！<br><span class="terms">*ミニ、スタンダード口座対象。利用規約が適用されます。</span></li>
-                <li>✅ <strong>Loyaltyボーナス:</strong> 資金移動または入金額に応じて、<span class="highlight">25%ボーナス</span>（上限700,000円）を受け取れます。</li>
+    <section class="hero">
+        <div class="limited">🚀 まもなく開始！最大$10,000新プログラム (3/5〜) 🚀</div>
+        <h1>FXGT.com 新規登録ボーナス<br><span class="hero-highlight">未入金で10,000円分プレゼント！</span></h1>
+        <p>FXGT.comの公式アプリでいつでもどこでも取引。新規登録とアカウント認証だけで10,000円が付与され、さらに初回入金100%ボーナスも実施中！</p>
+        <div class="btn-group">
+            <a href="https://fxgt.link?refid=fxgtNihon" class="btn btn-main" target="_blank" rel="noopener noreferrer">今すぐ10,000円ボーナスを受け取る</a>
+            <a href="https://fxgt.link?refid=fxgtNihon" class="btn btn-sub" target="_blank" rel="noopener noreferrer">FXGT Appをダウンロードする</a>
+        </div>
+    </section>
+
+    <section class="content-section container">
+        
+        <div class="info-card">
+            <h3>🎁 FXGT 豪華ボーナスの特典まとめ</h3>
+            <ul class="check-list">
+                <li><strong>新規登録ボーナス:</strong> アカウント認証で<span style="color:var(--fxgt-accent)">10,000円</span>獲得（Optimus口座対象）</li>
+                <li><strong>Welcomeボーナス:</strong> 初回入金に対して100％ボーナス（最大50,000円）</li>
+                <li><strong>Loyaltyボーナス:</strong> 資金移動/入金で25%ボーナス（上限700,000円まで何度でも）</li>
+                <li><strong>利益は出金可能:</strong> 条件を満たせば獲得した利益はすべて出金OK</li>
             </ul>
-
-            <div style="background: rgba(245, 166, 35, 0.1); padding: 15px; border-radius: 8px; margin-bottom: 25px;">
-                <strong>🚀 予告：3月5日スタート！</strong><br>
-                取引の成長に合わせて最大 <strong>$10,000</strong> を獲得できる新プログラム（30%マイルストーン＆ロイヤルティボーナス）が開始されます！
-            </div>
-
-            <a href="https://fxgt.link?refid=fxgtNihon" class="cta-button" target="_blank" rel="noopener noreferrer">今すぐ口座開設する (無料)</a>
-        </section>
-
-        <section class="app-section">
-            <h3 style="margin-top: 0; color: var(--primary);">📱 FXGT Appでいつでもどこでも取引</h3>
-            <p>リアルタイムデータ、高度なチャート機能、即時注文執行を備えた専用モバイルアプリで、手のひらからグローバル市場（Forex、暗号資産、株価指数）にアクセスしましょう。</p>
-            <a href="https://fxgt.link?refid=fxgtNihon" style="color: var(--primary); text-decoration: underline; font-weight: bold;" target="_blank">FXGT Appをダウンロードする →</a>
-        </section>
-
-        <h3 style="text-align: center;">FXGTが選ばれる理由</h3>
-        <section class="features">
-            <div class="feature-card">
-                <h4>豊富な口座タイプ</h4>
-                <p>初心者向けの「ミニ」から、スプレッド0.0〜の「ECN ZERO」、暗号資産特化の「CRYPTOX」まで、5種類の専門口座。</p>
-            </div>
-            <div class="feature-card">
-                <h4>VPSスポンサーシップ</h4>
-                <p>安心・安全なサーバーで、途切れることなく超高速で注文執行。プロレベルの環境を提供します。</p>
-            </div>
-            <div class="feature-card">
-                <h4>コピートレード</h4>
-                <p>経験豊富なトップトレーダーの戦略を自動コピー。初心者でもすぐにプロの取引を再現可能です。</p>
-            </div>
-            <div class="feature-card">
-                <h4>キャッシュバック特典</h4>
-                <p>Optimus口座なら、スプレッドレートの最大30%をキャッシュバック。即時出金可能な特典です。</p>
-            </div>
-        </section>
-
-        <div style="text-align: center; margin-top: 30px;">
-            <a href="https://fxgt.link?refid=fxgtNihon" class="cta-button" target="_blank" rel="noopener noreferrer">ボーナスを受け取って取引開始</a>
+            <p class="footnote">*各種ボーナスには利用規約が適用されます。対象口座（ミニ、スタンダード等）をご確認ください。</p>
         </div>
 
-        <footer>
-            <strong>リスク開示：</strong> 取引にはリスクが伴います。CFDは複雑な金融商品であり、レバレッジにより急速に損失を被る高レベルのリスクを伴います。お客様は、CFD商品の仕組みを理解し、取引がご自身に適しているか熟慮する必要があります。失いたくないご資金は投資すべきではありません。レバレッジの効いた商品はすべてのトレーダーに適するわけではなく、全投資資産を失う場合があります。<br><br>
-            ここに含まれる資料および情報は、一般マーケティングのみを目的としており、投資アドバイスや推奨、金融商品の取得や金融取引への参加を促すものではありません。各キャンペーンには利用規約が適用されます。<br><br>
-            Copyright © FXGT 2026. All rights reserved.
-        </footer>
+        <div class="info-card">
+            <h3>⚡ FXGTが選ばれる理由</h3>
+            <ul class="check-list">
+                <li>豊富な口座タイプ（最低残高0ドル〜、スプレッド0.0〜）</li>
+                <li>最大1:5000の圧倒的レバレッジ</li>
+                <li>FX、仮想通貨、株式、株価指数を1つのアカウントで取引</li>
+                <li>スマホで完結！使いやすい専用「FXGT App」</li>
+            </ul>
+        </div>
+
+        <div class="info-card">
+            <h3>📱 10,000円ボーナス受け取り方 (3ステップ)</h3>
+            <ol class="steps">
+                <li>下記のボタンからFXGT.comへアクセスし、<strong>新規登録</strong>を行う</li>
+                <li>登録から30日以内に<strong>アカウント認証（KYC）</strong>を完了させる</li>
+                <li>Optimus口座を開設し、ボーナスを申請して取引スタート！</li>
+            </ol>
+            <p class="footnote">100%入金ボーナスをご希望の場合は、「ミニ」または「スタンダード」口座をご利用ください。</p>
+        </div>
+
+    </section>
+
+    <div class="risk">
+        <p><strong>リスク開示：</strong> 取引にはリスクが伴います。CFDは複雑な金融商品であり、レバレッジにより急速に損失を被る高レベルのリスクを伴います。お客様は、CFD商品の仕組みを理解し、取引がご自身に適しているか熟慮する必要があります。失いたくないご資金は投資すべきではありません。レバレッジの効いた商品はすべてのトレーダーに適するわけではなく、全投資資産を失う場合があります。</p><br>
+        <p>ここに含まれる資料および情報は、一般マーケティングのみを目的としており、投資アドバイスや推奨を意図したものではありません。 Copyright © FXGT 2026. All rights reserved.</p>
     </div>
 
-    <div class="cookie-banner" id="cookieBanner">
-        重要なお知らせ！当社では、お客様が当社ウェブサイト上で最高の体験を得られるようにクッキーを使用しています。
-        <button onclick="document.getElementById('cookieBanner').style.display='none'" style="margin-left: 10px; padding: 5px 10px; background: #f5a623; border: none; cursor: pointer; border-radius: 3px; font-weight: bold; color: #000;">同意する</button>
-    </div>
+    <footer class="sticky-footer">
+        <div class="sticky-text">10,000円登録ボーナス＆100%入金ボーナス実施中！</div>
+        <a href="https://fxgt.link?refid=fxgtNihon" class="btn-sticky" target="_blank" rel="noopener noreferrer">口座開設してボーナスをGET ➜</a>
+    </footer>
 
+    <script>
+        // Добавете тук вашите тракинг скриптове, ако са необходими, подобно на оригиналния код.
+        // Задължително тествайте линковете след качване.
+    </script>
 </body>
 </html>
