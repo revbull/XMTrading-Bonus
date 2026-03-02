@@ -31,7 +31,7 @@
         }
         
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans JP', sans-serif; }
-        body { background: var(--bg-main); color: var(--text-main); line-height: 1.7; padding-bottom: 100px; font-size: 16px; }
+        body { background: var(--bg-main); color: var(--text-main); line-height: 1.7; padding-bottom: 0; font-size: 16px; }
 
         .container { max-width: 600px; margin: 0 auto; padding: 20px 15px; }
 
@@ -62,7 +62,6 @@
         .tier-num { flex-shrink: 0; width: 32px; height: 32px; background: var(--accent-gold); color: #000; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; z-index: 2; }
         .tier-content h4 { color: #fff; font-size: 1.05rem; margin-bottom: 4px; }
         .tier-content p { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
-        /* Connecting line */
         .tier-box::before { content: ''; position: absolute; left: 35px; top: 40px; bottom: 40px; width: 2px; background: rgba(245, 166, 35, 0.2); z-index: 1; }
 
         /* Section 3: Case Study */
@@ -80,6 +79,10 @@
         .cta-btn { display: block; background: linear-gradient(180deg, var(--accent-gold) 0%, #d98a11 100%); color: #000; text-align: center; padding: 18px; border-radius: 8px; text-decoration: none; font-weight: 900; font-size: 1.15rem; box-shadow: 0 4px 15px rgba(245, 166, 35, 0.3); transition: transform 0.2s; margin: 30px 0; }
         .cta-btn:active { transform: scale(0.98); }
         .cta-sub { display: block; font-size: 0.8rem; font-weight: 500; margin-top: 6px; opacity: 0.8; }
+
+        /* Risk Disclosure */
+        .risk-disclosure { font-size: 0.75rem; color: #64748b; border-top: 1px solid var(--border); padding: 25px 15px 100px; margin-top: 40px; text-align: justify; line-height: 1.6; background: #05070a; }
+        .risk-disclosure strong { color: #94a3b8; display: block; margin-bottom: 8px; font-size: 0.85rem; }
 
         /* Sticky Footer */
         .sticky-footer { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(10, 14, 23, 0.95); backdrop-filter: blur(10px); padding: 12px 15px; border-top: 1px solid var(--border); z-index: 1000; display: flex; justify-content: center; }
@@ -136,8 +139,9 @@
             <div class="tier-step">
                 <div class="tier-num">3</div>
                 <div class="tier-content">
-                    <h4>取引報酬：最大$10,000 (3月限定)</h4>
-                    <p>取引量（ロット数）に応じて付与されるロイヤルティ報酬。専業トレーダーがFXGTをメイン口座にする最大の理由です。</p>
+                    <h4>取引報酬：最大$10,000 (3月5日開始)</h4>
+                    <p>取引量（ロット数）に応じて付与されるロイヤルティ報酬。専業トレーダーがFXGTをメイン口座にする最大の理由です。<br>
+                    <a href="https://fxgt.link?refid=fxgtNihon" class="track-link" style="color: var(--accent-blue); text-decoration: underline; font-weight: 700; margin-top: 8px; display: inline-block;">プログラムの詳細はこちら ＞</a></p>
                 </div>
             </div>
         </div>
@@ -176,6 +180,12 @@
                 <span class="cta-sub">※最短2分で口座開設・即時反映</span>
             </a>
         </div>
+    </div>
+
+    <div class="risk-disclosure">
+        <strong>🚨 リスク開示および免責事項（Risk Disclosure）：</strong>
+        CFD（差金決済取引）および暗号資産（仮想通貨）の証拠金取引は複雑な金融商品であり、高いレバレッジにより急速に資金を失う重大なリスクを伴います。過去のパフォーマンスは将来の結果を保証するものではありません。失う余裕のない資金を投資してはいけません。ハイレバレッジ商品はすべての投資家に適しているわけではなく、市場の変動により投資元本を全額失う可能性があります。<br><br>
+        当サイト（PR）はFXGTの公式アフィリエイトパートナーとして情報提供を行っており、直接的な投資助言を提供するものではありません。キャンペーンの適用条件、スプレッド、および最新の利用規約については、口座開設前に必ずFXGT公式サイトにてご自身でご確認ください。
     </div>
 
     <div class="sticky-footer">
