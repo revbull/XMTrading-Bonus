@@ -258,10 +258,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","N
 .fxgt-total-bar span{font-size:0.7rem;font-weight:700;color:rgba(255,255,255,0.85)}
 .fxgt-total-bar strong{font-size:1rem;font-weight:900;color:#fff}
 
-/* Section label */
-.section-label{font-size:0.63rem;font-weight:900;letter-spacing:0.12em;color:#6a0dad;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
-.section-label::after{content:'';flex:1;height:2px;background:var(--border)}
-
 /* ── PROMO CTA BUTTONS ── */
 .promo-cta-wrap{display:flex;flex-direction:column;gap:8px;margin-top:14px}
 .promo-cta-main{
@@ -293,6 +289,57 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","N
   color:#0d47a1!important;
 }
 .promo-cta-bonus-fxgt:hover,.promo-cta-bonus-fxgt:active{background:#bbdefb!important}
+
+/* ── MOBILE APP ROW in table ── */
+.app-row-xm{background:#e8f5e9!important}
+.app-row-fxgt{background:#e8f5e9!important}
+.app-stores{display:flex;flex-direction:column;gap:3px;margin-top:4px}
+.app-store-pill{display:inline-flex;align-items:center;gap:5px;font-size:0.62rem;font-weight:700;padding:3px 8px;border-radius:3px;text-decoration:none;width:fit-content}
+.app-store-pill.ios{background:#000;color:#fff}
+.app-store-pill.android{background:#01875f;color:#fff}
+.app-rating{font-size:0.6rem;color:#2e7d32;font-weight:700;margin-top:2px}
+
+/* ── APP DOWNLOAD BANNER (post-quiz) ── */
+.app-dl-banner{
+  background:var(--white);
+  border-top:3px solid transparent;
+  border-image:linear-gradient(90deg,#e53935,#1565c0) 1;
+  padding:20px 18px;
+  box-shadow:var(--shadow);
+}
+.app-dl-title{
+  text-align:center;font-size:0.7rem;font-weight:900;
+  letter-spacing:0.1em;color:#2e7d32;text-transform:uppercase;
+  margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:7px;
+}
+.app-dl-title::before,.app-dl-title::after{content:'';flex:1;height:2px;background:var(--border)}
+.app-dl-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.app-dl-card{border-radius:8px;overflow:hidden;border:2px solid var(--border)}
+.app-dl-card.xm-app{border-color:#ffcdd2}
+.app-dl-card.fxgt-app{border-color:#bbdefb}
+.app-dl-card-head{padding:10px 12px 8px;display:flex;align-items:center;gap:8px}
+.app-dl-card.xm-app .app-dl-card-head{background:#fff5f5}
+.app-dl-card.fxgt-app .app-dl-card-head{background:#e3f2fd}
+.app-dl-icon{font-size:1.4rem;flex-shrink:0}
+.app-dl-broker{font-size:0.78rem;font-weight:900;line-height:1.2}
+.app-dl-card.xm-app .app-dl-broker{color:#c62828}
+.app-dl-card.fxgt-app .app-dl-broker{color:#0d47a1}
+.app-dl-rating{font-size:0.62rem;color:#f57c00;font-weight:700}
+.app-dl-features{padding:8px 12px;background:#fff}
+.app-dl-features ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:3px}
+.app-dl-features li{font-size:0.64rem;color:var(--text-soft);padding-left:13px;position:relative}
+.app-dl-features li::before{content:'✓';position:absolute;left:0;color:#00c853;font-weight:900;font-size:0.65rem}
+.app-dl-btns{padding:8px 10px 10px;background:#fff;display:flex;flex-direction:column;gap:5px}
+.app-btn-ios,.app-btn-android{
+  display:flex;align-items:center;justify-content:center;gap:5px;
+  text-decoration:none;border-radius:4px;padding:7px 8px;
+  font-size:0.64rem;font-weight:700;letter-spacing:0.03em;
+}
+.app-btn-ios{background:#000;color:#fff}
+.app-btn-android{background:#01875f;color:#fff}
+.app-btn-ios span,.app-btn-android span{font-size:0.78rem}
+.app-dl-note{text-align:center;font-size:0.62rem;color:var(--text-muted);margin-top:10px;line-height:1.5}
+
 </style>
 </head>
 <body>
@@ -690,6 +737,69 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","N
     <div class="divider"></div>
     <div class="cta-area-wrap" id="cta-area"></div>
     <div class="divider"></div>
+    
+    <div class="app-dl-banner">
+      <div class="app-dl-title">📲 スマホアプリで今すぐ取引開始</div>
+      <div class="app-dl-grid">
+
+        <div class="app-dl-card xm-app">
+          <div class="app-dl-card-head">
+            <div class="app-dl-icon">🔴</div>
+            <div>
+              <div class="app-dl-broker">XMTrading<br>アプリ</div>
+              <div class="app-dl-rating">★ 4.2 / 5.0</div>
+            </div>
+          </div>
+          <div class="app-dl-features">
+            <ul>
+              <li>MT4 / MT5対応</li>
+              <li>リアルタイムチャート</li>
+              <li>プッシュ通知</li>
+              <li>日本語UI完全対応</li>
+            </ul>
+          </div>
+          <div class="app-dl-btns">
+            <a href="XM_L" target="_blank" rel="noopener noreferrer" class="app-btn-ios track-link-xm" onclick="trackClick('xm')">
+              <span>🍎</span> App Storeで入手
+            </a>
+            <a href="XM_L" target="_blank" rel="noopener noreferrer" class="app-btn-android track-link-xm" onclick="trackClick('xm')">
+              <span>🤖</span> Google Playで入手
+            </a>
+          </div>
+        </div>
+
+        <div class="app-dl-card fxgt-app">
+          <div class="app-dl-card-head">
+            <div class="app-dl-icon">🔵</div>
+            <div>
+              <div class="app-dl-broker">FXGT<br>アプリ</div>
+              <div class="app-dl-rating">★ 4.0 / 5.0</div>
+            </div>
+          </div>
+          <div class="app-dl-features">
+            <ul>
+              <li>MT5専用アプリ</li>
+              <li>仮想通貨CFD対応</li>
+              <li>プッシュ通知</li>
+              <li>日本語UI完全対応</li>
+            </ul>
+          </div>
+          <div class="app-dl-btns">
+            <a href="FXGT_L" target="_blank" rel="noopener noreferrer" class="app-btn-ios track-link-fxgt" onclick="trackClick('fxgt')">
+              <span>🍎</span> App Storeで入手
+            </a>
+            <a href="FXGT_L" target="_blank" rel="noopener noreferrer" class="app-btn-android track-link-fxgt" onclick="trackClick('fxgt')">
+              <span>🤖</span> Google Playで入手
+            </a>
+          </div>
+        </div>
+
+      </div>
+      <div class="app-dl-note">📲 アプリから口座開設も可能。無料・最短2分で完了します。</div>
+    </div>
+    
+    <div class="divider"></div>
+    
     <div class="score-section">
       <div class="sec-label">総合評価スコア</div>
       <div class="score-grid">
@@ -785,7 +895,7 @@ function sendPostback(goal) {
   else { new Image().src = url; }
 }
 
-// Актуализиране на статичните линкове при зареждане (за бутоните преди куиза)
+// Актуализиране на статичните линкове при зареждане
 document.addEventListener('DOMContentLoaded', function() {
     var promoXmLinks = document.querySelectorAll('.track-link-xm');
     promoXmLinks.forEach(function(link) {
@@ -905,6 +1015,14 @@ function showResult() {
   document.getElementById('sticky-cta-pair').innerHTML = injectLinks(d.sticky);
   document.getElementById('sticky-footer').classList.add('visible');
   document.getElementById('result-screen').style.display = 'block';
+  
+  // Уверяваме се, че линковете в App банера също са с генерирани URL-и при показване
+  var appLinksXm = document.querySelectorAll('.app-dl-banner .track-link-xm');
+  appLinksXm.forEach(function(link) { link.href = buildUrl(XM_URL); });
+  
+  var appLinksFxgt = document.querySelectorAll('.app-dl-banner .track-link-fxgt');
+  appLinksFxgt.forEach(function(link) { link.href = buildUrl(FXGT_URL); });
+
   window.scrollTo({top:0, behavior:'smooth'});
 
   var el = document.getElementById('ai-msg-text');
